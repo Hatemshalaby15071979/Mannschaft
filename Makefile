@@ -1,7 +1,7 @@
 SHELL := bash
 export PYTHONPATH := src
 
-.PHONY: check lint test validate render serve corpus-suggest clean
+.PHONY: check lint test validate render assemble serve corpus-suggest clean
 
 check: lint test
 
@@ -17,6 +17,10 @@ validate:
 render:
 	@test -n "$(ID)" || (echo "usage: make render ID=A2-01" && exit 1)
 	python3 -m v5 render $(ID)
+
+assemble:
+	@test -n "$(ID)" || (echo "usage: make assemble ID=A2-01" && exit 1)
+	python3 -m v5 assemble $(ID)
 
 serve:
 	python3 -m v5 serve

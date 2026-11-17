@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import dataclasses
 import json
+import shutil
 
 import pytest
 
@@ -367,7 +368,7 @@ def test_cli_render_refuses_an_invalid_lesson(tmp_path, monkeypatch, capsys):
     assert "refusing to render" in capsys.readouterr().err
 
 
-def test_cli_render_renders_a_lesson_end_to_end(tmp_path, monkeypatch, ready_voices, capsys):
+def test_cli_render_renders_segments_end_to_end(tmp_path, monkeypatch, ready_voices, capsys):
     import v5.contract.cli as cli
 
     fake = FakeTransport()
@@ -376,7 +377,7 @@ def test_cli_render_renders_a_lesson_end_to_end(tmp_path, monkeypatch, ready_voi
     monkeypatch.setattr(cli, "VoiceStudioClient", lambda: VoiceStudioClient(transport=fake))
     monkeypatch.setattr(cli, "AUDIO_DIR", tmp_path / "audio")
 
-    assert cli.main(["render", "A2-01"]) == 0
+    assert cli.main(["render", "A2-01", "--segments-only"]) == 0
     out = capsys.readouterr().out
     assert "28 segments" in out
     assert "0 from cache, 28 synthesised" in out
@@ -384,6 +385,70 @@ def test_cli_render_renders_a_lesson_end_to_end(tmp_path, monkeypatch, ready_voi
     assert len(lines) == 28
 
     # second run is a pure cache replay
-    assert cli.main(["render", "A2-01"]) == 0
+    assert cli.main(["render", "A2-01", "--segments-only"]) == 0
     assert "28 from cache, 0 synthesised" in capsys.readouterr().out
     assert len(fake.calls) == 28
+
+
+@pytest.mark.skipif(
+    shutil.which("ffmpeg") is None, reason="ffmpeg not installed"
+)
+def test_cli_render_produces_a_playable_lesson(tmp_path, monkeypatch, ready_voices, capsys):
+    """The whole user command: synthesise, assemble, write the sidecars."""
+    import v5.contract.cli as cli
+    from tests.helpers import make_clip
+
+    lesson = {
+        "id": "A1-98",
+        "level": "A1",
+        "title": {"de": "Kurz", "en": "Short"},
+        "minutes": 1,
+        "scene": {
+            "setting_de": "Kurz.", "setting_en": "Short.", "register": "neutral",
+            "can_do_de": "Ich kann testen.", "can_do_en": "I can test.",
+            "situation_tags": ["test"], "grammar_focus": ["test"],
+        },
+        "cast": [{"role": "narrator", "voice": "de_narrator_f"}],
+        "segments": [
+            {
+                "id": "s1", "type": "line", "speaker": "narrator",
+                "text": "Guten Tag.", "translation": "Good day.", "pause_after_ms": 400,
+            },
+            {
+                "id": "s2", "type": "line", "speaker": "narrator",
+                "text": "Bis später.", "translation": "See you later.", "pause_after_ms": 300,
+            },
+        ],
+        "glossary": [],
+    }
+    lessons = tmp_path / "lessons"
+    lessons.mkdir()
+    (lessons / "A1-98.lesson.json").write_text(json.dumps(lesson), encoding="utf-8")
+
+    tone = make_clip(tmp_path / "tone.wav", 0.8)
+    audio_bytes = tone.read_bytes()
+    fake = FakeTransport(audio=audio_bytes)
+
+    monkeypatch.setattr(cli, "LESSONS_DIR", lessons)
+    monkeypatch.setattr(cli, "load_voices", lambda: ready_voices)
+    monkeypatch.setattr(cli, "AudioCache", lambda: AudioCache(root=tmp_path / "cache"))
+    monkeypatch.setattr(cli, "VoiceStudioClient", lambda: VoiceStudioClient(transport=fake))
+    monkeypatch.setattr(cli, "AUDIO_DIR", tmp_path / "audio")
+
+    assert cli.main(["render", "A1-98"]) == 0
+    out = capsys.readouterr().out
+    assert "2 segments" in out
+
+    out_dir = tmp_path / "audio" / "A1-98"
+    for name in ("lesson.mp3", "timeline.json", "lesson.srt", "manifest.json"):
+        assert (out_dir / name).exists(), name
+    timeline = json.loads((out_dir / "timeline.json").read_text(encoding="utf-8"))
+    assert [e["id"] for e in timeline] == ["s1", "s2"]
+    assert (out_dir / "lines" / "s1.mp3").exists()
+
+    # a second run re-uses both the synthesis cache and the assembly
+    assert cli.main(["render", "A1-98"]) == 0
+    out = capsys.readouterr().out
+    assert "2 from cache, 0 synthesised" in out
+    assert "assembly: up to date" in out
+    assert len(fake.calls) == 2

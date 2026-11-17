@@ -72,30 +72,23 @@ def _wrap(text: str, tag: str | None) -> str:
     return f"[{tag}]{text}[/{tag}]" if tag else text
 
 
-def _takes(seg: Segment) -> int:
-    return max(1, seg.repeat or 1)
-
-
-def _gaps(seg: Segment) -> list[int]:
-    """Silence after each take; the last one is the authored pause."""
-    n = _takes(seg)
-    intra = max(300, seg.pause_after_ms // 2) if n > 1 else 0
-    return [intra] * (n - 1) + [seg.pause_after_ms]
-
-
 def _segment_line(seg: Segment, baseline: float) -> tuple[str, list[tuple[str, float]]]:
-    """Emit one segment as one line; return the line and its per-take speeds."""
+    """Emit one segment as one line; return the line and its per-take speeds.
+
+    Timing comes from ``Segment.gaps()`` — the same source the ffmpeg assembler
+    uses — so the two render paths cannot drift apart.
+    """
     authored = seg.speed if seg.speed is not None else baseline
     tag, effective = quantise_speed(authored, baseline)
     wrapped = _wrap(seg.text.strip(), tag)
 
     body: list[str] = []
-    for gap in _gaps(seg):
+    for gap in seg.gaps():
         body.append(wrapped)
         if gap > 0:
             body.append(f"[pause {gap}ms]")
     return f"[voice:{seg.speaker}] " + " ".join(body), [
-        (seg.text.strip(), effective) for _ in range(_takes(seg))
+        (seg.text.strip(), effective) for _ in range(seg.takes)
     ]
 
 
@@ -155,7 +148,7 @@ def expected_spans(script: LessonScript, level: LevelProfile) -> list[dict]:
     out: list[dict] = []
     for seg in script.segments:
         _line, takes = _segment_line(seg, baseline)
-        for (text, speed), gap in zip(takes, _gaps(seg), strict=True):
+        for (text, speed), gap in zip(takes, seg.gaps(), strict=True):
             out.append(
                 {
                     "voice_id": seg.speaker,

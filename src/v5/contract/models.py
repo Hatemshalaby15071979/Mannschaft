@@ -111,6 +111,38 @@ class Segment(_Strict):
     def word_count(self) -> int:
         return len(self.text.split())
 
+    # ---- timing -------------------------------------------------------
+    # Both render paths (longform text and the ffmpeg assembler) read these,
+    # so a lesson sounds the same whichever way it is produced.
+
+    @property
+    def takes(self) -> int:
+        """How many times the audio is played (echo/drill repeat, else 1)."""
+        return max(1, self.repeat or 1)
+
+    @property
+    def tail_pause_ms(self) -> int:
+        """Silence after the last take.
+
+        A `check` uses its thinking time instead of the ordinary pause, so the
+        learner gets the authored window to answer before the lesson moves on.
+        """
+        return self.answer_pause_ms if self.type == "check" else self.pause_after_ms
+
+    @property
+    def intra_take_pause_ms(self) -> int:
+        """Silence between takes of a repeated segment."""
+        return max(300, self.pause_after_ms // 2) if self.takes > 1 else 0
+
+    def gaps(self) -> list[int]:
+        """Silence after each take, in order; the last entry is the tail."""
+        return [self.intra_take_pause_ms] * (self.takes - 1) + [self.tail_pause_ms]
+
+    @property
+    def total_pause_ms(self) -> int:
+        """Sum of every gap this segment contributes (takes included)."""
+        return sum(self.gaps())
+
 
 class GlossaryEntry(_Strict):
     id: str
