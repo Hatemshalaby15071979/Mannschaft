@@ -1,0 +1,44 @@
+# Per-level authoring limits. Enforced by the validator, not advisory.
+# default_speed is the authored baseline; explicit segment `speed` overrides it.
+
+[A1]
+max_words_per_line = 12
+default_speed = 0.85
+base_pause_ms = 800
+target_minutes = 8
+target_segments = 55
+
+[A2]
+max_words_per_line = 18
+default_speed = 0.90
+base_pause_ms = 700
+target_minutes = 10
+target_segments = 70
+
+[B1]
+max_words_per_line = 25
+default_speed = 0.95
+base_pause_ms = 600
+target_minutes = 14
+target_segments = 95
+
+[B2]
+max_words_per_line = 32
+default_speed = 1.00
+base_pause_ms = 500
+target_minutes = 16
+target_segments = 110
+
+[C1]
+max_words_per_line = 40
+default_speed = 1.00
+base_pause_ms = 450
+target_minutes = 18
+target_segments = 125
+
+[C2]
+max_words_per_line = 1000
+default_speed = 1.00
+base_pause_ms = 400
+target_minutes = 20
+target_segments = 140

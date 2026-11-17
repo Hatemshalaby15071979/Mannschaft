@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+
+# generated
+content/audio/
+content/index.sqlite
+content/corpus/videos.sqlite
+audio/.cache/
+
+# private
+user/

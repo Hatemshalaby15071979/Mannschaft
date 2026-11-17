@@ -1,0 +1,82 @@
+# German voice profiles — the ONLY place voices are named.
+#
+# `profile_id` is empty until milestone M4 (VoiceStudio -> Voice Design, manual).
+# Every renderer MUST refuse to run while any profile_id is empty.
+#
+# `instruct` is derived from gender/age/pitch/whisper — do NOT write free text.
+# VoiceStudio's whitelist (omnivoice/utils/voice_design.py) drops anything else:
+#   gender : male | female
+#   age    : child | teenager | young adult | middle-aged | elderly
+#   pitch  : very low | low | moderate | high | very high
+#   whisper: whisper
+# Accents are English-only and must be omitted for German.
+#
+# Seeds must be distinct across voices: identical seeds push models toward
+# identical timbre. 445117530 is already used by the two existing English
+# profiles — do not reuse it.
+
+[voices.de_narrator_f]
+name = "DE Narrator (f)"
+profile_id = ""
+seed = 712340011
+gender = "female"
+age = "young adult"
+pitch = "moderate pitch"
+whisper = false
+language = "German"
+use = ["scene", "note", "recap"]
+
+[voices.de_narrator_m]
+name = "DE Narrator (m)"
+profile_id = ""
+seed = 712340017
+gender = "male"
+age = "middle-aged"
+pitch = "low pitch"
+whisper = false
+language = "German"
+use = ["scene", "note", "recap"]
+
+[voices.de_young_f]
+name = "DE Young (f)"
+profile_id = ""
+seed = 712340023
+gender = "female"
+age = "young adult"
+pitch = "high pitch"
+whisper = false
+language = "German"
+use = ["service", "peer", "student", "customer"]
+
+[voices.de_young_m]
+name = "DE Young (m)"
+profile_id = ""
+seed = 712340029
+gender = "male"
+age = "young adult"
+pitch = "moderate pitch"
+whisper = false
+language = "German"
+use = ["peer", "colleague", "customer"]
+
+[voices.de_older_f]
+name = "DE Older (f)"
+profile_id = ""
+seed = 712340041
+gender = "female"
+age = "elderly"
+pitch = "low pitch"
+whisper = false
+language = "German"
+use = ["authority", "neighbour", "doctor"]
+
+[voices.de_older_m]
+name = "DE Older (m)"
+profile_id = ""
+seed = 712340053
+gender = "male"
+age = "middle-aged"
+pitch = "very low pitch"
+whisper = false
+language = "German"
+use = ["boss", "official", "shopkeeper"]
