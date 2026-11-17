@@ -6,10 +6,12 @@ import argparse
 import sys
 from pathlib import Path
 
-from ..config import ROOT, missing_profiles
-from .validate import validate_file
+from ..config import ROOT, load_levels, load_voices, missing_profiles
+from ..render import AudioCache, RenderError, VoiceNotReady, VoiceStudioClient, render_lesson
+from .validate import has_errors, validate_file
 
 LESSONS_DIR = ROOT / "content" / "lessons"
+AUDIO_DIR = ROOT / "content" / "audio"
 NOT_YET = "not implemented yet — see v5/STATUS.md for the current milestone"
 
 
@@ -51,6 +53,61 @@ def _cmd_health(_args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_render(args: argparse.Namespace) -> int:
+    """Render every segment of one lesson into the cache + content/audio/<ID>/lines/."""
+    path = LESSONS_DIR / f"{args.id}.lesson.json"
+    if not path.exists():
+        print(f"no such lesson: {path}", file=sys.stderr)
+        return 1
+
+    # Invariant 7: audio is never generated from content that fails validation.
+    script, issues = validate_file(path)
+    for issue in issues:
+        print(f"  {issue}")
+    if script is None or has_errors(issues):
+        print(f"{args.id}: refusing to render — validation failed", file=sys.stderr)
+        return 1
+
+    voices = load_voices()
+    missing = missing_profiles(voices)
+    if missing:
+        print("cannot render: these voices have no profile_id yet:", file=sys.stderr)
+        for key in missing:
+            print(f"  - {key}", file=sys.stderr)
+        print(
+            "\nCreate them in VoiceStudio → Voice Design (milestone M4), then put the\n"
+            "returned profile id into v5/config/voices.toml. This is the human gate:\n"
+            "an unmapped voice renders in the engine default and every character\n"
+            "sounds identical.",
+            file=sys.stderr,
+        )
+        return 2
+
+    level = load_levels()[script.level]
+    cache = AudioCache()
+    client = VoiceStudioClient()
+    out_dir = AUDIO_DIR / script.id / "lines"
+
+    try:
+        results = render_lesson(script, voices, level, cache, client, out_dir)
+    except VoiceNotReady as exc:
+        print(f"cannot render: {exc}", file=sys.stderr)
+        return 2
+    except RenderError as exc:
+        print(f"render failed: {exc}", file=sys.stderr)
+        print("is VoiceStudio running on 127.0.0.1:3900?", file=sys.stderr)
+        return 3
+
+    hits = sum(1 for r in results if r.cached)
+    print(
+        f"{script.id}: {len(results)} segments — "
+        f"{hits} from cache, {len(results) - hits} synthesised"
+    )
+    print(f"lines: {out_dir}")
+    print(f"cache: {cache.stats}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="v5")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -64,7 +121,11 @@ def main(argv: list[str] | None = None) -> int:
     p_health = sub.add_parser("health", help="check voice profiles are configured")
     p_health.set_defaults(func=_cmd_health)
 
-    for name in ("render", "serve", "corpus"):
+    p_render = sub.add_parser("render", help="render one lesson's segments")
+    p_render.add_argument("id", metavar="ID", help="lesson id, e.g. A2-01")
+    p_render.set_defaults(func=_cmd_render)
+
+    for name in ("serve", "corpus"):
         p = sub.add_parser(name, help=f"{name} ({NOT_YET})")
         p.set_defaults(func=lambda _a: (print(NOT_YET), 2)[1])
 
