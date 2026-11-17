@@ -15,10 +15,12 @@ from __future__ import annotations
 
 import ipaddress
 import json
+import mimetypes
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from ..config import ROOT, load_voices, missing_profiles
@@ -38,6 +40,11 @@ from .progress import ProgressStore
 
 PORT = 8766
 CORPUS_PATH = ROOT / "content" / "corpus" / "clips.jsonl"
+CLIENT_DIR = Path(__file__).resolve().parent.parent / "client"
+
+# Python's mimetypes does not know .webmanifest on every platform; without this
+# some browsers refuse the PWA manifest as application/octet-stream.
+mimetypes.add_type("application/manifest+json", ".webmanifest")
 
 
 class ProgressUpdate(BaseModel):
@@ -86,6 +93,7 @@ def create_app(
     voicestudio_url: str = DEFAULT_VOICESTUDIO_URL,
     render_fn=None,
     voices=None,
+    client_dir: Path | None = None,
 ) -> FastAPI:
     app = FastAPI(
         title="v5",
@@ -109,8 +117,8 @@ def create_app(
 
     # ---- meta ----------------------------------------------------------
 
-    @app.get("/")
-    def root() -> dict:
+    @app.get("/api")
+    def api_root() -> dict:
         return {"app": "v5", "status": "ok", "docs": "/api/docs"}
 
     @app.get("/api/health")
@@ -173,7 +181,10 @@ def create_app(
 
     @app.get("/api/progress")
     def get_progress() -> dict:
-        return {"resume": store.resume(), "lessons": store.all()}
+        return JSONResponse(
+            {"resume": store.resume(), "lessons": store.all()},
+            headers={"Cache-Control": "no-store"},
+        )
 
     @app.post("/api/progress")
     def post_progress(update: ProgressUpdate) -> dict:
@@ -249,5 +260,11 @@ def create_app(
             if len(candidates) >= limit:
                 break
         return {"candidates": candidates, "count": len(candidates)}
+
+    # ---- client (mounted last: API routes win, everything else is the PWA) --
+
+    assets = Path(client_dir) if client_dir is not None else CLIENT_DIR
+    if (assets / "index.html").exists():
+        app.mount("/", StaticFiles(directory=assets, html=True), name="client")
 
     return app

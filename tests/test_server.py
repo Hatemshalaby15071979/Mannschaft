@@ -446,5 +446,16 @@ def test_corpus_suggest_is_honest_when_the_corpus_is_empty(client, monkeypatch):
     assert "M6" in body["reason"]
 
 
-def test_root_answers(client):
-    assert client.get("/").json()["app"] == "v5"
+def test_api_root_answers(client):
+    assert client.get("/api").json()["app"] == "v5"
+
+
+def test_client_is_served_at_root(tmp_path):
+    """When the PWA assets exist, `/` is the app shell, not a JSON root."""
+    from v5.server import create_app
+
+    app = create_app(progress_db=tmp_path / "p.sqlite")
+    response = TestClient(app).get("/")
+    assert response.status_code == 200
+    assert response.headers["content-type"].startswith("text/html")
+    assert "js/main.js" in response.text
