@@ -7,10 +7,16 @@
 
 ## NEXT ACTION
 
-**M6 — corpus stages A–C.** Files: `src/v5/corpus/`, `tests/test_corpus.py`.
-DoD: `clips.jsonl` with ≥ 400 scored candidates; `corpus suggest --level B1 --situation work`
-returns ≥ 3; the `GET /api/corpus/suggest` endpoint (already wired in M7) now returns real
-candidates instead of the honest "corpus not built yet" stub.
+**M9 — pilot 12 lessons.** Files: `content/lessons/`, `tests/`, `config/`.
+DoD (plan §14): 12 lessons (2 per level A1→C2), all validate and render and play;
+`make validate --all` → 0 errors; you finish one without wanting to stop. Only A2-01
+exists so far (28 segments — expand to ~70 in M9). Use `corpus suggest` to mine raw
+material for authoring; nothing auto-generates a lesson (plan §8.5).
+
+**M6 is DONE** (see milestone row + log). `content/corpus/clips.jsonl` holds 790 scored
+candidates; `corpus suggest --level B1 --situation work` returns 30; the
+`GET /api/corpus/suggest` endpoint returns real candidates. Stages A/B/C are resumable
+via `python -m v5 corpus build --stage A|B|C`.
 
 **M4 is DONE** (see milestone row + log). All six `profile_id`s are filled in
 `config/voices.toml`; the six design profiles exist in VoiceStudio's DB with distinct
@@ -30,7 +36,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | M3 | Segment renderer + cache | DONE | A2-01: 28 segments → 28 unique keys → 28 engine calls, then **28/28 cache hits, 0 calls**; `make render` refuses with exit 2 while profiles are empty; commit `acd7ca0` |
 | M4 | Six German voices | DONE | `b0872fa` — Six design profiles created via `POST /profiles` (kind=design, language=German, distinct seeds, `vd_states` from real `instruct_to_vd_states`); ids in `config/voices.toml`; `/v1/audio/speech` renders all six to distinct WAVs (6/6 hashes); `make check` 152 passed; `v5 health` → all voices configured |
 | M5 | Assembler | DONE | 94 tests green. Synthetic 4-segment lesson: computed **8060 ms**, assembled **8060 ms**, mp3 **8060 ms** → **0 ms drift**; −23.55 LUFS in → **−16.45 LUFS out** (target −16, within 1 LU); `timeline.json`/`lesson.srt`/`manifest.json`/`lines/*.mp3` all written; `reuse=True` returns in **0.2 ms**; commit `12301a5` |
-| M6 | Corpus stages A–C | TODO | — |
+| M6 | Corpus stages A–C | DONE | `<hash>` — 22 playlists → 728 unique videos (stage A, 0 errors); 150 fetched → 144 with captions, 241,804 word rows (stage B); 790 scored candidates in `content/corpus/clips.jsonl`; `corpus suggest --level B1 --situation work` → 30 (≥3); server endpoint returns real candidates; `make check` 174 passed |
 | M7 | Server | DONE | 135 tests (36 server + 5 pipeline). 16 routes on 127.0.0.1:8766; `Range: bytes=0-99` → **206**, `Content-Range: bytes 0-99/2048`, body exactly 100 bytes; suffix range → tail; `bytes=99999-` → **416**; `/api/health` reports VoiceStudio down (`[Errno 111] Connection refused`) without hanging; `assert_loopback` refuses `0.0.0.0`/LAN; live `make serve` returned A2-01 + honest health; commit `e6d4f97` |
 | M8 | Client | DONE | 152 tests (16 asset + 2 Playwright smoke). 8 screens; service worker with byte-range slicing (206/416 verified against HTTP semantics); position restored from `/api/progress` after reload; offline after first play; keyboard-only usable; commit `27a746d` |
 | M9 | Pilot 12 lessons | TODO | 1 of 12 exists (A2-01, 28 segments — expand to ~70 in M9) |
@@ -74,4 +80,9 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **Correction:** four "refuses while voices are unready" tests (test_adapter, test_pipeline, test_render ×2, test_server ×2) hard-coded `load_voices()` being empty (the pre-M4 state). With M4 done they either failed or — worse — the CLI test fell through to **real synthesis against the live engine and hung**. Fixed by injecting an explicit `unready_voices()` helper (empty profile_ids) in `tests/helpers.py`. The guard invariants are preserved; the tests no longer depend on ambient config. |
 | — | — | **Discovery:** VoiceStudio saves a design profile with a *pending sample* when the TTS model isn't loaded (`main.py` lazily preloads; `profiles.py` defers sample render). That is sufficient: `/v1/audio/speech` resolves the profile row and conditions on its stored `instruct`+`seed` (openai_compat.py:711-723). No GPU sample render was needed to make the voices functional. Backend device reported `cpu`. |
 | — | — | **Gotcha:** `POST /profiles` needs `vd_states` as a JSON **string** form field, and heals `instruct` from it via `heal_design_instruct`. Passing only `instruct` is not enough for a design profile — the server 422s without `vd_states`. |
+| 2026-11-17 | M6 | Corpus stages A–C: `config/{corpus.toml,de_bands.json}`, `src/v5/corpus/{__init__,score,db,manifest,captions,mine,suggest}.py`, CLI `corpus suggest`/`corpus build`; server endpoint now reads real candidates through the shared `suggest` helper. 152 → 174 tests (22 new corpus tests). Real data: 728 videos, 241,804 words, 790 candidates. |
+| — | — | **Correction:** plan §8.3's "8–40 words AND 30–90 s" bounds are contradictory at natural speech (~2.4 words/s → 30 s ≈ 72 words). With the literal 8–40 word cap, a real 15-min Easy German video produced **0** candidates (groups were whole 60–250 s speaker turns). Kept the 30–90 s time bound, widened words to 20–220, and add a `window_seconds=60` sentence-boundary rule. Same video then yielded 14; corpus total 790. |
+| — | — | **Bug:** `config/corpus.toml` had `fillers`/`profanity` *after* the `[[situation]]` array-of-tables, so TOML nested them into the last situation element. `score.low_filler_ratio()`/`profanity_or_slur()` raised `KeyError` on every real clip. Moved both keys above the array-of-tables; a `test_corpus` test pins it. |
+| — | — | **Bug:** all `src/v5/corpus/*.py` used `Path(__file__).parents[2]` for ROOT, which resolves to `v5/src` (one level too shallow) — config/DB/clips paths all pointed into `src/`. Fixed to `parents[3]`. Also `db.connect()` now creates the parent dir — a fresh run previously died with `unable to open database file`. |
+| — | — | **Design:** `corpus/suggest.py` is the single filter implementation for both the CLI and `GET /api/corpus/suggest` (filters on `level_est`, falling back to `level`). Server takes an injectable `corpus_path` so tests never read real content. Generated `corpus.sqlite3` (22 MB) + `cache/` (47 MB) are gitignored; only `clips.jsonl` (840 KB) is committed. |
 

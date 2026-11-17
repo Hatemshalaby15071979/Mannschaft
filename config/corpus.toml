@@ -1,0 +1,79 @@
+# Corpus mining configuration (plan §8.3). Pure data — no profile ids, no secrets.
+#
+# `de_bands.json` (same dir) maps a German token to its CEFR band. It is derived
+# from the curated glossary + a high-frequency function-word seed; it is NOT a
+# full frequency list, so level_fit is a heuristic that can be tuned later.
+# The scoring function is deterministic and unit-tested; only the word list can
+# change an individual score, never the formula.
+
+# Fillers that lower teachability (plan: "äh, halt, also… counted, penalised").
+# These must stay ABOVE the [[situation]] array-of-tables: in TOML, keys after
+# an array-of-tables header belong to that table, not the document root.
+fillers = ["äh", "ähm", "öh", "öhm", "halt", "also", "na ja", "quasi", "irgendwie", "eigentlich"]
+
+# Hard rejection: any token in this list zeroes the candidate.
+profanity = ["arsch", "scheiße", "scheiss", "scheisse", "fick", "wichser", "hurensohn", "nazi", "hitler", "rassist"]
+
+# Situation keyword → situation label. First match wins, in this order.
+[[situation]]
+label = "bakery"
+keywords = ["bäcker", "brötchen", "brot", "käse", "wurst", "backwaren", "konditorei", "bäckerei"]
+
+[[situation]]
+label = "work"
+keywords = ["arbeit", "arbeiten", "job", "kollege", "kollegin", "chef", "büro", "gehalt", "kündigen", "bewerbung", "vorstellungsgespräch", "praktikum", "beruf"]
+
+[[situation]]
+label = "transport"
+keywords = ["zug", "bahn", "bus", "ticket", "bahnhof", "hbf", "verspätung", "gleis", "fahren", "u-bahn", "flughafen"]
+
+[[situation]]
+label = "shopping"
+keywords = ["kaufen", "geschäft", "laden", "preis", "kasse", "restaurant", "bestellen", "rechnung", "supermarkt"]
+
+[[situation]]
+label = "health"
+keywords = ["arzt", "krank", "gesund", "klinik", "apotheke", "medikament", "schmerz", "-Arzt"]
+
+[[situation]]
+label = "housing"
+keywords = ["wohnung", "miete", "haus", "zimmer", "vermieter", "nachbar", "umzug", "einrichten"]
+
+[[situation]]
+label = "family"
+keywords = ["familie", "kind", "kinder", "mutter", "vater", "schwester", "bruder", "großeltern", "freund", "freundin"]
+
+[[situation]]
+label = "food"
+keywords = ["essen", "kochen", "rezept", "restaurant", "kaffee", "mittagessen", "abendessen", "lebensmittel"]
+
+[[situation]]
+label = "leisure"
+keywords = ["urlaub", "reise", "ferien", "hobby", "sport", "kino", "musik", "wochenende", "ausgehen"]
+
+[[situation]]
+label = "school"
+keywords = ["schule", "universität", "studium", "student", "lehrer", "prüfung", "unterricht", "lernen", "klasse"]
+
+# Target speech rate (words/second) per CEFR band, for speech_rate_fit.
+[rate]
+A1 = 1.6
+A2 = 1.9
+B1 = 2.2
+B2 = 2.5
+C1 = 2.7
+C2 = 2.9
+
+# Candidate mining bounds. The plan's "8–40 words AND 30–90 s" is internally
+# contradictory: at natural speech (~2.4 words/s) 30 s is ~72 words, so an
+# 8–40 word candidate cannot also be 30–90 s. We keep the plan's *time* bound
+# (a teachable exchange is 30–90 s) and widen the word bound to match real
+# auto-caption speech rate. Verified against a 15-min Easy German video:
+# ~2.4 words/s, sentence-final boundaries every ~5 s.
+[mining]
+min_words = 20
+max_words = 220
+min_seconds = 30.0
+max_seconds = 90.0
+boundary_gap_ms = 700
+window_seconds = 60.0  # close an exchange at the first sentence end after this

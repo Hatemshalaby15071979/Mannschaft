@@ -9,6 +9,8 @@ __pycache__/
 content/audio/
 content/index.sqlite
 content/corpus/videos.sqlite
+content/corpus/*.sqlite3
+content/corpus/cache/
 audio/.cache/
 
 # private

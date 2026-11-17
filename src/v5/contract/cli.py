@@ -24,7 +24,46 @@ from .validate import validate_file
 
 LESSONS_DIR = ROOT / "content" / "lessons"
 AUDIO_DIR = ROOT / "content" / "audio"
-NOT_YET = "not implemented yet — see v5/STATUS.md for the current milestone"
+
+
+def _cmd_corpus_suggest(args: argparse.Namespace) -> int:
+    from ..corpus.suggest import suggest
+
+    clips = suggest(
+        level=args.level,
+        situation=args.situation,
+        limit=args.limit,
+    )
+    if not clips:
+        print("no candidates matched (has the corpus been built? `python -m v5 corpus build`)")
+        return 1
+    for clip in clips:
+        print(
+            f"{clip['score']:.2f}  {clip.get('level_est', '?'):>2}  "
+            f"{str(clip.get('situation') or '-'):<10}  {clip['clip_id']}"
+        )
+        print(f"       {clip['text_de']}")
+    print(f"\n{len(clips)} candidate(s)")
+    return 0
+
+
+def _cmd_corpus_build(args: argparse.Namespace) -> int:
+    from ..corpus import captions, db, manifest, mine
+
+    conn = db.connect()
+    stats: dict = {}
+    stage = args.stage
+    if stage in ("A", "all"):
+        stats["A"] = manifest.build_manifest(conn)
+    if stage in ("B", "all"):
+        stats["B"] = captions.build_words(conn, limit=args.limit)
+    if stage in ("C", "all"):
+        stats["C"] = mine.mine(conn)
+    conn.close()
+    import json
+
+    print(json.dumps(stats, ensure_ascii=False, indent=2))
+    return 0
 
 M4_HELP = """
 Create them in VoiceStudio → Voice Design (milestone M4), then put the
@@ -242,8 +281,25 @@ def main(argv: list[str] | None = None) -> int:
     p_serve.add_argument("--log-level", default="info")
     p_serve.set_defaults(func=_cmd_serve)
 
-    p_corpus = sub.add_parser("corpus", help=f"corpus ({NOT_YET})")
-    p_corpus.set_defaults(func=lambda _a: (print(NOT_YET), 2)[1])
+    p_corpus = sub.add_parser("corpus", help="mine and query the Easy German corpus")
+    corpus_sub = p_corpus.add_subparsers(dest="corpus_cmd", required=True)
+
+    p_suggest = corpus_sub.add_parser("suggest", help="show scored clip candidates")
+    p_suggest.add_argument("--level", default=None, help="CEFR band, e.g. B1")
+    p_suggest.add_argument("--situation", default=None, help="situation label, e.g. work")
+    p_suggest.add_argument("--limit", type=int, default=10)
+    p_suggest.set_defaults(func=_cmd_corpus_suggest)
+
+    p_build = corpus_sub.add_parser("build", help="run corpus stages A, B, C")
+    p_build.add_argument(
+        "--stage", choices=("A", "B", "C", "all"), default="all",
+        help="which stage to run (default: all)",
+    )
+    p_build.add_argument(
+        "--limit", type=int, default=None,
+        help="for stage B: cap the number of videos fetched (resumable)",
+    )
+    p_build.set_defaults(func=_cmd_corpus_build)
 
     args = parser.parse_args(argv)
     return int(args.func(args))

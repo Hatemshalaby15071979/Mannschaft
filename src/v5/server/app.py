@@ -14,7 +14,6 @@ Design constraints that shape this file:
 from __future__ import annotations
 
 import ipaddress
-import json
 import mimetypes
 from pathlib import Path
 
@@ -94,6 +93,7 @@ def create_app(
     render_fn=None,
     voices=None,
     client_dir: Path | None = None,
+    corpus_path: Path | None = None,
 ) -> FastAPI:
     app = FastAPI(
         title="v5",
@@ -242,24 +242,18 @@ def create_app(
         situation: str | None = Query(default=None),
         limit: int = Query(default=10, ge=1, le=100),
     ) -> dict:
-        if not CORPUS_PATH.exists():
-            return {"candidates": [], "reason": "corpus not built yet (M6)"}
-        candidates: list[dict] = []
-        for line in CORPUS_PATH.read_text(encoding="utf-8").splitlines():
-            if not line.strip():
-                continue
-            try:
-                clip = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-            if level and str(clip.get("level", "")).upper() != level.upper():
-                continue
-            if situation and situation.lower() not in str(clip.get("situation", "")).lower():
-                continue
-            candidates.append(clip)
-            if len(candidates) >= limit:
-                break
-        return {"candidates": candidates, "count": len(candidates)}
+        from ..corpus.suggest import suggest
+
+        candidates = suggest(
+            corpus_path or CORPUS_PATH,
+            level=level,
+            situation=situation,
+            limit=limit,
+        )
+        result: dict = {"candidates": candidates, "count": len(candidates)}
+        if not candidates and not (corpus_path or CORPUS_PATH).exists():
+            result["reason"] = "corpus not built yet (M6)"
+        return result
 
     # ---- client (mounted last: API routes win, everything else is the PWA) --
 
