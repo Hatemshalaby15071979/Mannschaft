@@ -5,6 +5,7 @@ import json
 
 import pytest
 
+from tests.helpers import unready_voices
 from v5.adapters import Cue, VoiceNotReady, build, expected_spans, quantise_speed, to_srt
 from v5.adapters.longform import real_parser
 from v5.config import ROOT, load_levels, load_voices
@@ -100,7 +101,7 @@ def test_voice_map_keys_are_bare_role_names(script, ready_voices):
 def test_refuses_to_render_with_unready_voices(script):
     level = load_levels()[script.level]
     with pytest.raises(VoiceNotReady, match="no profile_id"):
-        build(script, load_voices(), level)
+        build(script, unready_voices(), level)
 
 
 def test_default_speed_segments_emit_no_inline_tag(script, ready_voices):

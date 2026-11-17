@@ -1,6 +1,10 @@
 # German voice profiles — the ONLY place voices are named.
 #
-# `profile_id` is empty until milestone M4 (VoiceStudio -> Voice Design, manual).
+# `profile_id` is the id returned by VoiceStudio for each design voice (M4).
+# These six were created via POST /profiles (kind=design) with language=German
+# and distinct seeds; vd_states were derived from each voice's gender/age/pitch
+# via VoiceStudio's own instruct_to_vd_states(). Verified through the exact
+# render path (/v1/audio/speech) — all six resolve to distinct German profiles.
 # Every renderer MUST refuse to run while any profile_id is empty.
 #
 # `instruct` is derived from gender/age/pitch/whisper — do NOT write free text.
@@ -17,7 +21,7 @@
 
 [voices.de_narrator_f]
 name = "DE Narrator (f)"
-profile_id = ""
+profile_id = "a22b40a0"
 seed = 712340011
 gender = "female"
 age = "young adult"
@@ -28,7 +32,7 @@ use = ["scene", "note", "recap"]
 
 [voices.de_narrator_m]
 name = "DE Narrator (m)"
-profile_id = ""
+profile_id = "df9b99b1"
 seed = 712340017
 gender = "male"
 age = "middle-aged"
@@ -39,7 +43,7 @@ use = ["scene", "note", "recap"]
 
 [voices.de_young_f]
 name = "DE Young (f)"
-profile_id = ""
+profile_id = "5cf0217b"
 seed = 712340023
 gender = "female"
 age = "young adult"
@@ -50,7 +54,7 @@ use = ["service", "peer", "student", "customer"]
 
 [voices.de_young_m]
 name = "DE Young (m)"
-profile_id = ""
+profile_id = "f9b3a073"
 seed = 712340029
 gender = "male"
 age = "young adult"
@@ -61,7 +65,7 @@ use = ["peer", "colleague", "customer"]
 
 [voices.de_older_f]
 name = "DE Older (f)"
-profile_id = ""
+profile_id = "7e76931c"
 seed = 712340041
 gender = "female"
 age = "elderly"
@@ -72,7 +76,7 @@ use = ["authority", "neighbour", "doctor"]
 
 [voices.de_older_m]
 name = "DE Older (m)"
-profile_id = ""
+profile_id = "ed753d0a"
 seed = 712340053
 gender = "male"
 age = "middle-aged"

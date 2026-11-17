@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pytest
 
+from tests.helpers import unready_voices
 from v5.config import load_voices
 from v5.render import (
     LessonNotFound,
@@ -81,9 +82,10 @@ def test_unknown_lesson_names_the_path_it_looked_at(lessons):
 
 
 def test_unready_voices_raise_with_the_missing_keys(lessons):
+    blocked = unready_voices()
     with pytest.raises(VoicesNotReady) as info:
-        renderable("A1-97", lessons_dir=lessons, voices=load_voices())
-    assert info.value.missing == sorted(load_voices())
+        renderable("A1-97", lessons_dir=lessons, voices=blocked)
+    assert info.value.missing == sorted(blocked)
     assert "M4" in str(info.value)
 
 

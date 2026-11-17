@@ -15,6 +15,7 @@ from types import SimpleNamespace
 import pytest
 from fastapi.testclient import TestClient
 
+from tests.helpers import unready_voices
 from v5.config import load_voices
 from v5.server import ProgressStore, assert_loopback, create_app
 
@@ -173,7 +174,7 @@ def test_health_reports_missing_voices(env, monkeypatch):
         lessons_dir=env["lessons"],
         audio_dir=env["audio"],
         progress_db=env["tmp"] / "p.sqlite",
-        voices=load_voices(),  # real config: profile ids are empty until M4
+        voices=unready_voices(),  # inject the pre-M4 blocked state explicitly
     )
     body = TestClient(app).get("/api/health").json()
     assert body["voices_ok"] is False
@@ -374,7 +375,7 @@ def test_render_refuses_while_voices_are_unready(env):
         lessons_dir=env["lessons"],
         audio_dir=env["audio"],
         progress_db=env["tmp"] / "p.sqlite",
-        voices=load_voices(),
+        voices=unready_voices(),
     )
     response = TestClient(app).post("/api/render/A1-98")
     assert response.status_code == 409

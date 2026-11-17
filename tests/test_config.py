@@ -41,10 +41,10 @@ def test_voice_instruct_uses_only_whitelist_tokens():
         assert "accent" not in prof.instruct, "accents are English-only"
 
 
-def test_voices_are_pending_until_m4():
-    # M4 is manual: until the user creates them, ids must be empty so renderers refuse.
-    missing = missing_profiles()
-    assert isinstance(missing, list)
+def test_all_voices_are_configured_after_m4():
+    # M4 is done: all six profile ids are filled, so renderers can run.
+    assert missing_profiles() == []
+    assert all(prof.ready for prof in load_voices().values())
 
 
 def test_levels_have_monotonic_difficulty():

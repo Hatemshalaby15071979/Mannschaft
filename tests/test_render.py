@@ -13,6 +13,7 @@ import shutil
 
 import pytest
 
+from tests.helpers import unready_voices
 from v5.config import ROOT, load_levels, load_voices
 from v5.contract import LessonScript
 from v5.render import (
@@ -298,7 +299,7 @@ def test_request_for_prefers_authored_speed(script, ready_voices):
 def test_render_lesson_refuses_when_profiles_are_missing(script, cache, client):
     with pytest.raises(VoiceNotReady, match="no profile_id"):
         render_lesson(
-            script, load_voices(), load_levels()[script.level], cache, client, cache.root / "out"
+            script, unready_voices(), load_levels()[script.level], cache, client, cache.root / "out"
         )
 
 
@@ -340,10 +341,14 @@ def test_second_lesson_render_hits_the_cache(script, ready_voices, cache, transp
 # --------------------------------------------------------------------------
 
 
-def test_cli_render_refuses_while_voices_are_unready(capsys):
-    from v5.contract.cli import main
+def test_cli_render_refuses_while_voices_are_unready(capsys, monkeypatch):
+    import v5.contract.cli as cli
 
-    assert main(["render", "A2-01"]) == 2
+    # Inject the pre-M4 blocked state: the real config is fully ready now, so a
+    # bare main(["render", ...]) would reach the engine instead of the guard.
+    monkeypatch.setattr(cli, "load_voices", unready_voices)
+
+    assert cli.main(["render", "A2-01"]) == 2
     err = capsys.readouterr().err
     assert "profile_id" in err
     assert "M4" in err

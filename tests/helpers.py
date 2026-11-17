@@ -6,8 +6,25 @@ the M4 voices. Every wav has padding so trimming is genuinely exercised.
 
 from __future__ import annotations
 
+import dataclasses
 import subprocess
 from pathlib import Path
+
+
+def unready_voices():
+    """Six configured voices with empty profile ids — the pre-M4 state.
+
+    Tests of the "refuse while voices are unready" guard must not depend on the
+    ambient config: after M4 the real config is fully populated, so a test that
+    calls load_voices() and expects it empty would either fail or (worse) fall
+    through to real synthesis against a live engine. Inject this explicitly.
+    """
+    from v5.config import load_voices
+
+    return {
+        key: dataclasses.replace(prof, profile_id="")
+        for key, prof in load_voices().items()
+    }
 
 
 def make_clip(path: Path, seconds: float, freq: int = 440, pad_s: float = 0.15) -> Path:
