@@ -7,19 +7,20 @@
 
 ## NEXT ACTION
 
-**M7 — FastAPI server on 127.0.0.1:8766.** Files: `src/v5/server/{app,__init__}.py`,
-`tests/test_server.py`; wire `python -m v5 serve`.
-Endpoints: `GET /api/health`, `GET /api/lessons`, `GET /api/lessons/{id}`
-(lesson + timeline), `GET /api/audio/{id}/lesson.mp3` with **byte-range** support,
-`GET /api/audio/{id}/lines/{seg}.mp3`, `POST /api/render/{id}` (job, returns 202).
-DoD: `TestClient` covers a 206 range request (correct `Content-Range`, exact byte
-count), the timeline endpoint, and a 404 for an unrendered lesson; the server binds
-**only** 127.0.0.1 (invariant 9). Test against a fixture lesson assembled from
-synthetic wavs — no VoiceStudio needed.
+**M8 — PWA client.** Files: `src/v5/client/` (vanilla ES modules, no bundler) served
+by the M7 app at `/`; `tests/test_client_assets.py`.
+DoD: 8 screens (Home, Player, Lesson detail, Transcript, Glossary, Drill, Library,
+Progress); cold start → play < 2 s; position restored from `/api/progress` after reload;
+offline after first play (service worker caches `lesson.mp3` + `timeline.json`);
+keyboard-only usable; one Playwright smoke test green. Transcript sync must use
+`timeline.json` `start_ms` (measured), never estimate.
+
+**M6 (corpus stages A–C) is still open** and only blocks authoring at M9/M10 — it does
+not block M8. `/api/corpus/suggest` already answers honestly when the corpus is absent.
 
 **M4 is the human gate (still open):** create the six German voices in VoiceStudio →
-Design, fill in `profile_id` in `config/voices.toml`. `make render` refuses with a list
-of exactly which voices are missing. Nothing audio-real can be verified until then.
+Design, fill in `profile_id` in `config/voices.toml`. Until then `POST /api/render/{id}`
+returns 409 with the exact missing voice keys, and no real audio can exist.
 
 ---
 
@@ -32,9 +33,9 @@ of exactly which voices are missing. Nothing audio-real can be verified until th
 | M2 | VoiceStudio adapter | DONE | golden test: 40 spans parsed by the **real** `longform_parser.py`; 32 tests green; commit `ff1152b` |
 | M3 | Segment renderer + cache | DONE | A2-01: 28 segments → 28 unique keys → 28 engine calls, then **28/28 cache hits, 0 calls**; `make render` refuses with exit 2 while profiles are empty; commit `acd7ca0` |
 | M4 | Six German voices | **BLOCKED (human)** | needs VoiceStudio Design session |
-| M5 | Assembler | DONE | 94 tests green. Synthetic 4-segment lesson: computed **8060 ms**, assembled **8060 ms**, mp3 **8060 ms** → **0 ms drift**; −23.55 LUFS in → **−16.45 LUFS out** (target −16, within 1 LU); `timeline.json`/`lesson.srt`/`manifest.json`/`lines/*.mp3` all written; `reuse=True` returns in **0.2 ms** |
-| M6 | Corpus stages A–C | TODO | — |
-| M7 | Server | TODO | — |
+| M5 | Assembler | DONE | 94 tests green. Synthetic 4-segment lesson: computed **8060 ms**, assembled **8060 ms**, mp3 **8060 ms** → **0 ms drift**; −23.55 LUFS in → **−16.45 LUFS out** (target −16, within 1 LU); `timeline.json`/`lesson.srt`/`manifest.json`/`lines/*.mp3` all written; `reuse=True` returns in **0.2 ms**; commit `12301a5` |
+| M6 | Corpus stages A–C | TODO | — (does not block M7/M8) |
+| M7 | Server | DONE | 135 tests (36 server + 5 pipeline). 16 routes on 127.0.0.1:8766; `Range: bytes=0-99` → **206**, `Content-Range: bytes 0-99/2048`, body exactly 100 bytes; suffix range → tail; `bytes=99999-` → **416**; `/api/health` reports VoiceStudio down (`[Errno 111] Connection refused`) without hanging; `assert_loopback` refuses `0.0.0.0`/LAN; live `make serve` returned A2-01 + honest health |
 | M8 | Client | TODO | — |
 | M9 | Pilot 12 lessons | TODO | 1 of 12 exists (A2-01, 28 segments — expand to ~70 in M9) |
 | M10 | Scale to 72 | TODO | — |
@@ -56,6 +57,12 @@ of exactly which voices are missing. Nothing audio-real can be verified until th
 | — | — | **Gotcha:** a fully silent clip trims to nothing and `ffprobe` prints `N/A`, not a number. `probe_duration_ms` now raises `AssemblyError` with a "synthesis failed" message instead of a bare `ValueError`. A dead engine can no longer produce a silent lesson. |
 | — | — | **Design:** `Segment.gaps()` / `takes` / `tail_pause_ms` live once in the contract. The longform adapter reads them, the assembler reads them, so the two render paths cannot drift. `check` uses `answer_pause_ms` as its tail (thinking time) and is excluded from `lesson.srt` — the question is audio, the answer is the UI's job. |
 | — | — | **Measurement:** trim chain (`silenceremove` −50 dB, `start_silence=0.04`, `areverse` round-trip) turns 1.30 s padded → 1.08 s, i.e. it keeps the intended 40 ms guard. mp3 duration equals wav duration exactly. |
+| 2026-11-17 | M7 | FastAPI app on 127.0.0.1:8766: catalogue, byte-range audio, render job queue, SQLite progress, health probe; `make serve`; 41 new tests |
+| — | — | **Decision:** byte-range is Starlette's `FileResponse`, not hand-rolled. Verified 206 + exact `Content-Range` + 416 before writing a line; a custom parser would have been a liability with no upside. |
+| — | — | **Correction:** `render`/`assemble` logic moved out of the CLI into `render/pipeline.py`, because the server needs the same guards. Two copies would have drifted. CLI now only maps typed exceptions to exit codes (1 bad lesson, 2 voices unready, 3 engine, 4 assembly). |
+| — | — | **Bug caught by test:** the server's default render function used the module-level `content/` paths, so an app built with injected test dirs would have rendered *real* content. `make_render_fn(catalogue)` now binds the pipeline to the app's own dirs; `test_default_render_fn_is_bound_to_the_apps_own_dirs` pins it. |
+| — | — | **Gotcha:** the `register` shadow bites again — `Catalogue` must read `script.scene.register_`, not `.register`, or pydantic's `__getattr__` raises `AttributeError` on every lesson. Documented at the read site. |
+| — | — | **Design:** render is queued, never inline (a 10-minute lesson cannot hold an HTTP request). The queue has exactly **one** worker: the GPU is a single resource. Duplicate submissions return the active job instead of stacking. |
 | — | — | **Correction:** contract uses `speaker` (cast role), not `voice`. Plan §6.1 and tests fixed. |
 | — | — | **Correction:** `voice_map` keys are bare names (`"kunde"`), not `"[voice:kunde]"`. The router's docstring is wrong; `_map_span_voice` does `voice_map.get(voice_id)`. Would have silently collapsed all voices to default. |
 | — | — | **Discovery:** `default_speed` on `parse_script_to_spans` is an exact float, so the level baseline (A2=0.90) does **not** need quantising. Only deviating segments get tags. First implementation wrapped every line in `[emphasis]`; fixed. |

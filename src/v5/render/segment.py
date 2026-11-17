@@ -125,16 +125,23 @@ def render_lesson(
     cache: AudioCache,
     client: VoiceStudioClient,
     out_dir: Path,
+    *,
+    on_segment: Callable[[int, int], None] | None = None,
 ) -> list[SegmentRender]:
-    """Render every segment once. Refuses if any cast voice is unconfigured."""
+    """Render every segment once. Refuses if any cast voice is unconfigured.
+
+    ``on_segment(done, total)`` is called after each clip so a job runner or a
+    progress bar can report honestly instead of guessing.
+    """
     unready = missing_profiles(voices)
     if unready:
         raise VoiceNotReady(
             "cannot render: no profile_id for " + ", ".join(unready) + " (M4 is manual)"
         )
     out_dir.mkdir(parents=True, exist_ok=True)
+    total = len(script.segments)
     results: list[SegmentRender] = []
-    for segment in script.segments:
+    for index, segment in enumerate(script.segments, start=1):
         member = script.roles[segment.speaker]
         profile = resolve_voice(voices, member.voice)
         rendered = render_segment(segment, profile, level, cache, client)
@@ -142,4 +149,6 @@ def render_lesson(
         if rendered.path != target:
             target.write_bytes(rendered.path.read_bytes())
         results.append(SegmentRender(segment.id, target, rendered.cached, rendered.key))
+        if on_segment is not None:
+            on_segment(index, total)
     return results

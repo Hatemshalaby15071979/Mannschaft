@@ -8,6 +8,18 @@ from .assemble import (
     script_hash,
 )
 from .cache import AudioCache, CacheStats, SynthesisRequest
+from .pipeline import (
+    AssemblyFailed,
+    LessonNotFound,
+    PipelineError,
+    RenderFailed,
+    RenderOutcome,
+    ValidationFailed,
+    VoicesNotReady,
+    load_lesson_json,
+    render_lesson_to_disk,
+    renderable,
+)
 from .segment import (
     RenderError,
     SegmentRender,
@@ -20,20 +32,30 @@ from .segment import (
 
 __all__ = [
     "AssemblyError",
+    "AssemblyFailed",
     "AssemblyResult",
     "AudioCache",
     "CacheStats",
+    "LessonNotFound",
+    "PipelineError",
     "RenderError",
+    "RenderFailed",
+    "RenderOutcome",
     "SegmentRender",
     "SynthesisRequest",
     "TimelineEntry",
+    "ValidationFailed",
     "VoiceNotReady",
     "VoiceStudioClient",
+    "VoicesNotReady",
     "assemble",
     "build_timeline",
+    "load_lesson_json",
     "probe_duration_ms",
     "render_lesson",
+    "render_lesson_to_disk",
     "render_segment",
+    "renderable",
     "request_for",
     "script_hash",
 ]
