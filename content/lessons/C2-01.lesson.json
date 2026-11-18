@@ -1,0 +1,246 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "C2-01",
+  "level": "C2",
+  "title": { "de": "Ironie und Untertreibung", "en": "Irony and understatement" },
+  "minutes": 20,
+  "scene": {
+    "setting_de": "Ein Abendessen mit Freunden. Der Abend ist chaotisch, aber alle bleiben höflich.",
+    "setting_en": "A dinner with friends. The evening is chaotic, but everyone stays polite.",
+    "register": "informal-social",
+    "can_do_de": "Ich kann Ironie und Untertreibung erkennen und selbst benutzen, ohne missverstanden zu werden.",
+    "can_do_en": "I can recognize and use irony and understatement without being misunderstood.",
+    "situation_tags": ["social", "humour", "dinner"],
+    "grammar_focus": ["stil", "partikeln", "ironie"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "gast1", "voice": "de_young_f", "lang": "de" },
+    { "role": "gast2", "voice": "de_older_m", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Ein Abendessen mit Freunden. Der Abend ist chaotisch, aber alle bleiben höflich.",
+      "translation": "A dinner with friends. The evening is chaotic, but everyone stays polite.",
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "gast1",
+      "text": "Na, das war ja ein interessanter Abend.",
+      "translation": "Well, that was an interesting evening.",
+      "pause_after_ms": 450,
+      "gloss": ["g_ironie", "g_interessant"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "gast2",
+      "text": "Interessant ist wohl das freundlichste Wort dafür.",
+      "translation": "Interesting is probably the kindest word for it.",
+      "pause_after_ms": 450
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "gast1",
+      "text": "Der Koch hat sich wirklich Mühe gegeben.",
+      "translation": "The cook really made an effort.",
+      "pause_after_ms": 450,
+      "gloss": ["g_muehe_geben"]
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "gast2",
+      "text": "Ja, besonders das Hauptgericht war unvergesslich.",
+      "translation": "Yes, especially the main course was unforgettable.",
+      "pause_after_ms": 450,
+      "gloss": ["g_hauptgericht", "g_unvergesslich"]
+    },
+    {
+      "id": "s006", "type": "check", "speaker": "narrator",
+      "text": "Was meinen die beiden mit interessant und unvergesslich?",
+      "translation": "What do the two mean by interesting and unforgettable?",
+      "answers": ["Sie meinen es ironisch: der Abend war chaotisch und das Essen schlecht."],
+      "answer_pause_ms": 3500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s007", "type": "note", "speaker": "narrator",
+      "text": "Ironie sagt das Gegenteil. Untertreibung sagt weniger, als man meint.",
+      "translation": "Irony says the opposite. Understatement says less than one means.",
+      "speed": 1.0, "pause_after_ms": 400, "skippable": true
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "gast1",
+      "text": "Immerhin ist niemand verletzt worden.",
+      "translation": "At least nobody got hurt.",
+      "pause_after_ms": 450,
+      "gloss": ["g_untertreibung", "g_immerhin"]
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "gast2",
+      "text": "Das ist ein niedriges Niveau, aber okay.",
+      "translation": "That's a low bar, but okay.",
+      "pause_after_ms": 450,
+      "gloss": ["g_niveau"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "gast1",
+      "text": "Nächstes Mal kochen wir einfach zusammen.",
+      "translation": "Next time we'll simply cook together.",
+      "pause_after_ms": 450
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "gast2",
+      "text": "Oh, wunderbar. Dann brennt wenigstens nur die Küche.",
+      "translation": "Oh, wonderful. Then at least only the kitchen will burn.",
+      "pause_after_ms": 500,
+      "gloss": ["g_wenigstens"]
+    },
+    {
+      "id": "s012", "type": "check", "speaker": "narrator",
+      "text": "Was schlägt Gast 1 für das nächste Mal vor?",
+      "translation": "What does guest 1 suggest for next time?",
+      "answers": ["zusammen zu kochen"],
+      "answer_pause_ms": 3500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s013", "type": "drill", "speaker": "gast2",
+      "text": "Das war ja ein interessanter Abend.",
+      "translation": "That was an interesting evening.",
+      "repeat": 2, "speed": 1.0, "pause_after_ms": 900
+    },
+    {
+      "id": "s014", "type": "line", "speaker": "gast1",
+      "text": "Du bist wirklich ein Optimist.",
+      "translation": "You really are an optimist.",
+      "pause_after_ms": 450,
+      "gloss": ["g_optimist"]
+    },
+    {
+      "id": "s015", "type": "line", "speaker": "gast2",
+      "text": "Optimist? Ich bin Realist mit guter Laune.",
+      "translation": "Optimist? I'm a realist in a good mood.",
+      "pause_after_ms": 500,
+      "gloss": ["g_realist", "g_laune"]
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "gast1",
+      "text": "Das ist eine schöne Beschreibung.",
+      "translation": "That's a nice description.",
+      "pause_after_ms": 450,
+      "gloss": ["g_beschreibung"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "gast2",
+      "text": "Danke. Ich arbeite daran.",
+      "translation": "Thanks. I'm working on it.",
+      "pause_after_ms": 500
+    },
+    {
+      "id": "s018", "type": "check", "speaker": "narrator",
+      "text": "Wie beschreibt sich Gast 2 selbst?",
+      "translation": "How does guest 2 describe himself?",
+      "answers": ["als Realist mit guter Laune"],
+      "answer_pause_ms": 3500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s019", "type": "vocab", "speaker": "narrator",
+      "text": "die Untertreibung",
+      "translation": "the understatement",
+      "pause_after_ms": 700,
+      "gloss": ["g_untertreibung"]
+    },
+    {
+      "id": "s020", "type": "vocab", "speaker": "narrator",
+      "text": "ironisch",
+      "translation": "ironic",
+      "pause_after_ms": 700,
+      "gloss": ["g_ironie"]
+    },
+    {
+      "id": "s021", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: Ironie und Untertreibung erkennen und selbst benutzen.",
+      "translation": "Today you learned: recognizing and using irony and understatement yourself.",
+      "pause_after_ms": 600
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_ironie", "de": "die Ironie", "en": "the irony", "pos": "noun",
+      "article": "die", "plural": "die Ironien",
+      "note_de": "Man sagt das Gegenteil von dem, was man meint.",
+      "note_en": "Saying the opposite of what one means.",
+      "example_de": "Das war ja ein interessanter Abend.", "example_en": "That was an interesting evening (ironic)."
+    },
+    {
+      "id": "g_untertreibung", "de": "die Untertreibung", "en": "the understatement", "pos": "noun",
+      "article": "die", "plural": "die Untertreibungen",
+      "note_de": "Man sagt weniger, als man meint.",
+      "note_en": "Saying less than one means.",
+      "example_de": "Das ist ein niedriges Niveau.", "example_en": "That's a low bar (understatement)."
+    },
+    {
+      "id": "g_interessant", "de": "interessant", "en": "interesting", "pos": "adj",
+      "example_de": "Das war ein interessanter Abend.", "example_en": "That was an interesting evening."
+    },
+    {
+      "id": "g_unvergesslich", "de": "unvergesslich", "en": "unforgettable", "pos": "adj",
+      "example_de": "Das Hauptgericht war unvergesslich.", "example_en": "The main course was unforgettable."
+    },
+    {
+      "id": "g_muehe_geben", "de": "sich Mühe geben", "en": "to make an effort", "pos": "phrase",
+      "example_de": "Der Koch hat sich Mühe gegeben.", "example_en": "The cook made an effort."
+    },
+    {
+      "id": "g_hauptgericht", "de": "das Hauptgericht", "en": "the main course", "pos": "noun",
+      "article": "das", "plural": "die Hauptgerichte",
+      "example_de": "Das Hauptgericht war unvergesslich.", "example_en": "The main course was unforgettable."
+    },
+    {
+      "id": "g_niveau", "de": "das Niveau", "en": "the level / standard", "pos": "noun",
+      "article": "das", "plural": "die Niveaus",
+      "example_de": "Das ist ein niedriges Niveau.", "example_en": "That's a low bar."
+    },
+    {
+      "id": "g_immerhin", "de": "immerhin", "en": "at least", "pos": "adverb",
+      "example_de": "Immerhin ist niemand verletzt worden.", "example_en": "At least nobody got hurt."
+    },
+    {
+      "id": "g_wenigstens", "de": "wenigstens", "en": "at least", "pos": "adverb",
+      "example_de": "Dann brennt wenigstens nur die Küche.", "example_en": "Then at least only the kitchen burns."
+    },
+    {
+      "id": "g_optimist", "de": "der Optimist", "en": "the optimist", "pos": "noun",
+      "article": "der", "plural": "die Optimisten",
+      "example_de": "Du bist wirklich ein Optimist.", "example_en": "You really are an optimist."
+    },
+    {
+      "id": "g_realist", "de": "der Realist", "en": "the realist", "pos": "noun",
+      "article": "der", "plural": "die Realisten",
+      "example_de": "Ich bin Realist.", "example_en": "I'm a realist."
+    },
+    {
+      "id": "g_laune", "de": "die Laune", "en": "the mood", "pos": "noun",
+      "article": "die", "plural": "die Launen",
+      "example_de": "Ich bin Realist mit guter Laune.", "example_en": "I'm a realist in a good mood."
+    },
+    {
+      "id": "g_beschreibung", "de": "die Beschreibung", "en": "the description", "pos": "noun",
+      "article": "die", "plural": "die Beschreibungen",
+      "example_de": "Das ist eine schöne Beschreibung.", "example_en": "That's a nice description."
+    },
+    {
+      "id": "g_chaotisch", "de": "chaotisch", "en": "chaotic", "pos": "adj",
+      "example_de": "Der Abend war chaotisch.", "example_en": "The evening was chaotic."
+    },
+    {
+      "id": "g_verletzt", "de": "verletzt", "en": "injured", "pos": "adj",
+      "example_de": "Niemand ist verletzt worden.", "example_en": "Nobody got injured."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 1200,
+    "version": 1
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "B1-02",
+  "level": "B1",
+  "title": { "de": "Das Bewerbungsgespräch", "en": "The job interview" },
+  "minutes": 14,
+  "scene": {
+    "setting_de": "Ein Bewerbungsgespräch in einem Büro. Frau Lang hat einen Termin.",
+    "setting_en": "A job interview in an office. Ms Lang has an appointment.",
+    "register": "formal-work",
+    "can_do_de": "Ich kann mich höflich bewerben, über Erfahrung sprechen und Fragen mit Konjunktiv II stellen.",
+    "can_do_en": "I can apply politely, talk about experience, and ask questions with the Konjunktiv II.",
+    "situation_tags": ["work", "interview", "career"],
+    "grammar_focus": ["konjunktiv-2-hoeflich", "perfekt", "fragen"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "bewerber", "voice": "de_young_f", "lang": "de" },
+    { "role": "personalerin", "voice": "de_older_f", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Ein Bewerbungsgespräch in einem Büro. Frau Lang hat einen Termin.",
+      "translation": "A job interview in an office. Ms Lang has an appointment.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "personalerin",
+      "text": "Guten Tag, Frau Lang. Nehmen Sie bitte Platz.",
+      "translation": "Good day, Ms Lang. Please take a seat.",
+      "pause_after_ms": 600,
+      "gloss": ["g_platz_nehmen"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "bewerber",
+      "text": "Vielen Dank. Ich freue mich über das Gespräch.",
+      "translation": "Thank you very much. I'm glad about the interview.",
+      "pause_after_ms": 700,
+      "gloss": ["g_gespraech"]
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "personalerin",
+      "text": "Erzählen Sie mir bitte etwas über sich.",
+      "translation": "Please tell me a little about yourself.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "bewerber",
+      "text": "Ich habe drei Jahre als Projektmanagerin gearbeitet.",
+      "translation": "I worked as a project manager for three years.",
+      "pause_after_ms": 700,
+      "gloss": ["g_projektmanagerin", "g_erfahrung"]
+    },
+    {
+      "id": "s006", "type": "line", "speaker": "bewerber",
+      "text": "Ich würde gern in einem internationalen Team arbeiten.",
+      "translation": "I would like to work in an international team.",
+      "pause_after_ms": 700,
+      "gloss": ["g_konjunktiv2", "g_international"]
+    },
+    {
+      "id": "s007", "type": "check", "speaker": "narrator",
+      "text": "Wie lange hat Frau Lang als Projektmanagerin gearbeitet?",
+      "translation": "How long did Ms Lang work as a project manager?",
+      "answers": ["drei Jahre"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s008", "type": "note", "speaker": "narrator",
+      "text": "Konjunktiv II macht Bitten höflich: ich würde gern, könnten Sie, hätten Sie.",
+      "translation": "Konjunktiv II makes requests polite: I would like, could you, would you have.",
+      "speed": 0.95, "pause_after_ms": 500, "skippable": true
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "personalerin",
+      "text": "Warum möchten Sie zu uns kommen?",
+      "translation": "Why would you like to come to us?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "bewerber",
+      "text": "Ihre Firma hat einen guten Ruf. Ich könnte hier viel lernen.",
+      "translation": "Your company has a good reputation. I could learn a lot here.",
+      "pause_after_ms": 700,
+      "gloss": ["g_ruf"]
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "personalerin",
+      "text": "Was sind Ihre Stärken?",
+      "translation": "What are your strengths?",
+      "pause_after_ms": 600,
+      "gloss": ["g_staerke"]
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "bewerber",
+      "text": "Ich bin organisiert und arbeite gern im Team.",
+      "translation": "I'm organized and I like working in a team.",
+      "pause_after_ms": 700,
+      "gloss": ["g_organisiert"]
+    },
+    {
+      "id": "s013", "type": "line", "speaker": "personalerin",
+      "text": "Und wo sehen Sie sich in fünf Jahren?",
+      "translation": "And where do you see yourself in five years?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s014", "type": "line", "speaker": "bewerber",
+      "text": "Ich würde gern mehr Verantwortung übernehmen.",
+      "translation": "I would like to take on more responsibility.",
+      "pause_after_ms": 700,
+      "gloss": ["g_verantwortung", "g_uebernehmen"]
+    },
+    {
+      "id": "s015", "type": "check", "speaker": "narrator",
+      "text": "Was möchte Frau Lang in fünf Jahren?",
+      "translation": "What does Ms Lang want in five years?",
+      "answers": ["mehr Verantwortung übernehmen"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s016", "type": "drill", "speaker": "bewerber",
+      "text": "Ich würde gern mehr Verantwortung übernehmen.",
+      "translation": "I would like to take on more responsibility.",
+      "repeat": 2, "speed": 0.9, "pause_after_ms": 1000
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "personalerin",
+      "text": "Hätten Sie noch Fragen an uns?",
+      "translation": "Would you still have any questions for us?",
+      "pause_after_ms": 600,
+      "gloss": ["g_konjunktiv2"]
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "bewerber",
+      "text": "Ja. Könnten Sie mir etwas über die Arbeitszeiten sagen?",
+      "translation": "Yes. Could you tell me something about the working hours?",
+      "pause_after_ms": 700,
+      "gloss": ["g_arbeitszeit"]
+    },
+    {
+      "id": "s019", "type": "line", "speaker": "personalerin",
+      "text": "Natürlich. Wir haben flexible Arbeitszeiten.",
+      "translation": "Of course. We have flexible working hours.",
+      "pause_after_ms": 600,
+      "gloss": ["g_flexibel"]
+    },
+    {
+      "id": "s020", "type": "line", "speaker": "bewerber",
+      "text": "Das klingt gut. Wann könnte ich anfangen?",
+      "translation": "That sounds good. When could I start?",
+      "pause_after_ms": 600,
+      "gloss": ["g_anfangen"]
+    },
+    {
+      "id": "s021", "type": "line", "speaker": "personalerin",
+      "text": "Ab dem ersten nächsten Monats.",
+      "translation": "From the first of next month.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s022", "type": "check", "speaker": "narrator",
+      "text": "Wann könnte Frau Lang anfangen?",
+      "translation": "When could Ms Lang start?",
+      "answers": ["ab dem ersten nächsten Monats"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s023", "type": "line", "speaker": "bewerber",
+      "text": "Perfekt. Vielen Dank für das Gespräch.",
+      "translation": "Perfect. Thank you very much for the interview.",
+      "pause_after_ms": 600,
+      "gloss": ["g_gespraech"]
+    },
+    {
+      "id": "s024", "type": "line", "speaker": "personalerin",
+      "text": "Wir melden uns bis Ende der Woche.",
+      "translation": "We'll get in touch by the end of the week.",
+      "pause_after_ms": 800,
+      "gloss": ["g_melden"]
+    },
+    {
+      "id": "s025", "type": "vocab", "speaker": "narrator",
+      "text": "die Bewerbung",
+      "translation": "the application",
+      "pause_after_ms": 800,
+      "gloss": ["g_bewerbung"]
+    },
+    {
+      "id": "s026", "type": "vocab", "speaker": "narrator",
+      "text": "die Stärke",
+      "translation": "the strength",
+      "pause_after_ms": 800,
+      "gloss": ["g_staerke"]
+    },
+    {
+      "id": "s027", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: sich höflich bewerben mit Konjunktiv II.",
+      "translation": "Today you learned: applying politely with the Konjunktiv II.",
+      "pause_after_ms": 700
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_bewerbung", "de": "die Bewerbung", "en": "the application", "pos": "noun",
+      "article": "die", "plural": "die Bewerbungen",
+      "example_de": "Ich habe meine Bewerbung geschickt.", "example_en": "I sent my application."
+    },
+    {
+      "id": "g_gespraech", "de": "das Gespräch", "en": "the interview / conversation", "pos": "noun",
+      "article": "das", "plural": "die Gespräche",
+      "example_de": "Vielen Dank für das Gespräch.", "example_en": "Thank you for the interview."
+    },
+    {
+      "id": "g_platz_nehmen", "de": "Platz nehmen", "en": "to take a seat", "pos": "phrase",
+      "example_de": "Nehmen Sie bitte Platz.", "example_en": "Please take a seat."
+    },
+    {
+      "id": "g_projektmanagerin", "de": "die Projektmanagerin", "en": "the project manager (female)", "pos": "noun",
+      "article": "die", "plural": "die Projektmanagerinnen",
+      "example_de": "Ich war drei Jahre Projektmanagerin.", "example_en": "I was a project manager for three years."
+    },
+    {
+      "id": "g_erfahrung", "de": "die Erfahrung", "en": "the experience", "pos": "noun",
+      "article": "die", "plural": "die Erfahrungen",
+      "example_de": "Ich habe viel Erfahrung im Projektmanagement.", "example_en": "I have a lot of experience in project management."
+    },
+    {
+      "id": "g_konjunktiv2", "de": "Konjunktiv II", "en": "subjunctive II", "pos": "noun",
+      "note_de": "Höfliche Form: ich würde, könnte, hätte, wäre.",
+      "note_en": "Polite form: I would, could, would have, would be.",
+      "example_de": "Ich würde gern hier arbeiten.", "example_en": "I would like to work here."
+    },
+    {
+      "id": "g_international", "de": "international", "en": "international", "pos": "adj",
+      "example_de": "Ich arbeite gern in einem internationalen Team.", "example_en": "I like working in an international team."
+    },
+    {
+      "id": "g_ruf", "de": "der Ruf", "en": "the reputation", "pos": "noun",
+      "article": "der", "plural": "die Rufe",
+      "example_de": "Die Firma hat einen guten Ruf.", "example_en": "The company has a good reputation."
+    },
+    {
+      "id": "g_staerke", "de": "die Stärke", "en": "the strength", "pos": "noun",
+      "article": "die", "plural": "die Stärken",
+      "example_de": "Was sind Ihre Stärken?", "example_en": "What are your strengths?"
+    },
+    {
+      "id": "g_organisiert", "de": "organisiert", "en": "organized", "pos": "adj",
+      "example_de": "Ich bin sehr organisiert.", "example_en": "I'm very organized."
+    },
+    {
+      "id": "g_verantwortung", "de": "die Verantwortung", "en": "the responsibility", "pos": "noun",
+      "article": "die", "plural": "die Verantwortungen",
+      "example_de": "Ich übernehme gern Verantwortung.", "example_en": "I like taking on responsibility."
+    },
+    {
+      "id": "g_uebernehmen", "de": "übernehmen", "en": "to take on", "pos": "verb",
+      "note_de": "Nicht trennbar: ich übernehme.",
+      "note_en": "Not separable: ich übernehme.",
+      "example_de": "Ich möchte mehr Verantwortung übernehmen.", "example_en": "I'd like to take on more responsibility."
+    },
+    {
+      "id": "g_arbeitszeit", "de": "die Arbeitszeit", "en": "the working hours", "pos": "noun",
+      "article": "die", "plural": "die Arbeitszeiten",
+      "example_de": "Wir haben flexible Arbeitszeiten.", "example_en": "We have flexible working hours."
+    },
+    {
+      "id": "g_flexibel", "de": "flexibel", "en": "flexible", "pos": "adj",
+      "example_de": "Die Arbeitszeiten sind flexibel.", "example_en": "The working hours are flexible."
+    },
+    {
+      "id": "g_anfangen", "de": "anfangen", "en": "to start", "pos": "verb",
+      "note_de": "Trennbares Verb: ich fange an.",
+      "note_en": "Separable verb: ich fange an.",
+      "example_de": "Wann könnte ich anfangen?", "example_en": "When could I start?"
+    },
+    {
+      "id": "g_melden", "de": "sich melden", "en": "to get in touch", "pos": "verb",
+      "example_de": "Wir melden uns bis Ende der Woche.", "example_en": "We'll get in touch by the end of the week."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 840,
+    "version": 1
+  }
+}

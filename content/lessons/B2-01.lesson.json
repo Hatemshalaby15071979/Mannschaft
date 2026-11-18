@@ -1,0 +1,294 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "B2-01",
+  "level": "B2",
+  "title": { "de": "Projektstatus im Meeting", "en": "Project status in the meeting" },
+  "minutes": 16,
+  "scene": {
+    "setting_de": "Ein Statusmeeting am Donnerstag. Das Projekt läuft seit sechs Monaten.",
+    "setting_en": "A status meeting on Thursday. The project has been running for six months.",
+    "register": "formal-work",
+    "can_do_de": "Ich kann einen Projektstatus sachlich berichten, Probleme benennen und Maßnahmen vorschlagen.",
+    "can_do_en": "I can report project status factually, name problems, and propose measures.",
+    "situation_tags": ["work", "meetings", "project-management"],
+    "grammar_focus": ["nominalisierung", "passiv", "konnektoren"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "pm", "voice": "de_narrator_m", "lang": "de" },
+    { "role": "stakeholder", "voice": "de_older_f", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Ein Statusmeeting am Donnerstag. Das Projekt läuft seit sechs Monaten.",
+      "translation": "A status meeting on Thursday. The project has been running for six months.",
+      "pause_after_ms": 500
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "pm",
+      "text": "Guten Tag. Ich möchte den aktuellen Projektstatus vorstellen.",
+      "translation": "Good day. I'd like to present the current project status.",
+      "pause_after_ms": 500,
+      "gloss": ["g_projektstatus", "g_vorstellen"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "pm",
+      "text": "Die Entwicklung ist zu achtzig Prozent abgeschlossen.",
+      "translation": "Development is eighty percent complete.",
+      "pause_after_ms": 500,
+      "gloss": ["g_entwicklung", "g_abgeschlossen"]
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "stakeholder",
+      "text": "Und wie sieht es mit dem Budget aus?",
+      "translation": "And how are things with the budget?",
+      "pause_after_ms": 500,
+      "gloss": ["g_budget"]
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "pm",
+      "text": "Die Budgetplanung ist noch nicht abgeschlossen. Es gibt eine Überschreitung von zehn Prozent.",
+      "translation": "Budget planning is not yet complete. There is an overrun of ten percent.",
+      "pause_after_ms": 600,
+      "gloss": ["g_ueberschreitung"]
+    },
+    {
+      "id": "s006", "type": "check", "speaker": "narrator",
+      "text": "Wie viel Prozent des Budgets ist überschritten?",
+      "translation": "By what percent is the budget exceeded?",
+      "answers": ["zehn Prozent"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s007", "type": "note", "speaker": "narrator",
+      "text": "Nominalisierung: entwickeln wird zu die Entwicklung, planen zu die Planung.",
+      "translation": "Nominalization: entwickeln becomes die Entwicklung, planen becomes die Planung.",
+      "speed": 1.0, "pause_after_ms": 400, "skippable": true
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "stakeholder",
+      "text": "Das ist ein Problem. Die Geschäftsführung erwartet eine Erklärung.",
+      "translation": "That is a problem. Management expects an explanation.",
+      "pause_after_ms": 500,
+      "gloss": ["g_geschaeftsfuehrung"]
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "pm",
+      "text": "Ich verstehe die Besorgnis. Die Verzögerung kommt von der Lieferkette.",
+      "translation": "I understand the concern. The delay comes from the supply chain.",
+      "pause_after_ms": 500,
+      "gloss": ["g_besorgnis", "g_verzoegerung", "g_lieferkette"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "pm",
+      "text": "Die Lieferung der Bauteile hat sich um zwei Wochen verschoben.",
+      "translation": "The delivery of the components has been delayed by two weeks.",
+      "pause_after_ms": 500,
+      "gloss": ["g_lieferung", "g_bauteil"]
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "stakeholder",
+      "text": "Welche Maßnahmen schlagen Sie vor?",
+      "translation": "What measures do you propose?",
+      "pause_after_ms": 500,
+      "gloss": ["g_massnahme"]
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "pm",
+      "text": "Ich schlage eine Anpassung der Prioritäten vor.",
+      "translation": "I propose an adjustment of priorities.",
+      "pause_after_ms": 500,
+      "gloss": ["g_anpassung", "g_prioritaet"]
+    },
+    {
+      "id": "s013", "type": "line", "speaker": "pm",
+      "text": "Die Fertigstellung der Kernfunktionen bleibt im Zeitplan.",
+      "translation": "Completion of the core functions remains on schedule.",
+      "pause_after_ms": 500,
+      "gloss": ["g_fertigstellung", "g_zeitplan"]
+    },
+    {
+      "id": "s014", "type": "check", "speaker": "narrator",
+      "text": "Warum verzögert sich das Projekt?",
+      "translation": "Why is the project delayed?",
+      "answers": ["Die Lieferung der Bauteile hat sich verschoben."],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s015", "type": "drill", "speaker": "pm",
+      "text": "Ich schlage eine Anpassung der Prioritäten vor.",
+      "translation": "I propose an adjustment of priorities.",
+      "repeat": 2, "speed": 0.95, "pause_after_ms": 900
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "stakeholder",
+      "text": "Wann können Sie die neue Planung vorlegen?",
+      "translation": "When can you present the new plan?",
+      "pause_after_ms": 500
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "pm",
+      "text": "Bis Ende der Woche. Die Überarbeitung dauert zwei Tage.",
+      "translation": "By the end of the week. The revision takes two days.",
+      "pause_after_ms": 500,
+      "gloss": ["g_ueberarbeitung"]
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "stakeholder",
+      "text": "Gut. Bitte informieren Sie auch das Team.",
+      "translation": "Good. Please also inform the team.",
+      "pause_after_ms": 500
+    },
+    {
+      "id": "s019", "type": "line", "speaker": "pm",
+      "text": "Natürlich. Die Kommunikation übernehme ich.",
+      "translation": "Of course. I'll take care of the communication.",
+      "pause_after_ms": 500,
+      "gloss": ["g_kommunikation"]
+    },
+    {
+      "id": "s020", "type": "check", "speaker": "narrator",
+      "text": "Wann legt der Projektleiter die neue Planung vor?",
+      "translation": "When will the project lead present the new plan?",
+      "answers": ["bis Ende der Woche"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s021", "type": "line", "speaker": "stakeholder",
+      "text": "Danke. Dann bis zum nächsten Meeting.",
+      "translation": "Thanks. Until the next meeting, then.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s022", "type": "vocab", "speaker": "narrator",
+      "text": "die Maßnahme",
+      "translation": "the measure",
+      "pause_after_ms": 700,
+      "gloss": ["g_massnahme"]
+    },
+    {
+      "id": "s023", "type": "vocab", "speaker": "narrator",
+      "text": "die Verzögerung",
+      "translation": "the delay",
+      "pause_after_ms": 700,
+      "gloss": ["g_verzoegerung"]
+    },
+    {
+      "id": "s024", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: Projektstatus berichten mit Nominalisierungen.",
+      "translation": "Today you learned: reporting project status using nominalizations.",
+      "pause_after_ms": 600
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_projektstatus", "de": "der Projektstatus", "en": "the project status", "pos": "noun",
+      "article": "der", "plural": "die Projektstatus",
+      "example_de": "Ich stelle den Projektstatus vor.", "example_en": "I'm presenting the project status."
+    },
+    {
+      "id": "g_vorstellen", "de": "vorstellen", "en": "to present", "pos": "verb",
+      "note_de": "Trennbares Verb: ich stelle vor.",
+      "note_en": "Separable verb: ich stelle vor.",
+      "example_de": "Ich möchte den Status vorstellen.", "example_en": "I'd like to present the status."
+    },
+    {
+      "id": "g_entwicklung", "de": "die Entwicklung", "en": "the development", "pos": "noun",
+      "article": "die", "plural": "die Entwicklungen",
+      "note_de": "Nominalisierung von entwickeln.",
+      "note_en": "Nominalization of entwickeln.",
+      "example_de": "Die Entwicklung ist fast fertig.", "example_en": "Development is almost done."
+    },
+    {
+      "id": "g_abgeschlossen", "de": "abgeschlossen", "en": "completed", "pos": "participle",
+      "note_de": "Partizip II von abschließen.",
+      "note_en": "Past participle of abschließen (to complete).",
+      "example_de": "Die Entwicklung ist abgeschlossen.", "example_en": "Development is complete."
+    },
+    {
+      "id": "g_budget", "de": "das Budget", "en": "the budget", "pos": "noun",
+      "article": "das", "plural": "die Budgets",
+      "example_de": "Wie sieht es mit dem Budget aus?", "example_en": "How are things with the budget?"
+    },
+    {
+      "id": "g_ueberschreitung", "de": "die Überschreitung", "en": "the overrun", "pos": "noun",
+      "article": "die", "plural": "die Überschreitungen",
+      "example_de": "Es gibt eine Überschreitung von zehn Prozent.", "example_en": "There is an overrun of ten percent."
+    },
+    {
+      "id": "g_geschaeftsfuehrung", "de": "die Geschäftsführung", "en": "the management", "pos": "noun",
+      "article": "die", "plural": "die Geschäftsführungen",
+      "example_de": "Die Geschäftsführung erwartet eine Erklärung.", "example_en": "Management expects an explanation."
+    },
+    {
+      "id": "g_besorgnis", "de": "die Besorgnis", "en": "the concern", "pos": "noun",
+      "article": "die", "plural": "die Besorgnisse",
+      "example_de": "Ich verstehe die Besorgnis.", "example_en": "I understand the concern."
+    },
+    {
+      "id": "g_verzoegerung", "de": "die Verzögerung", "en": "the delay", "pos": "noun",
+      "article": "die", "plural": "die Verzögerungen",
+      "example_de": "Die Verzögerung kommt von der Lieferkette.", "example_en": "The delay comes from the supply chain."
+    },
+    {
+      "id": "g_lieferkette", "de": "die Lieferkette", "en": "the supply chain", "pos": "noun",
+      "article": "die", "plural": "die Lieferketten",
+      "example_de": "Die Lieferkette ist unterbrochen.", "example_en": "The supply chain is disrupted."
+    },
+    {
+      "id": "g_lieferung", "de": "die Lieferung", "en": "the delivery", "pos": "noun",
+      "article": "die", "plural": "die Lieferungen",
+      "example_de": "Die Lieferung hat sich verschoben.", "example_en": "The delivery has been delayed."
+    },
+    {
+      "id": "g_bauteil", "de": "das Bauteil", "en": "the component", "pos": "noun",
+      "article": "das", "plural": "die Bauteile",
+      "example_de": "Die Bauteile kommen nächste Woche.", "example_en": "The components arrive next week."
+    },
+    {
+      "id": "g_massnahme", "de": "die Maßnahme", "en": "the measure", "pos": "noun",
+      "article": "die", "plural": "die Maßnahmen",
+      "example_de": "Welche Maßnahmen schlagen Sie vor?", "example_en": "What measures do you propose?"
+    },
+    {
+      "id": "g_anpassung", "de": "die Anpassung", "en": "the adjustment", "pos": "noun",
+      "article": "die", "plural": "die Anpassungen",
+      "example_de": "Ich schlage eine Anpassung vor.", "example_en": "I propose an adjustment."
+    },
+    {
+      "id": "g_prioritaet", "de": "die Priorität", "en": "the priority", "pos": "noun",
+      "article": "die", "plural": "die Prioritäten",
+      "example_de": "Wir müssen die Prioritäten ändern.", "example_en": "We have to change the priorities."
+    },
+    {
+      "id": "g_fertigstellung", "de": "die Fertigstellung", "en": "the completion", "pos": "noun",
+      "article": "die", "plural": "die Fertigstellungen",
+      "example_de": "Die Fertigstellung bleibt im Zeitplan.", "example_en": "Completion remains on schedule."
+    },
+    {
+      "id": "g_zeitplan", "de": "der Zeitplan", "en": "the schedule", "pos": "noun",
+      "article": "der", "plural": "die Zeitpläne",
+      "example_de": "Wir bleiben im Zeitplan.", "example_en": "We're staying on schedule."
+    },
+    {
+      "id": "g_ueberarbeitung", "de": "die Überarbeitung", "en": "the revision", "pos": "noun",
+      "article": "die", "plural": "die Überarbeitungen",
+      "example_de": "Die Überarbeitung dauert zwei Tage.", "example_en": "The revision takes two days."
+    },
+    {
+      "id": "g_kommunikation", "de": "die Kommunikation", "en": "the communication", "pos": "noun",
+      "article": "die", "plural": "die Kommunikationen",
+      "example_de": "Die Kommunikation übernehme ich.", "example_en": "I'll take care of the communication."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 960,
+    "version": 1
+  }
+}

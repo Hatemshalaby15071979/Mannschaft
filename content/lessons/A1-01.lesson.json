@@ -1,0 +1,334 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "A1-01",
+  "level": "A1",
+  "title": { "de": "Begrüßung und Vorstellung", "en": "Greetings and introductions" },
+  "minutes": 8,
+  "scene": {
+    "setting_de": "Erster Tag im Deutschkurs. Anna kommt in den Raum und trifft Tom.",
+    "setting_en": "First day at the German course. Anna comes into the room and meets Tom.",
+    "register": "informal",
+    "can_do_de": "Ich kann mich vorstellen, nach dem Namen und dem Land fragen und sagen, was ich mache.",
+    "can_do_en": "I can introduce myself, ask for a name and a country, and say what I do.",
+    "situation_tags": ["first-day", "introductions", "small-talk"],
+    "grammar_focus": ["ich-bin-du-bist", "w-fragen", "praesens"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "anna", "voice": "de_young_f", "lang": "de" },
+    { "role": "tom", "voice": "de_young_m", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Erster Tag im Deutschkurs. Anna kommt in den Raum.",
+      "translation": "First day at the German course. Anna comes into the room.",
+      "pause_after_ms": 800
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "anna",
+      "text": "Hallo!",
+      "translation": "Hello!",
+      "pause_after_ms": 500,
+      "gloss": ["g_hallo"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "tom",
+      "text": "Hallo! Ich bin Tom.",
+      "translation": "Hello! I'm Tom.",
+      "pause_after_ms": 700,
+      "gloss": ["g_ich_bin"]
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "anna",
+      "text": "Ich bin Anna. Freut mich.",
+      "translation": "I'm Anna. Nice to meet you.",
+      "pause_after_ms": 800,
+      "gloss": ["g_freut_mich"]
+    },
+    {
+      "id": "s005", "type": "echo", "speaker": "anna",
+      "text": "Freut mich.",
+      "translation": "Nice to meet you.",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1200
+    },
+    {
+      "id": "s006", "type": "line", "speaker": "tom",
+      "text": "Woher kommst du, Anna?",
+      "translation": "Where are you from, Anna?",
+      "pause_after_ms": 700,
+      "gloss": ["g_woher", "g_kommen_aus"]
+    },
+    {
+      "id": "s007", "type": "line", "speaker": "anna",
+      "text": "Ich komme aus Spanien. Und du?",
+      "translation": "I'm from Spain. And you?",
+      "pause_after_ms": 800,
+      "gloss": ["g_kommen_aus"]
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "tom",
+      "text": "Ich komme aus Deutschland. Ich wohne in Berlin.",
+      "translation": "I'm from Germany. I live in Berlin.",
+      "pause_after_ms": 800,
+      "gloss": ["g_wohnen"]
+    },
+    {
+      "id": "s009", "type": "check", "speaker": "narrator",
+      "text": "Woher kommt Anna?",
+      "translation": "Where is Anna from?",
+      "answers": ["aus Spanien"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s010", "type": "note", "speaker": "narrator",
+      "text": "Woher kommst du? fragt nach dem Land. Wo wohnst du? fragt nach der Stadt.",
+      "translation": "Woher kommst du? asks about the country. Wo wohnst du? asks about the city.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "anna",
+      "text": "Was machst du, Tom?",
+      "translation": "What do you do, Tom?",
+      "pause_after_ms": 700,
+      "gloss": ["g_was_machst_du"]
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "tom",
+      "text": "Ich bin Student. Ich lerne auch Deutsch.",
+      "translation": "I'm a student. I'm also learning German.",
+      "pause_after_ms": 800,
+      "gloss": ["g_student", "g_lernen"]
+    },
+    {
+      "id": "s013", "type": "echo", "speaker": "tom",
+      "text": "Ich lerne auch Deutsch.",
+      "translation": "I'm also learning German.",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1200
+    },
+    {
+      "id": "s014", "type": "check", "speaker": "narrator",
+      "text": "Was macht Tom?",
+      "translation": "What does Tom do?",
+      "answers": ["Er ist Student und lernt Deutsch."],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s015", "type": "vocab", "speaker": "narrator",
+      "text": "der Student",
+      "translation": "the student",
+      "pause_after_ms": 900,
+      "gloss": ["g_student"]
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "tom",
+      "text": "Wie alt bist du?",
+      "translation": "How old are you?",
+      "pause_after_ms": 700,
+      "gloss": ["g_wie_alt", "g_du_bist"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "anna",
+      "text": "Ich bin fünfundzwanzig.",
+      "translation": "I'm twenty-five.",
+      "pause_after_ms": 700,
+      "gloss": ["g_jahre_alt"]
+    },
+    {
+      "id": "s018", "type": "drill", "speaker": "anna",
+      "text": "Ich bin fünfundzwanzig Jahre alt.",
+      "translation": "I am twenty-five years old.",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1000
+    },
+    {
+      "id": "s019", "type": "check", "speaker": "narrator",
+      "text": "Wie alt ist Anna?",
+      "translation": "How old is Anna?",
+      "answers": ["fünfundzwanzig"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s020", "type": "line", "speaker": "tom",
+      "text": "Sprichst du auch Englisch?",
+      "translation": "Do you also speak English?",
+      "pause_after_ms": 700,
+      "gloss": ["g_sprechen"]
+    },
+    {
+      "id": "s021", "type": "line", "speaker": "anna",
+      "text": "Ja, ein bisschen. Und ein bisschen Deutsch.",
+      "translation": "Yes, a little. And a little German.",
+      "pause_after_ms": 800,
+      "gloss": ["g_ein_bisschen"]
+    },
+    {
+      "id": "s022", "type": "note", "speaker": "narrator",
+      "text": "ein bisschen heißt a little. Sehr nützlich, wenn du unsicher bist.",
+      "translation": "ein bisschen means a little. Very useful when you are unsure.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s023", "type": "vocab", "speaker": "narrator",
+      "text": "ein bisschen",
+      "translation": "a little",
+      "pause_after_ms": 900,
+      "gloss": ["g_ein_bisschen"]
+    },
+    {
+      "id": "s024", "type": "line", "speaker": "tom",
+      "text": "Willkommen im Kurs!",
+      "translation": "Welcome to the course!",
+      "pause_after_ms": 700,
+      "gloss": ["g_willkommen", "g_kurs"]
+    },
+    {
+      "id": "s025", "type": "line", "speaker": "anna",
+      "text": "Danke! Ich freue mich.",
+      "translation": "Thanks! I'm happy to be here.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s026", "type": "echo", "speaker": "anna",
+      "text": "Ich freue mich.",
+      "translation": "I'm happy to be here.",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1200
+    },
+    {
+      "id": "s027", "type": "check", "speaker": "narrator",
+      "text": "Wie viele Sprachen spricht Anna?",
+      "translation": "How many languages does Anna speak?",
+      "answers": ["Spanisch, Englisch und ein bisschen Deutsch"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s028", "type": "vocab", "speaker": "narrator",
+      "text": "der Kurs",
+      "translation": "the course",
+      "pause_after_ms": 900,
+      "gloss": ["g_kurs"]
+    },
+    {
+      "id": "s029", "type": "line", "speaker": "tom",
+      "text": "Der Kurs beginnt um neun Uhr.",
+      "translation": "The course starts at nine o'clock.",
+      "pause_after_ms": 700,
+      "gloss": ["g_beginnen"]
+    },
+    {
+      "id": "s030", "type": "line", "speaker": "anna",
+      "text": "Super. Dann bis später!",
+      "translation": "Great. See you later then!",
+      "pause_after_ms": 700,
+      "gloss": ["g_bis_spaeter"]
+    },
+    {
+      "id": "s031", "type": "line", "speaker": "tom",
+      "text": "Bis später, Anna!",
+      "translation": "See you later, Anna!",
+      "pause_after_ms": 900,
+      "gloss": ["g_bis_spaeter"]
+    },
+    {
+      "id": "s032", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: sich vorstellen, nach dem Land fragen und sagen, was du machst.",
+      "translation": "Today you learned: introducing yourself, asking about a country, and saying what you do.",
+      "pause_after_ms": 800
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_hallo", "de": "hallo", "en": "hello", "pos": "interjection",
+      "example_de": "Hallo, ich bin Anna.", "example_en": "Hello, I'm Anna."
+    },
+    {
+      "id": "g_ich_bin", "de": "ich bin", "en": "I am", "pos": "phrase",
+      "note_de": "1. Person Singular von sein.",
+      "note_en": "First person singular of sein (to be).",
+      "example_de": "Ich bin Tom.", "example_en": "I am Tom."
+    },
+    {
+      "id": "g_du_bist", "de": "du bist", "en": "you are", "pos": "phrase",
+      "note_de": "2. Person Singular von sein.",
+      "note_en": "Second person singular of sein (to be).",
+      "example_de": "Du bist Anna.", "example_en": "You are Anna."
+    },
+    {
+      "id": "g_freut_mich", "de": "freut mich", "en": "nice to meet you", "pos": "phrase",
+      "note_de": "Wörtlich: es freut mich (it pleases me).",
+      "note_en": "Literally: it pleases me.",
+      "example_de": "Freut mich, Tom!", "example_en": "Nice to meet you, Tom!"
+    },
+    {
+      "id": "g_woher", "de": "woher", "en": "where from", "pos": "adverb",
+      "example_de": "Woher kommst du?", "example_en": "Where are you from?"
+    },
+    {
+      "id": "g_kommen_aus", "de": "kommen aus", "en": "to come from", "pos": "phrase",
+      "example_de": "Ich komme aus Spanien.", "example_en": "I come from Spain."
+    },
+    {
+      "id": "g_wohnen", "de": "wohnen", "en": "to live", "pos": "verb",
+      "example_de": "Ich wohne in Berlin.", "example_en": "I live in Berlin."
+    },
+    {
+      "id": "g_was_machst_du", "de": "was machst du?", "en": "what do you do?", "pos": "phrase",
+      "note_de": "Fragt nach Beruf oder Tätigkeit.",
+      "note_en": "Asks about job or activity.",
+      "example_de": "Was machst du, Tom?", "example_en": "What do you do, Tom?"
+    },
+    {
+      "id": "g_student", "de": "der Student", "en": "the student", "pos": "noun",
+      "article": "der", "plural": "die Studenten",
+      "example_de": "Ich bin Student.", "example_en": "I'm a student."
+    },
+    {
+      "id": "g_lernen", "de": "lernen", "en": "to learn", "pos": "verb",
+      "example_de": "Ich lerne Deutsch.", "example_en": "I'm learning German."
+    },
+    {
+      "id": "g_wie_alt", "de": "wie alt", "en": "how old", "pos": "phrase",
+      "example_de": "Wie alt bist du?", "example_en": "How old are you?"
+    },
+    {
+      "id": "g_jahre_alt", "de": "Jahre alt", "en": "years old", "pos": "phrase",
+      "example_de": "Ich bin fünfundzwanzig Jahre alt.", "example_en": "I am twenty-five years old."
+    },
+    {
+      "id": "g_sprechen", "de": "sprechen", "en": "to speak", "pos": "verb",
+      "note_de": "du sprichst (Vokalwechsel e → i).",
+      "note_en": "du sprichst (vowel change e → i).",
+      "example_de": "Sprichst du Englisch?", "example_en": "Do you speak English?"
+    },
+    {
+      "id": "g_ein_bisschen", "de": "ein bisschen", "en": "a little", "pos": "phrase",
+      "example_de": "Ich spreche ein bisschen Deutsch.", "example_en": "I speak a little German."
+    },
+    {
+      "id": "g_willkommen", "de": "willkommen", "en": "welcome", "pos": "adj",
+      "example_de": "Willkommen im Kurs!", "example_en": "Welcome to the course!"
+    },
+    {
+      "id": "g_kurs", "de": "der Kurs", "en": "the course", "pos": "noun",
+      "article": "der", "plural": "die Kurse",
+      "example_de": "Der Kurs beginnt um neun Uhr.", "example_en": "The course starts at nine."
+    },
+    {
+      "id": "g_beginnen", "de": "beginnen", "en": "to begin", "pos": "verb",
+      "example_de": "Der Kurs beginnt um neun Uhr.", "example_en": "The course starts at nine."
+    },
+    {
+      "id": "g_bis_spaeter", "de": "bis später", "en": "see you later", "pos": "phrase",
+      "example_de": "Bis später, Anna!", "example_en": "See you later, Anna!"
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 480,
+    "version": 1
+  }
+}

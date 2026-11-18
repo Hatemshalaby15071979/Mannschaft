@@ -1,0 +1,264 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "C1-01",
+  "level": "C1",
+  "title": { "de": "Trade-offs im Strategie-Meeting", "en": "Trade-offs in the strategy meeting" },
+  "minutes": 18,
+  "scene": {
+    "setting_de": "Ein Strategie-Meeting. Das Unternehmen muss zwischen Wachstum und Profitabilität wählen.",
+    "setting_en": "A strategy meeting. The company must choose between growth and profitability.",
+    "register": "formal-business",
+    "can_do_de": "Ich kann Trade-offs abwägen, Optionen vorsichtig bewerten und eine Empfehlung begründen.",
+    "can_do_en": "I can weigh trade-offs, assess options cautiously, and justify a recommendation.",
+    "situation_tags": ["work", "strategy", "meetings"],
+    "grammar_focus": ["hedging", "konjunktiv-2", "argumentation"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "moderator", "voice": "de_narrator_m", "lang": "de" },
+    { "role": "cto", "voice": "de_older_f", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Ein Strategie-Meeting. Das Unternehmen muss zwischen Wachstum und Profitabilität wählen.",
+      "translation": "A strategy meeting. The company must choose between growth and profitability.",
+      "pause_after_ms": 450
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "moderator",
+      "text": "Wir stehen vor einer schwierigen Entscheidung.",
+      "translation": "We are facing a difficult decision.",
+      "pause_after_ms": 450,
+      "gloss": ["g_entscheidung"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "moderator",
+      "text": "Einerseits könnten wir stark wachsen, andererseits würden die Kosten steigen.",
+      "translation": "On the one hand we could grow strongly; on the other hand costs would rise.",
+      "pause_after_ms": 500,
+      "gloss": ["g_wachstum", "g_kosten"]
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "cto",
+      "text": "Das ist ein klassischer Trade-off. Man kann nicht beides maximieren.",
+      "translation": "That is a classic trade-off. You can't maximize both.",
+      "pause_after_ms": 500,
+      "gloss": ["g_tradeoff"]
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "cto",
+      "text": "Wenn wir zu schnell wachsen, riskieren wir die Qualität.",
+      "translation": "If we grow too fast, we risk quality.",
+      "pause_after_ms": 500,
+      "gloss": ["g_qualitaet"]
+    },
+    {
+      "id": "s006", "type": "check", "speaker": "narrator",
+      "text": "Was ist der Trade-off in diesem Meeting?",
+      "translation": "What is the trade-off in this meeting?",
+      "answers": ["Wachstum gegen Profitabilität"],
+      "answer_pause_ms": 3000,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s007", "type": "note", "speaker": "narrator",
+      "text": "Hedging heißt vorsichtiges Formulieren: vermutlich, möglicherweise, es könnte sein.",
+      "translation": "Hedging means cautious phrasing: presumably, possibly, it could be.",
+      "speed": 1.0, "pause_after_ms": 400, "skippable": true
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "moderator",
+      "text": "Welche Option würden Sie bevorzugen?",
+      "translation": "Which option would you prefer?",
+      "pause_after_ms": 450,
+      "gloss": ["g_bevorzugen"]
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "cto",
+      "text": "Ich würde einen moderaten Kurs vorschlagen.",
+      "translation": "I would propose a moderate course.",
+      "pause_after_ms": 500,
+      "gloss": ["g_moderat"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "cto",
+      "text": "Vermutlich ist es klüger, zuerst die Qualität zu sichern.",
+      "translation": "Presumably it is wiser to secure quality first.",
+      "pause_after_ms": 500,
+      "gloss": ["g_vermutlich", "g_klueger"]
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "moderator",
+      "text": "Das klingt vernünftig, aber der Vorstand erwartet Wachstum.",
+      "translation": "That sounds reasonable, but the board expects growth.",
+      "pause_after_ms": 500,
+      "gloss": ["g_vorstand"]
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "cto",
+      "text": "Ich verstehe den Druck. Möglicherweise können wir beides erreichen.",
+      "translation": "I understand the pressure. Possibly we can achieve both.",
+      "pause_after_ms": 500,
+      "gloss": ["g_druck"]
+    },
+    {
+      "id": "s013", "type": "check", "speaker": "narrator",
+      "text": "Welchen Kurs schlägt die CTO vor?",
+      "translation": "What course does the CTO propose?",
+      "answers": ["einen moderaten Kurs, zuerst die Qualität sichern"],
+      "answer_pause_ms": 3000,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s014", "type": "drill", "speaker": "cto",
+      "text": "Ich würde einen moderaten Kurs vorschlagen.",
+      "translation": "I would propose a moderate course.",
+      "repeat": 2, "speed": 1.0, "pause_after_ms": 900
+    },
+    {
+      "id": "s015", "type": "line", "speaker": "moderator",
+      "text": "Wie würden Sie das dem Vorstand erklären?",
+      "translation": "How would you explain that to the board?",
+      "pause_after_ms": 450
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "cto",
+      "text": "Ich würde betonen, dass nachhaltiges Wachstum mehr wert ist.",
+      "translation": "I would emphasize that sustainable growth is worth more.",
+      "pause_after_ms": 500,
+      "gloss": ["g_nachhaltig"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "cto",
+      "text": "Kurzfristige Gewinne könnten langfristig teuer werden.",
+      "translation": "Short-term profits could become expensive in the long run.",
+      "pause_after_ms": 500,
+      "gloss": ["g_kurzfristig", "g_langfristig"]
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "moderator",
+      "text": "Gut. Dann halten wir das als Empfehlung fest.",
+      "translation": "Good. Then we'll record that as a recommendation.",
+      "pause_after_ms": 500,
+      "gloss": ["g_empfehlung"]
+    },
+    {
+      "id": "s019", "type": "check", "speaker": "narrator",
+      "text": "Was würde die CTO dem Vorstand betonen?",
+      "translation": "What would the CTO emphasize to the board?",
+      "answers": ["dass nachhaltiges Wachstum mehr wert ist"],
+      "answer_pause_ms": 3000,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s020", "type": "vocab", "speaker": "narrator",
+      "text": "der Trade-off",
+      "translation": "the trade-off",
+      "pause_after_ms": 700,
+      "gloss": ["g_tradeoff"]
+    },
+    {
+      "id": "s021", "type": "vocab", "speaker": "narrator",
+      "text": "nachhaltig",
+      "translation": "sustainable",
+      "pause_after_ms": 700,
+      "gloss": ["g_nachhaltig"]
+    },
+    {
+      "id": "s022", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: Trade-offs abwägen und vorsichtig argumentieren.",
+      "translation": "Today you learned: weighing trade-offs and arguing cautiously.",
+      "pause_after_ms": 600
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_tradeoff", "de": "der Trade-off", "en": "the trade-off", "pos": "noun",
+      "article": "der", "plural": "die Trade-offs",
+      "note_de": "Ein Ziel gegen ein anderes abwägen.",
+      "note_en": "Weighing one goal against another.",
+      "example_de": "Das ist ein klassischer Trade-off.", "example_en": "That's a classic trade-off."
+    },
+    {
+      "id": "g_entscheidung", "de": "die Entscheidung", "en": "the decision", "pos": "noun",
+      "article": "die", "plural": "die Entscheidungen",
+      "example_de": "Wir stehen vor einer schwierigen Entscheidung.", "example_en": "We face a difficult decision."
+    },
+    {
+      "id": "g_wachstum", "de": "das Wachstum", "en": "the growth", "pos": "noun",
+      "article": "das", "plural": "die Wachstümer",
+      "example_de": "Der Vorstand erwartet Wachstum.", "example_en": "The board expects growth."
+    },
+    {
+      "id": "g_profitabilitaet", "de": "die Profitabilität", "en": "the profitability", "pos": "noun",
+      "article": "die", "plural": "die Profitabilitäten",
+      "example_de": "Wachstum und Profitabilität stehen im Konflikt.", "example_en": "Growth and profitability are in conflict."
+    },
+    {
+      "id": "g_kosten", "de": "die Kosten", "en": "the costs", "pos": "noun",
+      "article": "die", "plural": "die Kosten",
+      "note_de": "Pluralwort.",
+      "note_en": "Plural-only noun.",
+      "example_de": "Die Kosten würden steigen.", "example_en": "The costs would rise."
+    },
+    {
+      "id": "g_qualitaet", "de": "die Qualität", "en": "the quality", "pos": "noun",
+      "article": "die", "plural": "die Qualitäten",
+      "example_de": "Wir riskieren die Qualität.", "example_en": "We're risking quality."
+    },
+    {
+      "id": "g_bevorzugen", "de": "bevorzugen", "en": "to prefer", "pos": "verb",
+      "note_de": "Nicht trennbar: ich bevorzuge.",
+      "note_en": "Not separable: ich bevorzuge.",
+      "example_de": "Welche Option bevorzugen Sie?", "example_en": "Which option do you prefer?"
+    },
+    {
+      "id": "g_moderat", "de": "moderat", "en": "moderate", "pos": "adj",
+      "example_de": "Ich schlage einen moderaten Kurs vor.", "example_en": "I propose a moderate course."
+    },
+    {
+      "id": "g_vermutlich", "de": "vermutlich", "en": "presumably", "pos": "adverb",
+      "example_de": "Vermutlich ist es klüger zu warten.", "example_en": "Presumably it's wiser to wait."
+    },
+    {
+      "id": "g_klueger", "de": "klüger", "en": "wiser", "pos": "adj",
+      "note_de": "Komparativ von klug.",
+      "note_en": "Comparative of klug (clever).",
+      "example_de": "Es ist klüger, zuerst zu testen.", "example_en": "It's wiser to test first."
+    },
+    {
+      "id": "g_vorstand", "de": "der Vorstand", "en": "the board", "pos": "noun",
+      "article": "der", "plural": "die Vorstände",
+      "example_de": "Der Vorstand erwartet Wachstum.", "example_en": "The board expects growth."
+    },
+    {
+      "id": "g_druck", "de": "der Druck", "en": "the pressure", "pos": "noun",
+      "article": "der", "plural": "die Drücke",
+      "example_de": "Ich verstehe den Druck.", "example_en": "I understand the pressure."
+    },
+    {
+      "id": "g_nachhaltig", "de": "nachhaltig", "en": "sustainable", "pos": "adj",
+      "example_de": "Nachhaltiges Wachstum ist mehr wert.", "example_en": "Sustainable growth is worth more."
+    },
+    {
+      "id": "g_kurzfristig", "de": "kurzfristig", "en": "short-term", "pos": "adj",
+      "example_de": "Kurzfristige Gewinne können teuer werden.", "example_en": "Short-term profits can become expensive."
+    },
+    {
+      "id": "g_langfristig", "de": "langfristig", "en": "long-term", "pos": "adj",
+      "example_de": "Langfristig ist Qualität wichtiger.", "example_en": "In the long term, quality is more important."
+    },
+    {
+      "id": "g_empfehlung", "de": "die Empfehlung", "en": "the recommendation", "pos": "noun",
+      "article": "die", "plural": "die Empfehlungen",
+      "example_de": "Wir halten das als Empfehlung fest.", "example_en": "We'll record that as a recommendation."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 1080,
+    "version": 1
+  }
+}

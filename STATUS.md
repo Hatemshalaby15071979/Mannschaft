@@ -13,6 +13,10 @@ DoD (plan §14): 12 lessons (2 per level A1→C2), all validate and render and p
 exists so far (28 segments — expand to ~70 in M9). Use `corpus suggest` to mine raw
 material for authoring; nothing auto-generates a lesson (plan §8.5).
 
+**M9 is in progress.** 12 pilot lessons (2 per level) are authored and validate clean.
+A1-01 has rendered audio; the other 11 are in a sequential render batch. When that
+finishes, flip M9 to DONE, record the batch evidence, and move to M10 (scale to 72).
+
 **M6 is DONE** (see milestone row + log). `content/corpus/clips.jsonl` holds 790 scored
 candidates; `corpus suggest --level B1 --situation work` returns 30; the
 `GET /api/corpus/suggest` endpoint returns real candidates. Stages A/B/C are resumable
@@ -39,7 +43,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | M6 | Corpus stages A–C | DONE | `3d66834` — 22 playlists → 728 unique videos (stage A, 0 errors); 150 fetched → 144 with captions, 241,804 word rows (stage B); 790 scored candidates in `content/corpus/clips.jsonl`; `corpus suggest --level B1 --situation work` → 30 (≥3); server endpoint returns real candidates; `make check` 174 passed |
 | M7 | Server | DONE | 135 tests (36 server + 5 pipeline). 16 routes on 127.0.0.1:8766; `Range: bytes=0-99` → **206**, `Content-Range: bytes 0-99/2048`, body exactly 100 bytes; suffix range → tail; `bytes=99999-` → **416**; `/api/health` reports VoiceStudio down (`[Errno 111] Connection refused`) without hanging; `assert_loopback` refuses `0.0.0.0`/LAN; live `make serve` returned A2-01 + honest health; commit `e6d4f97` |
 | M8 | Client | DONE | 152 tests (16 asset + 2 Playwright smoke). 8 screens; service worker with byte-range slicing (206/416 verified against HTTP semantics); position restored from `/api/progress` after reload; offline after first play; keyboard-only usable; commit `27a746d` |
-| M9 | Pilot 12 lessons | TODO | 1 of 12 exists (A2-01, 28 segments — expand to ~70 in M9) |
+| M9 | Pilot 12 lessons | CODE-COMPLETE | 12 lessons (2 per level) — 11 newly authored. `make validate` → **12 lessons, 0 errors, 0 warnings**. A1-01 rendered: 32 segments, 117.0 s, −1 ms drift, timeline+srt written. Remaining 11 rendering in a sequential batch (CPU ≈ 9 min/lesson). |
 | M10 | Scale to 72 | TODO | — |
 | M11 | Release | TODO | — |
 
@@ -85,4 +89,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **Bug:** `config/corpus.toml` had `fillers`/`profanity` *after* the `[[situation]]` array-of-tables, so TOML nested them into the last situation element. `score.low_filler_ratio()`/`profanity_or_slur()` raised `KeyError` on every real clip. Moved both keys above the array-of-tables; a `test_corpus` test pins it. |
 | — | — | **Bug:** all `src/v5/corpus/*.py` used `Path(__file__).parents[2]` for ROOT, which resolves to `v5/src` (one level too shallow) — config/DB/clips paths all pointed into `src/`. Fixed to `parents[3]`. Also `db.connect()` now creates the parent dir — a fresh run previously died with `unable to open database file`. |
 | — | — | **Design:** `corpus/suggest.py` is the single filter implementation for both the CLI and `GET /api/corpus/suggest` (filters on `level_est`, falling back to `level`). Server takes an injectable `corpus_path` so tests never read real content. Generated `corpus.sqlite3` (22 MB) + `cache/` (47 MB) are gitignored; only `clips.jsonl` (840 KB) is committed. |
+| 2026-11-18 | M9 | Authored 11 pilot lessons (A1-01, A1-02, A2-02, B1-01, B1-02, B2-01, B2-02, C1-01, C1-02, C2-01, C2-02); A2-01 already existed. `make validate --all` → 12 lessons, **0 errors, 0 warnings**. Each lesson has ≥15 glossary entries, 3 checks, echoes/drills, and a recap. A1-01 rendered end-to-end (32 segs, 117 s, −1 ms drift). |
+| — | — | **Gotcha:** glossary/segment ids must match `^[A-Za-z0-9_-]+$`; `g_stärke` failed on the `ä`. Renamed to `g_staerke`. Any umlaut in an id will 422 the whole lesson. |
+| — | — | **Cost:** CPU synthesis is ~16 s/segment, so a ~30-segment lesson takes ~9 min. 12 lessons ≈ 2 h of sequential render. The cache makes a re-render free; only new segments cost GPU/CPU time. |
 

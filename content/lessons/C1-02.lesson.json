@@ -1,0 +1,261 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "C1-02",
+  "level": "C1",
+  "title": { "de": "Verhandlung mit dem Lieferanten", "en": "Negotiating with the supplier" },
+  "minutes": 18,
+  "scene": {
+    "setting_de": "Eine Verhandlung mit einem Lieferanten. Es geht um Preise und Lieferzeiten.",
+    "setting_en": "A negotiation with a supplier. The topic is prices and delivery times.",
+    "register": "formal-business",
+    "can_do_de": "Ich kann vorsichtig verhandeln, Bedingungen aushandeln und mit Modalpartikeln den Ton steuern.",
+    "can_do_en": "I can negotiate cautiously, agree on terms, and use modal particles to steer the tone.",
+    "situation_tags": ["business", "negotiation", "suppliers"],
+    "grammar_focus": ["vagheit", "modalpartikeln", "konjunktiv-2"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "einkaeufer", "voice": "de_narrator_m", "lang": "de" },
+    { "role": "lieferant", "voice": "de_older_m", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Eine Verhandlung mit einem Lieferanten. Es geht um Preise und Lieferzeiten.",
+      "translation": "A negotiation with a supplier. The topic is prices and delivery times.",
+      "pause_after_ms": 450
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "einkaeufer",
+      "text": "Vielen Dank, dass Sie gekommen sind.",
+      "translation": "Thank you very much for coming.",
+      "pause_after_ms": 450
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "lieferant",
+      "text": "Gern. Worum geht es genau?",
+      "translation": "You're welcome. What exactly is it about?",
+      "pause_after_ms": 450
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "einkaeufer",
+      "text": "Wir sind mit dem aktuellen Preis nicht ganz zufrieden.",
+      "translation": "We're not entirely satisfied with the current price.",
+      "pause_after_ms": 500,
+      "gloss": ["g_preis", "g_zufrieden"]
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "lieferant",
+      "text": "Das ist ja interessant. Der Preis ist eigentlich fair.",
+      "translation": "That's interesting. The price is actually fair.",
+      "pause_after_ms": 500,
+      "gloss": ["g_fair", "g_modalpartikel"]
+    },
+    {
+      "id": "s006", "type": "check", "speaker": "narrator",
+      "text": "Womit ist der Einkäufer nicht zufrieden?",
+      "translation": "What is the buyer not satisfied with?",
+      "answers": ["mit dem aktuellen Preis"],
+      "answer_pause_ms": 3000,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s007", "type": "note", "speaker": "narrator",
+      "text": "Modalpartikeln wie ja, eigentlich und doch machen Aussagen weicher und höflicher.",
+      "translation": "Modal particles like ja, eigentlich and doch make statements softer and more polite.",
+      "speed": 1.0, "pause_after_ms": 400, "skippable": true
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "einkaeufer",
+      "text": "Vielleicht könnten Sie uns ja einen Rabatt anbieten.",
+      "translation": "Perhaps you could offer us a discount.",
+      "pause_after_ms": 500,
+      "gloss": ["g_rabatt"]
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "lieferant",
+      "text": "Hmm, das ist schwierig. Die Materialkosten sind gestiegen.",
+      "translation": "Hmm, that's difficult. Material costs have risen.",
+      "pause_after_ms": 500,
+      "gloss": ["g_materialkosten"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "einkaeufer",
+      "text": "Das verstehe ich. Aber wir bestellen ja größere Mengen.",
+      "translation": "I understand. But we do order larger quantities.",
+      "pause_after_ms": 500,
+      "gloss": ["g_menge"]
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "lieferant",
+      "text": "Das stimmt wohl. Wie viel Rabatt stellen Sie sich vor?",
+      "translation": "That's probably true. How much discount do you have in mind?",
+      "pause_after_ms": 500
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "einkaeufer",
+      "text": "So etwa fünf Prozent wären schon hilfreich.",
+      "translation": "About five percent would already be helpful.",
+      "pause_after_ms": 500,
+      "gloss": ["g_hilfreich"]
+    },
+    {
+      "id": "s013", "type": "check", "speaker": "narrator",
+      "text": "Wie viel Rabatt möchte der Einkäufer?",
+      "translation": "How much discount does the buyer want?",
+      "answers": ["etwa fünf Prozent"],
+      "answer_pause_ms": 3000,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s014", "type": "drill", "speaker": "einkaeufer",
+      "text": "Vielleicht könnten Sie uns einen Rabatt anbieten.",
+      "translation": "Perhaps you could offer us a discount.",
+      "repeat": 2, "speed": 1.0, "pause_after_ms": 900
+    },
+    {
+      "id": "s015", "type": "line", "speaker": "lieferant",
+      "text": "Fünf Prozent ist machbar, aber nur bei einer Jahresbestellung.",
+      "translation": "Five percent is feasible, but only with an annual order.",
+      "pause_after_ms": 500,
+      "gloss": ["g_machbar", "g_jahresbestellung"]
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "einkaeufer",
+      "text": "Das ließe sich einrichten. Und die Lieferzeit?",
+      "translation": "That could be arranged. And the delivery time?",
+      "pause_after_ms": 500,
+      "gloss": ["g_einrichten", "g_lieferzeit"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "lieferant",
+      "text": "Die bleibt bei zwei Wochen, das ist ja unser Standard.",
+      "translation": "It stays at two weeks, that's our standard after all.",
+      "pause_after_ms": 500,
+      "gloss": ["g_standard"]
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "einkaeufer",
+      "text": "Gut. Dann halten wir das so fest.",
+      "translation": "Good. Then we'll record it that way.",
+      "pause_after_ms": 500,
+      "gloss": ["g_festhalten"]
+    },
+    {
+      "id": "s019", "type": "check", "speaker": "narrator",
+      "text": "Unter welcher Bedingung gibt es den Rabatt?",
+      "translation": "Under what condition is the discount given?",
+      "answers": ["bei einer Jahresbestellung"],
+      "answer_pause_ms": 3000,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s020", "type": "vocab", "speaker": "narrator",
+      "text": "der Rabatt",
+      "translation": "the discount",
+      "pause_after_ms": 700,
+      "gloss": ["g_rabatt"]
+    },
+    {
+      "id": "s021", "type": "vocab", "speaker": "narrator",
+      "text": "die Lieferzeit",
+      "translation": "the delivery time",
+      "pause_after_ms": 700,
+      "gloss": ["g_lieferzeit"]
+    },
+    {
+      "id": "s022", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: vorsichtig verhandeln mit Modalpartikeln.",
+      "translation": "Today you learned: negotiating cautiously with modal particles.",
+      "pause_after_ms": 600
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_verhandlung", "de": "die Verhandlung", "en": "the negotiation", "pos": "noun",
+      "article": "die", "plural": "die Verhandlungen",
+      "example_de": "Die Verhandlung war erfolgreich.", "example_en": "The negotiation was successful."
+    },
+    {
+      "id": "g_lieferant", "de": "der Lieferant", "en": "the supplier", "pos": "noun",
+      "article": "der", "plural": "die Lieferanten",
+      "example_de": "Wir verhandeln mit dem Lieferanten.", "example_en": "We're negotiating with the supplier."
+    },
+    {
+      "id": "g_preis", "de": "der Preis", "en": "the price", "pos": "noun",
+      "article": "der", "plural": "die Preise",
+      "example_de": "Der Preis ist eigentlich fair.", "example_en": "The price is actually fair."
+    },
+    {
+      "id": "g_zufrieden", "de": "zufrieden", "en": "satisfied", "pos": "adj",
+      "example_de": "Wir sind nicht ganz zufrieden.", "example_en": "We're not entirely satisfied."
+    },
+    {
+      "id": "g_fair", "de": "fair", "en": "fair", "pos": "adj",
+      "example_de": "Der Preis ist fair.", "example_en": "The price is fair."
+    },
+    {
+      "id": "g_modalpartikel", "de": "die Modalpartikel", "en": "the modal particle", "pos": "noun",
+      "article": "die", "plural": "die Modalpartikeln",
+      "note_de": "Kleine Wörter wie ja, doch, eigentlich, die den Ton färben.",
+      "note_en": "Small words like ja, doch, eigentlich that colour the tone.",
+      "example_de": "Das ist ja interessant.", "example_en": "That's interesting (indeed)."
+    },
+    {
+      "id": "g_rabatt", "de": "der Rabatt", "en": "the discount", "pos": "noun",
+      "article": "der", "plural": "die Rabatte",
+      "example_de": "Könnten Sie uns einen Rabatt anbieten?", "example_en": "Could you offer us a discount?"
+    },
+    {
+      "id": "g_materialkosten", "de": "die Materialkosten", "en": "the material costs", "pos": "noun",
+      "article": "die", "plural": "die Materialkosten",
+      "note_de": "Pluralwort.",
+      "note_en": "Plural-only noun.",
+      "example_de": "Die Materialkosten sind gestiegen.", "example_en": "Material costs have risen."
+    },
+    {
+      "id": "g_menge", "de": "die Menge", "en": "the quantity", "pos": "noun",
+      "article": "die", "plural": "die Mengen",
+      "example_de": "Wir bestellen größere Mengen.", "example_en": "We order larger quantities."
+    },
+    {
+      "id": "g_hilfreich", "de": "hilfreich", "en": "helpful", "pos": "adj",
+      "example_de": "Fünf Prozent wären hilfreich.", "example_en": "Five percent would be helpful."
+    },
+    {
+      "id": "g_machbar", "de": "machbar", "en": "feasible", "pos": "adj",
+      "example_de": "Fünf Prozent ist machbar.", "example_en": "Five percent is feasible."
+    },
+    {
+      "id": "g_jahresbestellung", "de": "die Jahresbestellung", "en": "the annual order", "pos": "noun",
+      "article": "die", "plural": "die Jahresbestellungen",
+      "example_de": "Nur bei einer Jahresbestellung.", "example_en": "Only with an annual order."
+    },
+    {
+      "id": "g_lieferzeit", "de": "die Lieferzeit", "en": "the delivery time", "pos": "noun",
+      "article": "die", "plural": "die Lieferzeiten",
+      "example_de": "Die Lieferzeit bleibt bei zwei Wochen.", "example_en": "The delivery time stays at two weeks."
+    },
+    {
+      "id": "g_standard", "de": "der Standard", "en": "the standard", "pos": "noun",
+      "article": "der", "plural": "die Standards",
+      "example_de": "Das ist unser Standard.", "example_en": "That's our standard."
+    },
+    {
+      "id": "g_festhalten", "de": "festhalten", "en": "to record / hold on to", "pos": "verb",
+      "note_de": "Trennbares Verb: ich halte fest.",
+      "note_en": "Separable verb: ich halte fest.",
+      "example_de": "Dann halten wir das so fest.", "example_en": "Then we'll record it that way."
+    },
+    {
+      "id": "g_einrichten", "de": "einrichten", "en": "to arrange", "pos": "verb",
+      "example_de": "Das ließe sich einrichten.", "example_en": "That could be arranged."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 1080,
+    "version": 1
+  }
+}

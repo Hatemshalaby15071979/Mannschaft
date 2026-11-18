@@ -1,0 +1,317 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "B1-01",
+  "level": "B1",
+  "title": { "de": "Daily Standup", "en": "Daily standup" },
+  "minutes": 14,
+  "scene": {
+    "setting_de": "Montagmorgen im Büro. Das Team trifft sich zum täglichen Standup.",
+    "setting_en": "Monday morning at the office. The team meets for the daily standup.",
+    "register": "neutral-work",
+    "can_do_de": "Ich kann über meine Arbeit berichten, Blockaden nennen und Zeitangaben mit seit und bis machen.",
+    "can_do_en": "I can report on my work, name blockers, and give time references with seit and bis.",
+    "situation_tags": ["work", "meetings", "planning"],
+    "grammar_focus": ["perfekt", "seit", "bis"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "teamlead", "voice": "de_narrator_m", "lang": "de" },
+    { "role": "dev", "voice": "de_young_f", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Montagmorgen im Büro. Das Team trifft sich zum täglichen Standup.",
+      "translation": "Monday morning at the office. The team meets for the daily standup.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "teamlead",
+      "text": "Guten Morgen zusammen. Fangen wir mit dem Standup an.",
+      "translation": "Good morning everyone. Let's start the standup.",
+      "pause_after_ms": 600,
+      "gloss": ["g_standup"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "teamlead",
+      "text": "Was hast du seit gestern gemacht?",
+      "translation": "What have you done since yesterday?",
+      "pause_after_ms": 600,
+      "gloss": ["g_seit", "g_perfekt"]
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "dev",
+      "text": "Ich habe gestern die Anmeldung fertiggestellt und getestet.",
+      "translation": "Yesterday I finished and tested the login.",
+      "pause_after_ms": 700,
+      "gloss": ["g_fertiggestellt", "g_testen"]
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "dev",
+      "text": "Seit letzter Woche arbeite ich an dem neuen Login.",
+      "translation": "Since last week I've been working on the new login.",
+      "pause_after_ms": 700,
+      "gloss": ["g_login"]
+    },
+    {
+      "id": "s006", "type": "check", "speaker": "narrator",
+      "text": "Woran arbeitet die Entwicklerin?",
+      "translation": "What is the developer working on?",
+      "answers": ["an dem neuen Login"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s007", "type": "note", "speaker": "narrator",
+      "text": "seit steht mit Dativ, bis mit Akkusativ. seit letzter Woche, bis Freitag.",
+      "translation": "seit takes the dative, bis the accusative. seit letzter Woche, bis Freitag.",
+      "speed": 0.95, "pause_after_ms": 500, "skippable": true
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "teamlead",
+      "text": "Gut. Gibt es Blockaden?",
+      "translation": "Good. Are there any blockers?",
+      "pause_after_ms": 500,
+      "gloss": ["g_blockade"]
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "dev",
+      "text": "Ja, ich warte bis Freitag auf die Freigabe von der Sicherheitsabteilung.",
+      "translation": "Yes, I'm waiting until Friday for approval from the security department.",
+      "pause_after_ms": 700,
+      "gloss": ["g_freigabe", "g_sicherheitsabteilung", "g_warten_auf"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "teamlead",
+      "text": "Okay. Ich frage heute nach. Bis wann brauchst du die Freigabe?",
+      "translation": "Okay. I'll ask today. By when do you need the approval?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "dev",
+      "text": "Am besten bis Mittwoch, sonst schaffen wir den Termin nicht.",
+      "translation": "Wednesday at the latest, otherwise we won't make the deadline.",
+      "pause_after_ms": 700,
+      "gloss": ["g_termin", "g_sonst"]
+    },
+    {
+      "id": "s012", "type": "check", "speaker": "narrator",
+      "text": "Warum kann die Entwicklerin nicht weitermachen?",
+      "translation": "Why can't the developer continue?",
+      "answers": ["Sie wartet auf die Freigabe von der Sicherheitsabteilung."],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s013", "type": "drill", "speaker": "dev",
+      "text": "Ich warte bis Freitag auf die Freigabe.",
+      "translation": "I'm waiting until Friday for the approval.",
+      "repeat": 2, "speed": 0.9, "pause_after_ms": 1000
+    },
+    {
+      "id": "s014", "type": "line", "speaker": "teamlead",
+      "text": "Verstanden. Was hast du für heute geplant?",
+      "translation": "Understood. What have you planned for today?",
+      "pause_after_ms": 600,
+      "gloss": ["g_planen"]
+    },
+    {
+      "id": "s015", "type": "line", "speaker": "dev",
+      "text": "Ich habe heute ein Meeting mit dem Kunden und schreibe danach die Dokumentation.",
+      "translation": "Today I have a meeting with the client and afterwards I'll write the documentation.",
+      "pause_after_ms": 700,
+      "gloss": ["g_meeting", "g_kunde", "g_dokumentation"]
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "teamlead",
+      "text": "Super. Ich habe gestern das Budget besprochen.",
+      "translation": "Great. Yesterday I discussed the budget.",
+      "pause_after_ms": 600,
+      "gloss": ["g_budget"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "teamlead",
+      "text": "Wir haben seit Januar drei neue Kollegen im Team.",
+      "translation": "We've had three new colleagues on the team since January.",
+      "pause_after_ms": 700,
+      "gloss": ["g_kollege"]
+    },
+    {
+      "id": "s018", "type": "check", "speaker": "narrator",
+      "text": "Wie viele neue Kollegen hat das Team seit Januar?",
+      "translation": "How many new colleagues has the team had since January?",
+      "answers": ["drei"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s019", "type": "note", "speaker": "narrator",
+      "text": "Perfekt bildest du mit haben und dem Partizip II: ich habe gearbeitet.",
+      "translation": "You form the perfect with haben and the past participle: ich habe gearbeitet.",
+      "speed": 0.95, "pause_after_ms": 500, "skippable": true
+    },
+    {
+      "id": "s020", "type": "line", "speaker": "dev",
+      "text": "Und wer macht das Review?",
+      "translation": "And who does the review?",
+      "pause_after_ms": 500,
+      "gloss": ["g_review"]
+    },
+    {
+      "id": "s021", "type": "line", "speaker": "teamlead",
+      "text": "Das macht Janosch. Er ist bis Donnerstag im Urlaub.",
+      "translation": "Janosch does it. He's on holiday until Thursday.",
+      "pause_after_ms": 600,
+      "gloss": ["g_urlaub"]
+    },
+    {
+      "id": "s022", "type": "line", "speaker": "dev",
+      "text": "Dann schicke ich ihm die Dateien vorher.",
+      "translation": "Then I'll send him the files beforehand.",
+      "pause_after_ms": 600,
+      "gloss": ["g_datei"]
+    },
+    {
+      "id": "s023", "type": "line", "speaker": "teamlead",
+      "text": "Perfekt. Noch Fragen? Nein? Dann bis morgen.",
+      "translation": "Perfect. Any questions? No? Then see you tomorrow.",
+      "pause_after_ms": 800
+    },
+    {
+      "id": "s024", "type": "vocab", "speaker": "narrator",
+      "text": "die Freigabe",
+      "translation": "the approval",
+      "pause_after_ms": 800,
+      "gloss": ["g_freigabe"]
+    },
+    {
+      "id": "s025", "type": "vocab", "speaker": "narrator",
+      "text": "die Blockade",
+      "translation": "the blocker",
+      "pause_after_ms": 800,
+      "gloss": ["g_blockade"]
+    },
+    {
+      "id": "s026", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: über Arbeit berichten mit Perfekt, seit und bis.",
+      "translation": "Today you learned: reporting on work with the perfect tense, seit and bis.",
+      "pause_after_ms": 700
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_standup", "de": "das Standup", "en": "the standup", "pos": "noun",
+      "article": "das", "plural": "die Standups",
+      "note_de": "Kurzes tägliches Teamtreffen.",
+      "note_en": "Short daily team meeting.",
+      "example_de": "Das Standup dauert fünfzehn Minuten.", "example_en": "The standup lasts fifteen minutes."
+    },
+    {
+      "id": "g_perfekt", "de": "Perfekt", "en": "perfect tense", "pos": "noun",
+      "note_de": "haben/sein + Partizip II.",
+      "note_en": "haben/sein + past participle.",
+      "example_de": "Ich habe gearbeitet.", "example_en": "I have worked."
+    },
+    {
+      "id": "g_seit", "de": "seit", "en": "since / for", "pos": "preposition",
+      "note_de": "Mit Dativ: seit letzter Woche.",
+      "note_en": "Takes the dative: seit letzter Woche.",
+      "example_de": "Seit letzter Woche arbeite ich daran.", "example_en": "Since last week I've been working on it."
+    },
+    {
+      "id": "g_fertiggestellt", "de": "fertiggestellt", "en": "finished / completed", "pos": "participle",
+      "note_de": "Partizip II von fertigstellen.",
+      "note_en": "Past participle of fertigstellen (to complete).",
+      "example_de": "Ich habe die Anmeldung fertiggestellt.", "example_en": "I finished the login."
+    },
+    {
+      "id": "g_testen", "de": "testen", "en": "to test", "pos": "verb",
+      "example_de": "Ich habe den Code getestet.", "example_en": "I tested the code."
+    },
+    {
+      "id": "g_login", "de": "der Login", "en": "the login", "pos": "noun",
+      "article": "der", "plural": "die Logins",
+      "example_de": "Ich arbeite an dem neuen Login.", "example_en": "I'm working on the new login."
+    },
+    {
+      "id": "g_blockade", "de": "die Blockade", "en": "the blocker", "pos": "noun",
+      "article": "die", "plural": "die Blockaden",
+      "example_de": "Gibt es Blockaden?", "example_en": "Are there any blockers?"
+    },
+    {
+      "id": "g_freigabe", "de": "die Freigabe", "en": "the approval", "pos": "noun",
+      "article": "die", "plural": "die Freigaben",
+      "example_de": "Ich warte auf die Freigabe.", "example_en": "I'm waiting for the approval."
+    },
+    {
+      "id": "g_warten_auf", "de": "warten auf", "en": "to wait for", "pos": "phrase",
+      "note_de": "Mit Akkusativ: warten auf die Freigabe.",
+      "note_en": "Takes the accusative: warten auf die Freigabe.",
+      "example_de": "Ich warte auf die Freigabe.", "example_en": "I'm waiting for the approval."
+    },
+    {
+      "id": "g_sicherheitsabteilung", "de": "die Sicherheitsabteilung", "en": "the security department", "pos": "noun",
+      "article": "die", "plural": "die Sicherheitsabteilungen",
+      "example_de": "Die Freigabe kommt von der Sicherheitsabteilung.", "example_en": "The approval comes from the security department."
+    },
+    {
+      "id": "g_termin", "de": "der Termin", "en": "the deadline / appointment", "pos": "noun",
+      "article": "der", "plural": "die Termine",
+      "example_de": "Sonst schaffen wir den Termin nicht.", "example_en": "Otherwise we won't make the deadline."
+    },
+    {
+      "id": "g_sonst", "de": "sonst", "en": "otherwise", "pos": "adverb",
+      "example_de": "Beeil dich, sonst kommen wir zu spät.", "example_en": "Hurry up, otherwise we'll be late."
+    },
+    {
+      "id": "g_planen", "de": "planen", "en": "to plan", "pos": "verb",
+      "example_de": "Was hast du für heute geplant?", "example_en": "What have you planned for today?"
+    },
+    {
+      "id": "g_meeting", "de": "das Meeting", "en": "the meeting", "pos": "noun",
+      "article": "das", "plural": "die Meetings",
+      "example_de": "Ich habe ein Meeting mit dem Kunden.", "example_en": "I have a meeting with the client."
+    },
+    {
+      "id": "g_kunde", "de": "der Kunde", "en": "the client", "pos": "noun",
+      "article": "der", "plural": "die Kunden",
+      "example_de": "Das Meeting mit dem Kunden ist um zehn.", "example_en": "The meeting with the client is at ten."
+    },
+    {
+      "id": "g_dokumentation", "de": "die Dokumentation", "en": "the documentation", "pos": "noun",
+      "article": "die", "plural": "die Dokumentationen",
+      "example_de": "Ich schreibe die Dokumentation.", "example_en": "I'm writing the documentation."
+    },
+    {
+      "id": "g_budget", "de": "das Budget", "en": "the budget", "pos": "noun",
+      "article": "das", "plural": "die Budgets",
+      "example_de": "Ich habe das Budget besprochen.", "example_en": "I discussed the budget."
+    },
+    {
+      "id": "g_kollege", "de": "der Kollege", "en": "the colleague", "pos": "noun",
+      "article": "der", "plural": "die Kollegen",
+      "example_de": "Wir haben drei neue Kollegen.", "example_en": "We have three new colleagues."
+    },
+    {
+      "id": "g_review", "de": "das Review", "en": "the review", "pos": "noun",
+      "article": "das", "plural": "die Reviews",
+      "example_de": "Wer macht das Review?", "example_en": "Who does the review?"
+    },
+    {
+      "id": "g_urlaub", "de": "der Urlaub", "en": "the holiday", "pos": "noun",
+      "article": "der", "plural": "die Urlaube",
+      "example_de": "Er ist bis Donnerstag im Urlaub.", "example_en": "He's on holiday until Thursday."
+    },
+    {
+      "id": "g_datei", "de": "die Datei", "en": "the file", "pos": "noun",
+      "article": "die", "plural": "die Dateien",
+      "example_de": "Ich schicke ihm die Dateien.", "example_en": "I'll send him the files."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 840,
+    "version": 1
+  }
+}

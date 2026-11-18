@@ -1,0 +1,250 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "C2-02",
+  "level": "C2",
+  "title": { "de": "Literarischer Dialog", "en": "Literary dialogue" },
+  "minutes": 20,
+  "scene": {
+    "setting_de": "Eine Bibliothek am Abend. Zwei Menschen sprechen leise.",
+    "setting_en": "A library in the evening. Two people speak quietly.",
+    "register": "literary",
+    "can_do_de": "Ich kann einen literarischen Dialog mit Rhythmus, Pausen und Andeutungen verstehen und sprechen.",
+    "can_do_en": "I can understand and speak a literary dialogue with rhythm, pauses, and suggestion.",
+    "situation_tags": ["literature", "culture", "atmosphere"],
+    "grammar_focus": ["stil", "rhythmus", "pausen"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "frau", "voice": "de_young_f", "lang": "de" },
+    { "role": "herr", "voice": "de_older_m", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Eine Bibliothek am Abend. Zwei Menschen sprechen leise.",
+      "translation": "A library in the evening. Two people speak quietly.",
+      "pause_after_ms": 900
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "frau",
+      "text": "Du bist spät gekommen.",
+      "translation": "You came late.",
+      "pause_after_ms": 900,
+      "gloss": ["g_dialog"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "herr",
+      "text": "Die Stadt war laut. Ich habe den Weg zu Fuß genommen.",
+      "translation": "The city was loud. I took the way on foot.",
+      "pause_after_ms": 900,
+      "gloss": ["g_weg", "g_zu_fuss"]
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "frau",
+      "text": "Und trotzdem bist du hier.",
+      "translation": "And nevertheless you are here.",
+      "pause_after_ms": 900
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "herr",
+      "text": "Ja. Trotzdem.",
+      "translation": "Yes. Nevertheless.",
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s006", "type": "check", "speaker": "narrator",
+      "text": "Warum ist der Mann zu spät gekommen?",
+      "translation": "Why did the man come late?",
+      "answers": ["Er hat den Weg zu Fuß genommen."],
+      "answer_pause_ms": 3500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s007", "type": "note", "speaker": "narrator",
+      "text": "Literarische Sprache lebt von kurzen Sätzen, Wiederholungen und Pausen.",
+      "translation": "Literary language lives on short sentences, repetitions, and pauses.",
+      "speed": 1.0, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "frau",
+      "text": "Setz dich. Das Licht ist noch an.",
+      "translation": "Sit down. The light is still on.",
+      "pause_after_ms": 800,
+      "gloss": ["g_licht"]
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "herr",
+      "text": "Ich sehe, du hast gewartet.",
+      "translation": "I see you waited.",
+      "pause_after_ms": 900,
+      "gloss": ["g_warten"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "frau",
+      "text": "Ich warte selten. Aber heute.",
+      "translation": "I rarely wait. But today.",
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "herr",
+      "text": "Es riecht nach alten Büchern.",
+      "translation": "It smells of old books.",
+      "pause_after_ms": 900,
+      "gloss": ["g_riechen"]
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "frau",
+      "text": "Es riecht nach Zeit.",
+      "translation": "It smells of time.",
+      "pause_after_ms": 1200,
+      "gloss": ["g_zeit"]
+    },
+    {
+      "id": "s013", "type": "check", "speaker": "narrator",
+      "text": "Was sagt die Frau über den Geruch der Bibliothek?",
+      "translation": "What does the woman say about the library's smell?",
+      "answers": ["Es riecht nach Zeit."],
+      "answer_pause_ms": 3500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s014", "type": "drill", "speaker": "herr",
+      "text": "Ich habe den Weg zu Fuß genommen.",
+      "translation": "I took the way on foot.",
+      "repeat": 2, "speed": 1.0, "pause_after_ms": 1000
+    },
+    {
+      "id": "s015", "type": "line", "speaker": "herr",
+      "text": "Wollen wir anfangen?",
+      "translation": "Shall we begin?",
+      "pause_after_ms": 800
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "frau",
+      "text": "Ja. Lies mir vor.",
+      "translation": "Yes. Read to me.",
+      "pause_after_ms": 900,
+      "gloss": ["g_vorlesen"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "herr",
+      "text": "Von Anfang an?",
+      "translation": "From the beginning?",
+      "pause_after_ms": 900,
+      "gloss": ["g_anfang"]
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "frau",
+      "text": "Von Anfang an.",
+      "translation": "From the beginning.",
+      "pause_after_ms": 1400
+    },
+    {
+      "id": "s019", "type": "check", "speaker": "narrator",
+      "text": "Was soll der Mann tun?",
+      "translation": "What should the man do?",
+      "answers": ["Er soll ihr vorlesen."],
+      "answer_pause_ms": 3500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s020", "type": "vocab", "speaker": "narrator",
+      "text": "vorlesen",
+      "translation": "to read aloud",
+      "pause_after_ms": 800,
+      "gloss": ["g_vorlesen"]
+    },
+    {
+      "id": "s021", "type": "vocab", "speaker": "narrator",
+      "text": "die Bibliothek",
+      "translation": "the library",
+      "pause_after_ms": 800,
+      "gloss": ["g_bibliothek"]
+    },
+    {
+      "id": "s022", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: literarische Dialoge mit Rhythmus und Pausen.",
+      "translation": "Today you learned: literary dialogues with rhythm and pauses.",
+      "pause_after_ms": 700
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_literatur", "de": "die Literatur", "en": "the literature", "pos": "noun",
+      "article": "die", "plural": "die Literaturen",
+      "example_de": "Ich lese gern deutsche Literatur.", "example_en": "I like reading German literature."
+    },
+    {
+      "id": "g_dialog", "de": "der Dialog", "en": "the dialogue", "pos": "noun",
+      "article": "der", "plural": "die Dialoge",
+      "example_de": "Der Dialog ist sehr ruhig.", "example_en": "The dialogue is very calm."
+    },
+    {
+      "id": "g_bibliothek", "de": "die Bibliothek", "en": "the library", "pos": "noun",
+      "article": "die", "plural": "die Bibliotheken",
+      "example_de": "Wir treffen uns in der Bibliothek.", "example_en": "We meet in the library."
+    },
+    {
+      "id": "g_weg", "de": "der Weg", "en": "the way / path", "pos": "noun",
+      "article": "der", "plural": "die Wege",
+      "example_de": "Ich habe den Weg zu Fuß genommen.", "example_en": "I took the way on foot."
+    },
+    {
+      "id": "g_zu_fuss", "de": "zu Fuß", "en": "on foot", "pos": "phrase",
+      "example_de": "Ich gehe zu Fuß.", "example_en": "I'm going on foot."
+    },
+    {
+      "id": "g_licht", "de": "das Licht", "en": "the light", "pos": "noun",
+      "article": "das", "plural": "die Lichter",
+      "example_de": "Das Licht ist noch an.", "example_en": "The light is still on."
+    },
+    {
+      "id": "g_riechen", "de": "riechen", "en": "to smell", "pos": "verb",
+      "example_de": "Es riecht nach alten Büchern.", "example_en": "It smells of old books."
+    },
+    {
+      "id": "g_zeit", "de": "die Zeit", "en": "the time", "pos": "noun",
+      "article": "die", "plural": "die Zeiten",
+      "example_de": "Es riecht nach Zeit.", "example_en": "It smells of time."
+    },
+    {
+      "id": "g_vorlesen", "de": "vorlesen", "en": "to read aloud", "pos": "verb",
+      "note_de": "Trennbares Verb: ich lese vor.",
+      "note_en": "Separable verb: ich lese vor.",
+      "example_de": "Lies mir vor.", "example_en": "Read to me."
+    },
+    {
+      "id": "g_anfang", "de": "der Anfang", "en": "the beginning", "pos": "noun",
+      "article": "der", "plural": "die Anfänge",
+      "example_de": "Von Anfang an.", "example_en": "From the beginning."
+    },
+    {
+      "id": "g_warten", "de": "warten", "en": "to wait", "pos": "verb",
+      "example_de": "Du hast gewartet.", "example_en": "You waited."
+    },
+    {
+      "id": "g_leise", "de": "leise", "en": "quiet", "pos": "adj",
+      "example_de": "Sie sprechen leise.", "example_en": "They speak quietly."
+    },
+    {
+      "id": "g_atmosphaere", "de": "die Atmosphäre", "en": "the atmosphere", "pos": "noun",
+      "article": "die", "plural": "die Atmosphären",
+      "example_de": "Die Atmosphäre ist ruhig.", "example_en": "The atmosphere is calm."
+    },
+    {
+      "id": "g_rhythmus", "de": "der Rhythmus", "en": "the rhythm", "pos": "noun",
+      "article": "der", "plural": "die Rhythmen",
+      "example_de": "Der Rhythmus der Sätze ist wichtig.", "example_en": "The rhythm of the sentences matters."
+    },
+    {
+      "id": "g_trotzdem", "de": "trotzdem", "en": "nevertheless", "pos": "adverb",
+      "example_de": "Und trotzdem bist du hier.", "example_en": "And nevertheless you are here."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 1200,
+    "version": 1
+  }
+}

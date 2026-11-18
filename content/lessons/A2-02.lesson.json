@@ -1,0 +1,326 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "A2-02",
+  "level": "A2",
+  "title": { "de": "Anmeldung im Bürgeramt", "en": "Registering at the citizens' office" },
+  "minutes": 10,
+  "scene": {
+    "setting_de": "Das Bürgeramt an einem Dienstagmorgen. Frau Weber hat einen Termin.",
+    "setting_en": "The citizens' office on a Tuesday morning. Ms Weber has an appointment.",
+    "register": "formal-service",
+    "can_do_de": "Ich kann mich anmelden, ein Formular ausfüllen und sagen, was ich muss und darf.",
+    "can_do_en": "I can register, fill in a form, and say what I must and may do.",
+    "situation_tags": ["bureaucracy", "registration", "service"],
+    "grammar_focus": ["muessen-duerfen", "formulare", "perfekt"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "buerger", "voice": "de_young_f", "lang": "de" },
+    { "role": "beamter", "voice": "de_older_m", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Das Bürgeramt an einem Dienstagmorgen. Frau Weber hat einen Termin.",
+      "translation": "The citizens' office on a Tuesday morning. Ms Weber has an appointment.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "beamter",
+      "text": "Guten Morgen. Haben Sie einen Termin?",
+      "translation": "Good morning. Do you have an appointment?",
+      "pause_after_ms": 600,
+      "gloss": ["g_termin"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "buerger",
+      "text": "Ja, um zehn Uhr. Mein Name ist Weber.",
+      "translation": "Yes, at ten o'clock. My name is Weber.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "beamter",
+      "text": "Frau Weber. Was kann ich für Sie tun?",
+      "translation": "Ms Weber. What can I do for you?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "buerger",
+      "text": "Ich bin umgezogen. Ich muss meine Adresse ändern.",
+      "translation": "I've moved. I have to change my address.",
+      "pause_after_ms": 800,
+      "gloss": ["g_umgezogen", "g_adresse", "g_muessen"]
+    },
+    {
+      "id": "s006", "type": "check", "speaker": "narrator",
+      "text": "Warum ist Frau Weber im Bürgeramt?",
+      "translation": "Why is Ms Weber at the citizens' office?",
+      "answers": ["Sie ist umgezogen und muss ihre Adresse ändern."],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s007", "type": "note", "speaker": "narrator",
+      "text": "umziehen heißt to move house. Ich bin umgezogen heißt I have moved.",
+      "translation": "umziehen means to move house. Ich bin umgezogen means I have moved.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s008", "type": "line", "speaker": "beamter",
+      "text": "Dann brauchen wir das Anmeldeformular. Haben Sie Ihren Ausweis dabei?",
+      "translation": "Then we need the registration form. Do you have your ID with you?",
+      "pause_after_ms": 700,
+      "gloss": ["g_anmeldeformular", "g_ausweis"]
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "buerger",
+      "text": "Ja, hier ist mein Pass. Und die Wohnungsgeberbestätigung.",
+      "translation": "Yes, here is my passport. And the landlord confirmation.",
+      "pause_after_ms": 800,
+      "gloss": ["g_pass", "g_wohnungsgeberbestaetigung"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "beamter",
+      "text": "Sehr gut. Sie müssen das Formular ausfüllen.",
+      "translation": "Very good. You have to fill in the form.",
+      "pause_after_ms": 700,
+      "gloss": ["g_ausfuellen"]
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "buerger",
+      "text": "Muss ich alles ausfüllen?",
+      "translation": "Do I have to fill in everything?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "beamter",
+      "text": "Nein, nur die ersten drei Felder. Sie dürfen das Formular hier ausfüllen.",
+      "translation": "No, only the first three fields. You may fill in the form here.",
+      "pause_after_ms": 700,
+      "gloss": ["g_feld", "g_duerfen"]
+    },
+    {
+      "id": "s013", "type": "check", "speaker": "narrator",
+      "text": "Was muss Frau Weber ausfüllen?",
+      "translation": "What does Ms Weber have to fill in?",
+      "answers": ["die ersten drei Felder des Formulars"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s014", "type": "drill", "speaker": "beamter",
+      "text": "Sie müssen das Formular ausfüllen.",
+      "translation": "You have to fill in the form.",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1000
+    },
+    {
+      "id": "s015", "type": "line", "speaker": "buerger",
+      "text": "Darf ich einen Stift benutzen?",
+      "translation": "May I use a pen?",
+      "pause_after_ms": 600,
+      "gloss": ["g_stift"]
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "beamter",
+      "text": "Natürlich. Hier, bitte.",
+      "translation": "Of course. Here you go.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "buerger",
+      "text": "Fertig. Ist das so richtig?",
+      "translation": "Done. Is that right like this?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "beamter",
+      "text": "Fast. Sie müssen hier noch unterschreiben.",
+      "translation": "Almost. You still have to sign here.",
+      "pause_after_ms": 700,
+      "gloss": ["g_unterschreiben"]
+    },
+    {
+      "id": "s019", "type": "line", "speaker": "buerger",
+      "text": "Oh, entschuldigung. Wo genau?",
+      "translation": "Oh, sorry. Where exactly?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s020", "type": "line", "speaker": "beamter",
+      "text": "Hier unten, neben dem Datum.",
+      "translation": "Down here, next to the date.",
+      "pause_after_ms": 700,
+      "gloss": ["g_datum"]
+    },
+    {
+      "id": "s021", "type": "check", "speaker": "narrator",
+      "text": "Was muss Frau Weber noch tun?",
+      "translation": "What does Ms Weber still have to do?",
+      "answers": ["Sie muss das Formular unterschreiben."],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s022", "type": "note", "speaker": "narrator",
+      "text": "müssen heißt must. dürfen heißt may oder be allowed to.",
+      "translation": "müssen means must. dürfen means may or to be allowed to.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s023", "type": "line", "speaker": "beamter",
+      "text": "So, das ist erledigt. Sie bekommen eine neue Meldebescheinigung.",
+      "translation": "So, that's done. You'll get a new registration certificate.",
+      "pause_after_ms": 700,
+      "gloss": ["g_erledigt", "g_meldebescheinigung"]
+    },
+    {
+      "id": "s024", "type": "line", "speaker": "buerger",
+      "text": "Wann bekomme ich sie?",
+      "translation": "When do I get it?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s025", "type": "line", "speaker": "beamter",
+      "text": "Sofort. Einen Moment, bitte.",
+      "translation": "Right away. One moment, please.",
+      "pause_after_ms": 600,
+      "gloss": ["g_sofort"]
+    },
+    {
+      "id": "s026", "type": "line", "speaker": "buerger",
+      "text": "Vielen Dank für Ihre Hilfe.",
+      "translation": "Thank you very much for your help.",
+      "pause_after_ms": 700,
+      "gloss": ["g_hilfe"]
+    },
+    {
+      "id": "s027", "type": "line", "speaker": "beamter",
+      "text": "Gern. Einen schönen Tag noch.",
+      "translation": "You're welcome. Have a nice day.",
+      "pause_after_ms": 800
+    },
+    {
+      "id": "s028", "type": "vocab", "speaker": "narrator",
+      "text": "das Formular",
+      "translation": "the form",
+      "pause_after_ms": 900,
+      "gloss": ["g_anmeldeformular"]
+    },
+    {
+      "id": "s029", "type": "vocab", "speaker": "narrator",
+      "text": "unterschreiben",
+      "translation": "to sign",
+      "pause_after_ms": 900,
+      "gloss": ["g_unterschreiben"]
+    },
+    {
+      "id": "s030", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: sich anmelden, ein Formular ausfüllen und unterschreiben.",
+      "translation": "Today you learned: registering, filling in a form, and signing.",
+      "pause_after_ms": 800
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_termin", "de": "der Termin", "en": "the appointment", "pos": "noun",
+      "article": "der", "plural": "die Termine",
+      "example_de": "Ich habe einen Termin um zehn Uhr.", "example_en": "I have an appointment at ten."
+    },
+    {
+      "id": "g_umgezogen", "de": "umgezogen", "en": "moved (house)", "pos": "participle",
+      "note_de": "Partizip II von umziehen.",
+      "note_en": "Past participle of umziehen (to move house).",
+      "example_de": "Ich bin letzte Woche umgezogen.", "example_en": "I moved last week."
+    },
+    {
+      "id": "g_adresse", "de": "die Adresse", "en": "the address", "pos": "noun",
+      "article": "die", "plural": "die Adressen",
+      "example_de": "Ich muss meine Adresse ändern.", "example_en": "I have to change my address."
+    },
+    {
+      "id": "g_anmeldeformular", "de": "das Anmeldeformular", "en": "the registration form", "pos": "noun",
+      "article": "das", "plural": "die Anmeldeformulare",
+      "example_de": "Bitte füllen Sie das Anmeldeformular aus.", "example_en": "Please fill in the registration form."
+    },
+    {
+      "id": "g_ausweis", "de": "der Ausweis", "en": "the ID", "pos": "noun",
+      "article": "der", "plural": "die Ausweise",
+      "example_de": "Haben Sie Ihren Ausweis dabei?", "example_en": "Do you have your ID with you?"
+    },
+    {
+      "id": "g_pass", "de": "der Pass", "en": "the passport", "pos": "noun",
+      "article": "der", "plural": "die Pässe",
+      "example_de": "Hier ist mein Pass.", "example_en": "Here is my passport."
+    },
+    {
+      "id": "g_wohnungsgeberbestaetigung", "de": "die Wohnungsgeberbestätigung", "en": "the landlord confirmation", "pos": "noun",
+      "article": "die", "plural": "die Wohnungsgeberbestätigungen",
+      "note_de": "Bescheinigung vom Vermieter, dass man dort wohnt.",
+      "note_en": "Certificate from the landlord that you live there.",
+      "example_de": "Ich habe die Wohnungsgeberbestätigung dabei.", "example_en": "I have the landlord confirmation with me."
+    },
+    {
+      "id": "g_ausfuellen", "de": "ausfüllen", "en": "to fill in", "pos": "verb",
+      "note_de": "Trennbares Verb: ich fülle aus.",
+      "note_en": "Separable verb: ich fülle aus.",
+      "example_de": "Sie müssen das Formular ausfüllen.", "example_en": "You have to fill in the form."
+    },
+    {
+      "id": "g_feld", "de": "das Feld", "en": "the field", "pos": "noun",
+      "article": "das", "plural": "die Felder",
+      "example_de": "Nur die ersten drei Felder.", "example_en": "Only the first three fields."
+    },
+    {
+      "id": "g_muessen", "de": "müssen", "en": "must / to have to", "pos": "verb",
+      "note_de": "Modalverb. ich muss, du musst, er muss.",
+      "note_en": "Modal verb. ich muss, du musst, er muss.",
+      "example_de": "Ich muss meine Adresse ändern.", "example_en": "I have to change my address."
+    },
+    {
+      "id": "g_duerfen", "de": "dürfen", "en": "may / to be allowed to", "pos": "verb",
+      "note_de": "Modalverb. ich darf, du darfst, er darf.",
+      "note_en": "Modal verb. ich darf, du darfst, er darf.",
+      "example_de": "Darf ich einen Stift benutzen?", "example_en": "May I use a pen?"
+    },
+    {
+      "id": "g_stift", "de": "der Stift", "en": "the pen", "pos": "noun",
+      "article": "der", "plural": "die Stifte",
+      "example_de": "Darf ich einen Stift benutzen?", "example_en": "May I use a pen?"
+    },
+    {
+      "id": "g_unterschreiben", "de": "unterschreiben", "en": "to sign", "pos": "verb",
+      "note_de": "Nicht trennbar: ich unterschreibe.",
+      "note_en": "Not separable: ich unterschreibe.",
+      "example_de": "Sie müssen hier unterschreiben.", "example_en": "You have to sign here."
+    },
+    {
+      "id": "g_datum", "de": "das Datum", "en": "the date", "pos": "noun",
+      "article": "das", "plural": "die Daten",
+      "example_de": "Hier unten, neben dem Datum.", "example_en": "Down here, next to the date."
+    },
+    {
+      "id": "g_meldebescheinigung", "de": "die Meldebescheinigung", "en": "the registration certificate", "pos": "noun",
+      "article": "die", "plural": "die Meldebescheinigungen",
+      "example_de": "Sie bekommen eine neue Meldebescheinigung.", "example_en": "You'll get a new registration certificate."
+    },
+    {
+      "id": "g_erledigt", "de": "erledigt", "en": "done / settled", "pos": "adj",
+      "example_de": "So, das ist erledigt.", "example_en": "So, that's done."
+    },
+    {
+      "id": "g_sofort", "de": "sofort", "en": "right away", "pos": "adverb",
+      "example_de": "Sofort. Einen Moment, bitte.", "example_en": "Right away. One moment, please."
+    },
+    {
+      "id": "g_hilfe", "de": "die Hilfe", "en": "the help", "pos": "noun",
+      "article": "die", "plural": "die Hilfen",
+      "example_de": "Vielen Dank für Ihre Hilfe.", "example_en": "Thank you very much for your help."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 600,
+    "version": 1
+  }
+}

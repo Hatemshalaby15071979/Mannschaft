@@ -1,0 +1,265 @@
+{
+  "schema": "lesson-script/v1",
+  "id": "B2-02",
+  "level": "B2",
+  "title": { "de": "Gehaltsverhandlung", "en": "Salary negotiation" },
+  "minutes": 16,
+  "scene": {
+    "setting_de": "Ein Gespräch über das Gehalt. Herr Bauer hat einen Termin bei seiner Vorgesetzten.",
+    "setting_en": "A conversation about salary. Mr Bauer has an appointment with his manager.",
+    "register": "formal-work",
+    "can_do_de": "Ich kann höflich über das Gehalt verhandeln, Vorschläge machen und Kompromisse aushandeln.",
+    "can_do_en": "I can negotiate salary politely, make proposals, and agree on compromises.",
+    "situation_tags": ["work", "salary", "negotiation"],
+    "grammar_focus": ["konjunktiv-2", "hoeflichkeit", "verhandlung"]
+  },
+  "cast": [
+    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
+    { "role": "mitarbeiter", "voice": "de_young_m", "lang": "de" },
+    { "role": "vorgesetzte", "voice": "de_older_f", "lang": "de" }
+  ],
+  "segments": [
+    {
+      "id": "s001", "type": "scene", "speaker": "narrator",
+      "text": "Ein Gespräch über das Gehalt. Herr Bauer hat einen Termin bei seiner Vorgesetzten.",
+      "translation": "A conversation about salary. Mr Bauer has an appointment with his manager.",
+      "pause_after_ms": 500
+    },
+    {
+      "id": "s002", "type": "line", "speaker": "vorgesetzte",
+      "text": "Guten Tag, Herr Bauer. Sie wollten über Ihr Gehalt sprechen.",
+      "translation": "Good day, Mr Bauer. You wanted to talk about your salary.",
+      "pause_after_ms": 500,
+      "gloss": ["g_gehalt"]
+    },
+    {
+      "id": "s003", "type": "line", "speaker": "mitarbeiter",
+      "text": "Ja, genau. Ich arbeite seit zwei Jahren hier.",
+      "translation": "Yes, exactly. I've been working here for two years.",
+      "pause_after_ms": 500
+    },
+    {
+      "id": "s004", "type": "line", "speaker": "mitarbeiter",
+      "text": "Ich habe in dieser Zeit viele Projekte übernommen.",
+      "translation": "During this time I've taken on many projects.",
+      "pause_after_ms": 500,
+      "gloss": ["g_uebernehmen"]
+    },
+    {
+      "id": "s005", "type": "line", "speaker": "vorgesetzte",
+      "text": "Das stimmt. Ihre Leistung ist gut.",
+      "translation": "That's true. Your performance is good.",
+      "pause_after_ms": 500,
+      "gloss": ["g_leistung"]
+    },
+    {
+      "id": "s006", "type": "line", "speaker": "mitarbeiter",
+      "text": "Ich würde gern über eine Gehaltsanpassung sprechen.",
+      "translation": "I would like to talk about a salary adjustment.",
+      "pause_after_ms": 500,
+      "gloss": ["g_gehaltsanpassung"]
+    },
+    {
+      "id": "s007", "type": "check", "speaker": "narrator",
+      "text": "Worüber möchte Herr Bauer sprechen?",
+      "translation": "What does Mr Bauer want to talk about?",
+      "answers": ["über eine Gehaltsanpassung"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s008", "type": "note", "speaker": "narrator",
+      "text": "Konjunktiv II klingt höflich: ich würde gern, ich hätte gern, könnten wir.",
+      "translation": "Konjunktiv II sounds polite: I would like, I would like to have, could we.",
+      "speed": 1.0, "pause_after_ms": 400, "skippable": true
+    },
+    {
+      "id": "s009", "type": "line", "speaker": "vorgesetzte",
+      "text": "Was stellen Sie sich vor?",
+      "translation": "What do you have in mind?",
+      "pause_after_ms": 500,
+      "gloss": ["g_vorschlagen"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "mitarbeiter",
+      "text": "Ich hätte gern zehn Prozent mehr.",
+      "translation": "I would like ten percent more.",
+      "pause_after_ms": 500,
+      "gloss": ["g_prozent"]
+    },
+    {
+      "id": "s011", "type": "line", "speaker": "vorgesetzte",
+      "text": "Zehn Prozent ist viel. Ich könnte fünf Prozent anbieten.",
+      "translation": "Ten percent is a lot. I could offer five percent.",
+      "pause_after_ms": 500,
+      "gloss": ["g_anbieten"]
+    },
+    {
+      "id": "s012", "type": "line", "speaker": "mitarbeiter",
+      "text": "Ich verstehe. Könnten wir sechs Prozent vereinbaren?",
+      "translation": "I understand. Could we agree on six percent?",
+      "pause_after_ms": 500,
+      "gloss": ["g_vereinbaren"]
+    },
+    {
+      "id": "s013", "type": "line", "speaker": "vorgesetzte",
+      "text": "Sechs Prozent wären möglich, aber erst ab nächstem Quartal.",
+      "translation": "Six percent would be possible, but only from next quarter.",
+      "pause_after_ms": 500,
+      "gloss": ["g_quartal"]
+    },
+    {
+      "id": "s014", "type": "check", "speaker": "narrator",
+      "text": "Wie viel Prozent bietet die Vorgesetzte zuerst an?",
+      "translation": "How many percent does the manager offer first?",
+      "answers": ["fünf Prozent"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s015", "type": "drill", "speaker": "mitarbeiter",
+      "text": "Könnten wir sechs Prozent vereinbaren?",
+      "translation": "Could we agree on six percent?",
+      "repeat": 2, "speed": 0.95, "pause_after_ms": 900
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "mitarbeiter",
+      "text": "Das wäre akzeptabel. Vielen Dank.",
+      "translation": "That would be acceptable. Thank you very much.",
+      "pause_after_ms": 500,
+      "gloss": ["g_akzeptabel"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "vorgesetzte",
+      "text": "Gern. Ich bereite den Vertrag vor.",
+      "translation": "You're welcome. I'll prepare the contract.",
+      "pause_after_ms": 500,
+      "gloss": ["g_vertrag"]
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "mitarbeiter",
+      "text": "Wann könnte ich den Vertrag unterschreiben?",
+      "translation": "When could I sign the contract?",
+      "pause_after_ms": 500,
+      "gloss": ["g_unterschreiben"]
+    },
+    {
+      "id": "s019", "type": "line", "speaker": "vorgesetzte",
+      "text": "Bis Ende des Monats.",
+      "translation": "By the end of the month.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s020", "type": "check", "speaker": "narrator",
+      "text": "Ab wann gilt die Gehaltserhöhung?",
+      "translation": "From when does the raise apply?",
+      "answers": ["ab nächstem Quartal"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s021", "type": "vocab", "speaker": "narrator",
+      "text": "die Gehaltsanpassung",
+      "translation": "the salary adjustment",
+      "pause_after_ms": 700,
+      "gloss": ["g_gehaltsanpassung"]
+    },
+    {
+      "id": "s022", "type": "vocab", "speaker": "narrator",
+      "text": "vereinbaren",
+      "translation": "to agree on",
+      "pause_after_ms": 700,
+      "gloss": ["g_vereinbaren"]
+    },
+    {
+      "id": "s023", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: höflich über das Gehalt verhandeln mit Konjunktiv II.",
+      "translation": "Today you learned: negotiating salary politely with the Konjunktiv II.",
+      "pause_after_ms": 600
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g_gehalt", "de": "das Gehalt", "en": "the salary", "pos": "noun",
+      "article": "das", "plural": "die Gehälter",
+      "example_de": "Ich möchte über mein Gehalt sprechen.", "example_en": "I'd like to talk about my salary."
+    },
+    {
+      "id": "g_gehaltsanpassung", "de": "die Gehaltsanpassung", "en": "the salary adjustment", "pos": "noun",
+      "article": "die", "plural": "die Gehaltsanpassungen",
+      "example_de": "Ich möchte über eine Gehaltsanpassung sprechen.", "example_en": "I'd like to talk about a salary adjustment."
+    },
+    {
+      "id": "g_leistung", "de": "die Leistung", "en": "the performance", "pos": "noun",
+      "article": "die", "plural": "die Leistungen",
+      "example_de": "Ihre Leistung ist gut.", "example_en": "Your performance is good."
+    },
+    {
+      "id": "g_uebernehmen", "de": "übernehmen", "en": "to take on", "pos": "verb",
+      "note_de": "Nicht trennbar: ich übernehme.",
+      "note_en": "Not separable: ich übernehme.",
+      "example_de": "Ich habe viele Projekte übernommen.", "example_en": "I've taken on many projects."
+    },
+    {
+      "id": "g_vorschlagen", "de": "vorschlagen", "en": "to propose", "pos": "verb",
+      "note_de": "Trennbares Verb: ich schlage vor.",
+      "note_en": "Separable verb: ich schlage vor.",
+      "example_de": "Was schlagen Sie vor?", "example_en": "What do you propose?"
+    },
+    {
+      "id": "g_prozent", "de": "das Prozent", "en": "the percent", "pos": "noun",
+      "article": "das", "plural": "die Prozent",
+      "example_de": "Ich hätte gern zehn Prozent mehr.", "example_en": "I'd like ten percent more."
+    },
+    {
+      "id": "g_anbieten", "de": "anbieten", "en": "to offer", "pos": "verb",
+      "note_de": "Trennbares Verb: ich biete an.",
+      "note_en": "Separable verb: ich biete an.",
+      "example_de": "Ich könnte fünf Prozent anbieten.", "example_en": "I could offer five percent."
+    },
+    {
+      "id": "g_vereinbaren", "de": "vereinbaren", "en": "to agree on", "pos": "verb",
+      "example_de": "Könnten wir sechs Prozent vereinbaren?", "example_en": "Could we agree on six percent?"
+    },
+    {
+      "id": "g_quartal", "de": "das Quartal", "en": "the quarter", "pos": "noun",
+      "article": "das", "plural": "die Quartale",
+      "example_de": "Erst ab nächstem Quartal.", "example_en": "Only from next quarter."
+    },
+    {
+      "id": "g_akzeptabel", "de": "akzeptabel", "en": "acceptable", "pos": "adj",
+      "example_de": "Das wäre akzeptabel.", "example_en": "That would be acceptable."
+    },
+    {
+      "id": "g_vertrag", "de": "der Vertrag", "en": "the contract", "pos": "noun",
+      "article": "der", "plural": "die Verträge",
+      "example_de": "Ich bereite den Vertrag vor.", "example_en": "I'll prepare the contract."
+    },
+    {
+      "id": "g_unterschreiben", "de": "unterschreiben", "en": "to sign", "pos": "verb",
+      "note_de": "Nicht trennbar: ich unterschreibe.",
+      "note_en": "Not separable: ich unterschreibe.",
+      "example_de": "Wann kann ich unterschreiben?", "example_en": "When can I sign?"
+    },
+    {
+      "id": "g_vorgesetzte", "de": "der/die Vorgesetzte", "en": "the manager", "pos": "noun",
+      "article": "der/die", "plural": "die Vorgesetzten",
+      "example_de": "Meine Vorgesetzte ist fair.", "example_en": "My manager is fair."
+    },
+    {
+      "id": "g_verhandlung", "de": "die Verhandlung", "en": "the negotiation", "pos": "noun",
+      "article": "die", "plural": "die Verhandlungen",
+      "example_de": "Die Verhandlung war erfolgreich.", "example_en": "The negotiation was successful."
+    },
+    {
+      "id": "g_erhoehen", "de": "erhöhen", "en": "to raise", "pos": "verb",
+      "example_de": "Wir könnten das Gehalt erhöhen.", "example_en": "We could raise the salary."
+    }
+  ],
+  "meta": {
+    "authored": "human+assist",
+    "source_refs": [],
+    "est_seconds": 960,
+    "version": 1
+  }
+}
