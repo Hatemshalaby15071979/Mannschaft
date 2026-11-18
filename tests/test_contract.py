@@ -39,6 +39,22 @@ def test_example_lesson_meets_content_floor():
     assert script.scene.grammar_focus
 
 
+LESSONS = sorted((ROOT / "content" / "lessons").glob("*.lesson.json"))
+
+
+@pytest.mark.parametrize("path", LESSONS, ids=lambda p: p.stem.removesuffix(".lesson"))
+def test_every_shipped_lesson_validates_clean(path):
+    """Every lesson in content/lessons must parse and have zero errors.
+
+    Parametrized per file so a failure names the lesson. This is the guard the
+    M9 pilot needs: a broken lesson cannot sit in the content dir unnoticed.
+    """
+    script, issues = validate_file(path)
+    assert script is not None, "\n".join(str(i) for i in issues)
+    errors = [i for i in issues if i.severity == "error"]
+    assert errors == [], "\n".join(str(e) for e in errors)
+
+
 def test_line_requires_translation(good):
     seg = next(s for s in good["segments"] if s["type"] == "line")
     del seg["translation"]
