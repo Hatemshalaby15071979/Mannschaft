@@ -77,8 +77,11 @@ async function route() {
     const result = await match.screen.render(params, query);
     if (myToken !== token) return;
     clear(screen);
-    screen.append(result.node);
-    cleanup = result.cleanup || null;
+    // Screens normally return { node, cleanup }; their error paths return a bare
+    // statusBlock element. Accept both so an error never renders as "undefined".
+    const node = result instanceof Node ? result : result.node;
+    screen.append(node);
+    cleanup = result instanceof Node ? null : result.cleanup || null;
   } catch (error) {
     if (myToken !== token) return;
     clear(screen);

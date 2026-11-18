@@ -68,6 +68,9 @@ class Player {
 
   load(detail, { positionMs = null, autoplay = false } = {}) {
     const same = this.detail && this.detail.lesson.id === detail.lesson.id;
+    // Keep the detail: progress saving (_maybeSave/_save) needs lesson id,
+    // segments and currentEntry. Without it every save returns early.
+    this.detail = detail;
     this.timeline = Array.isArray(detail.timeline) ? detail.timeline : [];
     this._error = null;
     if (!same) {

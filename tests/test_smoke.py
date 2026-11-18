@@ -242,6 +242,74 @@ def test_library_to_play_and_position_restores(server_url):
         browser.close()
 
 
+def test_every_screen_renders_real_content(server_url):
+    """No screen may fall through to the literal text 'undefined'.
+
+    Regression: home.js destructured an undeclared `all` (ReferenceError in an
+    ES module), and main.js appended `result.node` even when a screen's error
+    path returned a bare element — both rendered the word 'undefined'. The old
+    smoke test only visited library/lesson/play, so neither was caught.
+    """
+    with sync_playwright() as p:
+        browser = p.chromium.launch(args=["--no-sandbox"])
+        page = browser.new_page()
+        page.goto(server_url, wait_until="load")
+        page.wait_for_selector(".tabbar", timeout=10_000)
+
+        routes = [
+            ("#/", "Guten Tag."),
+            ("#/library", "Bibliothek"),
+            ("#/lesson/A1-01", "Segmente"),
+            ("#/play/A1-01", "NARRATOR"),
+            ("#/transcript/A1-01", "Zeilen"),
+            ("#/glossary/A1-01", "Glossar"),
+            ("#/drill/A1-01", "bung"),
+            ("#/progress", "Fortschritt"),
+        ]
+        for route, expected in routes:
+            page.evaluate(f"location.hash = {json.dumps(route)}")
+            page.wait_for_timeout(400)
+            text = page.locator("#screen").inner_text()
+            assert text.strip(), f"{route} rendered nothing"
+            assert "undefined" not in text, f"{route} rendered literal 'undefined': {text[:200]}"
+            assert expected in text, f"{route} missing expected text {expected!r}: {text[:200]}"
+
+        browser.close()
+
+
+def test_player_saves_progress_during_playback(server_url):
+    """The player must auto-save while playing, with no manual POST.
+
+    Regression: player.load() never assigned `this.detail`, so _maybeSave and
+    _save both returned early and no progress was ever written during ordinary
+    listening. The other smoke test POSTs progress by hand and only checks
+    restore, so it passed despite the broken auto-save.
+    """
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            args=["--autoplay-policy=no-user-gesture-required", "--no-sandbox"]
+        )
+        page = browser.new_page()
+        posts = []
+        page.on("request", lambda req: posts.append(req.url) if req.method == "POST" else None)
+        page.goto(server_url + "/#/play/A1-01", wait_until="load")
+        page.wait_for_selector("input#seek", timeout=15_000)
+
+        # The player must retain the lesson detail after load().
+        has_detail = page.evaluate(
+            "async () => (await import('/js/player.js')).player.detail !== null"
+        )
+        assert has_detail, "player.load() must keep the lesson detail for progress saving"
+
+        # Play longer than SAVE_INTERVAL_MS (4 s) so the periodic save fires.
+        page.locator("[data-action=play]").click()
+        page.wait_for_timeout(5_000)
+        assert any("/api/progress" in url for url in posts), (
+            f"no automatic progress POST during playback (posts={posts})"
+        )
+        browser.close()
+
+
 def test_range_requests_serve_sliced_bytes(server_url):
     import urllib.request
 

@@ -7,8 +7,9 @@ export async function render() {
   let progress = null;
   let lessons = [];
   try {
-    [progress, { lessons: all }] = await Promise.all([api.progress(), api.lessons()]);
-    lessons = all;
+    const [p, catalogue] = await Promise.all([api.progress(), api.lessons()]);
+    progress = p;
+    lessons = catalogue.lessons;
   } catch (error) {
     return statusBlock(
       'Kein lokaler Server',
