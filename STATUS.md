@@ -11,17 +11,17 @@
 DoD (plan §14): 12 lessons (2 per level A1→C2), all validate and render and play;
 `make validate --all` → 0 errors; you finish one without wanting to stop.
 
-**M9 authoring is COMPLETE at full plan depth.** All 12 lessons expanded to the §9.1
-volume targets (A1 55, A2 70, B1 92–98, B2 125, C1 100–141, C2 132 segs/lesson).
-`make validate --all` → 12 lessons, 0 errors, 0 warnings. `ruff check src tests` clean,
-`pytest` → 186 passed. C2-01 and C2-02 were authored from scratch at full depth via
-`/tmp/spec_c2*.py` compact DSL; A1/A2/B1/B2/C1 expanded from the shallow pilots.
+**M9 is DONE.** All 12 lessons at full §9.1 depth (A1 55, A2 70, B1 92–98, B2 125,
+C1 100–141, C2 132 segs/lesson), all validate (0 errors, 0 warnings) and all render.
+`ruff check src tests` clean, `pytest` → 186 passed. All 12 re-rendered from scratch at
+full depth (background batch `OMlabn`, log `/tmp/m9_render.log`, ~5.5 h sequential CPU);
+every lesson verified: `lines/` count == JSON segs == timeline entries, drift ≤ 7 ms,
+output loudness −16.42…−16.50 LUFS (target −16), SRT cues present, manifest `script_hash`
+matches the current JSON for all 12 (no stale audio). Authoring commit `095c14c`.
 
-**M9 render batch is RUNNING** (background `OMlabn`, log `/tmp/m9_render.log`). A1-01 was
-already re-rendered at 55 segs (196.8 s, −17.00 LUFS, 0 ms drift). The other 11 have
-stale shallow audio and are being re-rendered sequentially (CPU ≈ 16 s/seg). When the
-batch finishes: verify every lesson's `lines/` count == JSON segment count, `mp3`
-duration, timeline drift and loudness; then flip M9 to DONE and move to M10 (scale to 72).
+**Next: M10 — scale to 72 lessons** (12 per level, up from 2 in M9). Use `corpus suggest`
+to mine material and the compact DSL to author at §9.1 depth; never auto-generate a
+lesson (plan §8.5). Reuse the render pipeline + content-addressed cache.
 
 **M6 is DONE** (see milestone row + log). `content/corpus/clips.jsonl` holds 790 scored
 candidates; `corpus suggest --level B1 --situation work` returns 30; the
@@ -49,7 +49,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | M6 | Corpus stages A–C | DONE | `3d66834` — 22 playlists → 728 unique videos (stage A, 0 errors); 150 fetched → 144 with captions, 241,804 word rows (stage B); 790 scored candidates in `content/corpus/clips.jsonl`; `corpus suggest --level B1 --situation work` → 30 (≥3); server endpoint returns real candidates; `make check` 174 passed |
 | M7 | Server | DONE | 135 tests (36 server + 5 pipeline). 16 routes on 127.0.0.1:8766; `Range: bytes=0-99` → **206**, `Content-Range: bytes 0-99/2048`, body exactly 100 bytes; suffix range → tail; `bytes=99999-` → **416**; `/api/health` reports VoiceStudio down (`[Errno 111] Connection refused`) without hanging; `assert_loopback` refuses `0.0.0.0`/LAN; live `make serve` returned A2-01 + honest health; commit `e6d4f97` |
 | M8 | Client | DONE | 152 tests (16 asset + 2 Playwright smoke). 8 screens; service worker with byte-range slicing (206/416 verified against HTTP semantics); position restored from `/api/progress` after reload; offline after first play; keyboard-only usable; commit `27a746d` |
-| M9 | Pilot 12 lessons | IN PROGRESS | 12 lessons (2 per level) at full §9.1 depth: A1 55, A2 70, B1 92–98, B2 125, C1 100–141, C2 132 segs. `make validate --all` → **12 lessons, 0 errors, 0 warnings**; `ruff` clean; `pytest` 186 passed. A1-01 re-rendered at 55 segs (196.8 s, −17.00 LUFS, 0 ms drift). Other 11 re-rendering sequentially (CPU ≈ 16 s/seg). |
+| M9 | Pilot 12 lessons | DONE | `095c14c` — 12 lessons (2 per level) at full §9.1 depth: A1 55, A2 70, B1 92–98, B2 125, C1 100–141, C2 132 segs. `make validate --all` → **12 lessons, 0 errors, 0 warnings**; `ruff` clean; `pytest` 186 passed. All 12 re-rendered at full depth (~5.5 h sequential CPU): every lesson has `lines/`==segs==timeline entries, drift ≤ 7 ms (spec ±50), output −16.42…−16.50 LUFS, SRT cues present, and manifest `script_hash` matches current JSON (no stale audio). |
 | M10 | Scale to 72 | TODO | — |
 | M11 | Release | TODO | — |
 
@@ -101,4 +101,6 @@ advisory — objective waveform-distinctness passed 6/6.
 | 2026-11-18 | M9 | Expanded all 12 pilot lessons from shallow drafts to plan §9.1 depth (A1 55 / A2 70 / B1 92–98 / B2 125 / C1 100–141 / C2 132 segs). Authored C2-01 and C2-02 from scratch with the compact `/tmp/spec_c2*.py` DSL. All 12 validate with 0 errors/0 warnings; `pytest` 186 passed. |
 | — | — | **Correction:** `tests/test_render.py::test_cli_render_renders_segments_end_to_end` hard-coded A2-01's original 28 segments. After expanding A2-01 to 70 it failed. Fixed to derive `n` from the lesson JSON so the guard survives future edits. Only this one test was coupled to the old count. |
 | — | — | **Authoring gotcha:** C2 specs went through `/tmp/lh.py` + `/tmp/lesson_builder.py`; a regex gloss checker gave false `", "` errors on nested quotes. Replaced with a direct-import check that reads `S1/S2` and `G1/G2` objects — found real issues: `g_auss sprechen` (space), `g_bloß` (umlaut), `durchaus` (missing `g_`), `g_beispiel` (missing entry). Rule: glossary/segment ids must be ASCII `^[A-Za-z0-9_-]+$`; validate refs by import, never regex. |
+| 2026-11-18 | M9 | Full-depth render batch finished: all 12 lessons re-rendered sequentially in ~5.5 h (background `OMlabn`, `rc=0` for all, zero errors). Verified each: `lines/*.mp3` count == JSON segment count == `timeline.json` entries, mp3 vs manifest `duration_ms` drift ≤ 7 ms (spec ±50), output loudness −16.42…−16.50 LUFS (target −16), SRT cues present. Manifest `script_hash` recomputed from each current lesson JSON matched the audio manifest for all 12 → no stale render. M9 → DONE. |
+| — | — | **Measurement gotcha:** naive drift = mp3 duration − last `timeline.end_ms` shows ~800 ms and looks like a defect; it is the final segment's `pause_after_ms` tail, which is intentionally outside any cue's `end_ms`. The correct reference is `manifest.duration_ms` (includes tail) → drift 0–7 ms. Likewise +2100 ms "gaps" between segments are all `check` segments using `answer_pause_ms=2500` as thinking time instead of the normal 400 ms tail — not timeline corruption. |
 
