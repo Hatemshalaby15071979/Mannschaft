@@ -5,18 +5,20 @@
   "title": { "de": "Begrüßung und Vorstellung", "en": "Greetings and introductions" },
   "minutes": 8,
   "scene": {
-    "setting_de": "Erster Tag im Deutschkurs. Anna kommt in den Raum und trifft Tom.",
-    "setting_en": "First day at the German course. Anna comes into the room and meets Tom.",
+    "setting_de": "Erster Tag im Deutschkurs. Anna kommt in den Raum und trifft Tom, den Lehrer und eine weitere Studentin.",
+    "setting_en": "First day at the German course. Anna comes into the room and meets Tom, the teacher, and another student.",
     "register": "informal",
-    "can_do_de": "Ich kann mich vorstellen, nach dem Namen und dem Land fragen und sagen, was ich mache.",
-    "can_do_en": "I can introduce myself, ask for a name and a country, and say what I do.",
+    "can_do_de": "Ich kann mich vorstellen, nach dem Namen und dem Land fragen, sagen was ich mache und höflich mit Sie sprechen.",
+    "can_do_en": "I can introduce myself, ask for a name and a country, say what I do, and speak politely using Sie.",
     "situation_tags": ["first-day", "introductions", "small-talk"],
-    "grammar_focus": ["ich-bin-du-bist", "w-fragen", "praesens"]
+    "grammar_focus": ["ich-bin-du-bist", "w-fragen", "praesens", "du-vs-sie"]
   },
   "cast": [
     { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
     { "role": "anna", "voice": "de_young_f", "lang": "de" },
-    { "role": "tom", "voice": "de_young_m", "lang": "de" }
+    { "role": "tom", "voice": "de_young_m", "lang": "de" },
+    { "role": "lehrer", "voice": "de_older_m", "lang": "de" },
+    { "role": "maria", "voice": "de_older_f", "lang": "de" }
   ],
   "segments": [
     {
@@ -233,9 +235,165 @@
       "gloss": ["g_bis_spaeter"]
     },
     {
-      "id": "s032", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: sich vorstellen, nach dem Land fragen und sagen, was du machst.",
-      "translation": "Today you learned: introducing yourself, asking about a country, and saying what you do.",
+      "id": "s032", "type": "note", "speaker": "narrator",
+      "text": "Im Kurs sagt man du. Bei Fremden und im Amt sagt man Sie.",
+      "translation": "In the course people use du. With strangers and at official offices people use Sie.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s033", "type": "line", "speaker": "anna",
+      "text": "Entschuldigung, wie heißen Sie?",
+      "translation": "Excuse me, what is your name?",
+      "pause_after_ms": 700,
+      "gloss": ["g_heissen"]
+    },
+    {
+      "id": "s034", "type": "line", "speaker": "lehrer",
+      "text": "Ich heiße Weber. Und Sie?",
+      "translation": "My name is Weber. And you?",
+      "pause_after_ms": 800,
+      "gloss": ["g_heissen"]
+    },
+    {
+      "id": "s035", "type": "line", "speaker": "anna",
+      "text": "Ich heiße Anna López.",
+      "translation": "My name is Anna López.",
+      "pause_after_ms": 700,
+      "gloss": ["g_heissen"]
+    },
+    {
+      "id": "s036", "type": "line", "speaker": "lehrer",
+      "text": "Freut mich, Frau López.",
+      "translation": "Nice to meet you, Ms López.",
+      "pause_after_ms": 800,
+      "gloss": ["g_freut_mich"]
+    },
+    {
+      "id": "s037", "type": "echo", "speaker": "anna",
+      "text": "Wie heißen Sie?",
+      "translation": "What is your name? (formal)",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1200
+    },
+    {
+      "id": "s038", "type": "check", "speaker": "narrator",
+      "text": "Wie heißt der Lehrer?",
+      "translation": "What is the teacher's name?",
+      "answers": ["Weber"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s039", "type": "note", "speaker": "narrator",
+      "text": "Ich heiße Anna bedeutet dasselbe wie Ich bin Anna.",
+      "translation": "Ich heiße Anna means the same as Ich bin Anna.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s040", "type": "vocab", "speaker": "narrator",
+      "text": "heißen",
+      "translation": "to be called",
+      "pause_after_ms": 900,
+      "gloss": ["g_heissen"]
+    },
+    {
+      "id": "s041", "type": "line", "speaker": "tom",
+      "text": "Wie geht es dir, Anna?",
+      "translation": "How are you, Anna?",
+      "pause_after_ms": 700,
+      "gloss": ["g_wie_gehts"]
+    },
+    {
+      "id": "s042", "type": "line", "speaker": "anna",
+      "text": "Gut, danke. Und dir?",
+      "translation": "Good, thanks. And you?",
+      "pause_after_ms": 800,
+      "gloss": ["g_wie_gehts"]
+    },
+    {
+      "id": "s043", "type": "line", "speaker": "tom",
+      "text": "Auch gut, danke.",
+      "translation": "Also good, thanks.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s044", "type": "drill", "speaker": "anna",
+      "text": "Wie geht es dir? Gut, danke. Und dir?",
+      "translation": "How are you? Good, thanks. And you?",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1000
+    },
+    {
+      "id": "s045", "type": "check", "speaker": "narrator",
+      "text": "Wie geht es Anna?",
+      "translation": "How is Anna?",
+      "answers": ["gut"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s046", "type": "line", "speaker": "anna",
+      "text": "Das ist Maria. Sie kommt aus Italien.",
+      "translation": "This is Maria. She is from Italy.",
+      "pause_after_ms": 800,
+      "gloss": ["g_das_ist", "g_sie"]
+    },
+    {
+      "id": "s047", "type": "line", "speaker": "tom",
+      "text": "Hallo Maria! Ich bin Tom.",
+      "translation": "Hello Maria! I'm Tom.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s048", "type": "line", "speaker": "maria",
+      "text": "Hallo Tom! Freut mich.",
+      "translation": "Hello Tom! Nice to meet you.",
+      "pause_after_ms": 800,
+      "gloss": ["g_freut_mich"]
+    },
+    {
+      "id": "s049", "type": "note", "speaker": "narrator",
+      "text": "sie mit kleinem s heißt she. Sie mit großem S heißt you, höflich.",
+      "translation": "sie with a small s means she. Sie with a capital S means you, formal.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s050", "type": "check", "speaker": "narrator",
+      "text": "Woher kommt Maria?",
+      "translation": "Where is Maria from?",
+      "answers": ["aus Italien"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s051", "type": "vocab", "speaker": "narrator",
+      "text": "das ist",
+      "translation": "this is",
+      "pause_after_ms": 900,
+      "gloss": ["g_das_ist"]
+    },
+    {
+      "id": "s052", "type": "line", "speaker": "lehrer",
+      "text": "Auf Wiedersehen!",
+      "translation": "Goodbye!",
+      "pause_after_ms": 700,
+      "gloss": ["g_auf_wiedersehen"]
+    },
+    {
+      "id": "s053", "type": "line", "speaker": "anna",
+      "text": "Auf Wiedersehen!",
+      "translation": "Goodbye!",
+      "pause_after_ms": 700,
+      "gloss": ["g_auf_wiedersehen"]
+    },
+    {
+      "id": "s054", "type": "echo", "speaker": "anna",
+      "text": "Auf Wiedersehen.",
+      "translation": "Goodbye.",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1200
+    },
+    {
+      "id": "s055", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: sich vorstellen, nach dem Land fragen, sagen was du machst und höflich mit Sie sprechen.",
+      "translation": "Today you learned: introducing yourself, asking about a country, saying what you do, and speaking politely with Sie.",
       "pause_after_ms": 800
     }
   ],
@@ -323,6 +481,36 @@
     {
       "id": "g_bis_spaeter", "de": "bis später", "en": "see you later", "pos": "phrase",
       "example_de": "Bis später, Anna!", "example_en": "See you later, Anna!"
+    },
+    {
+      "id": "g_heissen", "de": "heißen", "en": "to be called", "pos": "verb",
+      "note_de": "Wie heißen Sie? ist die höfliche Form von Wie heißt du?",
+      "note_en": "Wie heißen Sie? is the polite form of Wie heißt du?",
+      "example_de": "Ich heiße Anna.", "example_en": "My name is Anna."
+    },
+    {
+      "id": "g_wie_gehts", "de": "wie geht es dir?", "en": "how are you?", "pos": "phrase",
+      "note_de": "Höflich: Wie geht es Ihnen?",
+      "note_en": "Polite form: Wie geht es Ihnen?",
+      "example_de": "Wie geht es dir, Anna?", "example_en": "How are you, Anna?"
+    },
+    {
+      "id": "g_das_ist", "de": "das ist", "en": "this is", "pos": "phrase",
+      "note_de": "Zum Vorstellen von Personen und Dingen.",
+      "note_en": "Used to introduce people and things.",
+      "example_de": "Das ist Maria.", "example_en": "This is Maria."
+    },
+    {
+      "id": "g_sie", "de": "sie / Sie", "en": "she / you (formal)", "pos": "pronoun",
+      "note_de": "Kleines s: she. Großes S: Sie, höfliche Anrede.",
+      "note_en": "Small s: she. Capital S: you, formal address.",
+      "example_de": "Sie kommt aus Italien.", "example_en": "She is from Italy."
+    },
+    {
+      "id": "g_auf_wiedersehen", "de": "auf Wiedersehen", "en": "goodbye", "pos": "phrase",
+      "note_de": "Formeller als tschüss.",
+      "note_en": "More formal than tschüss.",
+      "example_de": "Auf Wiedersehen, Frau López!", "example_en": "Goodbye, Ms López!"
     }
   ],
   "meta": {

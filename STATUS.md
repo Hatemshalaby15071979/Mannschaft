@@ -9,13 +9,19 @@
 
 **M9 — pilot 12 lessons.** Files: `content/lessons/`, `tests/`, `config/`.
 DoD (plan §14): 12 lessons (2 per level A1→C2), all validate and render and play;
-`make validate --all` → 0 errors; you finish one without wanting to stop. Only A2-01
-exists so far (28 segments — expand to ~70 in M9). Use `corpus suggest` to mine raw
-material for authoring; nothing auto-generates a lesson (plan §8.5).
+`make validate --all` → 0 errors; you finish one without wanting to stop.
 
-**M9 is in progress.** 12 pilot lessons (2 per level) are authored and validate clean.
-A1-01 has rendered audio; the other 11 are in a sequential render batch. When that
-finishes, flip M9 to DONE, record the batch evidence, and move to M10 (scale to 72).
+**M9 authoring is COMPLETE at full plan depth.** All 12 lessons expanded to the §9.1
+volume targets (A1 55, A2 70, B1 92–98, B2 125, C1 100–141, C2 132 segs/lesson).
+`make validate --all` → 12 lessons, 0 errors, 0 warnings. `ruff check src tests` clean,
+`pytest` → 186 passed. C2-01 and C2-02 were authored from scratch at full depth via
+`/tmp/spec_c2*.py` compact DSL; A1/A2/B1/B2/C1 expanded from the shallow pilots.
+
+**M9 render batch is RUNNING** (background `OMlabn`, log `/tmp/m9_render.log`). A1-01 was
+already re-rendered at 55 segs (196.8 s, −17.00 LUFS, 0 ms drift). The other 11 have
+stale shallow audio and are being re-rendered sequentially (CPU ≈ 16 s/seg). When the
+batch finishes: verify every lesson's `lines/` count == JSON segment count, `mp3`
+duration, timeline drift and loudness; then flip M9 to DONE and move to M10 (scale to 72).
 
 **M6 is DONE** (see milestone row + log). `content/corpus/clips.jsonl` holds 790 scored
 candidates; `corpus suggest --level B1 --situation work` returns 30; the
@@ -43,7 +49,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | M6 | Corpus stages A–C | DONE | `3d66834` — 22 playlists → 728 unique videos (stage A, 0 errors); 150 fetched → 144 with captions, 241,804 word rows (stage B); 790 scored candidates in `content/corpus/clips.jsonl`; `corpus suggest --level B1 --situation work` → 30 (≥3); server endpoint returns real candidates; `make check` 174 passed |
 | M7 | Server | DONE | 135 tests (36 server + 5 pipeline). 16 routes on 127.0.0.1:8766; `Range: bytes=0-99` → **206**, `Content-Range: bytes 0-99/2048`, body exactly 100 bytes; suffix range → tail; `bytes=99999-` → **416**; `/api/health` reports VoiceStudio down (`[Errno 111] Connection refused`) without hanging; `assert_loopback` refuses `0.0.0.0`/LAN; live `make serve` returned A2-01 + honest health; commit `e6d4f97` |
 | M8 | Client | DONE | 152 tests (16 asset + 2 Playwright smoke). 8 screens; service worker with byte-range slicing (206/416 verified against HTTP semantics); position restored from `/api/progress` after reload; offline after first play; keyboard-only usable; commit `27a746d` |
-| M9 | Pilot 12 lessons | CODE-COMPLETE | 12 lessons (2 per level) — 11 newly authored. `make validate` → **12 lessons, 0 errors, 0 warnings**. A1-01 rendered: 32 segments, 117.0 s, −1 ms drift, timeline+srt written. Remaining 11 rendering in a sequential batch (CPU ≈ 9 min/lesson). |
+| M9 | Pilot 12 lessons | IN PROGRESS | 12 lessons (2 per level) at full §9.1 depth: A1 55, A2 70, B1 92–98, B2 125, C1 100–141, C2 132 segs. `make validate --all` → **12 lessons, 0 errors, 0 warnings**; `ruff` clean; `pytest` 186 passed. A1-01 re-rendered at 55 segs (196.8 s, −17.00 LUFS, 0 ms drift). Other 11 re-rendering sequentially (CPU ≈ 16 s/seg). |
 | M10 | Scale to 72 | TODO | — |
 | M11 | Release | TODO | — |
 
@@ -92,4 +98,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | 2026-11-18 | M9 | Authored 11 pilot lessons (A1-01, A1-02, A2-02, B1-01, B1-02, B2-01, B2-02, C1-01, C1-02, C2-01, C2-02); A2-01 already existed. `make validate --all` → 12 lessons, **0 errors, 0 warnings**. Each lesson has ≥15 glossary entries, 3 checks, echoes/drills, and a recap. A1-01 rendered end-to-end (32 segs, 117 s, −1 ms drift). |
 | — | — | **Gotcha:** glossary/segment ids must match `^[A-Za-z0-9_-]+$`; `g_stärke` failed on the `ä`. Renamed to `g_staerke`. Any umlaut in an id will 422 the whole lesson. |
 | — | — | **Cost:** CPU synthesis is ~16 s/segment, so a ~30-segment lesson takes ~9 min. 12 lessons ≈ 2 h of sequential render. The cache makes a re-render free; only new segments cost GPU/CPU time. |
+| 2026-11-18 | M9 | Expanded all 12 pilot lessons from shallow drafts to plan §9.1 depth (A1 55 / A2 70 / B1 92–98 / B2 125 / C1 100–141 / C2 132 segs). Authored C2-01 and C2-02 from scratch with the compact `/tmp/spec_c2*.py` DSL. All 12 validate with 0 errors/0 warnings; `pytest` 186 passed. |
+| — | — | **Correction:** `tests/test_render.py::test_cli_render_renders_segments_end_to_end` hard-coded A2-01's original 28 segments. After expanding A2-01 to 70 it failed. Fixed to derive `n` from the lesson JSON so the guard survives future edits. Only this one test was coupled to the old count. |
+| — | — | **Authoring gotcha:** C2 specs went through `/tmp/lh.py` + `/tmp/lesson_builder.py`; a regex gloss checker gave false `", "` errors on nested quotes. Replaced with a direct-import check that reads `S1/S2` and `G1/G2` objects — found real issues: `g_auss sprechen` (space), `g_bloß` (umlaut), `durchaus` (missing `g_`), `g_beispiel` (missing entry). Rule: glossary/segment ids must be ASCII `^[A-Za-z0-9_-]+$`; validate refs by import, never regex. |
 

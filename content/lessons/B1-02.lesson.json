@@ -2,286 +2,1446 @@
   "schema": "lesson-script/v1",
   "id": "B1-02",
   "level": "B1",
-  "title": { "de": "Das Bewerbungsgespräch", "en": "The job interview" },
+  "title": {
+    "de": "Das Bewerbungsgespräch",
+    "en": "The job interview"
+  },
   "minutes": 14,
   "scene": {
-    "setting_de": "Ein Bewerbungsgespräch in einem Büro. Frau Lang hat einen Termin.",
-    "setting_en": "A job interview in an office. Ms Lang has an appointment.",
+    "setting_de": "Ein Bewerbungsgespräch in einem mittelgroßen Unternehmen. Die Personalerin führt das Gespräch, der Abteilungsleiter fragt Fachliches.",
+    "setting_en": "A job interview at a medium-sized company. The HR manager leads, the department head asks technical questions.",
     "register": "formal-work",
-    "can_do_de": "Ich kann mich höflich bewerben, über Erfahrung sprechen und Fragen mit Konjunktiv II stellen.",
-    "can_do_en": "I can apply politely, talk about experience, and ask questions with the Konjunktiv II.",
-    "situation_tags": ["work", "interview", "career"],
-    "grammar_focus": ["konjunktiv-2-hoeflich", "perfekt", "fragen"]
+    "can_do_de": "Ich kann mich höflich vorstellen, über Erfahrung und Stärken sprechen und höfliche Wünsche mit Konjunktiv II formulieren.",
+    "can_do_en": "I can introduce myself politely, talk about experience and strengths, and phrase polite requests with the subjunctive.",
+    "situation_tags": [
+      "work",
+      "application",
+      "interview"
+    ],
+    "grammar_focus": [
+      "konjunktiv-2-hoeflich",
+      "perfekt",
+      "modalverben"
+    ]
   },
   "cast": [
-    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
-    { "role": "bewerber", "voice": "de_young_f", "lang": "de" },
-    { "role": "personalerin", "voice": "de_older_f", "lang": "de" }
+    {
+      "role": "narrator",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "personalerin",
+      "voice": "de_older_f",
+      "lang": "de"
+    },
+    {
+      "role": "bewerberin",
+      "voice": "de_young_f",
+      "lang": "de"
+    },
+    {
+      "role": "abteilungsleiter",
+      "voice": "de_older_m",
+      "lang": "de"
+    }
   ],
   "segments": [
     {
-      "id": "s001", "type": "scene", "speaker": "narrator",
-      "text": "Ein Bewerbungsgespräch in einem Büro. Frau Lang hat einen Termin.",
-      "translation": "A job interview in an office. Ms Lang has an appointment.",
-      "pause_after_ms": 600
-    },
-    {
-      "id": "s002", "type": "line", "speaker": "personalerin",
-      "text": "Guten Tag, Frau Lang. Nehmen Sie bitte Platz.",
-      "translation": "Good day, Ms Lang. Please take a seat.",
-      "pause_after_ms": 600,
-      "gloss": ["g_platz_nehmen"]
-    },
-    {
-      "id": "s003", "type": "line", "speaker": "bewerber",
-      "text": "Vielen Dank. Ich freue mich über das Gespräch.",
-      "translation": "Thank you very much. I'm glad about the interview.",
-      "pause_after_ms": 700,
-      "gloss": ["g_gespraech"]
-    },
-    {
-      "id": "s004", "type": "line", "speaker": "personalerin",
-      "text": "Erzählen Sie mir bitte etwas über sich.",
-      "translation": "Please tell me a little about yourself.",
+      "id": "s001",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Ein Bewerbungsgespräch. Die Personalerin begrüßt die Bewerberin.",
+      "translation": "A job interview. The HR manager greets the applicant.",
       "pause_after_ms": 700
     },
     {
-      "id": "s005", "type": "line", "speaker": "bewerber",
-      "text": "Ich habe drei Jahre als Projektmanagerin gearbeitet.",
-      "translation": "I worked as a project manager for three years.",
+      "id": "s002",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Guten Tag. Ich freue mich, dass Sie da sind.",
+      "translation": "Good day. I'm glad you're here.",
       "pause_after_ms": 700,
-      "gloss": ["g_projektmanagerin", "g_erfahrung"]
+      "gloss": [
+        "g_begruessen"
+      ]
     },
     {
-      "id": "s006", "type": "line", "speaker": "bewerber",
-      "text": "Ich würde gern in einem internationalen Team arbeiten.",
-      "translation": "I would like to work in an international team.",
-      "pause_after_ms": 700,
-      "gloss": ["g_konjunktiv2", "g_international"]
-    },
-    {
-      "id": "s007", "type": "check", "speaker": "narrator",
-      "text": "Wie lange hat Frau Lang als Projektmanagerin gearbeitet?",
-      "translation": "How long did Ms Lang work as a project manager?",
-      "answers": ["drei Jahre"],
-      "answer_pause_ms": 2500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s008", "type": "note", "speaker": "narrator",
-      "text": "Konjunktiv II macht Bitten höflich: ich würde gern, könnten Sie, hätten Sie.",
-      "translation": "Konjunktiv II makes requests polite: I would like, could you, would you have.",
-      "speed": 0.95, "pause_after_ms": 500, "skippable": true
-    },
-    {
-      "id": "s009", "type": "line", "speaker": "personalerin",
-      "text": "Warum möchten Sie zu uns kommen?",
-      "translation": "Why would you like to come to us?",
-      "pause_after_ms": 600
-    },
-    {
-      "id": "s010", "type": "line", "speaker": "bewerber",
-      "text": "Ihre Firma hat einen guten Ruf. Ich könnte hier viel lernen.",
-      "translation": "Your company has a good reputation. I could learn a lot here.",
-      "pause_after_ms": 700,
-      "gloss": ["g_ruf"]
-    },
-    {
-      "id": "s011", "type": "line", "speaker": "personalerin",
-      "text": "Was sind Ihre Stärken?",
-      "translation": "What are your strengths?",
-      "pause_after_ms": 600,
-      "gloss": ["g_staerke"]
-    },
-    {
-      "id": "s012", "type": "line", "speaker": "bewerber",
-      "text": "Ich bin organisiert und arbeite gern im Team.",
-      "translation": "I'm organized and I like working in a team.",
-      "pause_after_ms": 700,
-      "gloss": ["g_organisiert"]
-    },
-    {
-      "id": "s013", "type": "line", "speaker": "personalerin",
-      "text": "Und wo sehen Sie sich in fünf Jahren?",
-      "translation": "And where do you see yourself in five years?",
+      "id": "s003",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Guten Tag. Ich freue mich auch, Sie kennenzulernen.",
+      "translation": "Good day. I'm pleased to meet you too.",
       "pause_after_ms": 700
     },
     {
-      "id": "s014", "type": "line", "speaker": "bewerber",
-      "text": "Ich würde gern mehr Verantwortung übernehmen.",
-      "translation": "I would like to take on more responsibility.",
+      "id": "s004",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Darf ich Ihnen zuerst eine Frage stellen?",
+      "translation": "May I ask you a question first?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s005",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ja, bitte.",
+      "translation": "Yes, please.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s006",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Können Sie sich bitte kurz vorstellen?",
+      "translation": "Could you introduce yourself briefly, please?",
       "pause_after_ms": 700,
-      "gloss": ["g_verantwortung", "g_uebernehmen"]
+      "gloss": [
+        "g_vorstellen"
+      ]
     },
     {
-      "id": "s015", "type": "check", "speaker": "narrator",
-      "text": "Was möchte Frau Lang in fünf Jahren?",
-      "translation": "What does Ms Lang want in five years?",
-      "answers": ["mehr Verantwortung übernehmen"],
+      "id": "s007",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wer führt das Gespräch zuerst?",
+      "translation": "Who leads the interview first?",
       "answer_pause_ms": 2500,
-      "pause_after_ms": 400
+      "pause_after_ms": 400,
+      "answers": [
+        "die Personalerin"
+      ]
     },
     {
-      "id": "s016", "type": "drill", "speaker": "bewerber",
-      "text": "Ich würde gern mehr Verantwortung übernehmen.",
-      "translation": "I would like to take on more responsibility.",
-      "repeat": 2, "speed": 0.9, "pause_after_ms": 1000
-    },
-    {
-      "id": "s017", "type": "line", "speaker": "personalerin",
-      "text": "Hätten Sie noch Fragen an uns?",
-      "translation": "Would you still have any questions for us?",
-      "pause_after_ms": 600,
-      "gloss": ["g_konjunktiv2"]
-    },
-    {
-      "id": "s018", "type": "line", "speaker": "bewerber",
-      "text": "Ja. Könnten Sie mir etwas über die Arbeitszeiten sagen?",
-      "translation": "Yes. Could you tell me something about the working hours?",
+      "id": "s008",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich heiße Lisa und habe letztes Jahr mein Studium abgeschlossen.",
+      "translation": "My name is Lisa and I finished my degree last year.",
       "pause_after_ms": 700,
-      "gloss": ["g_arbeitszeit"]
+      "gloss": [
+        "g_studium",
+        "g_abschliessen"
+      ]
     },
     {
-      "id": "s019", "type": "line", "speaker": "personalerin",
-      "text": "Natürlich. Wir haben flexible Arbeitszeiten.",
-      "translation": "Of course. We have flexible working hours.",
+      "id": "s009",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Danach habe ich zwei Jahre als Entwicklerin gearbeitet.",
+      "translation": "After that I worked as a developer for two years.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_entwicklerin"
+      ]
+    },
+    {
+      "id": "s010",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Was haben Sie in dieser Zeit gelernt?",
+      "translation": "What did you learn during that time?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_perfekt"
+      ]
+    },
+    {
+      "id": "s011",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich habe gelernt, im Team zu arbeiten und Projekte selbstständig zu leiten.",
+      "translation": "I learned to work in a team and to lead projects independently.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_selbststaendig"
+      ]
+    },
+    {
+      "id": "s012",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II höflich: Könnten Sie…? Hätten Sie…? Das klingt freundlicher als Können Sie…?",
+      "translation": "Polite subjunctive: Könnten Sie…? Hätten Sie…? That sounds friendlier than Können Sie…?",
+      "speed": 0.95,
       "pause_after_ms": 600,
-      "gloss": ["g_flexibel"]
+      "skippable": true
     },
     {
-      "id": "s020", "type": "line", "speaker": "bewerber",
-      "text": "Das klingt gut. Wann könnte ich anfangen?",
-      "translation": "That sounds good. When could I start?",
-      "pause_after_ms": 600,
-      "gloss": ["g_anfangen"]
-    },
-    {
-      "id": "s021", "type": "line", "speaker": "personalerin",
-      "text": "Ab dem ersten nächsten Monats.",
-      "translation": "From the first of next month.",
-      "pause_after_ms": 600
-    },
-    {
-      "id": "s022", "type": "check", "speaker": "narrator",
-      "text": "Wann könnte Frau Lang anfangen?",
-      "translation": "When could Ms Lang start?",
-      "answers": ["ab dem ersten nächsten Monats"],
+      "id": "s013",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was hat die Bewerberin nach dem Studium gemacht?",
+      "translation": "What did the applicant do after her studies?",
       "answer_pause_ms": 2500,
-      "pause_after_ms": 400
+      "pause_after_ms": 400,
+      "answers": [
+        "Sie hat zwei Jahre als Entwicklerin gearbeitet."
+      ]
     },
     {
-      "id": "s023", "type": "line", "speaker": "bewerber",
-      "text": "Perfekt. Vielen Dank für das Gespräch.",
-      "translation": "Perfect. Thank you very much for the interview.",
+      "id": "s014",
+      "type": "echo",
+      "speaker": "bewerberin",
+      "text": "Ich habe zwei Jahre als Entwicklerin gearbeitet.",
+      "translation": "I worked as a developer for two years.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s015",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Guten Tag. Ich hätte gern gewusst, welche Technologien Sie beherrschen.",
+      "translation": "Good day. I'd like to know which technologies you master.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_beherrschen"
+      ]
+    },
+    {
+      "id": "s016",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich arbeite seit drei Jahren mit Python und seit einem Jahr mit React.",
+      "translation": "I've worked with Python for three years and with React for one year.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_seit"
+      ]
+    },
+    {
+      "id": "s017",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Hätten Sie ein Beispiel für ein schwieriges Projekt?",
+      "translation": "Do you have an example of a difficult project?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_beispiel"
+      ]
+    },
+    {
+      "id": "s018",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ja. Letztes Jahr haben wir eine App neu entwickelt, obwohl der Termin knapp war.",
+      "translation": "Yes. Last year we developed an app from scratch, even though the deadline was tight.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_obwohl",
+        "g_knapp"
+      ]
+    },
+    {
+      "id": "s019",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welche Technologie nutzt die Bewerberin seit einem Jahr?",
+      "translation": "Which technology has the applicant used for one year?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "React"
+      ]
+    },
+    {
+      "id": "s020",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Wie hätten Sie das Problem gelöst?",
+      "translation": "How would you have solved the problem?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_loesen"
+      ]
+    },
+    {
+      "id": "s021",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich hätte zuerst mit dem Team gesprochen und dann einen Plan gemacht.",
+      "translation": "I would have talked with the team first and then made a plan.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s022",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II im Perfekt: ich hätte gemacht, ich wäre gegangen.",
+      "translation": "Subjunctive II in the perfect: ich hätte gemacht, ich wäre gegangen.",
+      "speed": 0.95,
       "pause_after_ms": 600,
-      "gloss": ["g_gespraech"]
+      "skippable": true
     },
     {
-      "id": "s024", "type": "line", "speaker": "personalerin",
-      "text": "Wir melden uns bis Ende der Woche.",
-      "translation": "We'll get in touch by the end of the week.",
-      "pause_after_ms": 800,
-      "gloss": ["g_melden"]
+      "id": "s023",
+      "type": "drill",
+      "speaker": "bewerberin",
+      "text": "Ich hätte zuerst mit dem Team gesprochen.",
+      "translation": "I would have talked with the team first.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
     },
     {
-      "id": "s025", "type": "vocab", "speaker": "narrator",
-      "text": "die Bewerbung",
-      "translation": "the application",
-      "pause_after_ms": 800,
-      "gloss": ["g_bewerbung"]
+      "id": "s024",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was hätte die Bewerberin zuerst getan?",
+      "translation": "What would the applicant have done first?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Sie hätte zuerst mit dem Team gesprochen."
+      ]
     },
     {
-      "id": "s026", "type": "vocab", "speaker": "narrator",
+      "id": "s025",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Was sind Ihrer Meinung nach Ihre Stärken?",
+      "translation": "In your opinion, what are your strengths?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_staerke"
+      ]
+    },
+    {
+      "id": "s026",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich bin zuverlässig und kann gut zuhören. Das hilft im Team sehr.",
+      "translation": "I'm reliable and a good listener. That helps a lot in a team.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zuverlaessig",
+        "g_zuzuhoeren"
+      ]
+    },
+    {
+      "id": "s027",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Und wo sehen Sie noch Entwicklungsmöglichkeiten?",
+      "translation": "And where do you see room for development?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_entwicklung"
+      ]
+    },
+    {
+      "id": "s028",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich würde gern meine Führungsfähigkeiten weiter ausbauen.",
+      "translation": "I'd like to further develop my leadership skills.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fuehrungsfaehigkeit"
+      ]
+    },
+    {
+      "id": "s029",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was ist eine Stärke der Bewerberin?",
+      "translation": "What is one of the applicant's strengths?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Sie ist zuverlässig und kann gut zuhören."
+      ]
+    },
+    {
+      "id": "s030",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Warum möchten Sie ausgerechnet zu uns?",
+      "translation": "Why do you want to join us in particular?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ausgerechnet"
+      ]
+    },
+    {
+      "id": "s031",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich habe von Ihrem Team gehört und würde gern daran mitarbeiten.",
+      "translation": "I've heard about your team and would like to work with it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_mitarbeiten"
+      ]
+    },
+    {
+      "id": "s032",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Hätten Sie einen Kommentar zu unserer Arbeitsweise?",
+      "translation": "Do you have any comments on our way of working?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s033",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich finde sie modern. Besonders die kurzen Wege gefallen mir.",
+      "translation": "I find it modern. I especially like the short communication lines.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gefallen"
+      ]
+    },
+    {
+      "id": "s034",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "gefallen funktioniert wie mögen: Die kurzen Wege gefallen mir. = I like the short lines.",
+      "translation": "gefallen works like mögen: Die kurzen Wege gefallen mir. = I like the short lines.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s035",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Vorstellungsgespräch",
+      "translation": "the job interview",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorstellungsgespraech"
+      ]
+    },
+    {
+      "id": "s036",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sich vorstellen",
+      "translation": "to introduce oneself",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorstellen"
+      ]
+    },
+    {
+      "id": "s037",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Studium",
+      "translation": "the university studies",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_studium"
+      ]
+    },
+    {
+      "id": "s038",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "abschließen",
+      "translation": "to complete / graduate",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_abschliessen"
+      ]
+    },
+    {
+      "id": "s039",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Entwicklerin",
+      "translation": "the developer (female)",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_entwicklerin"
+      ]
+    },
+    {
+      "id": "s040",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "selbstständig",
+      "translation": "independently",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_selbststaendig"
+      ]
+    },
+    {
+      "id": "s041",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "beherrschen",
+      "translation": "to master",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_beherrschen"
+      ]
+    },
+    {
+      "id": "s042",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Beispiel",
+      "translation": "the example",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_beispiel"
+      ]
+    },
+    {
+      "id": "s043",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "obwohl",
+      "translation": "although",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_obwohl"
+      ]
+    },
+    {
+      "id": "s044",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "knapp",
+      "translation": "tight / scarce",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_knapp"
+      ]
+    },
+    {
+      "id": "s045",
+      "type": "vocab",
+      "speaker": "narrator",
       "text": "die Stärke",
       "translation": "the strength",
-      "pause_after_ms": 800,
-      "gloss": ["g_staerke"]
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_staerke"
+      ]
     },
     {
-      "id": "s027", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: sich höflich bewerben mit Konjunktiv II.",
-      "translation": "Today you learned: applying politely with the Konjunktiv II.",
+      "id": "s046",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "zuverlässig",
+      "translation": "reliable",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zuverlaessig"
+      ]
+    },
+    {
+      "id": "s047",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Entwicklung",
+      "translation": "the development",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_entwicklung"
+      ]
+    },
+    {
+      "id": "s048",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "mitarbeiten",
+      "translation": "to work with / contribute",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_mitarbeiten"
+      ]
+    },
+    {
+      "id": "s049",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gefallen",
+      "translation": "to please / be liked",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gefallen"
+      ]
+    },
+    {
+      "id": "s050",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Warum möchte die Bewerberin zu dem Unternehmen?",
+      "translation": "Why does the applicant want to join the company?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Wegen des Teams."
+      ]
+    },
+    {
+      "id": "s051",
+      "type": "echo",
+      "speaker": "personalerin",
+      "text": "Können Sie sich bitte kurz vorstellen?",
+      "translation": "Could you introduce yourself briefly, please?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s052",
+      "type": "drill",
+      "speaker": "bewerberin",
+      "text": "Ich bin zuverlässig und kann gut zuhören.",
+      "translation": "I'm reliable and a good listener.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s053",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Hätten Sie noch Fragen an uns?",
+      "translation": "Do you have any questions for us?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_frage"
+      ]
+    },
+    {
+      "id": "s054",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ja, ich hätte gern gewusst, wie die Einarbeitung aussieht.",
+      "translation": "Yes, I'd like to know what the onboarding looks like.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_einarbeitung"
+      ]
+    },
+    {
+      "id": "s055",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Sie bekommen in der ersten Woche eine Mentorin zur Seite.",
+      "translation": "You'll have a mentor assigned in your first week.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_mentorin"
+      ]
+    },
+    {
+      "id": "s056",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Das klingt gut. Wann könnte ich anfangen?",
+      "translation": "That sounds good. When could I start?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_anfangen"
+      ]
+    },
+    {
+      "id": "s057",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Wenn alles klappt, zum ersten des nächsten Monats.",
+      "translation": "If everything works out, on the first of next month.",
       "pause_after_ms": 700
+    },
+    {
+      "id": "s058",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "höfliche Frage mit Konjunktiv II: Wann könnten Sie anfangen? Wann hätten Sie Zeit?",
+      "translation": "Polite question with subjunctive: Wann könnten Sie anfangen? Wann hätten Sie Zeit?",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s059",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann könnte die Bewerberin anfangen?",
+      "translation": "When could the applicant start?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "zum ersten des nächsten Monats"
+      ]
+    },
+    {
+      "id": "s060",
+      "type": "echo",
+      "speaker": "bewerberin",
+      "text": "Wann könnte ich anfangen?",
+      "translation": "When could I start?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s061",
+      "type": "drill",
+      "speaker": "personalerin",
+      "text": "Hätten Sie noch Fragen an uns?",
+      "translation": "Do you have any questions for us?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s062",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Ich habe noch eine technische Frage. Sie haben React erwähnt.",
+      "translation": "I have one more technical question. You mentioned React.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_erwaehnen"
+      ]
+    },
+    {
+      "id": "s063",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ja, in meinem letzten Projekt haben wir React und TypeScript benutzt.",
+      "translation": "Yes, in my last project we used React and TypeScript.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_benutzen"
+      ]
+    },
+    {
+      "id": "s064",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Wie hätten Sie die Komponenten strukturiert?",
+      "translation": "How would you have structured the components?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_komponente"
+      ]
+    },
+    {
+      "id": "s065",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich hätte sie nach Funktion sortiert, nicht nach Seite.",
+      "translation": "I would have sorted them by function, not by page.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s066",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wonach hätte die Bewerberin die Komponenten sortiert?",
+      "translation": "What would the applicant have sorted the components by?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "nach Funktion"
+      ]
+    },
+    {
+      "id": "s067",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "nach plus Dativ: nach Funktion, nach Seite, nach Team.",
+      "translation": "nach plus dative: nach Funktion, nach Seite, nach Team.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s068",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Frage",
+      "translation": "the question",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_frage"
+      ]
+    },
+    {
+      "id": "s069",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Einarbeitung",
+      "translation": "the onboarding",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einarbeitung"
+      ]
+    },
+    {
+      "id": "s070",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Mentorin",
+      "translation": "the mentor (female)",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_mentorin"
+      ]
+    },
+    {
+      "id": "s071",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "anfangen",
+      "translation": "to start",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anfangen"
+      ]
+    },
+    {
+      "id": "s072",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "erwähnen",
+      "translation": "to mention",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erwaehnen"
+      ]
+    },
+    {
+      "id": "s073",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "benutzen",
+      "translation": "to use",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_benutzen"
+      ]
+    },
+    {
+      "id": "s074",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Komponente",
+      "translation": "the component",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_komponente"
+      ]
+    },
+    {
+      "id": "s075",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welche Technologien beherrscht die Bewerberin?",
+      "translation": "Which technologies does the applicant master?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Python und React"
+      ]
+    },
+    {
+      "id": "s076",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie ist die Bewerberin im Team?",
+      "translation": "What is the applicant like in a team?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Zuverlässig und sie kann gut zuhören."
+      ]
+    },
+    {
+      "id": "s077",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Noch eine Frage: Hätten Sie Vorstellungen zum Gehalt?",
+      "translation": "One more question: do you have salary expectations?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gehalt",
+        "g_vorstellung"
+      ]
+    },
+    {
+      "id": "s078",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich hätte gern ein Gehalt, das meiner Erfahrung entspricht.",
+      "translation": "I'd like a salary that matches my experience.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_entsprechen"
+      ]
+    },
+    {
+      "id": "s079",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Das können wir besprechen. Wir zahlen nach Tarif.",
+      "translation": "We can discuss that. We pay according to the collective agreement.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_tarif"
+      ]
+    },
+    {
+      "id": "s080",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II mit möchten und hätten gern: Ich hätte gern eine Frage. Ich möchte gern anfangen.",
+      "translation": "Subjunctive II with möchten and hätten gern: Ich hätte gern eine Frage. Ich möchte gern anfangen.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s081",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wonach richtet sich das Gehalt?",
+      "translation": "What is the salary based on?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "nach Tarif"
+      ]
+    },
+    {
+      "id": "s082",
+      "type": "echo",
+      "speaker": "personalerin",
+      "text": "Hätten Sie Vorstellungen zum Gehalt?",
+      "translation": "Do you have salary expectations?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s083",
+      "type": "drill",
+      "speaker": "bewerberin",
+      "text": "Ich hätte gern ein Gehalt, das meiner Erfahrung entspricht.",
+      "translation": "I'd like a salary that matches my experience.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s084",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Wie würden Sie einen Konflikt im Team lösen?",
+      "translation": "How would you resolve a conflict in the team?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_konflikt"
+      ]
+    },
+    {
+      "id": "s085",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Ich würde zuerst ruhig zuhören und dann das Gespräch suchen.",
+      "translation": "I would first listen calmly and then seek a conversation.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ruhig",
+        "g_gespraech_suchen"
+      ]
+    },
+    {
+      "id": "s086",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Und wenn das nicht funktioniert?",
+      "translation": "And if that doesn't work?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s087",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Dann würde ich die Personalerin oder den Leiter hinzuziehen.",
+      "translation": "Then I would bring in the HR manager or the head.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_hinzuziehen"
+      ]
+    },
+    {
+      "id": "s088",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was würde die Bewerberin zuerst bei einem Konflikt tun?",
+      "translation": "What would the applicant do first in a conflict?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "ruhig zuhören"
+      ]
+    },
+    {
+      "id": "s089",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II mit würde: ich würde zuhören, du würdest fragen, wir würden entscheiden.",
+      "translation": "Subjunctive II with würde: ich würde zuhören, du würdest fragen, wir würden entscheiden.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s090",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Gehalt",
+      "translation": "the salary",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gehalt"
+      ]
+    },
+    {
+      "id": "s091",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Vorstellung",
+      "translation": "the expectation / idea",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorstellung"
+      ]
+    },
+    {
+      "id": "s092",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Tarif",
+      "translation": "the collective agreement",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_tarif"
+      ]
+    },
+    {
+      "id": "s093",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Konflikt",
+      "translation": "the conflict",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_konflikt"
+      ]
+    },
+    {
+      "id": "s094",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "hinzuziehen",
+      "translation": "to bring in",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_hinzuziehen"
+      ]
+    },
+    {
+      "id": "s095",
+      "type": "line",
+      "speaker": "personalerin",
+      "text": "Vielen Dank für das Gespräch. Wir melden uns nächste Woche.",
+      "translation": "Thank you for the interview. We'll be in touch next week.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sich_melden"
+      ]
+    },
+    {
+      "id": "s096",
+      "type": "line",
+      "speaker": "bewerberin",
+      "text": "Vielen Dank. Ich freue mich auf Ihre Rückmeldung.",
+      "translation": "Thank you. I look forward to your reply.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_rueckmeldung"
+      ]
+    },
+    {
+      "id": "s097",
+      "type": "line",
+      "speaker": "abteilungsleiter",
+      "text": "Auf Wiederhören.",
+      "translation": "Goodbye (on the phone).",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s098",
+      "type": "recap",
+      "speaker": "narrator",
+      "text": "Heute hast du gelernt: dich höflich vorzustellen, über Erfahrung zu sprechen und Wünsche mit Konjunktiv II zu formulieren.",
+      "translation": "Today you learned: introducing yourself politely, talking about experience, and phrasing wishes with the subjunctive.",
+      "pause_after_ms": 800
     }
   ],
   "glossary": [
     {
-      "id": "g_bewerbung", "de": "die Bewerbung", "en": "the application", "pos": "noun",
-      "article": "die", "plural": "die Bewerbungen",
-      "example_de": "Ich habe meine Bewerbung geschickt.", "example_en": "I sent my application."
+      "id": "g_begruessen",
+      "de": "begrüßen",
+      "en": "to greet",
+      "pos": "verb",
+      "example_de": "Ich begrüße Sie herzlich.",
+      "example_en": "I greet you warmly."
     },
     {
-      "id": "g_gespraech", "de": "das Gespräch", "en": "the interview / conversation", "pos": "noun",
-      "article": "das", "plural": "die Gespräche",
-      "example_de": "Vielen Dank für das Gespräch.", "example_en": "Thank you for the interview."
+      "id": "g_vorstellen",
+      "de": "sich vorstellen",
+      "en": "to introduce oneself",
+      "pos": "verb",
+      "example_de": "Darf ich mich vorstellen?",
+      "example_en": "May I introduce myself?"
     },
     {
-      "id": "g_platz_nehmen", "de": "Platz nehmen", "en": "to take a seat", "pos": "phrase",
-      "example_de": "Nehmen Sie bitte Platz.", "example_en": "Please take a seat."
+      "id": "g_vorstellungsgespraech",
+      "de": "das Vorstellungsgespräch",
+      "en": "the job interview",
+      "pos": "noun",
+      "example_de": "Das Vorstellungsgespräch ist um zehn.",
+      "example_en": "The interview is at ten.",
+      "article": "das",
+      "plural": "die Vorstellungsgespräche"
     },
     {
-      "id": "g_projektmanagerin", "de": "die Projektmanagerin", "en": "the project manager (female)", "pos": "noun",
-      "article": "die", "plural": "die Projektmanagerinnen",
-      "example_de": "Ich war drei Jahre Projektmanagerin.", "example_en": "I was a project manager for three years."
+      "id": "g_studium",
+      "de": "das Studium",
+      "en": "the university studies",
+      "pos": "noun",
+      "example_de": "Ich habe mein Studium abgeschlossen.",
+      "example_en": "I completed my studies.",
+      "article": "das",
+      "plural": "die Studien"
     },
     {
-      "id": "g_erfahrung", "de": "die Erfahrung", "en": "the experience", "pos": "noun",
-      "article": "die", "plural": "die Erfahrungen",
-      "example_de": "Ich habe viel Erfahrung im Projektmanagement.", "example_en": "I have a lot of experience in project management."
+      "id": "g_abschliessen",
+      "de": "abschließen",
+      "en": "to complete / graduate",
+      "pos": "verb",
+      "example_de": "Ich habe letztes Jahr abgeschlossen.",
+      "example_en": "I graduated last year."
     },
     {
-      "id": "g_konjunktiv2", "de": "Konjunktiv II", "en": "subjunctive II", "pos": "noun",
-      "note_de": "Höfliche Form: ich würde, könnte, hätte, wäre.",
-      "note_en": "Polite form: I would, could, would have, would be.",
-      "example_de": "Ich würde gern hier arbeiten.", "example_en": "I would like to work here."
+      "id": "g_entwicklerin",
+      "de": "die Entwicklerin",
+      "en": "the developer (female)",
+      "pos": "noun",
+      "example_de": "Sie arbeitet als Entwicklerin.",
+      "example_en": "She works as a developer.",
+      "article": "die",
+      "plural": "die Entwicklerinnen"
     },
     {
-      "id": "g_international", "de": "international", "en": "international", "pos": "adj",
-      "example_de": "Ich arbeite gern in einem internationalen Team.", "example_en": "I like working in an international team."
+      "id": "g_perfekt",
+      "de": "das Perfekt",
+      "en": "the perfect tense",
+      "pos": "noun",
+      "example_de": "Ich habe gearbeitet.",
+      "example_en": "I have worked.",
+      "article": "das"
     },
     {
-      "id": "g_ruf", "de": "der Ruf", "en": "the reputation", "pos": "noun",
-      "article": "der", "plural": "die Rufe",
-      "example_de": "Die Firma hat einen guten Ruf.", "example_en": "The company has a good reputation."
+      "id": "g_selbststaendig",
+      "de": "selbstständig",
+      "en": "independently",
+      "pos": "adjective",
+      "example_de": "Ich arbeite selbstständig.",
+      "example_en": "I work independently."
     },
     {
-      "id": "g_staerke", "de": "die Stärke", "en": "the strength", "pos": "noun",
-      "article": "die", "plural": "die Stärken",
-      "example_de": "Was sind Ihre Stärken?", "example_en": "What are your strengths?"
+      "id": "g_beherrschen",
+      "de": "beherrschen",
+      "en": "to master",
+      "pos": "verb",
+      "example_de": "Ich beherrsche Python.",
+      "example_en": "I master Python."
     },
     {
-      "id": "g_organisiert", "de": "organisiert", "en": "organized", "pos": "adj",
-      "example_de": "Ich bin sehr organisiert.", "example_en": "I'm very organized."
+      "id": "g_beispiel",
+      "de": "das Beispiel",
+      "en": "the example",
+      "pos": "noun",
+      "example_de": "Haben Sie ein Beispiel?",
+      "example_en": "Do you have an example?",
+      "article": "das",
+      "plural": "die Beispiele"
     },
     {
-      "id": "g_verantwortung", "de": "die Verantwortung", "en": "the responsibility", "pos": "noun",
-      "article": "die", "plural": "die Verantwortungen",
-      "example_de": "Ich übernehme gern Verantwortung.", "example_en": "I like taking on responsibility."
+      "id": "g_obwohl",
+      "de": "obwohl",
+      "en": "although",
+      "pos": "conjunction",
+      "example_de": "Obwohl es schwierig war, haben wir es geschafft.",
+      "example_en": "Although it was difficult, we made it."
     },
     {
-      "id": "g_uebernehmen", "de": "übernehmen", "en": "to take on", "pos": "verb",
-      "note_de": "Nicht trennbar: ich übernehme.",
-      "note_en": "Not separable: ich übernehme.",
-      "example_de": "Ich möchte mehr Verantwortung übernehmen.", "example_en": "I'd like to take on more responsibility."
+      "id": "g_knapp",
+      "de": "knapp",
+      "en": "tight / scarce",
+      "pos": "adjective",
+      "example_de": "Der Termin war knapp.",
+      "example_en": "The deadline was tight."
     },
     {
-      "id": "g_arbeitszeit", "de": "die Arbeitszeit", "en": "the working hours", "pos": "noun",
-      "article": "die", "plural": "die Arbeitszeiten",
-      "example_de": "Wir haben flexible Arbeitszeiten.", "example_en": "We have flexible working hours."
+      "id": "g_loesen",
+      "de": "lösen",
+      "en": "to solve",
+      "pos": "verb",
+      "example_de": "Ich habe das Problem gelöst.",
+      "example_en": "I solved the problem."
     },
     {
-      "id": "g_flexibel", "de": "flexibel", "en": "flexible", "pos": "adj",
-      "example_de": "Die Arbeitszeiten sind flexibel.", "example_en": "The working hours are flexible."
+      "id": "g_staerke",
+      "de": "die Stärke",
+      "en": "the strength",
+      "pos": "noun",
+      "example_de": "Meine Stärke ist Zuverlässigkeit.",
+      "example_en": "My strength is reliability.",
+      "article": "die",
+      "plural": "die Stärken"
     },
     {
-      "id": "g_anfangen", "de": "anfangen", "en": "to start", "pos": "verb",
-      "note_de": "Trennbares Verb: ich fange an.",
-      "note_en": "Separable verb: ich fange an.",
-      "example_de": "Wann könnte ich anfangen?", "example_en": "When could I start?"
+      "id": "g_zuverlaessig",
+      "de": "zuverlässig",
+      "en": "reliable",
+      "pos": "adjective",
+      "example_de": "Ich bin zuverlässig.",
+      "example_en": "I am reliable."
     },
     {
-      "id": "g_melden", "de": "sich melden", "en": "to get in touch", "pos": "verb",
-      "example_de": "Wir melden uns bis Ende der Woche.", "example_en": "We'll get in touch by the end of the week."
+      "id": "g_zuzuhoeren",
+      "de": "zuhören",
+      "en": "to listen",
+      "pos": "verb",
+      "example_de": "Ich kann gut zuhören.",
+      "example_en": "I listen well."
+    },
+    {
+      "id": "g_entwicklung",
+      "de": "die Entwicklung",
+      "en": "the development",
+      "pos": "noun",
+      "example_de": "Ich sehe Entwicklungsmöglichkeiten.",
+      "example_en": "I see opportunities for development.",
+      "article": "die",
+      "plural": "die Entwicklungen"
+    },
+    {
+      "id": "g_fuehrungsfaehigkeit",
+      "de": "die Führungsfähigkeit",
+      "en": "the leadership skill",
+      "pos": "noun",
+      "example_de": "Ich möchte meine Führungsfähigkeiten ausbauen.",
+      "example_en": "I want to develop my leadership skills.",
+      "article": "die",
+      "plural": "die Führungsfähigkeiten"
+    },
+    {
+      "id": "g_ausgerechnet",
+      "de": "ausgerechnet",
+      "en": "precisely / in particular",
+      "pos": "adverb",
+      "example_de": "Warum ausgerechnet wir?",
+      "example_en": "Why us in particular?"
+    },
+    {
+      "id": "g_mitarbeiten",
+      "de": "mitarbeiten",
+      "en": "to work with / contribute",
+      "pos": "verb",
+      "example_de": "Ich möchte im Team mitarbeiten.",
+      "example_en": "I want to work with the team."
+    },
+    {
+      "id": "g_gefallen",
+      "de": "gefallen",
+      "en": "to please / be liked",
+      "pos": "verb",
+      "example_de": "Das Team gefällt mir.",
+      "example_en": "I like the team."
+    },
+    {
+      "id": "g_frage",
+      "de": "die Frage",
+      "en": "the question",
+      "pos": "noun",
+      "example_de": "Ich habe eine Frage.",
+      "example_en": "I have a question.",
+      "article": "die",
+      "plural": "die Fragen"
+    },
+    {
+      "id": "g_einarbeitung",
+      "de": "die Einarbeitung",
+      "en": "the onboarding",
+      "pos": "noun",
+      "example_de": "Die Einarbeitung dauert eine Woche.",
+      "example_en": "The onboarding takes a week.",
+      "article": "die",
+      "plural": "die Einarbeitungen"
+    },
+    {
+      "id": "g_mentorin",
+      "de": "die Mentorin",
+      "en": "the mentor (female)",
+      "pos": "noun",
+      "example_de": "Ich habe eine Mentorin.",
+      "example_en": "I have a mentor.",
+      "article": "die",
+      "plural": "die Mentorinnen"
+    },
+    {
+      "id": "g_anfangen",
+      "de": "anfangen",
+      "en": "to start",
+      "pos": "verb",
+      "example_de": "Ich fange am ersten an.",
+      "example_en": "I start on the first."
+    },
+    {
+      "id": "g_erwaehnen",
+      "de": "erwähnen",
+      "en": "to mention",
+      "pos": "verb",
+      "example_de": "Sie haben React erwähnt.",
+      "example_en": "You mentioned React."
+    },
+    {
+      "id": "g_benutzen",
+      "de": "benutzen",
+      "en": "to use",
+      "pos": "verb",
+      "example_de": "Wir haben TypeScript benutzt.",
+      "example_en": "We used TypeScript."
+    },
+    {
+      "id": "g_komponente",
+      "de": "die Komponente",
+      "en": "the component",
+      "pos": "noun",
+      "example_de": "Die Komponente ist fertig.",
+      "example_en": "The component is done.",
+      "article": "die",
+      "plural": "die Komponenten"
+    },
+    {
+      "id": "g_rueckmeldung",
+      "de": "die Rückmeldung",
+      "en": "the reply / feedback",
+      "pos": "noun",
+      "example_de": "Ich freue mich auf Ihre Rückmeldung.",
+      "example_en": "I look forward to your reply.",
+      "article": "die",
+      "plural": "die Rückmeldungen"
+    },
+    {
+      "id": "g_seit",
+      "de": "seit",
+      "en": "since / for",
+      "pos": "preposition",
+      "example_de": "Seit drei Jahren arbeite ich damit.",
+      "example_en": "I've worked with it for three years.",
+      "note_de": "Mit Dativ.",
+      "note_en": "Takes the dative."
+    },
+    {
+      "id": "g_sich_melden",
+      "de": "sich melden",
+      "en": "to get in touch",
+      "pos": "verb",
+      "example_de": "Wir melden uns nächste Woche.",
+      "example_en": "We'll be in touch next week."
+    },
+    {
+      "id": "g_gehalt",
+      "de": "das Gehalt",
+      "en": "the salary",
+      "pos": "noun",
+      "example_de": "Das Gehalt ist fair.",
+      "example_en": "The salary is fair.",
+      "article": "das",
+      "plural": "die Gehälter"
+    },
+    {
+      "id": "g_vorstellung",
+      "de": "die Vorstellung",
+      "en": "the expectation / idea",
+      "pos": "noun",
+      "example_de": "Ich habe Vorstellungen zum Gehalt.",
+      "example_en": "I have salary expectations.",
+      "article": "die",
+      "plural": "die Vorstellungen"
+    },
+    {
+      "id": "g_entsprechen",
+      "de": "entsprechen",
+      "en": "to correspond to",
+      "pos": "verb",
+      "example_de": "Das Gehalt entspricht der Erfahrung.",
+      "example_en": "The salary matches the experience."
+    },
+    {
+      "id": "g_tarif",
+      "de": "der Tarif",
+      "en": "the collective agreement",
+      "pos": "noun",
+      "example_de": "Wir zahlen nach Tarif.",
+      "example_en": "We pay according to the collective agreement.",
+      "article": "der",
+      "plural": "die Tarife"
+    },
+    {
+      "id": "g_konflikt",
+      "de": "der Konflikt",
+      "en": "the conflict",
+      "pos": "noun",
+      "example_de": "Es gibt einen Konflikt im Team.",
+      "example_en": "There's a conflict in the team.",
+      "article": "der",
+      "plural": "die Konflikte"
+    },
+    {
+      "id": "g_ruhig",
+      "de": "ruhig",
+      "en": "calmly / calm",
+      "pos": "adverb",
+      "example_de": "Ich höre ruhig zu.",
+      "example_en": "I listen calmly."
+    },
+    {
+      "id": "g_gespraech_suchen",
+      "de": "das Gespräch suchen",
+      "en": "to seek a conversation",
+      "pos": "phrase",
+      "example_de": "Ich suche das Gespräch.",
+      "example_en": "I seek a conversation."
+    },
+    {
+      "id": "g_hinzuziehen",
+      "de": "hinzuziehen",
+      "en": "to bring in",
+      "pos": "verb",
+      "example_de": "Ich ziehe die Personalerin hinzu.",
+      "example_en": "I bring in the HR manager."
     }
   ],
   "meta": {

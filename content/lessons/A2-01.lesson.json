@@ -5,13 +5,13 @@
   "title": { "de": "Beim Bäcker", "en": "At the bakery" },
   "minutes": 10,
   "scene": {
-    "setting_de": "Samstagmorgen in einer kleinen Bäckerei in der Altstadt.",
-    "setting_en": "Saturday morning in a small bakery in the old town.",
+    "setting_de": "Samstagmorgen in einer kleinen Bäckerei in der Altstadt. Der Kunde kennt den Bäcker schon.",
+    "setting_en": "Saturday morning in a small bakery in the old town. The customer already knows the baker.",
     "register": "informal-service",
-    "can_do_de": "Ich kann Brötchen und Kuchen kaufen, nach dem Preis fragen und bezahlen.",
-    "can_do_en": "I can buy rolls and cake, ask the price, and pay.",
+    "can_do_de": "Ich kann Brötchen, Brot und Kuchen kaufen, Mengen nennen, über das Wetter sprechen und bezahlen.",
+    "can_do_en": "I can buy rolls, bread and cake, name quantities, talk about the weather, and pay.",
     "situation_tags": ["food", "service", "numbers", "small-talk"],
-    "grammar_focus": ["konjunktiv-2-hoeflich", "akkusativ", "zahlen"]
+    "grammar_focus": ["konjunktiv-2-hoeflich", "akkusativ", "perfekt", "mengen"]
   },
   "cast": [
     { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
@@ -48,41 +48,47 @@
       "gloss": ["g_haette_gern", "g_broetchen"]
     },
     {
-      "id": "s005", "type": "line", "speaker": "baecker",
+      "id": "s005", "type": "echo", "speaker": "kunde",
+      "text": "Ich hätte gern zwei Brötchen, bitte.",
+      "translation": "I'd like two rolls, please.",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1200
+    },
+    {
+      "id": "s006", "type": "line", "speaker": "baecker",
       "text": "Gerne. Sonst noch etwas?",
       "translation": "Sure. Anything else?",
       "pause_after_ms": 600,
       "gloss": ["g_sonst_noch_etwas"]
     },
     {
-      "id": "s006", "type": "echo", "speaker": "kunde",
+      "id": "s007", "type": "echo", "speaker": "kunde",
       "text": "Sonst noch etwas?",
       "translation": "Anything else?",
       "repeat": 2, "speed": 0.85, "pause_after_ms": 1200
     },
     {
-      "id": "s007", "type": "line", "speaker": "kunde",
+      "id": "s008", "type": "line", "speaker": "kunde",
       "text": "Ja, haben Sie auch Kuchen?",
       "translation": "Yes, do you also have cake?",
       "pause_after_ms": 600,
       "gloss": ["g_kuchen"]
     },
     {
-      "id": "s008", "type": "line", "speaker": "baecker",
+      "id": "s009", "type": "line", "speaker": "baecker",
       "text": "Natürlich. Der Käsekuchen ist heute frisch.",
       "translation": "Of course. The cheesecake is fresh today.",
       "pause_after_ms": 700,
       "gloss": ["g_kaesekuchen", "g_frisch"]
     },
     {
-      "id": "s009", "type": "line", "speaker": "kunde",
+      "id": "s010", "type": "line", "speaker": "kunde",
       "text": "Dann nehme ich ein Stück Käsekuchen.",
       "translation": "Then I'll take a piece of cheesecake.",
       "pause_after_ms": 700,
       "gloss": ["g_stueck"]
     },
     {
-      "id": "s010", "type": "check", "speaker": "kunde",
+      "id": "s011", "type": "check", "speaker": "kunde",
       "text": "Was möchte der Kunde kaufen?",
       "translation": "What does the customer want to buy?",
       "answers": ["zwei Brötchen und ein Stück Käsekuchen"],
@@ -90,123 +96,397 @@
       "pause_after_ms": 400
     },
     {
-      "id": "s011", "type": "note", "speaker": "narrator",
+      "id": "s012", "type": "note", "speaker": "narrator",
       "text": "Ich hätte gern ist höflicher als ich will.",
       "translation": "Ich hätte gern (I would like) is more polite than ich will (I want).",
       "speed": 0.9, "pause_after_ms": 600, "skippable": true
     },
     {
-      "id": "s012", "type": "line", "speaker": "baecker",
-      "text": "Das macht sieben Euro fünfzig.",
-      "translation": "That comes to seven euros fifty.",
-      "pause_after_ms": 600,
-      "gloss": ["g_das_macht"]
-    },
-    {
-      "id": "s013", "type": "line", "speaker": "kunde",
-      "text": "Kann ich mit Karte zahlen?",
-      "translation": "Can I pay by card?",
-      "pause_after_ms": 600,
-      "gloss": ["g_karte"]
-    },
-    {
-      "id": "s014", "type": "line", "speaker": "baecker",
-      "text": "Ab zehn Euro, ja. Darunter nur bar.",
-      "translation": "From ten euros, yes. Below that, cash only.",
-      "pause_after_ms": 700,
-      "gloss": ["g_bar"]
-    },
-    {
-      "id": "s015", "type": "check", "speaker": "kunde",
-      "text": "Warum zahlt der Kunde bar?",
-      "translation": "Why does the customer pay cash?",
-      "answers": ["Der Betrag liegt unter zehn Euro."],
-      "answer_pause_ms": 2500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s016", "type": "line", "speaker": "kunde",
-      "text": "Dann zahle ich bar. Hier, bitte.",
-      "translation": "Then I'll pay cash. Here you go.",
-      "pause_after_ms": 600
-    },
-    {
-      "id": "s017", "type": "line", "speaker": "baecker",
-      "text": "Danke. Und fünfzig Cent zurück.",
-      "translation": "Thanks. And fifty cents change.",
-      "pause_after_ms": 600,
-      "gloss": ["g_zurueck"]
-    },
-    {
-      "id": "s018", "type": "line", "speaker": "kunde",
-      "text": "Vielen Dank. Einen schönen Tag noch!",
-      "translation": "Thank you very much. Have a nice day!",
-      "pause_after_ms": 700
-    },
-    {
-      "id": "s019", "type": "line", "speaker": "baecker",
-      "text": "Ihnen auch. Bis nächste Woche!",
-      "translation": "You too. See you next week!",
-      "pause_after_ms": 900
-    },
-    {
-      "id": "s020", "type": "echo", "speaker": "kunde",
-      "text": "Ich hätte gern zwei Brötchen, bitte.",
-      "translation": "I'd like two rolls, please.",
-      "repeat": 2, "speed": 0.85, "pause_after_ms": 1200
-    },
-    {
-      "id": "s021", "type": "line", "speaker": "kunde",
-      "text": "Entschuldigung, ich habe das nicht verstanden. Können Sie das wiederholen?",
-      "translation": "Sorry, I didn't understand that. Could you repeat it?",
-      "pause_after_ms": 800,
-      "gloss": ["g_verstanden", "g_wiederholen"]
-    },
-    {
-      "id": "s022", "type": "line", "speaker": "baecker",
-      "text": "Natürlich. Zwei Brötchen, sieben Euro fünfzig.",
-      "translation": "Of course. Two rolls, seven euros fifty.",
-      "pause_after_ms": 700
-    },
-    {
-      "id": "s023", "type": "vocab", "speaker": "narrator",
+      "id": "s013", "type": "vocab", "speaker": "narrator",
       "text": "das Brötchen",
       "translation": "the roll",
       "pause_after_ms": 900,
       "gloss": ["g_broetchen"]
     },
     {
-      "id": "s024", "type": "drill", "speaker": "kunde",
+      "id": "s014", "type": "drill", "speaker": "kunde",
       "text": "Ich hätte gern ein Brötchen.",
       "translation": "I'd like one roll.",
       "repeat": 3, "speed": 0.85, "pause_after_ms": 1000
     },
     {
-      "id": "s025", "type": "check", "speaker": "kunde",
-      "text": "Wie viel kostet alles zusammen?",
-      "translation": "How much does everything cost together?",
-      "answers": ["sieben Euro fünfzig"],
+      "id": "s015", "type": "line", "speaker": "baecker",
+      "text": "Möchten Sie auch Brot?",
+      "translation": "Would you like bread too?",
+      "pause_after_ms": 600,
+      "gloss": ["g_brot"]
+    },
+    {
+      "id": "s016", "type": "line", "speaker": "kunde",
+      "text": "Ja, was für Brot haben Sie?",
+      "translation": "Yes, what kind of bread do you have?",
+      "pause_after_ms": 700,
+      "gloss": ["g_brot"]
+    },
+    {
+      "id": "s017", "type": "line", "speaker": "baecker",
+      "text": "Vollkornbrot, Bauernbrot und Sauerteigbrot.",
+      "translation": "Wholegrain bread, farmhouse bread, and sourdough bread.",
+      "pause_after_ms": 800,
+      "gloss": ["g_vollkornbrot", "g_sauerteig"]
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "kunde",
+      "text": "Dann ein halbes Kilo Vollkornbrot, bitte.",
+      "translation": "Then half a kilo of wholegrain bread, please.",
+      "pause_after_ms": 800,
+      "gloss": ["g_kilo", "g_vollkornbrot"]
+    },
+    {
+      "id": "s019", "type": "check", "speaker": "kunde",
+      "text": "Welches Brot nimmt der Kunde?",
+      "translation": "Which bread does the customer take?",
+      "answers": ["ein halbes Kilo Vollkornbrot"],
       "answer_pause_ms": 2500,
       "pause_after_ms": 400
     },
     {
+      "id": "s020", "type": "note", "speaker": "narrator",
+      "text": "Mengen: ein halbes Kilo, ein Pfund, hundert Gramm.",
+      "translation": "Quantities: half a kilo, a pound, a hundred grams.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s021", "type": "drill", "speaker": "kunde",
+      "text": "ein halbes Kilo Vollkornbrot",
+      "translation": "half a kilo of wholegrain bread",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1000
+    },
+    {
+      "id": "s022", "type": "vocab", "speaker": "narrator",
+      "text": "das Vollkornbrot",
+      "translation": "the wholegrain bread",
+      "pause_after_ms": 900,
+      "gloss": ["g_vollkornbrot"]
+    },
+    {
+      "id": "s023", "type": "vocab", "speaker": "narrator",
+      "text": "das Kilo",
+      "translation": "the kilo",
+      "pause_after_ms": 900,
+      "gloss": ["g_kilo"]
+    },
+    {
+      "id": "s024", "type": "line", "speaker": "baecker",
+      "text": "Waren Sie gestern auch hier?",
+      "translation": "Were you here yesterday too?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s025", "type": "line", "speaker": "kunde",
+      "text": "Nein, gestern habe ich nichts gekauft.",
+      "translation": "No, yesterday I didn't buy anything.",
+      "pause_after_ms": 700
+    },
+    {
       "id": "s026", "type": "line", "speaker": "baecker",
+      "text": "Und letzte Woche?",
+      "translation": "And last week?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s027", "type": "line", "speaker": "kunde",
+      "text": "Da habe ich drei Brezeln gekauft. Die waren sehr gut.",
+      "translation": "Then I bought three pretzels. They were very good.",
+      "pause_after_ms": 800,
+      "gloss": ["g_brezel"]
+    },
+    {
+      "id": "s028", "type": "check", "speaker": "kunde",
+      "text": "Was hat der Kunde letzte Woche gekauft?",
+      "translation": "What did the customer buy last week?",
+      "answers": ["drei Brezeln"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s029", "type": "note", "speaker": "narrator",
+      "text": "Perfekt: ich habe gekauft, ich habe gegessen, ich bin gegangen.",
+      "translation": "Perfect tense: ich habe gekauft, ich habe gegessen, ich bin gegangen.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s030", "type": "drill", "speaker": "kunde",
+      "text": "Ich habe gestern Brot gekauft.",
+      "translation": "I bought bread yesterday.",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1000
+    },
+    {
+      "id": "s031", "type": "vocab", "speaker": "narrator",
+      "text": "die Brezel",
+      "translation": "the pretzel",
+      "pause_after_ms": 900,
+      "gloss": ["g_brezel"]
+    },
+    {
+      "id": "s032", "type": "line", "speaker": "baecker",
+      "text": "Danke, das freut mich.",
+      "translation": "Thanks, I'm glad to hear it.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s033", "type": "line", "speaker": "baecker",
+      "text": "Heute ist es sehr kalt, oder?",
+      "translation": "It's very cold today, isn't it?",
+      "pause_after_ms": 700,
+      "gloss": ["g_kalt", "g_wetter"]
+    },
+    {
+      "id": "s034", "type": "line", "speaker": "kunde",
+      "text": "Ja, richtig kalt. Aber die Sonne scheint.",
+      "translation": "Yes, really cold. But the sun is shining.",
+      "pause_after_ms": 800,
+      "gloss": ["g_wetter"]
+    },
+    {
+      "id": "s035", "type": "line", "speaker": "baecker",
+      "text": "Stimmt. Am Wochenende soll es regnen.",
+      "translation": "True. It's supposed to rain at the weekend.",
+      "pause_after_ms": 700,
+      "gloss": ["g_regnen"]
+    },
+    {
+      "id": "s036", "type": "line", "speaker": "kunde",
+      "text": "Oh nein. Dann bleibe ich zu Hause.",
+      "translation": "Oh no. Then I'll stay at home.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s037", "type": "check", "speaker": "kunde",
+      "text": "Wie ist das Wetter heute?",
+      "translation": "What is the weather like today?",
+      "answers": ["kalt, aber die Sonne scheint"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s038", "type": "note", "speaker": "narrator",
+      "text": "Wetter: es ist kalt, die Sonne scheint, es regnet.",
+      "translation": "Weather: es ist kalt, die Sonne scheint, es regnet.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s039", "type": "line", "speaker": "kunde",
+      "text": "Haben Sie auch Croissants?",
+      "translation": "Do you also have croissants?",
+      "pause_after_ms": 600,
+      "gloss": ["g_croissant"]
+    },
+    {
+      "id": "s040", "type": "line", "speaker": "baecker",
+      "text": "Ja, zwei Stück sind noch da.",
+      "translation": "Yes, two are still there.",
+      "pause_after_ms": 700,
+      "gloss": ["g_stueck"]
+    },
+    {
+      "id": "s041", "type": "line", "speaker": "kunde",
+      "text": "Dann nehme ich beide.",
+      "translation": "Then I'll take both.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s042", "type": "line", "speaker": "baecker",
+      "text": "Sehr gern.",
+      "translation": "Very gladly.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s043", "type": "vocab", "speaker": "narrator",
+      "text": "das Croissant",
+      "translation": "the croissant",
+      "pause_after_ms": 900,
+      "gloss": ["g_croissant"]
+    },
+    {
+      "id": "s044", "type": "check", "speaker": "kunde",
+      "text": "Wie viele Croissants nimmt der Kunde?",
+      "translation": "How many croissants does the customer take?",
+      "answers": ["beide, also zwei"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s045", "type": "line", "speaker": "baecker",
+      "text": "Das macht elf Euro zwanzig.",
+      "translation": "That comes to eleven euros twenty.",
+      "pause_after_ms": 600,
+      "gloss": ["g_das_macht"]
+    },
+    {
+      "id": "s046", "type": "check", "speaker": "kunde",
+      "text": "Wie viel kostet alles zusammen?",
+      "translation": "How much does everything cost together?",
+      "answers": ["elf Euro zwanzig"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s047", "type": "line", "speaker": "kunde",
+      "text": "Kann ich mit Karte zahlen?",
+      "translation": "Can I pay by card?",
+      "pause_after_ms": 600,
+      "gloss": ["g_karte"]
+    },
+    {
+      "id": "s048", "type": "line", "speaker": "baecker",
+      "text": "Ab zehn Euro, ja. Darunter nur bar.",
+      "translation": "From ten euros, yes. Below that, cash only.",
+      "pause_after_ms": 700,
+      "gloss": ["g_bar"]
+    },
+    {
+      "id": "s049", "type": "check", "speaker": "kunde",
+      "text": "Warum kann der Kunde mit Karte zahlen?",
+      "translation": "Why can the customer pay by card?",
+      "answers": ["Der Betrag liegt über zehn Euro."],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s050", "type": "note", "speaker": "narrator",
+      "text": "ab zehn Euro heißt from ten euros. Darunter heißt below that.",
+      "translation": "ab zehn Euro means from ten euros. Darunter means below that.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s051", "type": "line", "speaker": "kunde",
+      "text": "Gut, dann mit Karte.",
+      "translation": "Good, then by card.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s052", "type": "line", "speaker": "baecker",
+      "text": "Bitte schön.",
+      "translation": "Here you are.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s053", "type": "echo", "speaker": "kunde",
+      "text": "Kann ich mit Karte zahlen?",
+      "translation": "Can I pay by card?",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1200
+    },
+    {
+      "id": "s054", "type": "line", "speaker": "kunde",
+      "text": "Entschuldigung, ich habe das nicht verstanden. Können Sie das wiederholen?",
+      "translation": "Sorry, I didn't understand that. Could you repeat it?",
+      "pause_after_ms": 800,
+      "gloss": ["g_verstanden", "g_wiederholen"]
+    },
+    {
+      "id": "s055", "type": "line", "speaker": "baecker",
+      "text": "Natürlich. Elf Euro zwanzig.",
+      "translation": "Of course. Eleven euros twenty.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s056", "type": "line", "speaker": "kunde",
+      "text": "Danke. Elf Euro zwanzig.",
+      "translation": "Thanks. Eleven euros twenty.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s057", "type": "drill", "speaker": "kunde",
+      "text": "Können Sie das bitte wiederholen?",
+      "translation": "Could you please repeat that?",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1000
+    },
+    {
+      "id": "s058", "type": "note", "speaker": "narrator",
+      "text": "Höfliche Frage: Könnten Sie bitte langsamer sprechen?",
+      "translation": "Polite request: Könnten Sie bitte langsamer sprechen?",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s059", "type": "line", "speaker": "baecker",
       "text": "Möchten Sie eine Tüte?",
       "translation": "Would you like a bag?",
       "pause_after_ms": 600,
       "gloss": ["g_tuete"]
     },
     {
-      "id": "s027", "type": "line", "speaker": "kunde",
+      "id": "s060", "type": "line", "speaker": "kunde",
       "text": "Nein, danke. Ich habe eine Tasche dabei.",
       "translation": "No thanks. I have a bag with me.",
       "pause_after_ms": 700,
       "gloss": ["g_tasche"]
     },
     {
-      "id": "s028", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: höflich bestellen, nach dem Preis fragen und bezahlen.",
-      "translation": "Today you learned: ordering politely, asking the price, and paying.",
+      "id": "s061", "type": "line", "speaker": "baecker",
+      "text": "Alles klar. Einen schönen Tag noch!",
+      "translation": "All right. Have a nice day!",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s062", "type": "line", "speaker": "kunde",
+      "text": "Ihnen auch. Bis nächste Woche!",
+      "translation": "You too. See you next week!",
+      "pause_after_ms": 900
+    },
+    {
+      "id": "s063", "type": "echo", "speaker": "kunde",
+      "text": "Einen schönen Tag noch!",
+      "translation": "Have a nice day!",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1200
+    },
+    {
+      "id": "s064", "type": "vocab", "speaker": "narrator",
+      "text": "die Tüte",
+      "translation": "the paper bag",
+      "pause_after_ms": 900,
+      "gloss": ["g_tuete"]
+    },
+    {
+      "id": "s065", "type": "vocab", "speaker": "narrator",
+      "text": "die Tasche",
+      "translation": "the bag",
+      "pause_after_ms": 900,
+      "gloss": ["g_tasche"]
+    },
+    {
+      "id": "s066", "type": "vocab", "speaker": "narrator",
+      "text": "der Sauerteig",
+      "translation": "the sourdough",
+      "pause_after_ms": 900,
+      "gloss": ["g_sauerteig"]
+    },
+    {
+      "id": "s067", "type": "check", "speaker": "kunde",
+      "text": "Was sagt der Bäcker zum Abschied?",
+      "translation": "What does the baker say in farewell?",
+      "answers": ["Einen schönen Tag noch! Bis nächste Woche!"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s068", "type": "vocab", "speaker": "narrator",
+      "text": "das Brot",
+      "translation": "the bread",
+      "pause_after_ms": 900,
+      "gloss": ["g_brot"]
+    },
+    {
+      "id": "s069", "type": "vocab", "speaker": "narrator",
+      "text": "der Kuchen",
+      "translation": "the cake",
+      "pause_after_ms": 900,
+      "gloss": ["g_kuchen"]
+    },
+    {
+      "id": "s070", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: höflich bestellen, Mengen nennen, über das Wetter sprechen und bezahlen.",
+      "translation": "Today you learned: ordering politely, naming quantities, talking about the weather, and paying.",
       "pause_after_ms": 800
     }
   ],
@@ -289,6 +569,55 @@
     {
       "id": "g_guten_morgen", "de": "guten Morgen", "en": "good morning", "pos": "phrase",
       "example_de": "Guten Morgen, Frau Schmidt!", "example_en": "Good morning, Mrs Schmidt!"
+    },
+    {
+      "id": "g_brot", "de": "das Brot", "en": "the bread", "pos": "noun",
+      "article": "das", "plural": "die Brote",
+      "example_de": "Ich kaufe ein Brot.", "example_en": "I'm buying a loaf of bread."
+    },
+    {
+      "id": "g_vollkornbrot", "de": "das Vollkornbrot", "en": "the wholegrain bread", "pos": "noun",
+      "article": "das", "plural": "die Vollkornbrote",
+      "note_de": "voll = full, das Korn = the grain.",
+      "note_en": "voll = full, das Korn = the grain.",
+      "example_de": "Ein halbes Kilo Vollkornbrot, bitte.", "example_en": "Half a kilo of wholegrain bread, please."
+    },
+    {
+      "id": "g_kilo", "de": "das Kilo", "en": "the kilo", "pos": "noun",
+      "article": "das", "plural": "die Kilo",
+      "note_de": "ein halbes Kilo = fünfhundert Gramm.",
+      "note_en": "ein halbes Kilo = five hundred grams.",
+      "example_de": "Ein Kilo Kartoffeln, bitte.", "example_en": "A kilo of potatoes, please."
+    },
+    {
+      "id": "g_brezel", "de": "die Brezel", "en": "the pretzel", "pos": "noun",
+      "article": "die", "plural": "die Brezeln",
+      "example_de": "Ich habe drei Brezeln gekauft.", "example_en": "I bought three pretzels."
+    },
+    {
+      "id": "g_croissant", "de": "das Croissant", "en": "the croissant", "pos": "noun",
+      "article": "das", "plural": "die Croissants",
+      "example_de": "Haben Sie auch Croissants?", "example_en": "Do you also have croissants?"
+    },
+    {
+      "id": "g_sauerteig", "de": "der Sauerteig", "en": "the sourdough", "pos": "noun",
+      "article": "der", "plural": "die Sauerteige",
+      "note_de": "sauer = sour, der Teig = the dough.",
+      "note_en": "sauer = sour, der Teig = the dough.",
+      "example_de": "Sauerteigbrot schmeckt kräftig.", "example_en": "Sourdough bread tastes robust."
+    },
+    {
+      "id": "g_wetter", "de": "das Wetter", "en": "the weather", "pos": "noun",
+      "article": "das", "plural": "die Wetter",
+      "example_de": "Das Wetter ist heute schön.", "example_en": "The weather is nice today."
+    },
+    {
+      "id": "g_kalt", "de": "kalt", "en": "cold", "pos": "adj",
+      "example_de": "Heute ist es sehr kalt.", "example_en": "It's very cold today."
+    },
+    {
+      "id": "g_regnen", "de": "regnen", "en": "to rain", "pos": "verb",
+      "example_de": "Am Wochenende soll es regnen.", "example_en": "It's supposed to rain at the weekend."
     }
   ],
   "meta": {

@@ -2,257 +2,2329 @@
   "schema": "lesson-script/v1",
   "id": "C1-01",
   "level": "C1",
-  "title": { "de": "Trade-offs im Strategie-Meeting", "en": "Trade-offs in the strategy meeting" },
+  "title": {
+    "de": "Strategie-Trade-offs",
+    "en": "Strategy trade-offs"
+  },
   "minutes": 18,
   "scene": {
-    "setting_de": "Ein Strategie-Meeting. Das Unternehmen muss zwischen Wachstum und Profitabilität wählen.",
-    "setting_en": "A strategy meeting. The company must choose between growth and profitability.",
-    "register": "formal-business",
-    "can_do_de": "Ich kann Trade-offs abwägen, Optionen vorsichtig bewerten und eine Empfehlung begründen.",
-    "can_do_en": "I can weigh trade-offs, assess options cautiously, and justify a recommendation.",
-    "situation_tags": ["work", "strategy", "meetings"],
-    "grammar_focus": ["hedging", "konjunktiv-2", "argumentation"]
+    "setting_de": "Eine Strategie-Sitzung der Geschäftsführung. Zwei Manager diskutieren, ob sie in Eigenentwicklung oder eine Fremdlösung investieren.",
+    "setting_en": "A management strategy session. Two managers discuss whether to invest in in-house development or an external solution.",
+    "register": "formal-work",
+    "can_do_de": "Ich kann komplexe Sachverhalte strukturiert darlegen, Trade-offs abwägen und hypothetische Szenarien mit Konjunktiv II erörtern.",
+    "can_do_en": "I can lay out complex matters in a structured way, weigh trade-offs, and discuss hypothetical scenarios with the subjunctive.",
+    "situation_tags": [
+      "work",
+      "strategy",
+      "meetings"
+    ],
+    "grammar_focus": [
+      "konjunktiv-2",
+      "nominalstil",
+      "konnektoren"
+    ]
   },
   "cast": [
-    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
-    { "role": "moderator", "voice": "de_narrator_m", "lang": "de" },
-    { "role": "cto", "voice": "de_older_f", "lang": "de" }
+    {
+      "role": "narrator",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "managerin",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "manager",
+      "voice": "de_older_m",
+      "lang": "de"
+    }
   ],
   "segments": [
     {
-      "id": "s001", "type": "scene", "speaker": "narrator",
-      "text": "Ein Strategie-Meeting. Das Unternehmen muss zwischen Wachstum und Profitabilität wählen.",
-      "translation": "A strategy meeting. The company must choose between growth and profitability.",
-      "pause_after_ms": 450
+      "id": "s001",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Eine Strategie-Sitzung. Es geht um die Wahl zwischen Eigenentwicklung und Fremdlösung.",
+      "translation": "A strategy session. The choice is between in-house development and an external solution.",
+      "pause_after_ms": 700
     },
     {
-      "id": "s002", "type": "line", "speaker": "moderator",
-      "text": "Wir stehen vor einer schwierigen Entscheidung.",
-      "translation": "We are facing a difficult decision.",
-      "pause_after_ms": 450,
-      "gloss": ["g_entscheidung"]
-    },
-    {
-      "id": "s003", "type": "line", "speaker": "moderator",
-      "text": "Einerseits könnten wir stark wachsen, andererseits würden die Kosten steigen.",
-      "translation": "On the one hand we could grow strongly; on the other hand costs would rise.",
-      "pause_after_ms": 500,
-      "gloss": ["g_wachstum", "g_kosten"]
-    },
-    {
-      "id": "s004", "type": "line", "speaker": "cto",
-      "text": "Das ist ein klassischer Trade-off. Man kann nicht beides maximieren.",
-      "translation": "That is a classic trade-off. You can't maximize both.",
-      "pause_after_ms": 500,
-      "gloss": ["g_tradeoff"]
-    },
-    {
-      "id": "s005", "type": "line", "speaker": "cto",
-      "text": "Wenn wir zu schnell wachsen, riskieren wir die Qualität.",
-      "translation": "If we grow too fast, we risk quality.",
-      "pause_after_ms": 500,
-      "gloss": ["g_qualitaet"]
-    },
-    {
-      "id": "s006", "type": "check", "speaker": "narrator",
-      "text": "Was ist der Trade-off in diesem Meeting?",
-      "translation": "What is the trade-off in this meeting?",
-      "answers": ["Wachstum gegen Profitabilität"],
-      "answer_pause_ms": 3000,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s007", "type": "note", "speaker": "narrator",
-      "text": "Hedging heißt vorsichtiges Formulieren: vermutlich, möglicherweise, es könnte sein.",
-      "translation": "Hedging means cautious phrasing: presumably, possibly, it could be.",
-      "speed": 1.0, "pause_after_ms": 400, "skippable": true
-    },
-    {
-      "id": "s008", "type": "line", "speaker": "moderator",
-      "text": "Welche Option würden Sie bevorzugen?",
-      "translation": "Which option would you prefer?",
-      "pause_after_ms": 450,
-      "gloss": ["g_bevorzugen"]
-    },
-    {
-      "id": "s009", "type": "line", "speaker": "cto",
-      "text": "Ich würde einen moderaten Kurs vorschlagen.",
-      "translation": "I would propose a moderate course.",
-      "pause_after_ms": 500,
-      "gloss": ["g_moderat"]
-    },
-    {
-      "id": "s010", "type": "line", "speaker": "cto",
-      "text": "Vermutlich ist es klüger, zuerst die Qualität zu sichern.",
-      "translation": "Presumably it is wiser to secure quality first.",
-      "pause_after_ms": 500,
-      "gloss": ["g_vermutlich", "g_klueger"]
-    },
-    {
-      "id": "s011", "type": "line", "speaker": "moderator",
-      "text": "Das klingt vernünftig, aber der Vorstand erwartet Wachstum.",
-      "translation": "That sounds reasonable, but the board expects growth.",
-      "pause_after_ms": 500,
-      "gloss": ["g_vorstand"]
-    },
-    {
-      "id": "s012", "type": "line", "speaker": "cto",
-      "text": "Ich verstehe den Druck. Möglicherweise können wir beides erreichen.",
-      "translation": "I understand the pressure. Possibly we can achieve both.",
-      "pause_after_ms": 500,
-      "gloss": ["g_druck"]
-    },
-    {
-      "id": "s013", "type": "check", "speaker": "narrator",
-      "text": "Welchen Kurs schlägt die CTO vor?",
-      "translation": "What course does the CTO propose?",
-      "answers": ["einen moderaten Kurs, zuerst die Qualität sichern"],
-      "answer_pause_ms": 3000,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s014", "type": "drill", "speaker": "cto",
-      "text": "Ich würde einen moderaten Kurs vorschlagen.",
-      "translation": "I would propose a moderate course.",
-      "repeat": 2, "speed": 1.0, "pause_after_ms": 900
-    },
-    {
-      "id": "s015", "type": "line", "speaker": "moderator",
-      "text": "Wie würden Sie das dem Vorstand erklären?",
-      "translation": "How would you explain that to the board?",
-      "pause_after_ms": 450
-    },
-    {
-      "id": "s016", "type": "line", "speaker": "cto",
-      "text": "Ich würde betonen, dass nachhaltiges Wachstum mehr wert ist.",
-      "translation": "I would emphasize that sustainable growth is worth more.",
-      "pause_after_ms": 500,
-      "gloss": ["g_nachhaltig"]
-    },
-    {
-      "id": "s017", "type": "line", "speaker": "cto",
-      "text": "Kurzfristige Gewinne könnten langfristig teuer werden.",
-      "translation": "Short-term profits could become expensive in the long run.",
-      "pause_after_ms": 500,
-      "gloss": ["g_kurzfristig", "g_langfristig"]
-    },
-    {
-      "id": "s018", "type": "line", "speaker": "moderator",
-      "text": "Gut. Dann halten wir das als Empfehlung fest.",
-      "translation": "Good. Then we'll record that as a recommendation.",
-      "pause_after_ms": 500,
-      "gloss": ["g_empfehlung"]
-    },
-    {
-      "id": "s019", "type": "check", "speaker": "narrator",
-      "text": "Was würde die CTO dem Vorstand betonen?",
-      "translation": "What would the CTO emphasize to the board?",
-      "answers": ["dass nachhaltiges Wachstum mehr wert ist"],
-      "answer_pause_ms": 3000,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s020", "type": "vocab", "speaker": "narrator",
-      "text": "der Trade-off",
-      "translation": "the trade-off",
+      "id": "s002",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Lassen Sie uns die Entscheidung systematisch angehen. Was spricht für die Eigenentwicklung?",
+      "translation": "Let's approach the decision systematically. What speaks for in-house development?",
       "pause_after_ms": 700,
-      "gloss": ["g_tradeoff"]
+      "gloss": [
+        "g_systematisch",
+        "g_angehen"
+      ]
     },
     {
-      "id": "s021", "type": "vocab", "speaker": "narrator",
-      "text": "nachhaltig",
-      "translation": "sustainable",
+      "id": "s003",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Der offensichtliche Vorteil liegt in der Kontrolle über die Architektur und die Daten.",
+      "translation": "The obvious advantage lies in control over the architecture and the data.",
       "pause_after_ms": 700,
-      "gloss": ["g_nachhaltig"]
+      "gloss": [
+        "g_offensichtlich",
+        "g_vorteil",
+        "g_architektur"
+      ]
     },
     {
-      "id": "s022", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: Trade-offs abwägen und vorsichtig argumentieren.",
-      "translation": "Today you learned: weighing trade-offs and arguing cautiously.",
-      "pause_after_ms": 600
+      "id": "s004",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Das ist richtig, aber wir unterschätzen die Personalkosten, die damit einhergehen.",
+      "translation": "That's right, but we underestimate the personnel costs that come with it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_unterschaetzen",
+        "g_personalkosten",
+        "g_einhergehen"
+      ]
+    },
+    {
+      "id": "s005",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was ist der offensichtliche Vorteil der Eigenentwicklung?",
+      "translation": "What's the obvious advantage of in-house development?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die Kontrolle über Architektur und Daten"
+      ]
+    },
+    {
+      "id": "s006",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Trade-off bedeutet Abwägung zwischen zwei Zielen, bei denen man nicht alles gleichzeitig maximieren kann.",
+      "translation": "Trade-off means weighing two goals where you can't maximise both at once.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s007",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Wenn wir selbst entwickeln, hätten wir volle Flexibilität, aber auch ein höheres Risiko.",
+      "translation": "If we develop in-house, we'd have full flexibility, but also a higher risk.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_flexibilitaet"
+      ]
+    },
+    {
+      "id": "s008",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Eine Fremdlösung würde die Time-to-Market deutlich verkürzen. Dafür wären wir abhängig vom Anbieter.",
+      "translation": "An external solution would considerably shorten time-to-market. In return, we'd depend on the provider.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fremdloesung",
+        "g_abhaengig",
+        "g_anbieter"
+      ]
+    },
+    {
+      "id": "s009",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II im hypothetischen Vergleich: wir hätten, wir würden, es wäre. Damit beschreibt man mögliche, aber nicht reale Situationen.",
+      "translation": "Subjunctive II in hypothetical comparison: wir hätten, wir würden, es wäre. This describes possible but unreal situations.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s010",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welchen Nachteil hätte eine Fremdlösung?",
+      "translation": "What disadvantage would an external solution have?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die Abhängigkeit vom Anbieter"
+      ]
+    },
+    {
+      "id": "s011",
+      "type": "echo",
+      "speaker": "managerin",
+      "text": "Eine Fremdlösung würde die Time-to-Market verkürzen.",
+      "translation": "An external solution would shorten time-to-market.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s012",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Angenommen, wir entscheiden uns für die Eigenentwicklung. Wie lange würde die Amortisation dauern?",
+      "translation": "Suppose we choose in-house development. How long would the amortisation take?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_angenommen",
+        "g_amortisation"
+      ]
+    },
+    {
+      "id": "s013",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Unter der Annahme stabiler Rahmenbedingungen läge sie bei etwa achtzehn Monaten.",
+      "translation": "Assuming stable conditions, it would be about eighteen months.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_rahmenbedingung"
+      ]
+    },
+    {
+      "id": "s014",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Das ist ein erheblicher Zeitraum. Wäre eine hybride Lösung denkbar?",
+      "translation": "That's a considerable period. Would a hybrid solution be conceivable?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_erheblich",
+        "g_hybrid",
+        "g_denkbar"
+      ]
+    },
+    {
+      "id": "s015",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Allerdings könnte ein hybrider Ansatz die Komplexität eher erhöhen als verringern.",
+      "translation": "However, a hybrid approach could increase complexity rather than reduce it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_allerdings",
+        "g_komplexitaet",
+        "g_verringern"
+      ]
+    },
+    {
+      "id": "s016",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie lange würde die Amortisation laut Managerin dauern?",
+      "translation": "How long would the amortisation take according to the manager?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "etwa achtzehn Monate"
+      ]
+    },
+    {
+      "id": "s017",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Weniger Komplexität ist zwar wünschenswert, aber nicht um jeden Preis.",
+      "translation": "Less complexity is desirable, of course, but not at any price.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_wuenschenswert"
+      ]
+    },
+    {
+      "id": "s018",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Ein weiterer Aspekt ist die Skalierbarkeit. Wie würde sich die Lösung bei zehnfachem Wachstum verhalten?",
+      "translation": "Another aspect is scalability. How would the solution behave at tenfold growth?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_aspekt",
+        "g_skalierbarkeit",
+        "g_wachstum"
+      ]
+    },
+    {
+      "id": "s019",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Die aktuelle Architektur wäre dafür nicht ausgelegt. Wir müssten sie grundlegend überarbeiten.",
+      "translation": "The current architecture isn't designed for that. We'd have to fundamentally revise it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ausgelegt",
+        "g_grundlegend",
+        "g_ueberarbeiten"
+      ]
+    },
+    {
+      "id": "s020",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Nominalstil: sich entscheiden → die Entscheidung, wachsen → das Wachstum, abhängen → die Abhängigkeit. Er macht Texte präziser, aber auch schwerer.",
+      "translation": "Nominal style: sich entscheiden → die Entscheidung, wachsen → das Wachstum, abhängen → die Abhängigkeit. It makes texts more precise but also heavier.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s021",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wäre die aktuelle Architektur für zehnfaches Wachstum ausgelegt?",
+      "translation": "Is the current architecture designed for tenfold growth?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Nein, sie müsste überarbeitet werden."
+      ]
+    },
+    {
+      "id": "s022",
+      "type": "drill",
+      "speaker": "managerin",
+      "text": "Die aktuelle Architektur wäre nicht ausgelegt.",
+      "translation": "The current architecture wouldn't be designed for it.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s023",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "systematisch",
+      "translation": "systematic / systematically",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_systematisch"
+      ]
+    },
+    {
+      "id": "s024",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Vorteil",
+      "translation": "the advantage",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorteil"
+      ]
+    },
+    {
+      "id": "s025",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Architektur",
+      "translation": "the architecture",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_architektur"
+      ]
+    },
+    {
+      "id": "s026",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "unterschätzen",
+      "translation": "to underestimate",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_unterschaetzen"
+      ]
+    },
+    {
+      "id": "s027",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Personalkosten",
+      "translation": "the personnel costs",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_personalkosten"
+      ]
+    },
+    {
+      "id": "s028",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "einhergehen",
+      "translation": "to come with / accompany",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einhergehen"
+      ]
+    },
+    {
+      "id": "s029",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Flexibilität",
+      "translation": "the flexibility",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_flexibilitaet"
+      ]
+    },
+    {
+      "id": "s030",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Fremdlösung",
+      "translation": "the external solution",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fremdloesung"
+      ]
+    },
+    {
+      "id": "s031",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "abhängig",
+      "translation": "dependent",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_abhaengig"
+      ]
+    },
+    {
+      "id": "s032",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Anbieter",
+      "translation": "the provider",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anbieter"
+      ]
+    },
+    {
+      "id": "s033",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Amortisation",
+      "translation": "the amortisation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_amortisation"
+      ]
+    },
+    {
+      "id": "s034",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Rahmenbedingung",
+      "translation": "the framework condition",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_rahmenbedingung"
+      ]
+    },
+    {
+      "id": "s035",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "hybrid",
+      "translation": "hybrid",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_hybrid"
+      ]
+    },
+    {
+      "id": "s036",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "denkbar",
+      "translation": "conceivable",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_denkbar"
+      ]
+    },
+    {
+      "id": "s037",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Komplexität",
+      "translation": "the complexity",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_komplexitaet"
+      ]
+    },
+    {
+      "id": "s038",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verringern",
+      "translation": "to reduce",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verringern"
+      ]
+    },
+    {
+      "id": "s039",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "wuenschenswert",
+      "translation": "desirable",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_wuenschenswert"
+      ]
+    },
+    {
+      "id": "s040",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Skalierbarkeit",
+      "translation": "the scalability",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_skalierbarkeit"
+      ]
+    },
+    {
+      "id": "s041",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Wachstum",
+      "translation": "the growth",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_wachstum"
+      ]
+    },
+    {
+      "id": "s042",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "grundlegend",
+      "translation": "fundamental",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_grundlegend"
+      ]
+    },
+    {
+      "id": "s043",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "überarbeiten",
+      "translation": "to revise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ueberarbeiten"
+      ]
+    },
+    {
+      "id": "s044",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Betrachten wir auch die rechtliche Seite. Wie sieht es mit Compliance und Datenschutz aus?",
+      "translation": "Let's also consider the legal side. What about compliance and data protection?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_compliance",
+        "g_datenschutz"
+      ]
+    },
+    {
+      "id": "s045",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Bei einer Fremdlösung müssten wir sicherstellen, dass der Anbieter die Vorgaben einhält.",
+      "translation": "With an external solution we'd have to ensure the provider meets the requirements.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_vorgabe",
+        "g_einhalten"
+      ]
+    },
+    {
+      "id": "s046",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "In Eigenregie hätten wir die Kontrolle, aber auch die volle Verantwortung für Verstöße.",
+      "translation": "In-house we'd have control, but also full responsibility for violations.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_eigenregie",
+        "g_verstoss"
+      ]
+    },
+    {
+      "id": "s047",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wer trägt bei einer Fremdlösung die Verantwortung für die Einhaltung?",
+      "translation": "Who bears responsibility for compliance with an external solution?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "der Anbieter, aber wir müssen es sicherstellen"
+      ]
+    },
+    {
+      "id": "s048",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II mit sollten und müssten: Wir müssten sicherstellen. Wir sollten prüfen. Das drückt eine empfohlene oder notwendige Handlung aus.",
+      "translation": "Subjunctive II with sollten and müssten: Wir müssten sicherstellen. Wir should prüfen. This expresses a recommended or necessary action.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s049",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Was wäre, wenn wir die Eigenentwicklung schrittweise umsetzen würden?",
+      "translation": "What if we implemented in-house development step by step?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_schrittweise"
+      ]
+    },
+    {
+      "id": "s050",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Ein schrittweiser Ansatz würde das Risiko verteilen. Allerdings würde er auch länger dauern.",
+      "translation": "A step-by-step approach would spread the risk. However, it would also take longer.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verteilen"
+      ]
+    },
+    {
+      "id": "s051",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Das könnte ein gangbarer Mittelweg sein. Welche Ressourcen bräuchten wir im ersten Schritt?",
+      "translation": "That could be a viable middle ground. What resources would we need in the first step?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gangbar",
+        "g_mittelweg",
+        "g_ressource"
+      ]
+    },
+    {
+      "id": "s052",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Für den ersten Schritt würden wir etwa vier Entwickler und einen Architekten benötigen.",
+      "translation": "For the first step we'd need about four developers and one architect.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_benoetigen"
+      ]
+    },
+    {
+      "id": "s053",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie viele Entwickler würden für den ersten Schritt benötigt?",
+      "translation": "How many developers would be needed for the first step?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "etwa vier"
+      ]
+    },
+    {
+      "id": "s054",
+      "type": "echo",
+      "speaker": "managerin",
+      "text": "Für den ersten Schritt würden wir vier Entwickler benötigen.",
+      "translation": "For the first step we'd need four developers.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s055",
+      "type": "drill",
+      "speaker": "manager",
+      "text": "Ein schrittweiser Ansatz würde das Risiko verteilen.",
+      "translation": "A step-by-step approach would spread the risk.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s056",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Damit hätten wir eine Entscheidungsgrundlage. Sollten wir die Empfehlung ausformulieren?",
+      "translation": "That gives us a basis for decision. Should we formulate the recommendation?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_entscheidungsgrundlage",
+        "g_ausformulieren"
+      ]
+    },
+    {
+      "id": "s057",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Ja. Ich würde empfehlen, mit einem Pilotprojekt zu beginnen und danach zu evaluieren.",
+      "translation": "Yes. I'd recommend starting with a pilot project and evaluating afterwards.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_pilotprojekt",
+        "g_evaluieren"
+      ]
+    },
+    {
+      "id": "s058",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Einverstanden. Die Gegenüberstellung der Optionen überzeught mich.",
+      "translation": "Agreed. The comparison of the options convinces me.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gegenueberstellung",
+        "g_ueberzeugen"
+      ]
+    },
+    {
+      "id": "s059",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was empfiehlt der Manager?",
+      "translation": "What does the manager recommend?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "mit einem Pilotprojekt zu beginnen"
+      ]
+    },
+    {
+      "id": "s060",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Zusammenfassung: Trade-offs abwägen heißt, Vor- und Nachteile systematisch gegenüberzustellen und Hypothesen mit Konjunktiv II zu formulieren.",
+      "translation": "Summary: weighing trade-offs means systematically comparing pros and cons and formulating hypotheses with subjunctive II.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s061",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Compliance",
+      "translation": "compliance",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_compliance"
+      ]
+    },
+    {
+      "id": "s062",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Datenschutz",
+      "translation": "data protection",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_datenschutz"
+      ]
+    },
+    {
+      "id": "s063",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Vorgabe",
+      "translation": "the requirement / specification",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorgabe"
+      ]
+    },
+    {
+      "id": "s064",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "einhalten",
+      "translation": "to comply with",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einhalten"
+      ]
+    },
+    {
+      "id": "s065",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Eigenregie",
+      "translation": "in-house management",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_eigenregie"
+      ]
+    },
+    {
+      "id": "s066",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Verstoß",
+      "translation": "the violation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verstoss"
+      ]
+    },
+    {
+      "id": "s067",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "schrittweise",
+      "translation": "step by step",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_schrittweise"
+      ]
+    },
+    {
+      "id": "s068",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verteilen",
+      "translation": "to distribute / spread",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verteilen"
+      ]
+    },
+    {
+      "id": "s069",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gangbar",
+      "translation": "viable",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gangbar"
+      ]
+    },
+    {
+      "id": "s070",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Mittelweg",
+      "translation": "the middle ground",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_mittelweg"
+      ]
+    },
+    {
+      "id": "s071",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Ressource",
+      "translation": "the resource",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ressource"
+      ]
+    },
+    {
+      "id": "s072",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "benötigen",
+      "translation": "to need / require",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_benoetigen"
+      ]
+    },
+    {
+      "id": "s073",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Entscheidungsgrundlage",
+      "translation": "the basis for decision",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_entscheidungsgrundlage"
+      ]
+    },
+    {
+      "id": "s074",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "ausformulieren",
+      "translation": "to formulate in full",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ausformulieren"
+      ]
+    },
+    {
+      "id": "s075",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Pilotprojekt",
+      "translation": "the pilot project",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_pilotprojekt"
+      ]
+    },
+    {
+      "id": "s076",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "evaluieren",
+      "translation": "to evaluate",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_evaluieren"
+      ]
+    },
+    {
+      "id": "s077",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Gegenüberstellung",
+      "translation": "the comparison",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gegenueberstellung"
+      ]
+    },
+    {
+      "id": "s078",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "überzeugen",
+      "translation": "to convince",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ueberzeugen"
+      ]
+    },
+    {
+      "id": "s079",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Ein Punkt fehlt uns noch: die langfristige Wartbarkeit.",
+      "translation": "One point is still missing: long-term maintainability.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_wartbarkeit",
+        "g_langfristig"
+      ]
+    },
+    {
+      "id": "s080",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Die Wartbarkeit einer Fremdlösung hängt stark vom Anbieter ab. Bei uns läge sie in eigenen Händen.",
+      "translation": "The maintainability of an external solution depends heavily on the provider. With us it would be in our own hands.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_haengen_ab",
+        "g_eigene_hand"
+      ]
+    },
+    {
+      "id": "s081",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Aber eigenes Personal zu binden ist teuer. Hätten wir die Kapazität, das dauerhaft zu stemmen?",
+      "translation": "But retaining our own staff is expensive. Would we have the capacity to sustain that long-term?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_binden",
+        "g_dauerhaft",
+        "g_stemmen"
+      ]
+    },
+    {
+      "id": "s082",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Wenn wir die Pilotphase erfolgreich abschließen, wäre die Kapazität vorhanden.",
+      "translation": "If we complete the pilot phase successfully, the capacity would be there.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_abschliessen"
+      ]
+    },
+    {
+      "id": "s083",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wovon hängt die Wartbarkeit einer Fremdlösung ab?",
+      "translation": "What does the maintainability of an external solution depend on?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "stark vom Anbieter"
+      ]
+    },
+    {
+      "id": "s084",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Abhängigkeit von etwas: abhängen von + Dativ. Die Wartbarkeit hängt vom Anbieter ab.",
+      "translation": "Dependence on something: abhängen von + dative. Maintainability depends on the provider.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s085",
+      "type": "drill",
+      "speaker": "managerin",
+      "text": "Die Wartbarkeit hängt vom Anbieter ab.",
+      "translation": "Maintainability depends on the provider.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s086",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Betrachten wir die Risiken im Detail. Was wäre der worst case bei der Eigenentwicklung?",
+      "translation": "Let's consider the risks in detail. What would be the worst case with in-house development?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_worst_case",
+        "g_detail"
+      ]
+    },
+    {
+      "id": "s087",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Der worst case wäre, dass wir nach zwölf Monaten feststellen, dass der Ansatz nicht funktioniert.",
+      "translation": "The worst case would be that after twelve months we realise the approach doesn't work.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_feststellen"
+      ]
+    },
+    {
+      "id": "s088",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Dann hätten wir viel investiert und nichts vorzuzeigen.",
+      "translation": "Then we'd have invested a lot and have nothing to show.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_vorzeigen"
+      ]
+    },
+    {
+      "id": "s089",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Deshalb ist das Pilotprojekt so wichtig. Es begrenzt den Schaden im Zweifelsfall.",
+      "translation": "That's why the pilot project is so important. It limits the damage if things go wrong.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_deshalb",
+        "g_begrenzen",
+        "g_zweifelsfall"
+      ]
+    },
+    {
+      "id": "s090",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was wäre der worst case bei der Eigenentwicklung?",
+      "translation": "What would be the worst case with in-house development?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "nach zwölf Monaten festzustellen, dass es nicht funktioniert"
+      ]
+    },
+    {
+      "id": "s091",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II Plusquamperfekt: wir hätten investiert, wir hätten festgestellt. Es beschreibt eine irreale Situation in der Vergangenheit.",
+      "translation": "Subjunctive II perfect: wir hätten investiert, wir hätten festgestellt. It describes an unreal situation in the past.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s092",
+      "type": "echo",
+      "speaker": "managerin",
+      "text": "Der worst case wäre ein Fehlschlag nach zwölf Monaten.",
+      "translation": "The worst case would be a failure after twelve months.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s093",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Wie sieht es mit dem Marktumfeld aus? Könnte sich die Lage in einem Jahr völlig verändern?",
+      "translation": "What about the market environment? Could the situation change completely in a year?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_marktumfeld",
+        "g_voellig"
+      ]
+    },
+    {
+      "id": "s094",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Durchaus. Wenn der Markt schneller wächst als erwartet, wäre eine flexible Eigenentwicklung im Vorteil.",
+      "translation": "Quite possibly. If the market grows faster than expected, flexible in-house development would be an advantage.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_durchaus",
+        "g_erwartet"
+      ]
+    },
+    {
+      "id": "s095",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Und wenn der Markt stagniert, wäre die Fremdlösung günstiger, weil sie weniger Fixkosten hat.",
+      "translation": "And if the market stagnates, the external solution would be cheaper because it has fewer fixed costs.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_stagnieren",
+        "g_fixkosten"
+      ]
+    },
+    {
+      "id": "s096",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann wäre die Eigenentwicklung im Vorteil?",
+      "translation": "When would in-house development be an advantage?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "wenn der Markt schneller wächst als erwartet"
+      ]
+    },
+    {
+      "id": "s097",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Negative Bedingungen mit wenn: wenn nicht, außer wenn, solange nicht. Sie helfen, Szenarien präzise abzugrenzen.",
+      "translation": "Negative conditions with wenn: wenn nicht, außer wenn, solange nicht. They help define scenarios precisely.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s098",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Wir sollten auch die Exit-Optionen prüfen. Wie kämen wir aus einer Fremdlösung wieder heraus?",
+      "translation": "We should also examine the exit options. How would we get out of an external solution again?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_exit",
+        "g_pruefen"
+      ]
+    },
+    {
+      "id": "s099",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Das hängt von den Vertragsbedingungen ab. Wenn es keine Ausstiegsklausel gibt, wären wir gebunden.",
+      "translation": "That depends on the contract terms. If there's no exit clause, we'd be tied.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_vertragsbedingung",
+        "g_ausstiegsklausel",
+        "g_gebunden"
+      ]
+    },
+    {
+      "id": "s100",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Dann müssten wir eine Ausstiegsklausel aushandeln, bevor wir unterschreiben.",
+      "translation": "Then we'd have to negotiate an exit clause before we sign.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_aushandeln",
+        "g_unterschreiben"
+      ]
+    },
+    {
+      "id": "s101",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wovon hängt der Ausstieg aus einer Fremdlösung ab?",
+      "translation": "What does exiting an external solution depend on?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "von den Vertragsbedingungen"
+      ]
+    },
+    {
+      "id": "s102",
+      "type": "drill",
+      "speaker": "managerin",
+      "text": "Wir müssten eine Ausstiegsklausel aushandeln.",
+      "translation": "We'd have to negotiate an exit clause.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s103",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Wartbarkeit",
+      "translation": "maintainability",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_wartbarkeit"
+      ]
+    },
+    {
+      "id": "s104",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "langfristig",
+      "translation": "long-term",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_langfristig"
+      ]
+    },
+    {
+      "id": "s105",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "abhängen von",
+      "translation": "to depend on",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_haengen_ab"
+      ]
+    },
+    {
+      "id": "s106",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "dauerhaft",
+      "translation": "permanently / sustainably",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_dauerhaft"
+      ]
+    },
+    {
+      "id": "s107",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "stemmen",
+      "translation": "to manage / cope with",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stemmen"
+      ]
+    },
+    {
+      "id": "s108",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der worst case",
+      "translation": "the worst case",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_worst_case"
+      ]
+    },
+    {
+      "id": "s109",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "im Detail",
+      "translation": "in detail",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_detail"
+      ]
+    },
+    {
+      "id": "s110",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "feststellen",
+      "translation": "to determine / notice",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_feststellen"
+      ]
+    },
+    {
+      "id": "s111",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "vorzeigen",
+      "translation": "to show / present",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorzeigen"
+      ]
+    },
+    {
+      "id": "s112",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "deshalb",
+      "translation": "therefore",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_deshalb"
+      ]
+    },
+    {
+      "id": "s113",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "begrenzen",
+      "translation": "to limit",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_begrenzen"
+      ]
+    },
+    {
+      "id": "s114",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Zweifelsfall",
+      "translation": "the case of doubt",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zweifelsfall"
+      ]
+    },
+    {
+      "id": "s115",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Marktumfeld",
+      "translation": "the market environment",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_marktumfeld"
+      ]
+    },
+    {
+      "id": "s116",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "völlig",
+      "translation": "completely",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_voellig"
+      ]
+    },
+    {
+      "id": "s117",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "durchaus",
+      "translation": "quite / certainly",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_durchaus"
+      ]
+    },
+    {
+      "id": "s118",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "erwartet",
+      "translation": "expected",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erwartet"
+      ]
+    },
+    {
+      "id": "s119",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "stagnieren",
+      "translation": "to stagnate",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stagnieren"
+      ]
+    },
+    {
+      "id": "s120",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Fixkosten",
+      "translation": "fixed costs",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fixkosten"
+      ]
+    },
+    {
+      "id": "s121",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Exit",
+      "translation": "the exit",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_exit"
+      ]
+    },
+    {
+      "id": "s122",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Vertragsbedingung",
+      "translation": "the contract term",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vertragsbedingung"
+      ]
+    },
+    {
+      "id": "s123",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Ausstiegsklausel",
+      "translation": "the exit clause",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ausstiegsklausel"
+      ]
+    },
+    {
+      "id": "s124",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gebunden",
+      "translation": "bound / tied",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gebunden"
+      ]
+    },
+    {
+      "id": "s125",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "aushandeln",
+      "translation": "to negotiate",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_aushandeln"
+      ]
+    },
+    {
+      "id": "s126",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "unterschreiben",
+      "translation": "to sign",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_unterschreiben"
+      ]
+    },
+    {
+      "id": "s127",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Damit haben wir eine fundierte Grundlage für die Entscheidung.",
+      "translation": "That gives us a solid basis for the decision.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fundiert",
+        "g_grundlage"
+      ]
+    },
+    {
+      "id": "s128",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Ich werde die Analyse bis Freitag schriftlich zusammenfassen.",
+      "translation": "I'll summarise the analysis in writing by Friday.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zusammenfassen"
+      ]
+    },
+    {
+      "id": "s129",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Und ich bereite die Präsentation für die Geschäftsführung vor.",
+      "translation": "And I'll prepare the presentation for the management board.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_praesentation",
+        "g_geschaeftsfuehrung"
+      ]
+    },
+    {
+      "id": "s130",
+      "type": "line",
+      "speaker": "managerin",
+      "text": "Dann sind wir uns einig über den Pilotprojekt-Ansatz?",
+      "translation": "Then we agree on the pilot project approach?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sich_einig"
+      ]
+    },
+    {
+      "id": "s131",
+      "type": "line",
+      "speaker": "manager",
+      "text": "Einverstanden. Wir starten klein und bewerten die Ergebnisse.",
+      "translation": "Agreed. We'll start small and evaluate the results.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_bewerten"
+      ]
+    },
+    {
+      "id": "s132",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Bis wann wird die Analyse schriftlich zusammengefasst?",
+      "translation": "By when will the analysis be summarised in writing?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "bis Freitag"
+      ]
+    },
+    {
+      "id": "s133",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Zusammenfassung: bei strategischen Entscheidungen zählen Trade-offs, Risiken, Annahmen und Exit-Optionen. Konjunktiv II macht Hypothesen erkennbar.",
+      "translation": "Summary: in strategic decisions, trade-offs, risks, assumptions and exit options matter. Subjunctive II marks hypotheses.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s134",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "fundiert",
+      "translation": "well-founded",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fundiert"
+      ]
+    },
+    {
+      "id": "s135",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Grundlage",
+      "translation": "the basis",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_grundlage"
+      ]
+    },
+    {
+      "id": "s136",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "zusammenfassen",
+      "translation": "to summarise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zusammenfassen"
+      ]
+    },
+    {
+      "id": "s137",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Präsentation",
+      "translation": "the presentation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_praesentation"
+      ]
+    },
+    {
+      "id": "s138",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Geschäftsführung",
+      "translation": "the management board",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_geschaeftsfuehrung"
+      ]
+    },
+    {
+      "id": "s139",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sich einig",
+      "translation": "in agreement",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sich_einig"
+      ]
+    },
+    {
+      "id": "s140",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bewerten",
+      "translation": "to evaluate",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bewerten"
+      ]
+    },
+    {
+      "id": "s141",
+      "type": "recap",
+      "speaker": "narrator",
+      "text": "Heute hast du gelernt: Trade-offs abzuwägen, einen Nominalstil zu verstehen und hypothetische Szenarien mit Konjunktiv II zu erörtern.",
+      "translation": "Today you learned: weighing trade-offs, understanding nominal style, and discussing hypothetical scenarios with the subjunctive.",
+      "pause_after_ms": 800
     }
   ],
   "glossary": [
     {
-      "id": "g_tradeoff", "de": "der Trade-off", "en": "the trade-off", "pos": "noun",
-      "article": "der", "plural": "die Trade-offs",
-      "note_de": "Ein Ziel gegen ein anderes abwägen.",
-      "note_en": "Weighing one goal against another.",
-      "example_de": "Das ist ein klassischer Trade-off.", "example_en": "That's a classic trade-off."
+      "id": "g_systematisch",
+      "de": "systematisch",
+      "en": "systematically",
+      "pos": "adverb",
+      "example_de": "Wir gehen systematisch vor.",
+      "example_en": "We proceed systematically."
     },
     {
-      "id": "g_entscheidung", "de": "die Entscheidung", "en": "the decision", "pos": "noun",
-      "article": "die", "plural": "die Entscheidungen",
-      "example_de": "Wir stehen vor einer schwierigen Entscheidung.", "example_en": "We face a difficult decision."
+      "id": "g_angehen",
+      "de": "angehen",
+      "en": "to approach / tackle",
+      "pos": "verb",
+      "example_de": "Wir gehen das Problem an.",
+      "example_en": "We tackle the problem."
     },
     {
-      "id": "g_wachstum", "de": "das Wachstum", "en": "the growth", "pos": "noun",
-      "article": "das", "plural": "die Wachstümer",
-      "example_de": "Der Vorstand erwartet Wachstum.", "example_en": "The board expects growth."
+      "id": "g_offensichtlich",
+      "de": "offensichtlich",
+      "en": "obvious",
+      "pos": "adjective",
+      "example_de": "Der Vorteil ist offensichtlich.",
+      "example_en": "The advantage is obvious."
     },
     {
-      "id": "g_profitabilitaet", "de": "die Profitabilität", "en": "the profitability", "pos": "noun",
-      "article": "die", "plural": "die Profitabilitäten",
-      "example_de": "Wachstum und Profitabilität stehen im Konflikt.", "example_en": "Growth and profitability are in conflict."
+      "id": "g_vorteil",
+      "de": "der Vorteil",
+      "en": "the advantage",
+      "pos": "noun",
+      "example_de": "Das ist ein Vorteil.",
+      "example_en": "That's an advantage.",
+      "article": "der",
+      "plural": "die Vorteile"
     },
     {
-      "id": "g_kosten", "de": "die Kosten", "en": "the costs", "pos": "noun",
-      "article": "die", "plural": "die Kosten",
-      "note_de": "Pluralwort.",
-      "note_en": "Plural-only noun.",
-      "example_de": "Die Kosten würden steigen.", "example_en": "The costs would rise."
+      "id": "g_architektur",
+      "de": "die Architektur",
+      "en": "the architecture",
+      "pos": "noun",
+      "example_de": "Die Architektur ist stabil.",
+      "example_en": "The architecture is stable.",
+      "article": "die",
+      "plural": "die Architekturen"
     },
     {
-      "id": "g_qualitaet", "de": "die Qualität", "en": "the quality", "pos": "noun",
-      "article": "die", "plural": "die Qualitäten",
-      "example_de": "Wir riskieren die Qualität.", "example_en": "We're risking quality."
+      "id": "g_unterschaetzen",
+      "de": "unterschätzen",
+      "en": "to underestimate",
+      "pos": "verb",
+      "example_de": "Wir unterschätzen die Kosten.",
+      "example_en": "We underestimate the costs."
     },
     {
-      "id": "g_bevorzugen", "de": "bevorzugen", "en": "to prefer", "pos": "verb",
-      "note_de": "Nicht trennbar: ich bevorzuge.",
-      "note_en": "Not separable: ich bevorzuge.",
-      "example_de": "Welche Option bevorzugen Sie?", "example_en": "Which option do you prefer?"
+      "id": "g_personalkosten",
+      "de": "die Personalkosten",
+      "en": "the personnel costs",
+      "pos": "noun",
+      "example_de": "Die Personalkosten steigen.",
+      "example_en": "Personnel costs are rising.",
+      "article": "die",
+      "plural": "die Personalkosten"
     },
     {
-      "id": "g_moderat", "de": "moderat", "en": "moderate", "pos": "adj",
-      "example_de": "Ich schlage einen moderaten Kurs vor.", "example_en": "I propose a moderate course."
+      "id": "g_einhergehen",
+      "de": "einhergehen",
+      "en": "to come with / accompany",
+      "pos": "verb",
+      "example_de": "Das geht mit Kosten einher.",
+      "example_en": "That comes with costs."
     },
     {
-      "id": "g_vermutlich", "de": "vermutlich", "en": "presumably", "pos": "adverb",
-      "example_de": "Vermutlich ist es klüger zu warten.", "example_en": "Presumably it's wiser to wait."
+      "id": "g_flexibilitaet",
+      "de": "die Flexibilität",
+      "en": "the flexibility",
+      "pos": "noun",
+      "example_de": "Wir haben Flexibilität.",
+      "example_en": "We have flexibility.",
+      "article": "die"
     },
     {
-      "id": "g_klueger", "de": "klüger", "en": "wiser", "pos": "adj",
-      "note_de": "Komparativ von klug.",
-      "note_en": "Comparative of klug (clever).",
-      "example_de": "Es ist klüger, zuerst zu testen.", "example_en": "It's wiser to test first."
+      "id": "g_fremdloesung",
+      "de": "die Fremdlösung",
+      "en": "the external solution",
+      "pos": "noun",
+      "example_de": "Die Fremdlösung ist schneller.",
+      "example_en": "The external solution is faster.",
+      "article": "die",
+      "plural": "die Fremdlösungen"
     },
     {
-      "id": "g_vorstand", "de": "der Vorstand", "en": "the board", "pos": "noun",
-      "article": "der", "plural": "die Vorstände",
-      "example_de": "Der Vorstand erwartet Wachstum.", "example_en": "The board expects growth."
+      "id": "g_abhaengig",
+      "de": "abhängig",
+      "en": "dependent",
+      "pos": "adjective",
+      "example_de": "Wir sind abhängig vom Anbieter.",
+      "example_en": "We depend on the provider."
     },
     {
-      "id": "g_druck", "de": "der Druck", "en": "the pressure", "pos": "noun",
-      "article": "der", "plural": "die Drücke",
-      "example_de": "Ich verstehe den Druck.", "example_en": "I understand the pressure."
+      "id": "g_anbieter",
+      "de": "der Anbieter",
+      "en": "the provider",
+      "pos": "noun",
+      "example_de": "Der Anbieter liefert die Software.",
+      "example_en": "The provider delivers the software.",
+      "article": "der",
+      "plural": "die Anbieter"
     },
     {
-      "id": "g_nachhaltig", "de": "nachhaltig", "en": "sustainable", "pos": "adj",
-      "example_de": "Nachhaltiges Wachstum ist mehr wert.", "example_en": "Sustainable growth is worth more."
+      "id": "g_angenommen",
+      "de": "angenommen",
+      "en": "suppose / assuming",
+      "pos": "conjunction",
+      "example_de": "Angenommen, wir machen das.",
+      "example_en": "Suppose we do that."
     },
     {
-      "id": "g_kurzfristig", "de": "kurzfristig", "en": "short-term", "pos": "adj",
-      "example_de": "Kurzfristige Gewinne können teuer werden.", "example_en": "Short-term profits can become expensive."
+      "id": "g_amortisation",
+      "de": "die Amortisation",
+      "en": "the amortisation",
+      "pos": "noun",
+      "example_de": "Die Amortisation dauert zwei Jahre.",
+      "example_en": "Amortisation takes two years.",
+      "article": "die",
+      "plural": "die Amortisationen"
     },
     {
-      "id": "g_langfristig", "de": "langfristig", "en": "long-term", "pos": "adj",
-      "example_de": "Langfristig ist Qualität wichtiger.", "example_en": "In the long term, quality is more important."
+      "id": "g_rahmenbedingung",
+      "de": "die Rahmenbedingung",
+      "en": "the framework condition",
+      "pos": "noun",
+      "example_de": "Die Rahmenbedingungen sind stabil.",
+      "example_en": "The framework conditions are stable.",
+      "article": "die",
+      "plural": "die Rahmenbedingungen"
     },
     {
-      "id": "g_empfehlung", "de": "die Empfehlung", "en": "the recommendation", "pos": "noun",
-      "article": "die", "plural": "die Empfehlungen",
-      "example_de": "Wir halten das als Empfehlung fest.", "example_en": "We'll record that as a recommendation."
+      "id": "g_erheblich",
+      "de": "erheblich",
+      "en": "considerable",
+      "pos": "adjective",
+      "example_de": "Der Zeitraum ist erheblich.",
+      "example_en": "The period is considerable."
+    },
+    {
+      "id": "g_hybrid",
+      "de": "hybrid",
+      "en": "hybrid",
+      "pos": "adjective",
+      "example_de": "Das ist ein hybrider Ansatz.",
+      "example_en": "That's a hybrid approach."
+    },
+    {
+      "id": "g_denkbar",
+      "de": "denkbar",
+      "en": "conceivable",
+      "pos": "adjective",
+      "example_de": "Das ist denkbar.",
+      "example_en": "That's conceivable."
+    },
+    {
+      "id": "g_allerdings",
+      "de": "allerdings",
+      "en": "however / admittedly",
+      "pos": "adverb",
+      "example_de": "Allerdings ist es teuer.",
+      "example_en": "However, it's expensive."
+    },
+    {
+      "id": "g_komplexitaet",
+      "de": "die Komplexität",
+      "en": "the complexity",
+      "pos": "noun",
+      "example_de": "Die Komplexität ist hoch.",
+      "example_en": "The complexity is high.",
+      "article": "die"
+    },
+    {
+      "id": "g_verringern",
+      "de": "verringern",
+      "en": "to reduce",
+      "pos": "verb",
+      "example_de": "Wir verringern die Komplexität.",
+      "example_en": "We reduce the complexity."
+    },
+    {
+      "id": "g_wuenschenswert",
+      "de": "wünschenswert",
+      "en": "desirable",
+      "pos": "adjective",
+      "example_de": "Weniger Komplexität ist wünschenswert.",
+      "example_en": "Less complexity is desirable."
+    },
+    {
+      "id": "g_aspekt",
+      "de": "der Aspekt",
+      "en": "the aspect",
+      "pos": "noun",
+      "example_de": "Ein wichtiger Aspekt.",
+      "example_en": "An important aspect.",
+      "article": "der",
+      "plural": "die Aspekte"
+    },
+    {
+      "id": "g_skalierbarkeit",
+      "de": "die Skalierbarkeit",
+      "en": "the scalability",
+      "pos": "noun",
+      "example_de": "Die Skalierbarkeit ist wichtig.",
+      "example_en": "Scalability is important.",
+      "article": "die"
+    },
+    {
+      "id": "g_wachstum",
+      "de": "das Wachstum",
+      "en": "the growth",
+      "pos": "noun",
+      "example_de": "Das Wachstum ist stark.",
+      "example_en": "Growth is strong.",
+      "article": "das"
+    },
+    {
+      "id": "g_ausgelegt",
+      "de": "ausgelegt",
+      "en": "designed for",
+      "pos": "adjective",
+      "example_de": "Die Architektur ist darauf ausgelegt.",
+      "example_en": "The architecture is designed for it."
+    },
+    {
+      "id": "g_grundlegend",
+      "de": "grundlegend",
+      "en": "fundamental",
+      "pos": "adjective",
+      "example_de": "Eine grundlegende Änderung.",
+      "example_en": "A fundamental change."
+    },
+    {
+      "id": "g_ueberarbeiten",
+      "de": "überarbeiten",
+      "en": "to revise",
+      "pos": "verb",
+      "example_de": "Wir überarbeiten die Architektur.",
+      "example_en": "We revise the architecture."
+    },
+    {
+      "id": "g_compliance",
+      "de": "die Compliance",
+      "en": "compliance",
+      "pos": "noun",
+      "example_de": "Compliance ist erforderlich.",
+      "example_en": "Compliance is required.",
+      "article": "die"
+    },
+    {
+      "id": "g_datenschutz",
+      "de": "der Datenschutz",
+      "en": "data protection",
+      "pos": "noun",
+      "example_de": "Der Datenschutz ist wichtig.",
+      "example_en": "Data protection is important.",
+      "article": "der"
+    },
+    {
+      "id": "g_vorgabe",
+      "de": "die Vorgabe",
+      "en": "the requirement / specification",
+      "pos": "noun",
+      "example_de": "Die Vorgaben sind klar.",
+      "example_en": "The requirements are clear.",
+      "article": "die",
+      "plural": "die Vorgaben"
+    },
+    {
+      "id": "g_einhalten",
+      "de": "einhalten",
+      "en": "to comply with",
+      "pos": "verb",
+      "example_de": "Wir halten die Vorgaben ein.",
+      "example_en": "We comply with the requirements."
+    },
+    {
+      "id": "g_eigenregie",
+      "de": "die Eigenregie",
+      "en": "in-house management",
+      "pos": "noun",
+      "example_de": "Wir arbeiten in Eigenregie.",
+      "example_en": "We work in-house.",
+      "article": "die"
+    },
+    {
+      "id": "g_verstoss",
+      "de": "der Verstoß",
+      "en": "the violation",
+      "pos": "noun",
+      "example_de": "Es gab einen Verstoß.",
+      "example_en": "There was a violation.",
+      "article": "der",
+      "plural": "die Verstöße"
+    },
+    {
+      "id": "g_schrittweise",
+      "de": "schrittweise",
+      "en": "step by step",
+      "pos": "adverb",
+      "example_de": "Wir gehen schrittweise vor.",
+      "example_en": "We proceed step by step."
+    },
+    {
+      "id": "g_verteilen",
+      "de": "verteilen",
+      "en": "to distribute / spread",
+      "pos": "verb",
+      "example_de": "Wir verteilen das Risiko.",
+      "example_en": "We spread the risk."
+    },
+    {
+      "id": "g_gangbar",
+      "de": "gangbar",
+      "en": "viable",
+      "pos": "adjective",
+      "example_de": "Das ist ein gangbarer Weg.",
+      "example_en": "That's a viable path."
+    },
+    {
+      "id": "g_mittelweg",
+      "de": "der Mittelweg",
+      "en": "the middle ground",
+      "pos": "noun",
+      "example_de": "Der Mittelweg ist sinnvoll.",
+      "example_en": "The middle ground makes sense.",
+      "article": "der",
+      "plural": "die Mittelwege"
+    },
+    {
+      "id": "g_ressource",
+      "de": "die Ressource",
+      "en": "the resource",
+      "pos": "noun",
+      "example_de": "Wir haben genug Ressourcen.",
+      "example_en": "We have enough resources.",
+      "article": "die",
+      "plural": "die Ressourcen"
+    },
+    {
+      "id": "g_benoetigen",
+      "de": "benötigen",
+      "en": "to need / require",
+      "pos": "verb",
+      "example_de": "Wir benötigen vier Entwickler.",
+      "example_en": "We need four developers."
+    },
+    {
+      "id": "g_entscheidungsgrundlage",
+      "de": "die Entscheidungsgrundlage",
+      "en": "the basis for decision",
+      "pos": "noun",
+      "example_de": "Das ist die Entscheidungsgrundlage.",
+      "example_en": "That's the basis for decision.",
+      "article": "die"
+    },
+    {
+      "id": "g_ausformulieren",
+      "de": "ausformulieren",
+      "en": "to formulate in full",
+      "pos": "verb",
+      "example_de": "Wir formulieren die Empfehlung aus.",
+      "example_en": "We formulate the recommendation."
+    },
+    {
+      "id": "g_pilotprojekt",
+      "de": "das Pilotprojekt",
+      "en": "the pilot project",
+      "pos": "noun",
+      "example_de": "Das Pilotprojekt startet im Mai.",
+      "example_en": "The pilot project starts in May.",
+      "article": "das",
+      "plural": "die Pilotprojekte"
+    },
+    {
+      "id": "g_evaluieren",
+      "de": "evaluieren",
+      "en": "to evaluate",
+      "pos": "verb",
+      "example_de": "Wir evaluieren das Ergebnis.",
+      "example_en": "We evaluate the result."
+    },
+    {
+      "id": "g_gegenueberstellung",
+      "de": "die Gegenüberstellung",
+      "en": "the comparison",
+      "pos": "noun",
+      "example_de": "Die Gegenüberstellung ist hilfreich.",
+      "example_en": "The comparison is helpful.",
+      "article": "die",
+      "plural": "die Gegenüberstellungen"
+    },
+    {
+      "id": "g_ueberzeugen",
+      "de": "überzeugen",
+      "en": "to convince",
+      "pos": "verb",
+      "example_de": "Das überzeugt mich.",
+      "example_en": "That convinces me."
+    },
+    {
+      "id": "g_wartbarkeit",
+      "de": "die Wartbarkeit",
+      "en": "maintainability",
+      "pos": "noun",
+      "example_de": "Die Wartbarkeit ist hoch.",
+      "example_en": "Maintainability is high.",
+      "article": "die"
+    },
+    {
+      "id": "g_langfristig",
+      "de": "langfristig",
+      "en": "long-term",
+      "pos": "adjective",
+      "example_de": "Eine langfristige Planung.",
+      "example_en": "A long-term plan."
+    },
+    {
+      "id": "g_haengen_ab",
+      "de": "abhängen von",
+      "en": "to depend on",
+      "pos": "verb",
+      "example_de": "Es hängt vom Anbieter ab.",
+      "example_en": "It depends on the provider."
+    },
+    {
+      "id": "g_eigene_hand",
+      "de": "in eigenen Händen",
+      "en": "in one's own hands",
+      "pos": "phrase",
+      "example_de": "Die Kontrolle liegt in eigenen Händen.",
+      "example_en": "Control is in our own hands."
+    },
+    {
+      "id": "g_binden",
+      "de": "binden",
+      "en": "to bind / retain",
+      "pos": "verb",
+      "example_de": "Wir binden das Personal.",
+      "example_en": "We retain the staff."
+    },
+    {
+      "id": "g_dauerhaft",
+      "de": "dauerhaft",
+      "en": "permanently / sustainably",
+      "pos": "adverb",
+      "example_de": "Wir sichern es dauerhaft.",
+      "example_en": "We secure it permanently."
+    },
+    {
+      "id": "g_stemmen",
+      "de": "stemmen",
+      "en": "to manage / cope with",
+      "pos": "verb",
+      "example_de": "Wir können das stemmen.",
+      "example_en": "We can manage that."
+    },
+    {
+      "id": "g_abschliessen",
+      "de": "abschließen",
+      "en": "to complete / conclude",
+      "pos": "verb",
+      "example_de": "Wir schließen die Phase ab.",
+      "example_en": "We complete the phase."
+    },
+    {
+      "id": "g_worst_case",
+      "de": "der worst case",
+      "en": "the worst case",
+      "pos": "noun",
+      "example_de": "Der worst case ist klar.",
+      "example_en": "The worst case is clear.",
+      "article": "der"
+    },
+    {
+      "id": "g_detail",
+      "de": "im Detail",
+      "en": "in detail",
+      "pos": "phrase",
+      "example_de": "Wir prüfen im Detail.",
+      "example_en": "We examine in detail."
+    },
+    {
+      "id": "g_feststellen",
+      "de": "feststellen",
+      "en": "to determine / notice",
+      "pos": "verb",
+      "example_de": "Wir stellen einen Fehler fest.",
+      "example_en": "We notice an error."
+    },
+    {
+      "id": "g_vorzeigen",
+      "de": "vorzeigen",
+      "en": "to show / present",
+      "pos": "verb",
+      "example_de": "Wir haben nichts vorzuzeigen.",
+      "example_en": "We have nothing to show."
+    },
+    {
+      "id": "g_deshalb",
+      "de": "deshalb",
+      "en": "therefore",
+      "pos": "adverb",
+      "example_de": "Deshalb ist es wichtig.",
+      "example_en": "That's why it's important."
+    },
+    {
+      "id": "g_begrenzen",
+      "de": "begrenzen",
+      "en": "to limit",
+      "pos": "verb",
+      "example_de": "Wir begrenzen den Schaden.",
+      "example_en": "We limit the damage."
+    },
+    {
+      "id": "g_zweifelsfall",
+      "de": "der Zweifelsfall",
+      "en": "the case of doubt",
+      "pos": "noun",
+      "example_de": "Im Zweifelsfall fragen wir nach.",
+      "example_en": "If in doubt, we ask.",
+      "article": "der",
+      "plural": "die Zweifelsfälle"
+    },
+    {
+      "id": "g_marktumfeld",
+      "de": "das Marktumfeld",
+      "en": "the market environment",
+      "pos": "noun",
+      "example_de": "Das Marktumfeld ändert sich.",
+      "example_en": "The market environment is changing.",
+      "article": "das"
+    },
+    {
+      "id": "g_voellig",
+      "de": "völlig",
+      "en": "completely",
+      "pos": "adverb",
+      "example_de": "Die Lage hat sich völlig verändert.",
+      "example_en": "The situation changed completely."
+    },
+    {
+      "id": "g_durchaus",
+      "de": "durchaus",
+      "en": "quite / certainly",
+      "pos": "adverb",
+      "example_de": "Das ist durchaus möglich.",
+      "example_en": "That's quite possible."
+    },
+    {
+      "id": "g_erwartet",
+      "de": "erwartet",
+      "en": "expected",
+      "pos": "adjective",
+      "example_de": "Schneller als erwartet.",
+      "example_en": "Faster than expected."
+    },
+    {
+      "id": "g_stagnieren",
+      "de": "stagnieren",
+      "en": "to stagnate",
+      "pos": "verb",
+      "example_de": "Der Markt stagniert.",
+      "example_en": "The market is stagnating."
+    },
+    {
+      "id": "g_fixkosten",
+      "de": "die Fixkosten",
+      "en": "fixed costs",
+      "pos": "noun",
+      "example_de": "Die Fixkosten sind niedrig.",
+      "example_en": "Fixed costs are low.",
+      "article": "die",
+      "plural": "die Fixkosten"
+    },
+    {
+      "id": "g_exit",
+      "de": "der Exit",
+      "en": "the exit",
+      "pos": "noun",
+      "example_de": "Der Exit ist geregelt.",
+      "example_en": "The exit is regulated.",
+      "article": "der"
+    },
+    {
+      "id": "g_vertragsbedingung",
+      "de": "die Vertragsbedingung",
+      "en": "the contract term",
+      "pos": "noun",
+      "example_de": "Die Vertragsbedingungen sind klar.",
+      "example_en": "The contract terms are clear.",
+      "article": "die",
+      "plural": "die Vertragsbedingungen"
+    },
+    {
+      "id": "g_ausstiegsklausel",
+      "de": "die Ausstiegsklausel",
+      "en": "the exit clause",
+      "pos": "noun",
+      "example_de": "Wir brauchen eine Ausstiegsklausel.",
+      "example_en": "We need an exit clause.",
+      "article": "die",
+      "plural": "die Ausstiegsklauseln"
+    },
+    {
+      "id": "g_gebunden",
+      "de": "gebunden",
+      "en": "bound / tied",
+      "pos": "adjective",
+      "example_de": "Wir sind an den Vertrag gebunden.",
+      "example_en": "We're bound by the contract."
+    },
+    {
+      "id": "g_aushandeln",
+      "de": "aushandeln",
+      "en": "to negotiate",
+      "pos": "verb",
+      "example_de": "Wir handeln eine Klausel aus.",
+      "example_en": "We negotiate a clause."
+    },
+    {
+      "id": "g_unterschreiben",
+      "de": "unterschreiben",
+      "en": "to sign",
+      "pos": "verb",
+      "example_de": "Wir unterschreiben den Vertrag.",
+      "example_en": "We sign the contract."
+    },
+    {
+      "id": "g_fundiert",
+      "de": "fundiert",
+      "en": "well-founded",
+      "pos": "adjective",
+      "example_de": "Eine fundierte Analyse.",
+      "example_en": "A well-founded analysis."
+    },
+    {
+      "id": "g_grundlage",
+      "de": "die Grundlage",
+      "en": "the basis",
+      "pos": "noun",
+      "example_de": "Das ist die Grundlage.",
+      "example_en": "That's the basis.",
+      "article": "die",
+      "plural": "die Grundlagen"
+    },
+    {
+      "id": "g_zusammenfassen",
+      "de": "zusammenfassen",
+      "en": "to summarise",
+      "pos": "verb",
+      "example_de": "Ich fasse die Analyse zusammen.",
+      "example_en": "I summarise the analysis."
+    },
+    {
+      "id": "g_praesentation",
+      "de": "die Präsentation",
+      "en": "the presentation",
+      "pos": "noun",
+      "example_de": "Die Präsentation ist fertig.",
+      "example_en": "The presentation is ready.",
+      "article": "die",
+      "plural": "die Präsentationen"
+    },
+    {
+      "id": "g_geschaeftsfuehrung",
+      "de": "die Geschäftsführung",
+      "en": "the management board",
+      "pos": "noun",
+      "example_de": "Die Geschäftsführung entscheidet.",
+      "example_en": "The management board decides.",
+      "article": "die"
+    },
+    {
+      "id": "g_sich_einig",
+      "de": "sich einig",
+      "en": "in agreement",
+      "pos": "phrase",
+      "example_de": "Wir sind uns einig.",
+      "example_en": "We're in agreement."
+    },
+    {
+      "id": "g_bewerten",
+      "de": "bewerten",
+      "en": "to evaluate",
+      "pos": "verb",
+      "example_de": "Wir bewerten die Ergebnisse.",
+      "example_en": "We evaluate the results."
+    },
+    {
+      "id": "g_pruefen",
+      "de": "prüfen",
+      "en": "to examine / check",
+      "pos": "verb",
+      "example_de": "Wir prüfen die Optionen.",
+      "example_en": "We examine the options."
     }
   ],
   "meta": {

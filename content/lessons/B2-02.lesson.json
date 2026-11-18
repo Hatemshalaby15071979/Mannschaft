@@ -2,258 +2,1932 @@
   "schema": "lesson-script/v1",
   "id": "B2-02",
   "level": "B2",
-  "title": { "de": "Gehaltsverhandlung", "en": "Salary negotiation" },
+  "title": {
+    "de": "Gehaltsverhandlung",
+    "en": "Salary negotiation"
+  },
   "minutes": 16,
   "scene": {
-    "setting_de": "Ein Gespräch über das Gehalt. Herr Bauer hat einen Termin bei seiner Vorgesetzten.",
-    "setting_en": "A conversation about salary. Mr Bauer has an appointment with his manager.",
+    "setting_de": "Eine Gehaltsverhandlung. Die Mitarbeiterin bittet um eine Gehaltserhöhung, der Vorgesetzte reagiert sachlich.",
+    "setting_en": "A salary negotiation. The employee asks for a raise; the manager responds factually.",
     "register": "formal-work",
-    "can_do_de": "Ich kann höflich über das Gehalt verhandeln, Vorschläge machen und Kompromisse aushandeln.",
-    "can_do_en": "I can negotiate salary politely, make proposals, and agree on compromises.",
-    "situation_tags": ["work", "salary", "negotiation"],
-    "grammar_focus": ["konjunktiv-2", "hoeflichkeit", "verhandlung"]
+    "can_do_de": "Ich kann ein Anliegen höflich und sachlich vertreten, Argumente gewichten und mit Konjunktiv II verhandeln.",
+    "can_do_en": "I can present a request politely and factually, weigh arguments, and negotiate using the subjunctive.",
+    "situation_tags": [
+      "work",
+      "negotiation",
+      "salary"
+    ],
+    "grammar_focus": [
+      "konjunktiv-2",
+      "konnektoren",
+      "komparativ"
+    ]
   },
   "cast": [
-    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
-    { "role": "mitarbeiter", "voice": "de_young_m", "lang": "de" },
-    { "role": "vorgesetzte", "voice": "de_older_f", "lang": "de" }
+    {
+      "role": "narrator",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "mitarbeiterin",
+      "voice": "de_young_f",
+      "lang": "de"
+    },
+    {
+      "role": "vorgesetzter",
+      "voice": "de_older_m",
+      "lang": "de"
+    }
   ],
   "segments": [
     {
-      "id": "s001", "type": "scene", "speaker": "narrator",
-      "text": "Ein Gespräch über das Gehalt. Herr Bauer hat einen Termin bei seiner Vorgesetzten.",
-      "translation": "A conversation about salary. Mr Bauer has an appointment with his manager.",
-      "pause_after_ms": 500
+      "id": "s001",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Ein Gespräch unter vier Augen. Die Mitarbeiterin möchte über ihr Gehalt sprechen.",
+      "translation": "A private conversation. The employee wants to talk about her salary.",
+      "pause_after_ms": 700
     },
     {
-      "id": "s002", "type": "line", "speaker": "vorgesetzte",
-      "text": "Guten Tag, Herr Bauer. Sie wollten über Ihr Gehalt sprechen.",
-      "translation": "Good day, Mr Bauer. You wanted to talk about your salary.",
-      "pause_after_ms": 500,
-      "gloss": ["g_gehalt"]
+      "id": "s002",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Herr Wolf, hätten Sie einen Moment Zeit für mich?",
+      "translation": "Mr Wolf, do you have a moment for me?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_moment"
+      ]
     },
     {
-      "id": "s003", "type": "line", "speaker": "mitarbeiter",
-      "text": "Ja, genau. Ich arbeite seit zwei Jahren hier.",
-      "translation": "Yes, exactly. I've been working here for two years.",
-      "pause_after_ms": 500
+      "id": "s003",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Natürlich. Kommen Sie herein und setzen Sie sich.",
+      "translation": "Of course. Come in and sit down.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_hereinkommen"
+      ]
     },
     {
-      "id": "s004", "type": "line", "speaker": "mitarbeiter",
-      "text": "Ich habe in dieser Zeit viele Projekte übernommen.",
-      "translation": "During this time I've taken on many projects.",
-      "pause_after_ms": 500,
-      "gloss": ["g_uebernehmen"]
+      "id": "s004",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Ich möchte heute über meine Vergütung sprechen.",
+      "translation": "I'd like to talk about my compensation today.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verguetung"
+      ]
     },
     {
-      "id": "s005", "type": "line", "speaker": "vorgesetzte",
-      "text": "Das stimmt. Ihre Leistung ist gut.",
-      "translation": "That's true. Your performance is good.",
-      "pause_after_ms": 500,
-      "gloss": ["g_leistung"]
+      "id": "s005",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Gerne. Was genau beschäftigt Sie?",
+      "translation": "Gladly. What exactly is on your mind?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_beschaeftigen"
+      ]
     },
     {
-      "id": "s006", "type": "line", "speaker": "mitarbeiter",
-      "text": "Ich würde gern über eine Gehaltsanpassung sprechen.",
-      "translation": "I would like to talk about a salary adjustment.",
-      "pause_after_ms": 500,
-      "gloss": ["g_gehaltsanpassung"]
-    },
-    {
-      "id": "s007", "type": "check", "speaker": "narrator",
-      "text": "Worüber möchte Herr Bauer sprechen?",
-      "translation": "What does Mr Bauer want to talk about?",
-      "answers": ["über eine Gehaltsanpassung"],
+      "id": "s006",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Worüber möchte die Mitarbeiterin sprechen?",
+      "translation": "What does the employee want to talk about?",
       "answer_pause_ms": 2500,
-      "pause_after_ms": 400
+      "pause_after_ms": 400,
+      "answers": [
+        "über ihre Vergütung"
+      ]
     },
     {
-      "id": "s008", "type": "note", "speaker": "narrator",
-      "text": "Konjunktiv II klingt höflich: ich würde gern, ich hätte gern, könnten wir.",
-      "translation": "Konjunktiv II sounds polite: I would like, I would like to have, could we.",
-      "speed": 1.0, "pause_after_ms": 400, "skippable": true
+      "id": "s007",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Ich bin seit zwei Jahren hier und habe in dieser Zeit viel Verantwortung übernommen.",
+      "translation": "I've been here for two years and have taken on a lot of responsibility in that time.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verantwortung"
+      ]
     },
     {
-      "id": "s009", "type": "line", "speaker": "vorgesetzte",
-      "text": "Was stellen Sie sich vor?",
-      "translation": "What do you have in mind?",
-      "pause_after_ms": 500,
-      "gloss": ["g_vorschlagen"]
+      "id": "s008",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Meine Aufgaben sind deutlich gewachsen, aber mein Gehalt ist gleich geblieben.",
+      "translation": "My tasks have grown considerably, but my salary has stayed the same.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_deutlich",
+        "g_gleichbleiben"
+      ]
     },
     {
-      "id": "s010", "type": "line", "speaker": "mitarbeiter",
-      "text": "Ich hätte gern zehn Prozent mehr.",
-      "translation": "I would like ten percent more.",
-      "pause_after_ms": 500,
-      "gloss": ["g_prozent"]
+      "id": "s009",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II höflich: Ich möchte, ich hätte, ich würde, ich könnte. Das wirkt sachlich und freundlich.",
+      "translation": "Polite subjunctive: Ich möchte, ich hätte, ich würde, ich könnte. That sounds factual and friendly.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
     },
     {
-      "id": "s011", "type": "line", "speaker": "vorgesetzte",
-      "text": "Zehn Prozent ist viel. Ich könnte fünf Prozent anbieten.",
-      "translation": "Ten percent is a lot. I could offer five percent.",
-      "pause_after_ms": 500,
-      "gloss": ["g_anbieten"]
+      "id": "s010",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Ich verstehe Ihr Anliegen. Lassen Sie uns die Fakten ansehen.",
+      "translation": "I understand your request. Let's look at the facts.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_anliegen",
+        "g_fakte"
+      ]
     },
     {
-      "id": "s012", "type": "line", "speaker": "mitarbeiter",
-      "text": "Ich verstehe. Könnten wir sechs Prozent vereinbaren?",
-      "translation": "I understand. Could we agree on six percent?",
-      "pause_after_ms": 500,
-      "gloss": ["g_vereinbaren"]
+      "id": "s011",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Welche konkreten Leistungen möchten Sie hervorheben?",
+      "translation": "Which specific achievements would you like to highlight?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_konkret",
+        "g_leistung",
+        "g_hervorheben"
+      ]
     },
     {
-      "id": "s013", "type": "line", "speaker": "vorgesetzte",
-      "text": "Sechs Prozent wären möglich, aber erst ab nächstem Quartal.",
-      "translation": "Six percent would be possible, but only from next quarter.",
-      "pause_after_ms": 500,
-      "gloss": ["g_quartal"]
-    },
-    {
-      "id": "s014", "type": "check", "speaker": "narrator",
-      "text": "Wie viel Prozent bietet die Vorgesetzte zuerst an?",
-      "translation": "How many percent does the manager offer first?",
-      "answers": ["fünf Prozent"],
+      "id": "s012",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie lange arbeitet die Mitarbeiterin schon in dem Unternehmen?",
+      "translation": "How long has the employee worked at the company?",
       "answer_pause_ms": 2500,
-      "pause_after_ms": 400
+      "pause_after_ms": 400,
+      "answers": [
+        "seit zwei Jahren"
+      ]
     },
     {
-      "id": "s015", "type": "drill", "speaker": "mitarbeiter",
+      "id": "s013",
+      "type": "echo",
+      "speaker": "mitarbeiterin",
+      "text": "Ich möchte heute über meine Vergütung sprechen.",
+      "translation": "I'd like to talk about my compensation today.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s014",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Ich habe das letzte Projekt vollständig geleitet und den Kundenkontakt selbst geführt.",
+      "translation": "I led the last project entirely and managed the client contact myself.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_vollstaendig",
+        "g_kundenkontakt"
+      ]
+    },
+    {
+      "id": "s015",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Außerdem habe ich eine neue Kollegin eingearbeitet.",
+      "translation": "In addition, I trained a new colleague.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_einarbeiten"
+      ]
+    },
+    {
+      "id": "s016",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Das ist richtig, und ich schätze Ihr Engagement sehr.",
+      "translation": "That's right, and I greatly appreciate your commitment.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_schaetzen",
+        "g_engagement"
+      ]
+    },
+    {
+      "id": "s017",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Aber das Budget für Gehaltserhöhungen ist dieses Jahr knapper als sonst.",
+      "translation": "But the budget for salary increases is tighter this year than usual.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_knapp",
+        "g_sonst"
+      ]
+    },
+    {
+      "id": "s018",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Komparativ: knapper als, höher als, mehr als. Der Vergleich mit als wird oft in Verhandlungen genutzt.",
+      "translation": "Comparative: knapper als, höher als, mehr als. The comparison with als is often used in negotiations.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s019",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was hat die Mitarbeiterin zusätzlich gemacht?",
+      "translation": "What did the employee do in addition?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Sie hat eine neue Kollegin eingearbeitet."
+      ]
+    },
+    {
+      "id": "s020",
+      "type": "drill",
+      "speaker": "mitarbeiterin",
+      "text": "Ich habe das Projekt vollständig geleitet.",
+      "translation": "I led the project entirely.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s021",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Ich verstehe die Budgetlage. Dennoch hätte ich gern eine Anpassung.",
+      "translation": "I understand the budget situation. Nevertheless, I'd like an adjustment.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_dennoch",
+        "g_anpassung"
+      ]
+    },
+    {
+      "id": "s022",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Ich könnte mir auch eine andere Lösung vorstellen, zum Beispiel mehr Weiterbildung.",
+      "translation": "I could also imagine another solution, for example more training.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sich_vorstellen",
+        "g_weiterbildung"
+      ]
+    },
+    {
+      "id": "s023",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Eine Weiterbildung ist möglich. Würden Sie das bevorzugen?",
+      "translation": "Training is possible. Would you prefer that?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_bevorzugen"
+      ]
+    },
+    {
+      "id": "s024",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Eigentlich würde ich eine Gehaltserhöhung bevorzugen, aber ich bin offen für Kompromisse.",
+      "translation": "Actually I'd prefer a salary increase, but I'm open to compromises.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_eigentlich",
+        "g_kompromiss"
+      ]
+    },
+    {
+      "id": "s025",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was würde die Mitarbeiterin bevorzugen?",
+      "translation": "What would the employee prefer?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "eine Gehaltserhöhung"
+      ]
+    },
+    {
+      "id": "s026",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II mit würde + Infinitiv: ich würde bevorzugen, du würdest vorschlagen, wir würden entscheiden.",
+      "translation": "Subjunctive II with würde + infinitive: ich würde bevorzugen, du würdest vorschlagen, wir würden entscheiden.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s027",
+      "type": "drill",
+      "speaker": "vorgesetzter",
+      "text": "Würden Sie eine Weiterbildung bevorzugen?",
+      "translation": "Would you prefer training?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s028",
+      "type": "echo",
+      "speaker": "mitarbeiterin",
+      "text": "Ich bin offen für Kompromisse.",
+      "translation": "I'm open to compromises.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s029",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Moment",
+      "translation": "the moment",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_moment"
+      ]
+    },
+    {
+      "id": "s030",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "hereinkommen",
+      "translation": "to come in",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_hereinkommen"
+      ]
+    },
+    {
+      "id": "s031",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Vergütung",
+      "translation": "the compensation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verguetung"
+      ]
+    },
+    {
+      "id": "s032",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sich beschäftigen",
+      "translation": "to concern oneself / be on one's mind",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_beschaeftigen"
+      ]
+    },
+    {
+      "id": "s033",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Verantwortung",
+      "translation": "the responsibility",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verantwortung"
+      ]
+    },
+    {
+      "id": "s034",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "deutlich",
+      "translation": "clearly / considerably",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_deutlich"
+      ]
+    },
+    {
+      "id": "s035",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gleichbleiben",
+      "translation": "to stay the same",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gleichbleiben"
+      ]
+    },
+    {
+      "id": "s036",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Anliegen",
+      "translation": "the request / concern",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anliegen"
+      ]
+    },
+    {
+      "id": "s037",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Fakt",
+      "translation": "the fact",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fakte"
+      ]
+    },
+    {
+      "id": "s038",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "konkret",
+      "translation": "concrete / specific",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_konkret"
+      ]
+    },
+    {
+      "id": "s039",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Leistung",
+      "translation": "the achievement / performance",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_leistung"
+      ]
+    },
+    {
+      "id": "s040",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "hervorheben",
+      "translation": "to highlight",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_hervorheben"
+      ]
+    },
+    {
+      "id": "s041",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "vollständig",
+      "translation": "entirely / completely",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vollstaendig"
+      ]
+    },
+    {
+      "id": "s042",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Kundenkontakt",
+      "translation": "the client contact",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kundenkontakt"
+      ]
+    },
+    {
+      "id": "s043",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "einarbeiten",
+      "translation": "to train in",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einarbeiten"
+      ]
+    },
+    {
+      "id": "s044",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "schätzen",
+      "translation": "to appreciate",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_schaetzen"
+      ]
+    },
+    {
+      "id": "s045",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Engagement",
+      "translation": "the commitment",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_engagement"
+      ]
+    },
+    {
+      "id": "s046",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "knapp",
+      "translation": "tight / scarce",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_knapp"
+      ]
+    },
+    {
+      "id": "s047",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sonst",
+      "translation": "otherwise / usual",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sonst"
+      ]
+    },
+    {
+      "id": "s048",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "dennoch",
+      "translation": "nevertheless",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_dennoch"
+      ]
+    },
+    {
+      "id": "s049",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Anpassung",
+      "translation": "the adjustment",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anpassung"
+      ]
+    },
+    {
+      "id": "s050",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sich vorstellen",
+      "translation": "to imagine",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sich_vorstellen"
+      ]
+    },
+    {
+      "id": "s051",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Weiterbildung",
+      "translation": "the further training",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_weiterbildung"
+      ]
+    },
+    {
+      "id": "s052",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bevorzugen",
+      "translation": "to prefer",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bevorzugen"
+      ]
+    },
+    {
+      "id": "s053",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "eigentlich",
+      "translation": "actually",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_eigentlich"
+      ]
+    },
+    {
+      "id": "s054",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Kompromiss",
+      "translation": "the compromise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kompromiss"
+      ]
+    },
+    {
+      "id": "s055",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Ich kann Ihnen eine Gehaltserhöhung von fünf Prozent anbieten.",
+      "translation": "I can offer you a five percent salary increase.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_anbieten",
+        "g_prozent"
+      ]
+    },
+    {
+      "id": "s056",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Das ist ein guter Anfang. Ich hatte an sieben Prozent gedacht.",
+      "translation": "That's a good start. I had thought of seven percent.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_anfang",
+        "g_gedacht"
+      ]
+    },
+    {
+      "id": "s057",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Sieben Prozent sind leider nicht drin. Fünf Prozent sind das Maximum.",
+      "translation": "Seven percent isn't possible, I'm afraid. Five percent is the maximum.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_drin",
+        "g_maximum"
+      ]
+    },
+    {
+      "id": "s058",
+      "type": "line",
+      "speaker": "mitarbeiterin",
       "text": "Könnten wir sechs Prozent vereinbaren?",
       "translation": "Could we agree on six percent?",
-      "repeat": 2, "speed": 0.95, "pause_after_ms": 900
-    },
-    {
-      "id": "s016", "type": "line", "speaker": "mitarbeiter",
-      "text": "Das wäre akzeptabel. Vielen Dank.",
-      "translation": "That would be acceptable. Thank you very much.",
-      "pause_after_ms": 500,
-      "gloss": ["g_akzeptabel"]
-    },
-    {
-      "id": "s017", "type": "line", "speaker": "vorgesetzte",
-      "text": "Gern. Ich bereite den Vertrag vor.",
-      "translation": "You're welcome. I'll prepare the contract.",
-      "pause_after_ms": 500,
-      "gloss": ["g_vertrag"]
-    },
-    {
-      "id": "s018", "type": "line", "speaker": "mitarbeiter",
-      "text": "Wann könnte ich den Vertrag unterschreiben?",
-      "translation": "When could I sign the contract?",
-      "pause_after_ms": 500,
-      "gloss": ["g_unterschreiben"]
-    },
-    {
-      "id": "s019", "type": "line", "speaker": "vorgesetzte",
-      "text": "Bis Ende des Monats.",
-      "translation": "By the end of the month.",
-      "pause_after_ms": 600
-    },
-    {
-      "id": "s020", "type": "check", "speaker": "narrator",
-      "text": "Ab wann gilt die Gehaltserhöhung?",
-      "translation": "From when does the raise apply?",
-      "answers": ["ab nächstem Quartal"],
-      "answer_pause_ms": 2500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s021", "type": "vocab", "speaker": "narrator",
-      "text": "die Gehaltsanpassung",
-      "translation": "the salary adjustment",
       "pause_after_ms": 700,
-      "gloss": ["g_gehaltsanpassung"]
+      "gloss": [
+        "g_vereinbaren"
+      ]
     },
     {
-      "id": "s022", "type": "vocab", "speaker": "narrator",
+      "id": "s059",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Ich könnte auf sechs Prozent gehen, wenn wir das Datum des Inkrafttretens verschieben.",
+      "translation": "I could go to six percent if we postpone the effective date.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verschieben",
+        "g_inkrafttreten"
+      ]
+    },
+    {
+      "id": "s060",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie viele Prozent bietet der Vorgesetzte zuerst an?",
+      "translation": "How many percent does the manager offer first?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "fünf Prozent"
+      ]
+    },
+    {
+      "id": "s061",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II in der Verhandlung: Ich könnte, wir könnten, hätten Sie…? Damit bleibt das Gespräch höflich.",
+      "translation": "Subjunctive II in negotiation: Ich könnte, wir könnten, hätten Sie…? This keeps the conversation polite.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s062",
+      "type": "echo",
+      "speaker": "vorgesetzter",
+      "text": "Ich kann Ihnen fünf Prozent anbieten.",
+      "translation": "I can offer you five percent.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s063",
+      "type": "drill",
+      "speaker": "mitarbeiterin",
+      "text": "Könnten wir sechs Prozent vereinbaren?",
+      "translation": "Could we agree on six percent?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s064",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Das klingt fair. Ab wann würde die Erhöhung gelten?",
+      "translation": "That sounds fair. From when would the increase apply?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gelten"
+      ]
+    },
+    {
+      "id": "s065",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Sie würde zum ersten des nächsten Monats in Kraft treten.",
+      "translation": "It would take effect on the first of next month.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_inkrafttreten"
+      ]
+    },
+    {
+      "id": "s066",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Und die Weiterbildung, die wir besprochen haben?",
+      "translation": "And the training we discussed?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_besprochen"
+      ]
+    },
+    {
+      "id": "s067",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Die stellt sichergehen. Ich schicke Ihnen die Unterlagen nächste Woche.",
+      "translation": "That's taken care of. I'll send you the documents next week.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sichergehen",
+        "g_unterlagen"
+      ]
+    },
+    {
+      "id": "s068",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann tritt die Erhöhung in Kraft?",
+      "translation": "When does the increase take effect?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "zum ersten des nächsten Monats"
+      ]
+    },
+    {
+      "id": "s069",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Vielen Dank. Ich freue mich, dass wir eine Einigung erzielt haben.",
+      "translation": "Thank you. I'm glad we reached an agreement.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_einigung",
+        "g_erzielen"
+      ]
+    },
+    {
+      "id": "s070",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Ich auch. Ihre Leistung verdient das.",
+      "translation": "So am I. Your performance deserves it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verdienen"
+      ]
+    },
+    {
+      "id": "s071",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Zusammenfassung: höfliche Verhandlung mit Konjunktiv II, Vergleichen mit als und klaren Konnektoren.",
+      "translation": "Summary: polite negotiation with subjunctive II, comparisons with als, and clear connectives.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s072",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "anbieten",
+      "translation": "to offer",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anbieten"
+      ]
+    },
+    {
+      "id": "s073",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Prozent",
+      "translation": "the percent",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_prozent"
+      ]
+    },
+    {
+      "id": "s074",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Anfang",
+      "translation": "the beginning",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anfang"
+      ]
+    },
+    {
+      "id": "s075",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "drin",
+      "translation": "possible / in it",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_drin"
+      ]
+    },
+    {
+      "id": "s076",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Maximum",
+      "translation": "the maximum",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_maximum"
+      ]
+    },
+    {
+      "id": "s077",
+      "type": "vocab",
+      "speaker": "narrator",
       "text": "vereinbaren",
       "translation": "to agree on",
-      "pause_after_ms": 700,
-      "gloss": ["g_vereinbaren"]
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vereinbaren"
+      ]
     },
     {
-      "id": "s023", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: höflich über das Gehalt verhandeln mit Konjunktiv II.",
-      "translation": "Today you learned: negotiating salary politely with the Konjunktiv II.",
-      "pause_after_ms": 600
+      "id": "s078",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verschieben",
+      "translation": "to postpone",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verschieben"
+      ]
+    },
+    {
+      "id": "s079",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "inkrafttreten",
+      "translation": "to take effect",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_inkrafttreten"
+      ]
+    },
+    {
+      "id": "s080",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gelten",
+      "translation": "to apply / be valid",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gelten"
+      ]
+    },
+    {
+      "id": "s081",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Unterlagen",
+      "translation": "the documents",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_unterlagen"
+      ]
+    },
+    {
+      "id": "s082",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Einigung",
+      "translation": "the agreement",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einigung"
+      ]
+    },
+    {
+      "id": "s083",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "erzielen",
+      "translation": "to achieve / reach",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erzielen"
+      ]
+    },
+    {
+      "id": "s084",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verdienen",
+      "translation": "to deserve / earn",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verdienen"
+      ]
+    },
+    {
+      "id": "s085",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was hat der Vorgesetzte am Ende zugesagt?",
+      "translation": "What did the manager promise in the end?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "sechs Prozent und eine Weiterbildung"
+      ]
+    },
+    {
+      "id": "s086",
+      "type": "echo",
+      "speaker": "mitarbeiterin",
+      "text": "Ich freue mich, dass wir eine Einigung erzielt haben.",
+      "translation": "I'm glad we reached an agreement.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s087",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Noch etwas: Wir möchten Ihre Rolle offiziell aufwerten.",
+      "translation": "One more thing: we'd like to formally upgrade your role.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_aufwerten",
+        "g_offiziell"
+      ]
+    },
+    {
+      "id": "s088",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Das freut mich. Was bedeutet das konkret für meine Aufgaben?",
+      "translation": "That makes me happy. What does that mean concretely for my tasks?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_bedeuten"
+      ]
+    },
+    {
+      "id": "s089",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Sie übernehmen künftig die fachliche Führung des Teams.",
+      "translation": "You'll take over the technical leadership of the team in future.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_kuenftig",
+        "g_fachlich"
+      ]
+    },
+    {
+      "id": "s090",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Das ist eine große Verantwortung, aber ich nehme sie gern an.",
+      "translation": "That's a great responsibility, but I gladly accept it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_annehmen"
+      ]
+    },
+    {
+      "id": "s091",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welche Rolle soll die Mitarbeiterin künftig übernehmen?",
+      "translation": "What role should the employee take on in future?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die fachliche Führung des Teams"
+      ]
+    },
+    {
+      "id": "s092",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Vorsicht: übernehmen heißt sowohl take over als auch take on. Im Kontext von Aufgaben bedeutet es eher take on.",
+      "translation": "Note: übernehmen means both take over and take on. In the context of tasks it means take on.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s093",
+      "type": "drill",
+      "speaker": "vorgesetzter",
+      "text": "Sie übernehmen künftig die fachliche Führung.",
+      "translation": "You'll take over technical leadership in future.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s094",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Gibt es dafür eine zusätzliche Vergütung?",
+      "translation": "Is there additional compensation for that?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zusaetzlich"
+      ]
+    },
+    {
+      "id": "s095",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Darüber sprechen wir in drei Monaten, wenn die Ziele erreicht sind.",
+      "translation": "We'll talk about that in three months, once the goals are met.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ziel"
+      ]
+    },
+    {
+      "id": "s096",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Einverstanden. Wie werden die Ziele definiert?",
+      "translation": "Agreed. How will the goals be defined?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_einverstanden",
+        "g_definieren"
+      ]
+    },
+    {
+      "id": "s097",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Wir setzen sie gemeinsam im nächsten Planungsgespräch fest.",
+      "translation": "We'll set them together in the next planning meeting.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_festsetzen"
+      ]
+    },
+    {
+      "id": "s098",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann wird über zusätzliche Vergütung gesprochen?",
+      "translation": "When will additional compensation be discussed?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "in drei Monaten"
+      ]
+    },
+    {
+      "id": "s099",
+      "type": "echo",
+      "speaker": "vorgesetzter",
+      "text": "Darüber sprechen wir in drei Monaten.",
+      "translation": "We'll talk about that in three months.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s100",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Dann habe ich noch eine Frage zur Arbeitszeit.",
+      "translation": "Then I have one more question about working time.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_arbeitszeit"
+      ]
+    },
+    {
+      "id": "s101",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Bitte. Wir haben heute Zeit für alles.",
+      "translation": "Please. We have time for everything today.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s102",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Wäre es möglich, einmal pro Woche von zu Hause zu arbeiten?",
+      "translation": "Would it be possible to work from home once a week?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_moeglich",
+        "g_von_zu_hause"
+      ]
+    },
+    {
+      "id": "s103",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Das ist grundsätzlich möglich. Wir haben eine Homeoffice-Regelung.",
+      "translation": "That's generally possible. We have a home office policy.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_grundsaetzlich",
+        "g_regelung"
+      ]
+    },
+    {
+      "id": "s104",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was möchte die Mitarbeiterin bezüglich der Arbeitszeit?",
+      "translation": "What does the employee want regarding working time?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "einmal pro Woche von zu Hause arbeiten"
+      ]
+    },
+    {
+      "id": "s105",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II für höfliche Anfragen: Wäre es möglich…? Könnte ich…? Hätten Sie…?",
+      "translation": "Subjunctive II for polite requests: Wäre es möglich…? Könnte ich…? Hätten Sie…?",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s106",
+      "type": "drill",
+      "speaker": "mitarbeiterin",
+      "text": "Wäre es möglich, von zu Hause zu arbeiten?",
+      "translation": "Would it be possible to work from home?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s107",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "aufwerten",
+      "translation": "to upgrade / enhance",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_aufwerten"
+      ]
+    },
+    {
+      "id": "s108",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "offiziell",
+      "translation": "official / formally",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_offiziell"
+      ]
+    },
+    {
+      "id": "s109",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bedeuten",
+      "translation": "to mean",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bedeuten"
+      ]
+    },
+    {
+      "id": "s110",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "künftig",
+      "translation": "in future",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kuenftig"
+      ]
+    },
+    {
+      "id": "s111",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "fachlich",
+      "translation": "technical / professional",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fachlich"
+      ]
+    },
+    {
+      "id": "s112",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "annehmen",
+      "translation": "to accept",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_annehmen"
+      ]
+    },
+    {
+      "id": "s113",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "zusätzlich",
+      "translation": "additional",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zusaetzlich"
+      ]
+    },
+    {
+      "id": "s114",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Ziel",
+      "translation": "the goal",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ziel"
+      ]
+    },
+    {
+      "id": "s115",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "einverstanden",
+      "translation": "agreed",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einverstanden"
+      ]
+    },
+    {
+      "id": "s116",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "definieren",
+      "translation": "to define",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_definieren"
+      ]
+    },
+    {
+      "id": "s117",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "festsetzen",
+      "translation": "to set / fix",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_festsetzen"
+      ]
+    },
+    {
+      "id": "s118",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Arbeitszeit",
+      "translation": "the working time",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_arbeitszeit"
+      ]
+    },
+    {
+      "id": "s119",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "möglich",
+      "translation": "possible",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_moeglich"
+      ]
+    },
+    {
+      "id": "s120",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "von zu Hause",
+      "translation": "from home",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_von_zu_hause"
+      ]
+    },
+    {
+      "id": "s121",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "grundsätzlich",
+      "translation": "generally / in principle",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_grundsaetzlich"
+      ]
+    },
+    {
+      "id": "s122",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Regelung",
+      "translation": "the regulation / policy",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_regelung"
+      ]
+    },
+    {
+      "id": "s123",
+      "type": "line",
+      "speaker": "vorgesetzter",
+      "text": "Ich denke, wir haben heute alles Wichtige besprochen.",
+      "translation": "I think we've discussed everything important today.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_wichtig"
+      ]
+    },
+    {
+      "id": "s124",
+      "type": "line",
+      "speaker": "mitarbeiterin",
+      "text": "Ja. Vielen Dank für das offene Gespräch.",
+      "translation": "Yes. Thank you for the open conversation.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s125",
+      "type": "recap",
+      "speaker": "narrator",
+      "text": "Heute hast du gelernt: höflich zu verhandeln, Argumente zu gewichten und mit Konjunktiv II und Komparativ zu arbeiten.",
+      "translation": "Today you learned: negotiating politely, weighing arguments, and using the subjunctive and comparative.",
+      "pause_after_ms": 800
     }
   ],
   "glossary": [
     {
-      "id": "g_gehalt", "de": "das Gehalt", "en": "the salary", "pos": "noun",
-      "article": "das", "plural": "die Gehälter",
-      "example_de": "Ich möchte über mein Gehalt sprechen.", "example_en": "I'd like to talk about my salary."
+      "id": "g_moment",
+      "de": "der Moment",
+      "en": "the moment",
+      "pos": "noun",
+      "example_de": "Haben Sie einen Moment?",
+      "example_en": "Do you have a moment?",
+      "article": "der",
+      "plural": "die Momente"
     },
     {
-      "id": "g_gehaltsanpassung", "de": "die Gehaltsanpassung", "en": "the salary adjustment", "pos": "noun",
-      "article": "die", "plural": "die Gehaltsanpassungen",
-      "example_de": "Ich möchte über eine Gehaltsanpassung sprechen.", "example_en": "I'd like to talk about a salary adjustment."
+      "id": "g_hereinkommen",
+      "de": "hereinkommen",
+      "en": "to come in",
+      "pos": "verb",
+      "example_de": "Kommen Sie bitte herein.",
+      "example_en": "Please come in."
     },
     {
-      "id": "g_leistung", "de": "die Leistung", "en": "the performance", "pos": "noun",
-      "article": "die", "plural": "die Leistungen",
-      "example_de": "Ihre Leistung ist gut.", "example_en": "Your performance is good."
+      "id": "g_verguetung",
+      "de": "die Vergütung",
+      "en": "the compensation",
+      "pos": "noun",
+      "example_de": "Die Vergütung ist angemessen.",
+      "example_en": "The compensation is appropriate.",
+      "article": "die",
+      "plural": "die Vergütungen"
     },
     {
-      "id": "g_uebernehmen", "de": "übernehmen", "en": "to take on", "pos": "verb",
-      "note_de": "Nicht trennbar: ich übernehme.",
-      "note_en": "Not separable: ich übernehme.",
-      "example_de": "Ich habe viele Projekte übernommen.", "example_en": "I've taken on many projects."
+      "id": "g_beschaeftigen",
+      "de": "sich beschäftigen",
+      "en": "to concern oneself / be on one's mind",
+      "pos": "verb",
+      "example_de": "Was beschäftigt Sie?",
+      "example_en": "What's on your mind?"
     },
     {
-      "id": "g_vorschlagen", "de": "vorschlagen", "en": "to propose", "pos": "verb",
-      "note_de": "Trennbares Verb: ich schlage vor.",
-      "note_en": "Separable verb: ich schlage vor.",
-      "example_de": "Was schlagen Sie vor?", "example_en": "What do you propose?"
+      "id": "g_verantwortung",
+      "de": "die Verantwortung",
+      "en": "the responsibility",
+      "pos": "noun",
+      "example_de": "Ich habe Verantwortung übernommen.",
+      "example_en": "I took on responsibility.",
+      "article": "die",
+      "plural": "die Verantwortungen"
     },
     {
-      "id": "g_prozent", "de": "das Prozent", "en": "the percent", "pos": "noun",
-      "article": "das", "plural": "die Prozent",
-      "example_de": "Ich hätte gern zehn Prozent mehr.", "example_en": "I'd like ten percent more."
+      "id": "g_deutlich",
+      "de": "deutlich",
+      "en": "clearly / considerably",
+      "pos": "adverb",
+      "example_de": "Die Aufgaben sind deutlich gewachsen.",
+      "example_en": "The tasks have grown considerably."
     },
     {
-      "id": "g_anbieten", "de": "anbieten", "en": "to offer", "pos": "verb",
-      "note_de": "Trennbares Verb: ich biete an.",
-      "note_en": "Separable verb: ich biete an.",
-      "example_de": "Ich könnte fünf Prozent anbieten.", "example_en": "I could offer five percent."
+      "id": "g_gleichbleiben",
+      "de": "gleichbleiben",
+      "en": "to stay the same",
+      "pos": "verb",
+      "example_de": "Das Gehalt ist gleichgeblieben.",
+      "example_en": "The salary stayed the same."
     },
     {
-      "id": "g_vereinbaren", "de": "vereinbaren", "en": "to agree on", "pos": "verb",
-      "example_de": "Könnten wir sechs Prozent vereinbaren?", "example_en": "Could we agree on six percent?"
+      "id": "g_anliegen",
+      "de": "das Anliegen",
+      "en": "the request / concern",
+      "pos": "noun",
+      "example_de": "Ich verstehe Ihr Anliegen.",
+      "example_en": "I understand your request.",
+      "article": "das",
+      "plural": "die Anliegen"
     },
     {
-      "id": "g_quartal", "de": "das Quartal", "en": "the quarter", "pos": "noun",
-      "article": "das", "plural": "die Quartale",
-      "example_de": "Erst ab nächstem Quartal.", "example_en": "Only from next quarter."
+      "id": "g_fakte",
+      "de": "der Fakt",
+      "en": "the fact",
+      "pos": "noun",
+      "example_de": "Sehen wir uns die Fakten an.",
+      "example_en": "Let's look at the facts.",
+      "article": "der",
+      "plural": "die Fakten"
     },
     {
-      "id": "g_akzeptabel", "de": "akzeptabel", "en": "acceptable", "pos": "adj",
-      "example_de": "Das wäre akzeptabel.", "example_en": "That would be acceptable."
+      "id": "g_konkret",
+      "de": "konkret",
+      "en": "concrete / specific",
+      "pos": "verb",
+      "example_de": "Können Sie das konkret sagen?",
+      "example_en": "Can you say that specifically?"
     },
     {
-      "id": "g_vertrag", "de": "der Vertrag", "en": "the contract", "pos": "noun",
-      "article": "der", "plural": "die Verträge",
-      "example_de": "Ich bereite den Vertrag vor.", "example_en": "I'll prepare the contract."
+      "id": "g_leistung",
+      "de": "die Leistung",
+      "en": "the achievement / performance",
+      "pos": "noun",
+      "example_de": "Ihre Leistung ist beeindruckend.",
+      "example_en": "Your performance is impressive.",
+      "article": "die",
+      "plural": "die Leistungen"
     },
     {
-      "id": "g_unterschreiben", "de": "unterschreiben", "en": "to sign", "pos": "verb",
-      "note_de": "Nicht trennbar: ich unterschreibe.",
-      "note_en": "Not separable: ich unterschreibe.",
-      "example_de": "Wann kann ich unterschreiben?", "example_en": "When can I sign?"
+      "id": "g_hervorheben",
+      "de": "hervorheben",
+      "en": "to highlight",
+      "pos": "verb",
+      "example_de": "Ich möchte das hervorheben.",
+      "example_en": "I'd like to highlight that."
     },
     {
-      "id": "g_vorgesetzte", "de": "der/die Vorgesetzte", "en": "the manager", "pos": "noun",
-      "article": "der/die", "plural": "die Vorgesetzten",
-      "example_de": "Meine Vorgesetzte ist fair.", "example_en": "My manager is fair."
+      "id": "g_vollstaendig",
+      "de": "vollständig",
+      "en": "entirely / completely",
+      "pos": "adverb",
+      "example_de": "Ich habe es vollständig gemacht.",
+      "example_en": "I did it entirely."
     },
     {
-      "id": "g_verhandlung", "de": "die Verhandlung", "en": "the negotiation", "pos": "noun",
-      "article": "die", "plural": "die Verhandlungen",
-      "example_de": "Die Verhandlung war erfolgreich.", "example_en": "The negotiation was successful."
+      "id": "g_kundenkontakt",
+      "de": "der Kundenkontakt",
+      "en": "the client contact",
+      "pos": "noun",
+      "example_de": "Ich führe den Kundenkontakt.",
+      "example_en": "I manage the client contact.",
+      "article": "der",
+      "plural": "die Kundenkontakte"
     },
     {
-      "id": "g_erhoehen", "de": "erhöhen", "en": "to raise", "pos": "verb",
-      "example_de": "Wir könnten das Gehalt erhöhen.", "example_en": "We could raise the salary."
+      "id": "g_einarbeiten",
+      "de": "einarbeiten",
+      "en": "to train in",
+      "pos": "verb",
+      "example_de": "Ich habe sie eingearbeitet.",
+      "example_en": "I trained her in."
+    },
+    {
+      "id": "g_schaetzen",
+      "de": "schätzen",
+      "en": "to appreciate",
+      "pos": "verb",
+      "example_de": "Ich schätze Ihr Engagement.",
+      "example_en": "I appreciate your commitment."
+    },
+    {
+      "id": "g_engagement",
+      "de": "das Engagement",
+      "en": "the commitment",
+      "pos": "noun",
+      "example_de": "Das Engagement ist groß.",
+      "example_en": "The commitment is great.",
+      "article": "das"
+    },
+    {
+      "id": "g_knapp",
+      "de": "knapp",
+      "en": "tight / scarce",
+      "pos": "adjective",
+      "example_de": "Das Budget ist knapp.",
+      "example_en": "The budget is tight."
+    },
+    {
+      "id": "g_sonst",
+      "de": "sonst",
+      "en": "otherwise / usual",
+      "pos": "adverb",
+      "example_de": " Dieses Jahr ist es knapper als sonst.",
+      "example_en": "This year it's tighter than usual."
+    },
+    {
+      "id": "g_dennoch",
+      "de": "dennoch",
+      "en": "nevertheless",
+      "pos": "adverb",
+      "example_de": "Dennoch möchte ich fragen.",
+      "example_en": "Nevertheless I'd like to ask."
+    },
+    {
+      "id": "g_anpassung",
+      "de": "die Anpassung",
+      "en": "the adjustment",
+      "pos": "noun",
+      "example_de": "Ich möchte eine Anpassung.",
+      "example_en": "I'd like an adjustment.",
+      "article": "die",
+      "plural": "die Anpassungen"
+    },
+    {
+      "id": "g_sich_vorstellen",
+      "de": "sich vorstellen",
+      "en": "to imagine",
+      "pos": "verb",
+      "example_de": "Ich könnte mir das vorstellen.",
+      "example_en": "I could imagine that."
+    },
+    {
+      "id": "g_weiterbildung",
+      "de": "die Weiterbildung",
+      "en": "the further training",
+      "pos": "noun",
+      "example_de": "Die Weiterbildung ist geplant.",
+      "example_en": "The training is planned.",
+      "article": "die",
+      "plural": "die Weiterbildungen"
+    },
+    {
+      "id": "g_bevorzugen",
+      "de": "bevorzugen",
+      "en": "to prefer",
+      "pos": "verb",
+      "example_de": "Ich bevorzuge eine Erhöhung.",
+      "example_en": "I prefer a raise."
+    },
+    {
+      "id": "g_eigentlich",
+      "de": "eigentlich",
+      "en": "actually",
+      "pos": "adverb",
+      "example_de": "Eigentlich möchte ich mehr.",
+      "example_en": "Actually I want more."
+    },
+    {
+      "id": "g_kompromiss",
+      "de": "der Kompromiss",
+      "en": "the compromise",
+      "pos": "noun",
+      "example_de": "Ein Kompromiss ist möglich.",
+      "example_en": "A compromise is possible.",
+      "article": "der",
+      "plural": "die Kompromisse"
+    },
+    {
+      "id": "g_anbieten",
+      "de": "anbieten",
+      "en": "to offer",
+      "pos": "verb",
+      "example_de": "Ich biete Ihnen fünf Prozent an.",
+      "example_en": "I offer you five percent."
+    },
+    {
+      "id": "g_prozent",
+      "de": "das Prozent",
+      "en": "the percent",
+      "pos": "noun",
+      "example_de": "Fünf Prozent sind möglich.",
+      "example_en": "Five percent are possible.",
+      "article": "das",
+      "plural": "die Prozent"
+    },
+    {
+      "id": "g_anfang",
+      "de": "der Anfang",
+      "en": "the beginning",
+      "pos": "noun",
+      "example_de": "Das ist ein guter Anfang.",
+      "example_en": "That's a good start.",
+      "article": "der",
+      "plural": "die Anfänge"
+    },
+    {
+      "id": "g_gedacht",
+      "de": "gedacht",
+      "en": "thought",
+      "pos": "participle",
+      "example_de": "Ich hatte an sieben gedacht.",
+      "example_en": "I had thought of seven."
+    },
+    {
+      "id": "g_drin",
+      "de": "drin",
+      "en": "possible / in it",
+      "pos": "adverb",
+      "example_de": "Sieben Prozent sind nicht drin.",
+      "example_en": "Seven percent isn't possible."
+    },
+    {
+      "id": "g_maximum",
+      "de": "das Maximum",
+      "en": "the maximum",
+      "pos": "noun",
+      "example_de": "Das ist das Maximum.",
+      "example_en": "That's the maximum.",
+      "article": "das",
+      "plural": "die Maxima"
+    },
+    {
+      "id": "g_vereinbaren",
+      "de": "vereinbaren",
+      "en": "to agree on",
+      "pos": "verb",
+      "example_de": "Wir vereinbaren sechs Prozent.",
+      "example_en": "We agree on six percent."
+    },
+    {
+      "id": "g_verschieben",
+      "de": "verschieben",
+      "en": "to postpone",
+      "pos": "verb",
+      "example_de": "Wir verschieben das Datum.",
+      "example_en": "We postpone the date."
+    },
+    {
+      "id": "g_inkrafttreten",
+      "de": "inkrafttreten",
+      "en": "to take effect",
+      "pos": "verb",
+      "example_de": "Die Erhöhung tritt in Kraft.",
+      "example_en": "The increase takes effect."
+    },
+    {
+      "id": "g_gelten",
+      "de": "gelten",
+      "en": "to apply / be valid",
+      "pos": "verb",
+      "example_de": "Ab wann gilt die Erhöhung?",
+      "example_en": "From when does the increase apply?"
+    },
+    {
+      "id": "g_unterlagen",
+      "de": "die Unterlagen",
+      "en": "the documents",
+      "pos": "noun",
+      "example_de": "Ich schicke die Unterlagen.",
+      "example_en": "I'll send the documents.",
+      "article": "die",
+      "plural": "die Unterlagen"
+    },
+    {
+      "id": "g_einigung",
+      "de": "die Einigung",
+      "en": "the agreement",
+      "pos": "noun",
+      "example_de": "Wir haben eine Einigung erzielt.",
+      "example_en": "We reached an agreement.",
+      "article": "die",
+      "plural": "die Einigungen"
+    },
+    {
+      "id": "g_erzielen",
+      "de": "erzielen",
+      "en": "to achieve / reach",
+      "pos": "verb",
+      "example_de": "Wir haben eine Einigung erzielt.",
+      "example_en": "We reached an agreement."
+    },
+    {
+      "id": "g_verdienen",
+      "de": "verdienen",
+      "en": "to deserve / earn",
+      "pos": "verb",
+      "example_de": "Sie verdient das.",
+      "example_en": "She deserves it."
+    },
+    {
+      "id": "g_sichergehen",
+      "de": "sichergehen",
+      "en": "to make sure / be taken care of",
+      "pos": "verb",
+      "example_de": "Das ist sichergegangen.",
+      "example_en": "That's taken care of."
+    },
+    {
+      "id": "g_besprochen",
+      "de": "besprochen",
+      "en": "discussed",
+      "pos": "participle",
+      "example_de": "Wie besprochen.",
+      "example_en": "As discussed."
+    },
+    {
+      "id": "g_aufwerten",
+      "de": "aufwerten",
+      "en": "to upgrade / enhance",
+      "pos": "verb",
+      "example_de": "Wir werten die Rolle auf.",
+      "example_en": "We upgrade the role."
+    },
+    {
+      "id": "g_offiziell",
+      "de": "offiziell",
+      "en": "official / formally",
+      "pos": "adjective",
+      "example_de": "Es ist offiziell.",
+      "example_en": "It's official."
+    },
+    {
+      "id": "g_bedeuten",
+      "de": "bedeuten",
+      "en": "to mean",
+      "pos": "verb",
+      "example_de": "Was bedeutet das?",
+      "example_en": "What does that mean?"
+    },
+    {
+      "id": "g_kuenftig",
+      "de": "künftig",
+      "en": "in future",
+      "pos": "adverb",
+      "example_de": "Künftig übernehme ich das.",
+      "example_en": "In future I'll take that on."
+    },
+    {
+      "id": "g_fachlich",
+      "de": "fachlich",
+      "en": "technical / professional",
+      "pos": "adjective",
+      "example_de": "Die fachliche Führung ist neu.",
+      "example_en": "The technical leadership is new."
+    },
+    {
+      "id": "g_annehmen",
+      "de": "annehmen",
+      "en": "to accept",
+      "pos": "verb",
+      "example_de": "Ich nehme die Verantwortung an.",
+      "example_en": "I accept the responsibility."
+    },
+    {
+      "id": "g_zusaetzlich",
+      "de": "zusätzlich",
+      "en": "additional",
+      "pos": "adjective",
+      "example_de": "Es gibt zusätzliche Vergütung.",
+      "example_en": "There's additional compensation."
+    },
+    {
+      "id": "g_ziel",
+      "de": "das Ziel",
+      "en": "the goal",
+      "pos": "noun",
+      "example_de": "Das Ziel ist erreicht.",
+      "example_en": "The goal is reached.",
+      "article": "das",
+      "plural": "die Ziele"
+    },
+    {
+      "id": "g_einverstanden",
+      "de": "einverstanden",
+      "en": "agreed",
+      "pos": "adjective",
+      "example_de": "Ich bin einverstanden.",
+      "example_en": "I agree."
+    },
+    {
+      "id": "g_definieren",
+      "de": "definieren",
+      "en": "to define",
+      "pos": "verb",
+      "example_de": "Wir definieren die Ziele.",
+      "example_en": "We define the goals."
+    },
+    {
+      "id": "g_festsetzen",
+      "de": "festsetzen",
+      "en": "to set / fix",
+      "pos": "verb",
+      "example_de": "Wir setzen die Ziele fest.",
+      "example_en": "We set the goals."
+    },
+    {
+      "id": "g_arbeitszeit",
+      "de": "die Arbeitszeit",
+      "en": "the working time",
+      "pos": "noun",
+      "example_de": "Die Arbeitszeit ist flexibel.",
+      "example_en": "Working time is flexible.",
+      "article": "die"
+    },
+    {
+      "id": "g_moeglich",
+      "de": "möglich",
+      "en": "possible",
+      "pos": "adjective",
+      "example_de": "Das ist möglich.",
+      "example_en": "That's possible."
+    },
+    {
+      "id": "g_von_zu_hause",
+      "de": "von zu Hause",
+      "en": "from home",
+      "pos": "phrase",
+      "example_de": "Ich arbeite von zu Hause.",
+      "example_en": "I work from home."
+    },
+    {
+      "id": "g_grundsaetzlich",
+      "de": "grundsätzlich",
+      "en": "generally / in principle",
+      "pos": "adverb",
+      "example_de": "Grundsätzlich ist das möglich.",
+      "example_en": "In principle that's possible."
+    },
+    {
+      "id": "g_regelung",
+      "de": "die Regelung",
+      "en": "the regulation / policy",
+      "pos": "noun",
+      "example_de": "Es gibt eine Regelung.",
+      "example_en": "There's a policy.",
+      "article": "die",
+      "plural": "die Regelungen"
+    },
+    {
+      "id": "g_wichtig",
+      "de": "wichtig",
+      "en": "important",
+      "pos": "adjective",
+      "example_de": "Das ist wichtig.",
+      "example_en": "That's important."
     }
   ],
   "meta": {

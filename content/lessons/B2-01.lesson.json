@@ -2,287 +2,1977 @@
   "schema": "lesson-script/v1",
   "id": "B2-01",
   "level": "B2",
-  "title": { "de": "Projektstatus im Meeting", "en": "Project status in the meeting" },
+  "title": {
+    "de": "Projektstatus im Meeting",
+    "en": "Project status meeting"
+  },
   "minutes": 16,
   "scene": {
-    "setting_de": "Ein Statusmeeting am Donnerstag. Das Projekt läuft seit sechs Monaten.",
-    "setting_en": "A status meeting on Thursday. The project has been running for six months.",
-    "register": "formal-work",
-    "can_do_de": "Ich kann einen Projektstatus sachlich berichten, Probleme benennen und Maßnahmen vorschlagen.",
-    "can_do_en": "I can report project status factually, name problems, and propose measures.",
-    "situation_tags": ["work", "meetings", "project-management"],
-    "grammar_focus": ["nominalisierung", "passiv", "konnektoren"]
+    "setting_de": "Ein Statusmeeting in einem Softwareunternehmen. Die Projektleiterin fragt den Stand ab, die Entwicklerin und der Product Owner berichten.",
+    "setting_en": "A status meeting at a software company. The project manager asks for status; the developer and the product owner report.",
+    "register": "neutral-work",
+    "can_do_de": "Ich kann einen Projektstand strukturiert berichten, Risiken benennen und Sachverhalte nominalisieren.",
+    "can_do_en": "I can report a project status in a structured way, name risks, and nominalise facts.",
+    "situation_tags": [
+      "work",
+      "meetings",
+      "planning"
+    ],
+    "grammar_focus": [
+      "nominalisierung",
+      "passiv",
+      "konnektoren"
+    ]
   },
   "cast": [
-    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
-    { "role": "pm", "voice": "de_narrator_m", "lang": "de" },
-    { "role": "stakeholder", "voice": "de_older_f", "lang": "de" }
+    {
+      "role": "narrator",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "projektleiterin",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "entwicklerin",
+      "voice": "de_young_f",
+      "lang": "de"
+    },
+    {
+      "role": "productowner",
+      "voice": "de_young_m",
+      "lang": "de"
+    }
   ],
   "segments": [
     {
-      "id": "s001", "type": "scene", "speaker": "narrator",
-      "text": "Ein Statusmeeting am Donnerstag. Das Projekt läuft seit sechs Monaten.",
-      "translation": "A status meeting on Thursday. The project has been running for six months.",
-      "pause_after_ms": 500
+      "id": "s001",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Dienstagmorgen. Das Projektteam trifft sich zum Statusmeeting.",
+      "translation": "Tuesday morning. The project team meets for the status meeting.",
+      "pause_after_ms": 700
     },
     {
-      "id": "s002", "type": "line", "speaker": "pm",
-      "text": "Guten Tag. Ich möchte den aktuellen Projektstatus vorstellen.",
-      "translation": "Good day. I'd like to present the current project status.",
-      "pause_after_ms": 500,
-      "gloss": ["g_projektstatus", "g_vorstellen"]
-    },
-    {
-      "id": "s003", "type": "line", "speaker": "pm",
-      "text": "Die Entwicklung ist zu achtzig Prozent abgeschlossen.",
-      "translation": "Development is eighty percent complete.",
-      "pause_after_ms": 500,
-      "gloss": ["g_entwicklung", "g_abgeschlossen"]
-    },
-    {
-      "id": "s004", "type": "line", "speaker": "stakeholder",
-      "text": "Und wie sieht es mit dem Budget aus?",
-      "translation": "And how are things with the budget?",
-      "pause_after_ms": 500,
-      "gloss": ["g_budget"]
-    },
-    {
-      "id": "s005", "type": "line", "speaker": "pm",
-      "text": "Die Budgetplanung ist noch nicht abgeschlossen. Es gibt eine Überschreitung von zehn Prozent.",
-      "translation": "Budget planning is not yet complete. There is an overrun of ten percent.",
-      "pause_after_ms": 600,
-      "gloss": ["g_ueberschreitung"]
-    },
-    {
-      "id": "s006", "type": "check", "speaker": "narrator",
-      "text": "Wie viel Prozent des Budgets ist überschritten?",
-      "translation": "By what percent is the budget exceeded?",
-      "answers": ["zehn Prozent"],
-      "answer_pause_ms": 2500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s007", "type": "note", "speaker": "narrator",
-      "text": "Nominalisierung: entwickeln wird zu die Entwicklung, planen zu die Planung.",
-      "translation": "Nominalization: entwickeln becomes die Entwicklung, planen becomes die Planung.",
-      "speed": 1.0, "pause_after_ms": 400, "skippable": true
-    },
-    {
-      "id": "s008", "type": "line", "speaker": "stakeholder",
-      "text": "Das ist ein Problem. Die Geschäftsführung erwartet eine Erklärung.",
-      "translation": "That is a problem. Management expects an explanation.",
-      "pause_after_ms": 500,
-      "gloss": ["g_geschaeftsfuehrung"]
-    },
-    {
-      "id": "s009", "type": "line", "speaker": "pm",
-      "text": "Ich verstehe die Besorgnis. Die Verzögerung kommt von der Lieferkette.",
-      "translation": "I understand the concern. The delay comes from the supply chain.",
-      "pause_after_ms": 500,
-      "gloss": ["g_besorgnis", "g_verzoegerung", "g_lieferkette"]
-    },
-    {
-      "id": "s010", "type": "line", "speaker": "pm",
-      "text": "Die Lieferung der Bauteile hat sich um zwei Wochen verschoben.",
-      "translation": "The delivery of the components has been delayed by two weeks.",
-      "pause_after_ms": 500,
-      "gloss": ["g_lieferung", "g_bauteil"]
-    },
-    {
-      "id": "s011", "type": "line", "speaker": "stakeholder",
-      "text": "Welche Maßnahmen schlagen Sie vor?",
-      "translation": "What measures do you propose?",
-      "pause_after_ms": 500,
-      "gloss": ["g_massnahme"]
-    },
-    {
-      "id": "s012", "type": "line", "speaker": "pm",
-      "text": "Ich schlage eine Anpassung der Prioritäten vor.",
-      "translation": "I propose an adjustment of priorities.",
-      "pause_after_ms": 500,
-      "gloss": ["g_anpassung", "g_prioritaet"]
-    },
-    {
-      "id": "s013", "type": "line", "speaker": "pm",
-      "text": "Die Fertigstellung der Kernfunktionen bleibt im Zeitplan.",
-      "translation": "Completion of the core functions remains on schedule.",
-      "pause_after_ms": 500,
-      "gloss": ["g_fertigstellung", "g_zeitplan"]
-    },
-    {
-      "id": "s014", "type": "check", "speaker": "narrator",
-      "text": "Warum verzögert sich das Projekt?",
-      "translation": "Why is the project delayed?",
-      "answers": ["Die Lieferung der Bauteile hat sich verschoben."],
-      "answer_pause_ms": 2500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s015", "type": "drill", "speaker": "pm",
-      "text": "Ich schlage eine Anpassung der Prioritäten vor.",
-      "translation": "I propose an adjustment of priorities.",
-      "repeat": 2, "speed": 0.95, "pause_after_ms": 900
-    },
-    {
-      "id": "s016", "type": "line", "speaker": "stakeholder",
-      "text": "Wann können Sie die neue Planung vorlegen?",
-      "translation": "When can you present the new plan?",
-      "pause_after_ms": 500
-    },
-    {
-      "id": "s017", "type": "line", "speaker": "pm",
-      "text": "Bis Ende der Woche. Die Überarbeitung dauert zwei Tage.",
-      "translation": "By the end of the week. The revision takes two days.",
-      "pause_after_ms": 500,
-      "gloss": ["g_ueberarbeitung"]
-    },
-    {
-      "id": "s018", "type": "line", "speaker": "stakeholder",
-      "text": "Gut. Bitte informieren Sie auch das Team.",
-      "translation": "Good. Please also inform the team.",
-      "pause_after_ms": 500
-    },
-    {
-      "id": "s019", "type": "line", "speaker": "pm",
-      "text": "Natürlich. Die Kommunikation übernehme ich.",
-      "translation": "Of course. I'll take care of the communication.",
-      "pause_after_ms": 500,
-      "gloss": ["g_kommunikation"]
-    },
-    {
-      "id": "s020", "type": "check", "speaker": "narrator",
-      "text": "Wann legt der Projektleiter die neue Planung vor?",
-      "translation": "When will the project lead present the new plan?",
-      "answers": ["bis Ende der Woche"],
-      "answer_pause_ms": 2500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s021", "type": "line", "speaker": "stakeholder",
-      "text": "Danke. Dann bis zum nächsten Meeting.",
-      "translation": "Thanks. Until the next meeting, then.",
-      "pause_after_ms": 600
-    },
-    {
-      "id": "s022", "type": "vocab", "speaker": "narrator",
-      "text": "die Maßnahme",
-      "translation": "the measure",
+      "id": "s002",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Guten Morgen. Wir wollen heute den aktuellen Stand besprechen.",
+      "translation": "Good morning. Today we want to discuss the current status.",
       "pause_after_ms": 700,
-      "gloss": ["g_massnahme"]
+      "gloss": [
+        "g_besprechen"
+      ]
     },
     {
-      "id": "s023", "type": "vocab", "speaker": "narrator",
+      "id": "s003",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Fangen wir mit der Umsetzung an. Wo stehen wir?",
+      "translation": "Let's start with implementation. Where are we?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_umsetzung"
+      ]
+    },
+    {
+      "id": "s004",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Die Umsetzung der Schnittstelle ist weitgehend abgeschlossen.",
+      "translation": "The implementation of the interface is largely complete.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_weitgehend",
+        "g_abgeschlossen"
+      ]
+    },
+    {
+      "id": "s005",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Die Tests wurden letzte Woche durchgeführt und alle Fehler behoben.",
+      "translation": "The tests were carried out last week and all errors were fixed.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_durchfuehren",
+        "g_beheben"
+      ]
+    },
+    {
+      "id": "s006",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was ist weitgehend abgeschlossen?",
+      "translation": "What is largely complete?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die Umsetzung der Schnittstelle"
+      ]
+    },
+    {
+      "id": "s007",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Nominalisierung: wir testen → die Testung / der Test, wir beheben → die Behebung. Nominalstil klingt formell.",
+      "translation": "Nominalisation: wir testen → die Testung / der Test, wir beheben → die Behebung. The nominal style sounds formal.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s008",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Gut. Und die Dokumentation?",
+      "translation": "Good. And the documentation?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_dokumentation"
+      ]
+    },
+    {
+      "id": "s009",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Sie wird gerade erstellt. Die fertige Fassung liegt bis Donnerstag vor.",
+      "translation": "It's currently being written. The finished version will be available by Thursday.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fassung"
+      ]
+    },
+    {
+      "id": "s010",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Aus Sicht des Fachbereichs fehlt noch die Beschreibung der Validierung.",
+      "translation": "From the department's point of view, the description of the validation is still missing.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fachbereich",
+        "g_validierung"
+      ]
+    },
+    {
+      "id": "s011",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann liegt die fertige Fassung der Dokumentation vor?",
+      "translation": "When will the finished documentation be available?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "bis Donnerstag"
+      ]
+    },
+    {
+      "id": "s012",
+      "type": "echo",
+      "speaker": "entwicklerin",
+      "text": "Die Tests wurden letzte Woche durchgeführt.",
+      "translation": "The tests were carried out last week.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s013",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Wir müssen über die Verzögerung sprechen. Woran liegt sie?",
+      "translation": "We need to talk about the delay. What's causing it?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verzoegerung"
+      ]
+    },
+    {
+      "id": "s014",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Sie liegt an der späten Freigabe der Anforderungen durch den Kunden.",
+      "translation": "It's due to the late approval of the requirements by the client.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_anforderung",
+        "g_freigabe_x"
+      ]
+    },
+    {
+      "id": "s015",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Zusätzlich war die Abstimmung mit der Sicherheitsabteilung zeitaufwendig.",
+      "translation": "In addition, coordination with the security department was time-consuming.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_abstimmung",
+        "g_zeitaufwendig"
+      ]
+    },
+    {
+      "id": "s016",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Passiv mit werden: Die Tests werden durchgeführt. Die Freigabe wurde erteilt. Das Passiv betont die Handlung, nicht die Person.",
+      "translation": "Passive with werden: Die Tests werden durchgeführt. Die Freigabe wurde erteilt. The passive emphasises the action, not the person.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s017",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Woran liegt die Verzögerung?",
+      "translation": "What is causing the delay?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "an der späten Freigabe der Anforderungen"
+      ]
+    },
+    {
+      "id": "s018",
+      "type": "drill",
+      "speaker": "projektleiterin",
+      "text": "Die Freigabe wurde letzte Woche erteilt.",
+      "translation": "The approval was granted last week.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s019",
+      "type": "drill",
+      "speaker": "entwicklerin",
+      "text": "Die Abstimmung war zeitaufwendig.",
+      "translation": "The coordination was time-consuming.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s020",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Welche Risiken sehen wir für den Termin?",
+      "translation": "What risks do we see for the deadline?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_risiko"
+      ]
+    },
+    {
+      "id": "s021",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Ein Risiko ist die noch ausstehende Freigabe des Budgets.",
+      "translation": "One risk is the still outstanding approval of the budget.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ausstehend",
+        "g_budget"
+      ]
+    },
+    {
+      "id": "s022",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Ein weiteres Risiko ist die Abhängigkeit von einer externen Komponente.",
+      "translation": "Another risk is the dependency on an external component.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_abhaengigkeit",
+        "g_extern"
+      ]
+    },
+    {
+      "id": "s023",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Wie können wir diese Risiken minimieren?",
+      "translation": "How can we minimise these risks?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_minimieren"
+      ]
+    },
+    {
+      "id": "s024",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Wir könnten die Freigabe vorziehen und frühzeitig nachfragen.",
+      "translation": "We could bring the approval forward and ask early.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_vorziehen",
+        "g_fruehzeitig"
+      ]
+    },
+    {
+      "id": "s025",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Nennen Sie ein Risiko für den Termin.",
+      "translation": "Name a risk for the deadline.",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die ausstehende Budgetfreigabe",
+        "die Abhängigkeit von einer externen Komponente"
+      ]
+    },
+    {
+      "id": "s026",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konnektoren: zusätzlich, außerdem, darüber hinaus, dennoch, deshalb. Sie strukturieren die Argumentation.",
+      "translation": "Connectives: zusätzlich, außerdem, darüber hinaus, dennoch, deshalb. They structure the argument.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s027",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Außerdem schaffen wir mehr Puffer, wenn wir die Reihenfolge ändern.",
+      "translation": "Moreover, we create more buffer if we change the order.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_puffer",
+        "g_reihenfolge"
+      ]
+    },
+    {
+      "id": "s028",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Das klingt vernünftig. Wer übernimmt die Kommunikation mit dem Kunden?",
+      "translation": "That sounds reasonable. Who takes on communication with the client?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_kommunikation"
+      ]
+    },
+    {
+      "id": "s029",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Ich übernehme das und informiere Sie nach jedem Gespräch.",
+      "translation": "I'll take that on and inform you after each conversation.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_informieren"
+      ]
+    },
+    {
+      "id": "s030",
+      "type": "echo",
+      "speaker": "productowner",
+      "text": "Ich übernehme die Kommunikation mit dem Kunden.",
+      "translation": "I'll take on communication with the client.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s031",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Umsetzung",
+      "translation": "the implementation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_umsetzung"
+      ]
+    },
+    {
+      "id": "s032",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Schnittstelle",
+      "translation": "the interface",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_schnittstelle_x"
+      ]
+    },
+    {
+      "id": "s033",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Dokumentation",
+      "translation": "the documentation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_dokumentation"
+      ]
+    },
+    {
+      "id": "s034",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Fassung",
+      "translation": "the version / draft",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fassung"
+      ]
+    },
+    {
+      "id": "s035",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Validierung",
+      "translation": "the validation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_validierung"
+      ]
+    },
+    {
+      "id": "s036",
+      "type": "vocab",
+      "speaker": "narrator",
       "text": "die Verzögerung",
       "translation": "the delay",
-      "pause_after_ms": 700,
-      "gloss": ["g_verzoegerung"]
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verzoegerung"
+      ]
     },
     {
-      "id": "s024", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: Projektstatus berichten mit Nominalisierungen.",
-      "translation": "Today you learned: reporting project status using nominalizations.",
-      "pause_after_ms": 600
+      "id": "s037",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Anforderung",
+      "translation": "the requirement",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anforderung"
+      ]
+    },
+    {
+      "id": "s038",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Freigabe",
+      "translation": "the approval",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_freigabe_x"
+      ]
+    },
+    {
+      "id": "s039",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Abstimmung",
+      "translation": "the coordination",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_abstimmung"
+      ]
+    },
+    {
+      "id": "s040",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "zeitaufwendig",
+      "translation": "time-consuming",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zeitaufwendig"
+      ]
+    },
+    {
+      "id": "s041",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Risiko",
+      "translation": "the risk",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_risiko"
+      ]
+    },
+    {
+      "id": "s042",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Abhängigkeit",
+      "translation": "the dependency",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_abhaengigkeit"
+      ]
+    },
+    {
+      "id": "s043",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "extern",
+      "translation": "external",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_extern"
+      ]
+    },
+    {
+      "id": "s044",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "minimieren",
+      "translation": "to minimise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_minimieren"
+      ]
+    },
+    {
+      "id": "s045",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "vorziehen",
+      "translation": "to bring forward",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorziehen"
+      ]
+    },
+    {
+      "id": "s046",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "frühzeitig",
+      "translation": "early / in good time",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fruehzeitig"
+      ]
+    },
+    {
+      "id": "s047",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Puffer",
+      "translation": "the buffer",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_puffer"
+      ]
+    },
+    {
+      "id": "s048",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Reihenfolge",
+      "translation": "the order / sequence",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_reihenfolge"
+      ]
+    },
+    {
+      "id": "s049",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Kommunikation",
+      "translation": "the communication",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kommunikation"
+      ]
+    },
+    {
+      "id": "s050",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Kommen wir zum Zeitplan. Wann ist der nächste Meilenstein?",
+      "translation": "Let's move to the timeline. When is the next milestone?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zeitplan",
+        "g_meilenstein"
+      ]
+    },
+    {
+      "id": "s051",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Der nächste Meilenstein ist die Integration am Ende des Monats.",
+      "translation": "The next milestone is integration at the end of the month.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_integration"
+      ]
+    },
+    {
+      "id": "s052",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Danach folgt die Abnahme durch den Fachbereich.",
+      "translation": "After that comes acceptance by the department.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_abnahme"
+      ]
+    },
+    {
+      "id": "s053",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was folgt nach der Integration?",
+      "translation": "What follows after integration?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die Abnahme durch den Fachbereich"
+      ]
+    },
+    {
+      "id": "s054",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Und was wurde bisher nicht erreicht?",
+      "translation": "And what hasn't been achieved so far?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_bisher"
+      ]
+    },
+    {
+      "id": "s055",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Die Automatisierung der Tests wurde noch nicht umgesetzt.",
+      "translation": "Test automation hasn't been implemented yet.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_automatisierung"
+      ]
+    },
+    {
+      "id": "s056",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Wird das den Meilenstein gefährden?",
+      "translation": "Will that jeopardise the milestone?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gefaehrden"
+      ]
+    },
+    {
+      "id": "s057",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Nein, es wurde eingeplant und wird nächste Woche nachgeholt.",
+      "translation": "No, it's been scheduled and will be caught up next week.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_einplanen",
+        "g_nachholen"
+      ]
+    },
+    {
+      "id": "s058",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Perfekt Passiv: Die Tests wurden durchgeführt. Die Fassung wurde erstellt. Bildung: wurden/wurde + Partizip II.",
+      "translation": "Perfect passive: Die Tests wurden durchgeführt. Die Fassung wurde erstellt. Form: wurden/wurde + past participle.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s059",
+      "type": "drill",
+      "speaker": "projektleiterin",
+      "text": "Die Automatisierung wurde eingeplant.",
+      "translation": "The automation was scheduled.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s060",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wird die Automatisierung den Meilenstein gefährden?",
+      "translation": "Will the automation jeopardise the milestone?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Nein, sie wurde eingeplant."
+      ]
+    },
+    {
+      "id": "s061",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Ich hätte noch eine Anmerkung zur Priorisierung.",
+      "translation": "I have one more comment about prioritisation.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_anmerkung",
+        "g_priorisierung"
+      ]
+    },
+    {
+      "id": "s062",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Bitte. Wir haben noch zehn Minuten.",
+      "translation": "Please. We have ten minutes left.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s063",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Die Fehlerbehebung sollte vor neuen Funktionen priorisiert werden.",
+      "translation": "Bug fixing should be prioritised before new features.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fehlerbehebung",
+        "g_funktion"
+      ]
+    },
+    {
+      "id": "s064",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Dem stimme ich zu. Die Stabilität geht vor.",
+      "translation": "I agree. Stability comes first.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_stabilitaet",
+        "g_vorgehen"
+      ]
+    },
+    {
+      "id": "s065",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was sollte laut Product Owner priorisiert werden?",
+      "translation": "According to the product owner, what should be prioritised?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die Fehlerbehebung"
+      ]
+    },
+    {
+      "id": "s066",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "gehen vor + Dativ: Die Stabilität geht der Geschwindigkeit vor. Die Qualität geht vor.",
+      "translation": "gehen vor + dative: Die Stabilität geht der Geschwindigkeit vor. Die Qualität geht vor.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s067",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Gut, das nehmen wir so auf. Gibt es noch offene Punkte?",
+      "translation": "Good, we'll record that. Are there any open points?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_offen"
+      ]
+    },
+    {
+      "id": "s068",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Eine Frage: Wer entscheidet über die Reihenfolge der Aufgaben?",
+      "translation": "One question: who decides on the order of tasks?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_entscheiden"
+      ]
+    },
+    {
+      "id": "s069",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Das entscheiden wir gemeinsam im nächsten Review.",
+      "translation": "We'll decide that together in the next review.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s070",
+      "type": "echo",
+      "speaker": "projektleiterin",
+      "text": "Wer entscheidet über die Reihenfolge der Aufgaben?",
+      "translation": "Who decides on the order of tasks?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s071",
+      "type": "drill",
+      "speaker": "entwicklerin",
+      "text": "Die Stabilität geht vor.",
+      "translation": "Stability comes first.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s072",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Zeitplan",
+      "translation": "the timeline",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zeitplan"
+      ]
+    },
+    {
+      "id": "s073",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Meilenstein",
+      "translation": "the milestone",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_meilenstein"
+      ]
+    },
+    {
+      "id": "s074",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Integration",
+      "translation": "the integration",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_integration"
+      ]
+    },
+    {
+      "id": "s075",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Abnahme",
+      "translation": "the acceptance",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_abnahme"
+      ]
+    },
+    {
+      "id": "s076",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bisher",
+      "translation": "so far",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bisher"
+      ]
+    },
+    {
+      "id": "s077",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Automatisierung",
+      "translation": "the automation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_automatisierung"
+      ]
+    },
+    {
+      "id": "s078",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gefährden",
+      "translation": "to jeopardise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gefaehrden"
+      ]
+    },
+    {
+      "id": "s079",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "einplanen",
+      "translation": "to schedule / plan in",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einplanen"
+      ]
+    },
+    {
+      "id": "s080",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "nachholen",
+      "translation": "to catch up",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_nachholen"
+      ]
+    },
+    {
+      "id": "s081",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Anmerkung",
+      "translation": "the comment",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anmerkung"
+      ]
+    },
+    {
+      "id": "s082",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Priorisierung",
+      "translation": "the prioritisation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_priorisierung"
+      ]
+    },
+    {
+      "id": "s083",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Fehlerbehebung",
+      "translation": "the bug fixing",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fehlerbehebung"
+      ]
+    },
+    {
+      "id": "s084",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Funktion",
+      "translation": "the feature / function",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_funktion"
+      ]
+    },
+    {
+      "id": "s085",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Stabilität",
+      "translation": "the stability",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stabilitaet"
+      ]
+    },
+    {
+      "id": "s086",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "offen",
+      "translation": "open / outstanding",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_offen"
+      ]
+    },
+    {
+      "id": "s087",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "entscheiden",
+      "translation": "to decide",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_entscheiden"
+      ]
+    },
+    {
+      "id": "s088",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann ist der nächste Meilenstein?",
+      "translation": "When is the next milestone?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die Integration am Ende des Monats"
+      ]
+    },
+    {
+      "id": "s089",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was wurde bisher nicht erreicht?",
+      "translation": "What hasn't been achieved so far?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "die Automatisierung der Tests"
+      ]
+    },
+    {
+      "id": "s090",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Ein letzter Punkt: die Qualitätssicherung. Wie wird sie durchgeführt?",
+      "translation": "One last point: quality assurance. How is it carried out?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_qualitaetssicherung"
+      ]
+    },
+    {
+      "id": "s091",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Sie wird durch automatische Tests und manuelle Prüfungen sichergestellt.",
+      "translation": "It's ensured through automated tests and manual checks.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sicherstellen",
+        "g_pruefung"
+      ]
+    },
+    {
+      "id": "s092",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Die Prüfung der Benutzeroberfläche wurde an externe Tester vergeben.",
+      "translation": "Testing of the user interface was outsourced to external testers.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_benutzeroberflaeche",
+        "g_vergeben"
+      ]
+    },
+    {
+      "id": "s093",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Durch was wird die Qualität sichergestellt?",
+      "translation": "How is quality ensured?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "durch automatische Tests und manuelle Prüfungen"
+      ]
+    },
+    {
+      "id": "s094",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Nominalisierung mit -ung: prüfen → die Prüfung, sichern → die Sicherung, umsetzen → die Umsetzung.",
+      "translation": "Nominalisation with -ung: prüfen → die Prüfung, sichern → die Sicherung, umsetzen → die Umsetzung.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s095",
+      "type": "drill",
+      "speaker": "entwicklerin",
+      "text": "Die Qualität wird durch Tests sichergestellt.",
+      "translation": "Quality is ensured through tests.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s096",
+      "type": "echo",
+      "speaker": "projektleiterin",
+      "text": "Wie wird die Qualitätssicherung durchgeführt?",
+      "translation": "How is quality assurance carried out?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s097",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Was ist der aktuelle Stand der Stakeholder-Kommunikation?",
+      "translation": "What's the current state of stakeholder communication?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_stakeholder"
+      ]
+    },
+    {
+      "id": "s098",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Ein Statusbericht wird jeden Freitag an alle Beteiligten versendet.",
+      "translation": "A status report is sent to all involved parties every Friday.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_statusbericht",
+        "g_beteiligt"
+      ]
+    },
+    {
+      "id": "s099",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Wurde der letzte Bericht bereits versendet?",
+      "translation": "Was the last report already sent?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_bereits"
+      ]
+    },
+    {
+      "id": "s100",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Ja, er wurde gestern versendet. Die Rückmeldungen waren positiv.",
+      "translation": "Yes, it was sent yesterday. The feedback was positive.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_rueckmeldung"
+      ]
+    },
+    {
+      "id": "s101",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie oft wird der Statusbericht versendet?",
+      "translation": "How often is the status report sent?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "jeden Freitag"
+      ]
+    },
+    {
+      "id": "s102",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Das Passiv im Perfekt mit sein + Partizip II bei Bewegung: er ist gegangen, der Bericht ist erschienen. Bei transitiven Verben: wurde versendet.",
+      "translation": "Perfect passive with sein + participle for movement: er ist gegangen, der Bericht ist erschienen. For transitive verbs: wurde versendet.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s103",
+      "type": "drill",
+      "speaker": "productowner",
+      "text": "Der Bericht wurde gestern versendet.",
+      "translation": "The report was sent yesterday.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s104",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Ich hätte eine Frage zur Absicherung der Daten.",
+      "translation": "I have a question about securing the data.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_absicherung"
+      ]
+    },
+    {
+      "id": "s105",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Bitte fragen Sie. Die Datensicherung ist ein wichtiges Thema.",
+      "translation": "Please ask. Data backup is an important topic.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_datensicherung"
+      ]
+    },
+    {
+      "id": "s106",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Werden die Daten täglich gesichert, oder nur bei Änderungen?",
+      "translation": "Are the data backed up daily, or only when changes occur?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_taeglich",
+        "g_aenderung"
+      ]
+    },
+    {
+      "id": "s107",
+      "type": "line",
+      "speaker": "productowner",
+      "text": "Sie werden täglich gesichert und zusätzlich vor jedem Release.",
+      "translation": "They're backed up daily and additionally before each release.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s108",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie oft werden die Daten gesichert?",
+      "translation": "How often is the data backed up?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "täglich und vor jedem Release"
+      ]
+    },
+    {
+      "id": "s109",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Qualitätssicherung",
+      "translation": "the quality assurance",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_qualitaetssicherung"
+      ]
+    },
+    {
+      "id": "s110",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sicherstellen",
+      "translation": "to ensure",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sicherstellen"
+      ]
+    },
+    {
+      "id": "s111",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Prüfung",
+      "translation": "the check / examination",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_pruefung"
+      ]
+    },
+    {
+      "id": "s112",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Benutzeroberfläche",
+      "translation": "the user interface",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_benutzeroberflaeche"
+      ]
+    },
+    {
+      "id": "s113",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "vergeben",
+      "translation": "to assign / outsource",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vergeben"
+      ]
+    },
+    {
+      "id": "s114",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Stakeholder",
+      "translation": "the stakeholder",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stakeholder"
+      ]
+    },
+    {
+      "id": "s115",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Statusbericht",
+      "translation": "the status report",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_statusbericht"
+      ]
+    },
+    {
+      "id": "s116",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "beteiligt",
+      "translation": "involved",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_beteiligt"
+      ]
+    },
+    {
+      "id": "s117",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bereits",
+      "translation": "already",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bereits"
+      ]
+    },
+    {
+      "id": "s118",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Rückmeldung",
+      "translation": "the feedback",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_rueckmeldung"
+      ]
+    },
+    {
+      "id": "s119",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Absicherung",
+      "translation": "the securing",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_absicherung"
+      ]
+    },
+    {
+      "id": "s120",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Datensicherung",
+      "translation": "the data backup",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_datensicherung"
+      ]
+    },
+    {
+      "id": "s121",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "täglich",
+      "translation": "daily",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_taeglich"
+      ]
+    },
+    {
+      "id": "s122",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Änderung",
+      "translation": "the change",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_aenderung"
+      ]
+    },
+    {
+      "id": "s123",
+      "type": "line",
+      "speaker": "projektleiterin",
+      "text": "Gut, dann ist das geklärt. Vielen Dank für die ausführlichen Berichte.",
+      "translation": "Good, then that's settled. Thank you for the detailed reports.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_geklaert",
+        "g_ausfuehrlich"
+      ]
+    },
+    {
+      "id": "s124",
+      "type": "line",
+      "speaker": "entwicklerin",
+      "text": "Gerne. Ich melde mich, falls sich etwas ändert.",
+      "translation": "You're welcome. I'll get in touch if anything changes.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s125",
+      "type": "recap",
+      "speaker": "narrator",
+      "text": "Heute hast du gelernt: einen Projektstand zu berichten, Sachverhalte zu nominalisieren und das Passiv zu verwenden.",
+      "translation": "Today you learned: reporting a project status, nominalising facts, and using the passive.",
+      "pause_after_ms": 800
     }
   ],
   "glossary": [
     {
-      "id": "g_projektstatus", "de": "der Projektstatus", "en": "the project status", "pos": "noun",
-      "article": "der", "plural": "die Projektstatus",
-      "example_de": "Ich stelle den Projektstatus vor.", "example_en": "I'm presenting the project status."
+      "id": "g_besprechen",
+      "de": "besprechen",
+      "en": "to discuss",
+      "pos": "verb",
+      "example_de": "Wir besprechen den Stand.",
+      "example_en": "We discuss the status."
     },
     {
-      "id": "g_vorstellen", "de": "vorstellen", "en": "to present", "pos": "verb",
-      "note_de": "Trennbares Verb: ich stelle vor.",
-      "note_en": "Separable verb: ich stelle vor.",
-      "example_de": "Ich möchte den Status vorstellen.", "example_en": "I'd like to present the status."
+      "id": "g_umsetzung",
+      "de": "die Umsetzung",
+      "en": "the implementation",
+      "pos": "noun",
+      "example_de": "Die Umsetzung ist fertig.",
+      "example_en": "The implementation is done.",
+      "article": "die",
+      "plural": "die Umsetzungen"
     },
     {
-      "id": "g_entwicklung", "de": "die Entwicklung", "en": "the development", "pos": "noun",
-      "article": "die", "plural": "die Entwicklungen",
-      "note_de": "Nominalisierung von entwickeln.",
-      "note_en": "Nominalization of entwickeln.",
-      "example_de": "Die Entwicklung ist fast fertig.", "example_en": "Development is almost done."
+      "id": "g_weitgehend",
+      "de": "weitgehend",
+      "en": "largely",
+      "pos": "adverb",
+      "example_de": "Es ist weitgehend fertig.",
+      "example_en": "It's largely finished."
     },
     {
-      "id": "g_abgeschlossen", "de": "abgeschlossen", "en": "completed", "pos": "participle",
-      "note_de": "Partizip II von abschließen.",
-      "note_en": "Past participle of abschließen (to complete).",
-      "example_de": "Die Entwicklung ist abgeschlossen.", "example_en": "Development is complete."
+      "id": "g_abgeschlossen",
+      "de": "abgeschlossen",
+      "en": "completed",
+      "pos": "adjective",
+      "example_de": "Die Arbeit ist abgeschlossen.",
+      "example_en": "The work is completed."
     },
     {
-      "id": "g_budget", "de": "das Budget", "en": "the budget", "pos": "noun",
-      "article": "das", "plural": "die Budgets",
-      "example_de": "Wie sieht es mit dem Budget aus?", "example_en": "How are things with the budget?"
+      "id": "g_durchfuehren",
+      "de": "durchführen",
+      "en": "to carry out",
+      "pos": "verb",
+      "example_de": "Die Tests wurden durchgeführt.",
+      "example_en": "The tests were carried out."
     },
     {
-      "id": "g_ueberschreitung", "de": "die Überschreitung", "en": "the overrun", "pos": "noun",
-      "article": "die", "plural": "die Überschreitungen",
-      "example_de": "Es gibt eine Überschreitung von zehn Prozent.", "example_en": "There is an overrun of ten percent."
+      "id": "g_beheben",
+      "de": "beheben",
+      "en": "to fix / remedy",
+      "pos": "verb",
+      "example_de": "Die Fehler wurden behoben.",
+      "example_en": "The errors were fixed."
     },
     {
-      "id": "g_geschaeftsfuehrung", "de": "die Geschäftsführung", "en": "the management", "pos": "noun",
-      "article": "die", "plural": "die Geschäftsführungen",
-      "example_de": "Die Geschäftsführung erwartet eine Erklärung.", "example_en": "Management expects an explanation."
+      "id": "g_dokumentation",
+      "de": "die Dokumentation",
+      "en": "the documentation",
+      "pos": "noun",
+      "example_de": "Die Dokumentation wird erstellt.",
+      "example_en": "The documentation is being written.",
+      "article": "die",
+      "plural": "die Dokumentationen"
     },
     {
-      "id": "g_besorgnis", "de": "die Besorgnis", "en": "the concern", "pos": "noun",
-      "article": "die", "plural": "die Besorgnisse",
-      "example_de": "Ich verstehe die Besorgnis.", "example_en": "I understand the concern."
+      "id": "g_fassung",
+      "de": "die Fassung",
+      "en": "the version / draft",
+      "pos": "noun",
+      "example_de": "Die fertige Fassung liegt vor.",
+      "example_en": "The finished version is available.",
+      "article": "die",
+      "plural": "die Fassungen"
     },
     {
-      "id": "g_verzoegerung", "de": "die Verzögerung", "en": "the delay", "pos": "noun",
-      "article": "die", "plural": "die Verzögerungen",
-      "example_de": "Die Verzögerung kommt von der Lieferkette.", "example_en": "The delay comes from the supply chain."
+      "id": "g_fachbereich",
+      "de": "der Fachbereich",
+      "en": "the department",
+      "pos": "noun",
+      "example_de": "Der Fachbereich prüft die Ergebnisse.",
+      "example_en": "The department checks the results.",
+      "article": "der",
+      "plural": "die Fachbereiche"
     },
     {
-      "id": "g_lieferkette", "de": "die Lieferkette", "en": "the supply chain", "pos": "noun",
-      "article": "die", "plural": "die Lieferketten",
-      "example_de": "Die Lieferkette ist unterbrochen.", "example_en": "The supply chain is disrupted."
+      "id": "g_validierung",
+      "de": "die Validierung",
+      "en": "the validation",
+      "pos": "noun",
+      "example_de": "Die Validierung fehlt noch.",
+      "example_en": "The validation is still missing.",
+      "article": "die",
+      "plural": "die Validierungen"
     },
     {
-      "id": "g_lieferung", "de": "die Lieferung", "en": "the delivery", "pos": "noun",
-      "article": "die", "plural": "die Lieferungen",
-      "example_de": "Die Lieferung hat sich verschoben.", "example_en": "The delivery has been delayed."
+      "id": "g_verzoegerung",
+      "de": "die Verzögerung",
+      "en": "the delay",
+      "pos": "noun",
+      "example_de": "Die Verzögerung ist erklärbar.",
+      "example_en": "The delay is explainable.",
+      "article": "die",
+      "plural": "die Verzögerungen"
     },
     {
-      "id": "g_bauteil", "de": "das Bauteil", "en": "the component", "pos": "noun",
-      "article": "das", "plural": "die Bauteile",
-      "example_de": "Die Bauteile kommen nächste Woche.", "example_en": "The components arrive next week."
+      "id": "g_anforderung",
+      "de": "die Anforderung",
+      "en": "the requirement",
+      "pos": "noun",
+      "example_de": "Die Anforderung wurde freigegeben.",
+      "example_en": "The requirement was approved.",
+      "article": "die",
+      "plural": "die Anforderungen"
     },
     {
-      "id": "g_massnahme", "de": "die Maßnahme", "en": "the measure", "pos": "noun",
-      "article": "die", "plural": "die Maßnahmen",
-      "example_de": "Welche Maßnahmen schlagen Sie vor?", "example_en": "What measures do you propose?"
+      "id": "g_freigabe_x",
+      "de": "die Freigabe",
+      "en": "the approval",
+      "pos": "noun",
+      "example_de": "Die Freigabe kam spät.",
+      "example_en": "The approval came late.",
+      "article": "die",
+      "plural": "die Freigaben"
     },
     {
-      "id": "g_anpassung", "de": "die Anpassung", "en": "the adjustment", "pos": "noun",
-      "article": "die", "plural": "die Anpassungen",
-      "example_de": "Ich schlage eine Anpassung vor.", "example_en": "I propose an adjustment."
+      "id": "g_abstimmung",
+      "de": "die Abstimmung",
+      "en": "the coordination",
+      "pos": "noun",
+      "example_de": "Die Abstimmung dauerte lange.",
+      "example_en": "The coordination took a long time.",
+      "article": "die",
+      "plural": "die Abstimmungen"
     },
     {
-      "id": "g_prioritaet", "de": "die Priorität", "en": "the priority", "pos": "noun",
-      "article": "die", "plural": "die Prioritäten",
-      "example_de": "Wir müssen die Prioritäten ändern.", "example_en": "We have to change the priorities."
+      "id": "g_zeitaufwendig",
+      "de": "zeitaufwendig",
+      "en": "time-consuming",
+      "pos": "adjective",
+      "example_de": "Die Aufgabe ist zeitaufwendig.",
+      "example_en": "The task is time-consuming."
     },
     {
-      "id": "g_fertigstellung", "de": "die Fertigstellung", "en": "the completion", "pos": "noun",
-      "article": "die", "plural": "die Fertigstellungen",
-      "example_de": "Die Fertigstellung bleibt im Zeitplan.", "example_en": "Completion remains on schedule."
+      "id": "g_risiko",
+      "de": "das Risiko",
+      "en": "the risk",
+      "pos": "noun",
+      "example_de": "Das Risiko ist gering.",
+      "example_en": "The risk is low.",
+      "article": "das",
+      "plural": "die Risiken"
     },
     {
-      "id": "g_zeitplan", "de": "der Zeitplan", "en": "the schedule", "pos": "noun",
-      "article": "der", "plural": "die Zeitpläne",
-      "example_de": "Wir bleiben im Zeitplan.", "example_en": "We're staying on schedule."
+      "id": "g_ausstehend",
+      "de": "ausstehend",
+      "en": "outstanding / pending",
+      "pos": "adjective",
+      "example_de": "Die Freigabe ist noch ausstehend.",
+      "example_en": "The approval is still pending."
     },
     {
-      "id": "g_ueberarbeitung", "de": "die Überarbeitung", "en": "the revision", "pos": "noun",
-      "article": "die", "plural": "die Überarbeitungen",
-      "example_de": "Die Überarbeitung dauert zwei Tage.", "example_en": "The revision takes two days."
+      "id": "g_budget",
+      "de": "das Budget",
+      "en": "the budget",
+      "pos": "noun",
+      "example_de": "Das Budget wurde genehmigt.",
+      "example_en": "The budget was approved.",
+      "article": "das",
+      "plural": "die Budgets"
     },
     {
-      "id": "g_kommunikation", "de": "die Kommunikation", "en": "the communication", "pos": "noun",
-      "article": "die", "plural": "die Kommunikationen",
-      "example_de": "Die Kommunikation übernehme ich.", "example_en": "I'll take care of the communication."
+      "id": "g_abhaengigkeit",
+      "de": "die Abhängigkeit",
+      "en": "the dependency",
+      "pos": "noun",
+      "example_de": "Es gibt eine Abhängigkeit.",
+      "example_en": "There is a dependency.",
+      "article": "die",
+      "plural": "die Abhängigkeiten"
+    },
+    {
+      "id": "g_extern",
+      "de": "extern",
+      "en": "external",
+      "pos": "adjective",
+      "example_de": "Die Komponente ist extern.",
+      "example_en": "The component is external."
+    },
+    {
+      "id": "g_minimieren",
+      "de": "minimieren",
+      "en": "to minimise",
+      "pos": "verb",
+      "example_de": "Wir minimieren die Risiken.",
+      "example_en": "We minimise the risks."
+    },
+    {
+      "id": "g_vorziehen",
+      "de": "vorziehen",
+      "en": "to bring forward",
+      "pos": "verb",
+      "example_de": "Wir ziehen die Freigabe vor.",
+      "example_en": "We bring the approval forward."
+    },
+    {
+      "id": "g_fruehzeitig",
+      "de": "frühzeitig",
+      "en": "early / in good time",
+      "pos": "adverb",
+      "example_de": "Wir fragen frühzeitig nach.",
+      "example_en": "We ask early."
+    },
+    {
+      "id": "g_puffer",
+      "de": "der Puffer",
+      "en": "the buffer",
+      "pos": "noun",
+      "example_de": "Wir schaffen einen Puffer.",
+      "example_en": "We create a buffer.",
+      "article": "der",
+      "plural": "die Puffer"
+    },
+    {
+      "id": "g_reihenfolge",
+      "de": "die Reihenfolge",
+      "en": "the order / sequence",
+      "pos": "noun",
+      "example_de": "Die Reihenfolge wurde geändert.",
+      "example_en": "The order was changed.",
+      "article": "die",
+      "plural": "die Reihenfolgen"
+    },
+    {
+      "id": "g_kommunikation",
+      "de": "die Kommunikation",
+      "en": "the communication",
+      "pos": "noun",
+      "example_de": "Die Kommunikation läuft gut.",
+      "example_en": "Communication is going well.",
+      "article": "die"
+    },
+    {
+      "id": "g_informieren",
+      "de": "informieren",
+      "en": "to inform",
+      "pos": "verb",
+      "example_de": "Ich informiere Sie nachher.",
+      "example_en": "I'll inform you later."
+    },
+    {
+      "id": "g_schnittstelle_x",
+      "de": "die Schnittstelle",
+      "en": "the interface",
+      "pos": "noun",
+      "example_de": "Die Schnittstelle ist fertig.",
+      "example_en": "The interface is done.",
+      "article": "die",
+      "plural": "die Schnittstellen"
+    },
+    {
+      "id": "g_zeitplan",
+      "de": "der Zeitplan",
+      "en": "the timeline",
+      "pos": "noun",
+      "example_de": "Der Zeitplan ist eng.",
+      "example_en": "The timeline is tight.",
+      "article": "der",
+      "plural": "die Zeitpläne"
+    },
+    {
+      "id": "g_meilenstein",
+      "de": "der Meilenstein",
+      "en": "the milestone",
+      "pos": "noun",
+      "example_de": "Der Meilenstein ist erreicht.",
+      "example_en": "The milestone is reached.",
+      "article": "der",
+      "plural": "die Meilensteine"
+    },
+    {
+      "id": "g_integration",
+      "de": "die Integration",
+      "en": "the integration",
+      "pos": "noun",
+      "example_de": "Die Integration steht bevor.",
+      "example_en": "The integration is upcoming.",
+      "article": "die",
+      "plural": "die Integrationen"
+    },
+    {
+      "id": "g_abnahme",
+      "de": "die Abnahme",
+      "en": "the acceptance",
+      "pos": "noun",
+      "example_de": "Die Abnahme folgt danach.",
+      "example_en": "Acceptance follows afterwards.",
+      "article": "die",
+      "plural": "die Abnahmen"
+    },
+    {
+      "id": "g_bisher",
+      "de": "bisher",
+      "en": "so far",
+      "pos": "adverb",
+      "example_de": "Bisher war alles gut.",
+      "example_en": "So far everything was fine."
+    },
+    {
+      "id": "g_automatisierung",
+      "de": "die Automatisierung",
+      "en": "the automation",
+      "pos": "noun",
+      "example_de": "Die Automatisierung fehlt noch.",
+      "example_en": "The automation is still missing.",
+      "article": "die",
+      "plural": "die Automatisierungen"
+    },
+    {
+      "id": "g_gefaehrden",
+      "de": "gefährden",
+      "en": "to jeopardise",
+      "pos": "verb",
+      "example_de": "Das gefährdet den Termin.",
+      "example_en": "That jeopardises the deadline."
+    },
+    {
+      "id": "g_einplanen",
+      "de": "einplanen",
+      "en": "to schedule / plan in",
+      "pos": "verb",
+      "example_de": "Wir haben es eingeplant.",
+      "example_en": "We scheduled it."
+    },
+    {
+      "id": "g_nachholen",
+      "de": "nachholen",
+      "en": "to catch up",
+      "pos": "verb",
+      "example_de": "Wir holen es nächste Woche nach.",
+      "example_en": "We'll catch up next week."
+    },
+    {
+      "id": "g_anmerkung",
+      "de": "die Anmerkung",
+      "en": "the comment",
+      "pos": "noun",
+      "example_de": "Ich habe eine Anmerkung.",
+      "example_en": "I have a comment.",
+      "article": "die",
+      "plural": "die Anmerkungen"
+    },
+    {
+      "id": "g_priorisierung",
+      "de": "die Priorisierung",
+      "en": "the prioritisation",
+      "pos": "noun",
+      "example_de": "Die Priorisierung ist wichtig.",
+      "example_en": "The prioritisation is important.",
+      "article": "die",
+      "plural": "die Priorisierungen"
+    },
+    {
+      "id": "g_fehlerbehebung",
+      "de": "die Fehlerbehebung",
+      "en": "the bug fixing",
+      "pos": "noun",
+      "example_de": "Die Fehlerbehebung geht vor.",
+      "example_en": "Bug fixing comes first.",
+      "article": "die",
+      "plural": "die Fehlerbehebungen"
+    },
+    {
+      "id": "g_funktion",
+      "de": "die Funktion",
+      "en": "the feature / function",
+      "pos": "noun",
+      "example_de": "Die Funktion ist neu.",
+      "example_en": "The feature is new.",
+      "article": "die",
+      "plural": "die Funktionen"
+    },
+    {
+      "id": "g_stabilitaet",
+      "de": "die Stabilität",
+      "en": "the stability",
+      "pos": "noun",
+      "example_de": "Die Stabilität geht vor.",
+      "example_en": "Stability comes first.",
+      "article": "die"
+    },
+    {
+      "id": "g_vorgehen",
+      "de": "vorgehen",
+      "en": "to come first / take precedence",
+      "pos": "verb",
+      "example_de": "Die Qualität geht vor.",
+      "example_en": "Quality comes first."
+    },
+    {
+      "id": "g_offen",
+      "de": "offen",
+      "en": "open / outstanding",
+      "pos": "adjective",
+      "example_de": "Es gibt offene Punkte.",
+      "example_en": "There are open points."
+    },
+    {
+      "id": "g_entscheiden",
+      "de": "entscheiden",
+      "en": "to decide",
+      "pos": "verb",
+      "example_de": "Wir entscheiden gemeinsam.",
+      "example_en": "We decide together."
+    },
+    {
+      "id": "g_qualitaetssicherung",
+      "de": "die Qualitätssicherung",
+      "en": "the quality assurance",
+      "pos": "noun",
+      "example_de": "Die Qualitätssicherung ist wichtig.",
+      "example_en": "Quality assurance is important.",
+      "article": "die"
+    },
+    {
+      "id": "g_sicherstellen",
+      "de": "sicherstellen",
+      "en": "to ensure",
+      "pos": "verb",
+      "example_de": "Wir stellen die Qualität sicher.",
+      "example_en": "We ensure quality."
+    },
+    {
+      "id": "g_pruefung",
+      "de": "die Prüfung",
+      "en": "the check / examination",
+      "pos": "noun",
+      "example_de": "Die Prüfung war erfolgreich.",
+      "example_en": "The check was successful.",
+      "article": "die",
+      "plural": "die Prüfungen"
+    },
+    {
+      "id": "g_benutzeroberflaeche",
+      "de": "die Benutzeroberfläche",
+      "en": "the user interface",
+      "pos": "noun",
+      "example_de": "Die Benutzeroberfläche ist modern.",
+      "example_en": "The user interface is modern.",
+      "article": "die",
+      "plural": "die Benutzeroberflächen"
+    },
+    {
+      "id": "g_vergeben",
+      "de": "vergeben",
+      "en": "to assign / outsource",
+      "pos": "verb",
+      "example_de": "Die Prüfung wurde vergeben.",
+      "example_en": "The testing was outsourced."
+    },
+    {
+      "id": "g_stakeholder",
+      "de": "der Stakeholder",
+      "en": "the stakeholder",
+      "pos": "noun",
+      "example_de": "Alle Stakeholder wurden informiert.",
+      "example_en": "All stakeholders were informed.",
+      "article": "der",
+      "plural": "die Stakeholder"
+    },
+    {
+      "id": "g_statusbericht",
+      "de": "der Statusbericht",
+      "en": "the status report",
+      "pos": "noun",
+      "example_de": "Der Statusbericht ist fertig.",
+      "example_en": "The status report is ready.",
+      "article": "der",
+      "plural": "die Statusberichte"
+    },
+    {
+      "id": "g_beteiligt",
+      "de": "beteiligt",
+      "en": "involved",
+      "pos": "adjective",
+      "example_de": "Alle Beteiligten sind informiert.",
+      "example_en": "All involved parties are informed."
+    },
+    {
+      "id": "g_bereits",
+      "de": "bereits",
+      "en": "already",
+      "pos": "adverb",
+      "example_de": "Es ist bereits erledigt.",
+      "example_en": "It's already done."
+    },
+    {
+      "id": "g_rueckmeldung",
+      "de": "die Rückmeldung",
+      "en": "the feedback",
+      "pos": "noun",
+      "example_de": "Die Rückmeldung war positiv.",
+      "example_en": "The feedback was positive.",
+      "article": "die",
+      "plural": "die Rückmeldungen"
+    },
+    {
+      "id": "g_absicherung",
+      "de": "die Absicherung",
+      "en": "the securing",
+      "pos": "noun",
+      "example_de": "Die Absicherung der Daten ist wichtig.",
+      "example_en": "Securing the data is important.",
+      "article": "die"
+    },
+    {
+      "id": "g_datensicherung",
+      "de": "die Datensicherung",
+      "en": "the data backup",
+      "pos": "noun",
+      "example_de": "Die Datensicherung läuft täglich.",
+      "example_en": "The data backup runs daily.",
+      "article": "die"
+    },
+    {
+      "id": "g_taeglich",
+      "de": "täglich",
+      "en": "daily",
+      "pos": "adverb",
+      "example_de": "Wir sichern die Daten täglich.",
+      "example_en": "We back up the data daily."
+    },
+    {
+      "id": "g_aenderung",
+      "de": "die Änderung",
+      "en": "the change",
+      "pos": "noun",
+      "example_de": "Es gab eine Änderung.",
+      "example_en": "There was a change.",
+      "article": "die",
+      "plural": "die Änderungen"
+    },
+    {
+      "id": "g_geklaert",
+      "de": "geklärt",
+      "en": "settled / clarified",
+      "pos": "adjective",
+      "example_de": "Die Frage ist geklärt.",
+      "example_en": "The question is settled."
+    },
+    {
+      "id": "g_ausfuehrlich",
+      "de": "ausführlich",
+      "en": "detailed",
+      "pos": "adjective",
+      "example_de": "Der Bericht war ausführlich.",
+      "example_en": "The report was detailed."
     }
   ],
   "meta": {

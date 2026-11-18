@@ -5,18 +5,19 @@
   "title": { "de": "Im Café", "en": "At the café" },
   "minutes": 8,
   "scene": {
-    "setting_de": "Ein kleines Café am Nachmittag. Eine Frau setzt sich an einen Tisch.",
-    "setting_en": "A small café in the afternoon. A woman sits down at a table.",
+    "setting_de": "Ein kleines Café am Nachmittag. Eine Frau setzt sich an einen Tisch, später kommt eine zweite Gästin.",
+    "setting_en": "A small café in the afternoon. A woman sits down at a table; later a second guest arrives.",
     "register": "informal-service",
-    "can_do_de": "Ich kann im Café etwas bestellen, nach dem Preis fragen und bezahlen.",
-    "can_do_en": "I can order at a café, ask the price, and pay.",
+    "can_do_de": "Ich kann im Café etwas bestellen, nach dem Preis fragen, Zahlen verstehen und bezahlen.",
+    "can_do_en": "I can order at a café, ask the price, understand numbers, and pay.",
     "situation_tags": ["café", "food", "service", "numbers"],
     "grammar_focus": ["ich-moechte", "akkusativ", "zahlen-1-20"]
   },
   "cast": [
     { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
     { "role": "gast", "voice": "de_young_f", "lang": "de" },
-    { "role": "kellner", "voice": "de_young_m", "lang": "de" }
+    { "role": "kellner", "voice": "de_young_m", "lang": "de" },
+    { "role": "gast2", "voice": "de_older_f", "lang": "de" }
   ],
   "segments": [
     {
@@ -74,35 +75,42 @@
       "speed": 0.85, "pause_after_ms": 700, "skippable": true
     },
     {
-      "id": "s009", "type": "line", "speaker": "kellner",
+      "id": "s009", "type": "vocab", "speaker": "narrator",
+      "text": "der Kaffee",
+      "translation": "the coffee",
+      "pause_after_ms": 900,
+      "gloss": ["g_kaffee"]
+    },
+    {
+      "id": "s010", "type": "line", "speaker": "kellner",
       "text": "Möchten Sie auch etwas essen?",
       "translation": "Would you like something to eat too?",
       "pause_after_ms": 700,
       "gloss": ["g_essen"]
     },
     {
-      "id": "s010", "type": "line", "speaker": "gast",
+      "id": "s011", "type": "line", "speaker": "gast",
       "text": "Ja, ein Stück Kuchen. Was empfehlen Sie?",
       "translation": "Yes, a piece of cake. What do you recommend?",
       "pause_after_ms": 800,
       "gloss": ["g_stueck", "g_empfehlen"]
     },
     {
-      "id": "s011", "type": "line", "speaker": "kellner",
+      "id": "s012", "type": "line", "speaker": "kellner",
       "text": "Der Apfelkuchen ist sehr gut.",
       "translation": "The apple cake is very good.",
       "pause_after_ms": 700,
       "gloss": ["g_apfelkuchen"]
     },
     {
-      "id": "s012", "type": "line", "speaker": "gast",
+      "id": "s013", "type": "line", "speaker": "gast",
       "text": "Dann nehme ich den Apfelkuchen.",
       "translation": "Then I'll take the apple cake.",
       "pause_after_ms": 800,
       "gloss": ["g_nehmen"]
     },
     {
-      "id": "s013", "type": "check", "speaker": "narrator",
+      "id": "s014", "type": "check", "speaker": "narrator",
       "text": "Was empfiehlt der Kellner?",
       "translation": "What does the waiter recommend?",
       "answers": ["den Apfelkuchen"],
@@ -110,119 +118,280 @@
       "pause_after_ms": 400
     },
     {
-      "id": "s014", "type": "vocab", "speaker": "narrator",
+      "id": "s015", "type": "vocab", "speaker": "narrator",
       "text": "der Apfelkuchen",
       "translation": "the apple cake",
       "pause_after_ms": 900,
       "gloss": ["g_apfelkuchen"]
     },
     {
-      "id": "s015", "type": "line", "speaker": "gast",
-      "text": "Was kostet das zusammen?",
-      "translation": "How much does that cost together?",
-      "pause_after_ms": 700,
-      "gloss": ["g_kosten"]
+      "id": "s016", "type": "note", "speaker": "narrator",
+      "text": "Akkusativ: einen Kaffee, ein Stück, den Apfelkuchen.",
+      "translation": "Accusative: einen Kaffee, ein Stück, den Apfelkuchen.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
     },
     {
-      "id": "s016", "type": "line", "speaker": "kellner",
-      "text": "Das macht sechs Euro zwanzig.",
-      "translation": "That comes to six euros twenty.",
-      "pause_after_ms": 700,
-      "gloss": ["g_das_macht"]
-    },
-    {
-      "id": "s017", "type": "drill", "speaker": "kellner",
-      "text": "Das macht sechs Euro zwanzig.",
-      "translation": "That comes to six euros twenty.",
+      "id": "s017", "type": "drill", "speaker": "gast",
+      "text": "Ich möchte einen Kaffee und ein Stück Kuchen.",
+      "translation": "I'd like a coffee and a piece of cake.",
       "repeat": 2, "speed": 0.8, "pause_after_ms": 1000
     },
     {
-      "id": "s018", "type": "check", "speaker": "narrator",
-      "text": "Wie viel kostet alles zusammen?",
-      "translation": "How much does everything cost together?",
-      "answers": ["sechs Euro zwanzig"],
+      "id": "s018", "type": "line", "speaker": "gast",
+      "text": "Haben Sie auch Tee?",
+      "translation": "Do you also have tea?",
+      "pause_after_ms": 700,
+      "gloss": ["g_tee"]
+    },
+    {
+      "id": "s019", "type": "line", "speaker": "kellner",
+      "text": "Ja, schwarzen Tee und Kräutertee.",
+      "translation": "Yes, black tea and herbal tea.",
+      "pause_after_ms": 700,
+      "gloss": ["g_tee"]
+    },
+    {
+      "id": "s020", "type": "line", "speaker": "gast",
+      "text": "Dann einen Kräutertee, bitte.",
+      "translation": "Then a herbal tea, please.",
+      "pause_after_ms": 800,
+      "gloss": ["g_tee"]
+    },
+    {
+      "id": "s021", "type": "check", "speaker": "narrator",
+      "text": "Was möchte die Frau noch trinken?",
+      "translation": "What else does the woman want to drink?",
+      "answers": ["einen Kräutertee"],
       "answer_pause_ms": 2500,
       "pause_after_ms": 400
     },
     {
-      "id": "s019", "type": "line", "speaker": "gast",
-      "text": "Hier, bitte. Stimmt so.",
-      "translation": "Here you go. Keep the change.",
-      "pause_after_ms": 700,
-      "gloss": ["g_stimmt_so"]
-    },
-    {
-      "id": "s020", "type": "note", "speaker": "narrator",
-      "text": "Stimmt so heißt: das Wechselgeld ist für dich.",
-      "translation": "Stimmt so means: the change is for you.",
-      "speed": 0.85, "pause_after_ms": 700, "skippable": true
-    },
-    {
-      "id": "s021", "type": "line", "speaker": "kellner",
-      "text": "Vielen Dank! Guten Appetit.",
-      "translation": "Thank you very much! Enjoy your meal.",
-      "pause_after_ms": 700,
-      "gloss": ["g_guten_appetit"]
-    },
-    {
-      "id": "s022", "type": "line", "speaker": "gast",
-      "text": "Danke!",
-      "translation": "Thanks!",
-      "pause_after_ms": 500
-    },
-    {
-      "id": "s023", "type": "vocab", "speaker": "narrator",
-      "text": "der Kaffee",
-      "translation": "the coffee",
+      "id": "s022", "type": "vocab", "speaker": "narrator",
+      "text": "der Tee",
+      "translation": "the tea",
       "pause_after_ms": 900,
-      "gloss": ["g_kaffee"]
+      "gloss": ["g_tee"]
+    },
+    {
+      "id": "s023", "type": "line", "speaker": "kellner",
+      "text": "Der Kaffee kostet drei Euro fünfzig.",
+      "translation": "The coffee costs three euros fifty.",
+      "pause_after_ms": 700,
+      "gloss": ["g_kosten", "g_euro"]
     },
     {
       "id": "s024", "type": "line", "speaker": "gast",
+      "text": "Und der Kuchen?",
+      "translation": "And the cake?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s025", "type": "line", "speaker": "kellner",
+      "text": "Vier Euro zwanzig.",
+      "translation": "Four euros twenty.",
+      "pause_after_ms": 700,
+      "gloss": ["g_euro"]
+    },
+    {
+      "id": "s026", "type": "note", "speaker": "narrator",
+      "text": "Zahlen: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn.",
+      "translation": "Numbers: one, two, three, four, five, six, seven, eight, nine, ten.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s027", "type": "drill", "speaker": "kellner",
+      "text": "drei Euro fünfzig, vier Euro zwanzig",
+      "translation": "three euros fifty, four euros twenty",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1000
+    },
+    {
+      "id": "s028", "type": "check", "speaker": "narrator",
+      "text": "Was kostet der Kuchen?",
+      "translation": "How much does the cake cost?",
+      "answers": ["vier Euro zwanzig"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s029", "type": "vocab", "speaker": "narrator",
+      "text": "der Euro",
+      "translation": "the euro",
+      "pause_after_ms": 900,
+      "gloss": ["g_euro"]
+    },
+    {
+      "id": "s030", "type": "line", "speaker": "gast2",
+      "text": "Entschuldigung, ist dieser Platz frei?",
+      "translation": "Excuse me, is this seat free?",
+      "pause_after_ms": 700,
+      "gloss": ["g_platz"]
+    },
+    {
+      "id": "s031", "type": "line", "speaker": "gast",
+      "text": "Ja, bitte. Setzen Sie sich.",
+      "translation": "Yes, please. Have a seat.",
+      "pause_after_ms": 800,
+      "gloss": ["g_platz"]
+    },
+    {
+      "id": "s032", "type": "line", "speaker": "gast2",
+      "text": "Danke. Ich möchte auch einen Kaffee.",
+      "translation": "Thank you. I'd like a coffee too.",
+      "pause_after_ms": 800,
+      "gloss": ["g_moechten"]
+    },
+    {
+      "id": "s033", "type": "line", "speaker": "kellner",
+      "text": "Sehr gern. Mit Milch?",
+      "translation": "Very gladly. With milk?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s034", "type": "line", "speaker": "gast2",
+      "text": "Ohne Milch, danke.",
+      "translation": "Without milk, thanks.",
+      "pause_after_ms": 700,
+      "gloss": ["g_ohne"]
+    },
+    {
+      "id": "s035", "type": "check", "speaker": "narrator",
+      "text": "Wie möchte die zweite Frau den Kaffee?",
+      "translation": "How does the second woman want her coffee?",
+      "answers": ["ohne Milch"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s036", "type": "note", "speaker": "narrator",
+      "text": "Im Café sagt man oft Sie. Zu Freunden sagt man du.",
+      "translation": "In a café people often use Sie. With friends people use du.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s037", "type": "line", "speaker": "gast",
       "text": "Kann ich bitte die Rechnung haben?",
       "translation": "Can I have the bill, please?",
       "pause_after_ms": 700,
       "gloss": ["g_rechnung"]
     },
     {
-      "id": "s025", "type": "line", "speaker": "kellner",
+      "id": "s038", "type": "line", "speaker": "kellner",
       "text": "Natürlich. Einen Moment, bitte.",
       "translation": "Of course. One moment, please.",
       "pause_after_ms": 700,
       "gloss": ["g_moment"]
     },
     {
-      "id": "s026", "type": "echo", "speaker": "kellner",
+      "id": "s039", "type": "echo", "speaker": "kellner",
       "text": "Einen Moment, bitte.",
       "translation": "One moment, please.",
       "repeat": 2, "speed": 0.8, "pause_after_ms": 1200
     },
     {
-      "id": "s027", "type": "check", "speaker": "narrator",
-      "text": "Was sagt man, wenn man zahlen möchte?",
-      "translation": "What do you say when you want to pay?",
-      "answers": ["Die Rechnung, bitte."],
+      "id": "s040", "type": "line", "speaker": "kellner",
+      "text": "Das macht neun Euro zehn.",
+      "translation": "That comes to nine euros ten.",
+      "pause_after_ms": 700,
+      "gloss": ["g_das_macht", "g_euro"]
+    },
+    {
+      "id": "s041", "type": "drill", "speaker": "kellner",
+      "text": "Das macht neun Euro zehn.",
+      "translation": "That comes to nine euros ten.",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1000
+    },
+    {
+      "id": "s042", "type": "check", "speaker": "narrator",
+      "text": "Wie viel kostet alles zusammen?",
+      "translation": "How much does everything cost together?",
+      "answers": ["neun Euro zehn"],
       "answer_pause_ms": 2500,
       "pause_after_ms": 400
     },
     {
-      "id": "s028", "type": "vocab", "speaker": "narrator",
-      "text": "die Milch",
-      "translation": "the milk",
-      "pause_after_ms": 900,
-      "gloss": ["g_milch"]
+      "id": "s043", "type": "line", "speaker": "gast",
+      "text": "Kann ich mit Karte zahlen?",
+      "translation": "Can I pay by card?",
+      "pause_after_ms": 700,
+      "gloss": ["g_karte", "g_zahlen"]
     },
     {
-      "id": "s029", "type": "vocab", "speaker": "narrator",
-      "text": "die Rechnung",
-      "translation": "the bill",
-      "pause_after_ms": 900,
-      "gloss": ["g_rechnung"]
+      "id": "s044", "type": "line", "speaker": "kellner",
+      "text": "Ja, natürlich. Oder bar.",
+      "translation": "Yes, of course. Or in cash.",
+      "pause_after_ms": 700,
+      "gloss": ["g_bar"]
     },
     {
-      "id": "s030", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: im Café bestellen, nach dem Preis fragen und bezahlen.",
-      "translation": "Today you learned: ordering at a café, asking the price, and paying.",
+      "id": "s045", "type": "note", "speaker": "narrator",
+      "text": "mit Karte zahlen heißt by card. bar zahlen heißt in cash.",
+      "translation": "mit Karte zahlen means by card. bar zahlen means in cash.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s046", "type": "vocab", "speaker": "narrator",
+      "text": "die Karte",
+      "translation": "the card",
+      "pause_after_ms": 900,
+      "gloss": ["g_karte"]
+    },
+    {
+      "id": "s047", "type": "line", "speaker": "gast",
+      "text": "Hier, bitte. Stimmt so.",
+      "translation": "Here you go. Keep the change.",
+      "pause_after_ms": 700,
+      "gloss": ["g_stimmt_so"]
+    },
+    {
+      "id": "s048", "type": "note", "speaker": "narrator",
+      "text": "Stimmt so heißt: das Wechselgeld ist für dich.",
+      "translation": "Stimmt so means: the change is for you.",
+      "speed": 0.85, "pause_after_ms": 700, "skippable": true
+    },
+    {
+      "id": "s049", "type": "line", "speaker": "kellner",
+      "text": "Vielen Dank! Guten Appetit.",
+      "translation": "Thank you very much! Enjoy your meal.",
+      "pause_after_ms": 700,
+      "gloss": ["g_guten_appetit"]
+    },
+    {
+      "id": "s050", "type": "line", "speaker": "gast",
+      "text": "Der Kuchen schmeckt sehr gut.",
+      "translation": "The cake tastes very good.",
+      "pause_after_ms": 700,
+      "gloss": ["g_schmecken"]
+    },
+    {
+      "id": "s051", "type": "line", "speaker": "kellner",
+      "text": "Das freut mich.",
+      "translation": "I'm glad to hear it.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s052", "type": "line", "speaker": "gast",
+      "text": "Danke! Auf Wiedersehen.",
+      "translation": "Thanks! Goodbye.",
+      "pause_after_ms": 700,
+      "gloss": ["g_auf_wiedersehen"]
+    },
+    {
+      "id": "s053", "type": "line", "speaker": "kellner",
+      "text": "Auf Wiedersehen!",
+      "translation": "Goodbye!",
+      "pause_after_ms": 700,
+      "gloss": ["g_auf_wiedersehen"]
+    },
+    {
+      "id": "s054", "type": "echo", "speaker": "kellner",
+      "text": "Auf Wiedersehen.",
+      "translation": "Goodbye.",
+      "repeat": 2, "speed": 0.8, "pause_after_ms": 1200
+    },
+    {
+      "id": "s055", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: im Café bestellen, nach dem Preis fragen, Zahlen verstehen und bezahlen.",
+      "translation": "Today you learned: ordering at a café, asking the price, understanding numbers, and paying.",
       "pause_after_ms": 800
     }
   ],
@@ -307,6 +476,46 @@
     {
       "id": "g_guten_appetit", "de": "guten Appetit", "en": "enjoy your meal", "pos": "phrase",
       "example_de": "Guten Appetit!", "example_en": "Enjoy your meal!"
+    },
+    {
+      "id": "g_tee", "de": "der Tee", "en": "the tea", "pos": "noun",
+      "article": "der", "plural": "die Tees",
+      "example_de": "Ich möchte einen Tee.", "example_en": "I'd like a tea."
+    },
+    {
+      "id": "g_euro", "de": "der Euro", "en": "the euro", "pos": "noun",
+      "article": "der", "plural": "die Euro",
+      "example_de": "Das kostet drei Euro.", "example_en": "That costs three euros."
+    },
+    {
+      "id": "g_platz", "de": "der Platz", "en": "the seat, the place", "pos": "noun",
+      "article": "der", "plural": "die Plätze",
+      "example_de": "Ist dieser Platz frei?", "example_en": "Is this seat free?"
+    },
+    {
+      "id": "g_karte", "de": "die Karte", "en": "the card", "pos": "noun",
+      "article": "die", "plural": "die Karten",
+      "note_de": "mit Karte zahlen = by card. Die Speisekarte = the menu.",
+      "note_en": "mit Karte zahlen = pay by card. Die Speisekarte = the menu.",
+      "example_de": "Kann ich mit Karte zahlen?", "example_en": "Can I pay by card?"
+    },
+    {
+      "id": "g_bar", "de": "bar", "en": "in cash", "pos": "adverb",
+      "example_de": "Ich zahle bar.", "example_en": "I'm paying in cash."
+    },
+    {
+      "id": "g_zahlen", "de": "zahlen", "en": "to pay", "pos": "verb",
+      "example_de": "Ich möchte zahlen, bitte.", "example_en": "I'd like to pay, please."
+    },
+    {
+      "id": "g_schmecken", "de": "schmecken", "en": "to taste", "pos": "verb",
+      "example_de": "Der Kuchen schmeckt gut.", "example_en": "The cake tastes good."
+    },
+    {
+      "id": "g_auf_wiedersehen", "de": "auf Wiedersehen", "en": "goodbye", "pos": "phrase",
+      "note_de": "Formeller als tschüss.",
+      "note_en": "More formal than tschüss.",
+      "example_de": "Auf Wiedersehen!", "example_en": "Goodbye!"
     }
   ],
   "meta": {

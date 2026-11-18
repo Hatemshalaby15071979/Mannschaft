@@ -2,243 +2,2070 @@
   "schema": "lesson-script/v1",
   "id": "C2-02",
   "level": "C2",
-  "title": { "de": "Literarischer Dialog", "en": "Literary dialogue" },
+  "title": {
+    "de": "Literarischer Dialog",
+    "en": "Literary dialogue"
+  },
   "minutes": 20,
   "scene": {
-    "setting_de": "Eine Bibliothek am Abend. Zwei Menschen sprechen leise.",
-    "setting_en": "A library in the evening. Two people speak quietly.",
+    "setting_de": "Eine Bibliothek am Abend. Zwei Menschen lesen gemeinsam einen literarischen Text und sprechen über Rhythmus, Pausen und Andeutungen.",
+    "setting_en": "A library in the evening. Two people read a literary text together and talk about rhythm, pauses, and suggestion.",
     "register": "literary",
-    "can_do_de": "Ich kann einen literarischen Dialog mit Rhythmus, Pausen und Andeutungen verstehen und sprechen.",
-    "can_do_en": "I can understand and speak a literary dialogue with rhythm, pauses, and suggestion.",
-    "situation_tags": ["literature", "culture", "atmosphere"],
-    "grammar_focus": ["stil", "rhythmus", "pausen"]
+    "can_do_de": "Ich kann einen literarischen Dialog mit Rhythmus, Pausen und Andeutungen verstehen und sprechen und Bilder zwischen den Zeilen deuten.",
+    "can_do_en": "I can understand and speak a literary dialogue with rhythm, pauses, and suggestions, and interpret images between the lines.",
+    "situation_tags": [
+      "literature",
+      "culture",
+      "atmosphere"
+    ],
+    "grammar_focus": [
+      "konjunktiv-2",
+      "stilistik",
+      "andeutung"
+    ]
   },
   "cast": [
-    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
-    { "role": "frau", "voice": "de_young_f", "lang": "de" },
-    { "role": "herr", "voice": "de_older_m", "lang": "de" }
+    {
+      "role": "narrator",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "frau",
+      "voice": "de_young_f",
+      "lang": "de"
+    },
+    {
+      "role": "herr",
+      "voice": "de_older_m",
+      "lang": "de"
+    }
   ],
   "segments": [
     {
-      "id": "s001", "type": "scene", "speaker": "narrator",
-      "text": "Eine Bibliothek am Abend. Zwei Menschen sprechen leise.",
-      "translation": "A library in the evening. Two people speak quietly.",
-      "pause_after_ms": 900
+      "id": "s001",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Eine Bibliothek am Abend. Regen trommelt gegen die Fenster. Zwei Menschen sitzen über einem aufgeschlagenen Buch.",
+      "translation": "A library in the evening. Rain drums against the windows. Two people sit over an open book.",
+      "pause_after_ms": 700
     },
     {
-      "id": "s002", "type": "line", "speaker": "frau",
+      "id": "s002",
+      "type": "line",
+      "speaker": "frau",
       "text": "Du bist spät gekommen.",
       "translation": "You came late.",
-      "pause_after_ms": 900,
-      "gloss": ["g_dialog"]
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_spaet"
+      ]
     },
     {
-      "id": "s003", "type": "line", "speaker": "herr",
-      "text": "Die Stadt war laut. Ich habe den Weg zu Fuß genommen.",
-      "translation": "The city was loud. I took the way on foot.",
-      "pause_after_ms": 900,
-      "gloss": ["g_weg", "g_zu_fuss"]
+      "id": "s003",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Die Stadt war laut. Ich bin zu Fuß gegangen, um zur Ruhe zu kommen.",
+      "translation": "The city was loud. I walked to calm down.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zuruhe"
+      ]
     },
     {
-      "id": "s004", "type": "line", "speaker": "frau",
-      "text": "Und trotzdem bist du hier.",
-      "translation": "And nevertheless you are here.",
-      "pause_after_ms": 900
+      "id": "s004",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Und trotzdem bist du hier, bevor die Bibliothek schließt.",
+      "translation": "And yet you're here before the library closes.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_trotzdem",
+        "g_schliessen"
+      ]
     },
     {
-      "id": "s005", "type": "line", "speaker": "herr",
-      "text": "Ja. Trotzdem.",
-      "translation": "Yes. Nevertheless.",
+      "id": "s005",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Ja. Trotzdem. Als gäbe es keinen anderen Ort.",
+      "translation": "Yes. Still. As if there were no other place.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_als_ob"
+      ]
+    },
+    {
+      "id": "s006",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Warum ist der Mann zu spät gekommen?",
+      "translation": "Why did the man come late?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Die Stadt war laut; er ist zu Fuß gegangen, um zur Ruhe zu kommen."
+      ]
+    },
+    {
+      "id": "s007",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Als gäbe es …: Nach als steht der Konjunktiv II. So drückt man eine Vermutung oder einen Vergleich aus.",
+      "translation": "As if there were: after als, the subjunctive II is used. This expresses a guess or comparison.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s008",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Du bist spät gekommen.",
+      "translation": "You came late.",
+      "repeat": 2,
+      "speed": 0.85,
       "pause_after_ms": 1200
     },
     {
-      "id": "s006", "type": "check", "speaker": "narrator",
-      "text": "Warum ist der Mann zu spät gekommen?",
-      "translation": "Why did the man come late?",
-      "answers": ["Er hat den Weg zu Fuß genommen."],
-      "answer_pause_ms": 3500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s007", "type": "note", "speaker": "narrator",
-      "text": "Literarische Sprache lebt von kurzen Sätzen, Wiederholungen und Pausen.",
-      "translation": "Literary language lives on short sentences, repetitions, and pauses.",
-      "speed": 1.0, "pause_after_ms": 600, "skippable": true
-    },
-    {
-      "id": "s008", "type": "line", "speaker": "frau",
+      "id": "s009",
+      "type": "line",
+      "speaker": "frau",
       "text": "Setz dich. Das Licht ist noch an.",
       "translation": "Sit down. The light is still on.",
-      "pause_after_ms": 800,
-      "gloss": ["g_licht"]
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_setzen"
+      ]
     },
     {
-      "id": "s009", "type": "line", "speaker": "herr",
+      "id": "s010",
+      "type": "line",
+      "speaker": "herr",
       "text": "Ich sehe, du hast gewartet.",
-      "translation": "I see you waited.",
-      "pause_after_ms": 900,
-      "gloss": ["g_warten"]
+      "translation": "I see you've waited.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_warten"
+      ]
     },
     {
-      "id": "s010", "type": "line", "speaker": "frau",
-      "text": "Ich warte selten. Aber heute.",
-      "translation": "I rarely wait. But today.",
+      "id": "s011",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Ich warte selten. Aber heute warte ich.",
+      "translation": "I rarely wait. But today I wait.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_selten"
+      ]
+    },
+    {
+      "id": "s012",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Es riecht nach altem Papier und Staub.",
+      "translation": "It smells of old paper and dust.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_riechen",
+        "g_staub"
+      ]
+    },
+    {
+      "id": "s013",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Es riecht nach Zeit.",
+      "translation": "It smells of time.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s014",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was sagt die Frau über den Geruch der Bibliothek?",
+      "translation": "What does the woman say about the smell of the library?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Es riecht nach Zeit."
+      ]
+    },
+    {
+      "id": "s015",
+      "type": "drill",
+      "speaker": "herr",
+      "text": "Es riecht nach altem Papier und Staub.",
+      "translation": "It smells of old paper and dust.",
+      "repeat": 2,
+      "speed": 0.85,
       "pause_after_ms": 1000
     },
     {
-      "id": "s011", "type": "line", "speaker": "herr",
-      "text": "Es riecht nach alten Büchern.",
-      "translation": "It smells of old books.",
-      "pause_after_ms": 900,
-      "gloss": ["g_riechen"]
-    },
-    {
-      "id": "s012", "type": "line", "speaker": "frau",
-      "text": "Es riecht nach Zeit.",
-      "translation": "It smells of time.",
-      "pause_after_ms": 1200,
-      "gloss": ["g_zeit"]
-    },
-    {
-      "id": "s013", "type": "check", "speaker": "narrator",
-      "text": "Was sagt die Frau über den Geruch der Bibliothek?",
-      "translation": "What does the woman say about the library's smell?",
-      "answers": ["Es riecht nach Zeit."],
-      "answer_pause_ms": 3500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s014", "type": "drill", "speaker": "herr",
-      "text": "Ich habe den Weg zu Fuß genommen.",
-      "translation": "I took the way on foot.",
-      "repeat": 2, "speed": 1.0, "pause_after_ms": 1000
-    },
-    {
-      "id": "s015", "type": "line", "speaker": "herr",
-      "text": "Wollen wir anfangen?",
-      "translation": "Shall we begin?",
-      "pause_after_ms": 800
-    },
-    {
-      "id": "s016", "type": "line", "speaker": "frau",
-      "text": "Ja. Lies mir vor.",
-      "translation": "Yes. Read to me.",
-      "pause_after_ms": 900,
-      "gloss": ["g_vorlesen"]
-    },
-    {
-      "id": "s017", "type": "line", "speaker": "herr",
-      "text": "Von Anfang an?",
-      "translation": "From the beginning?",
-      "pause_after_ms": 900,
-      "gloss": ["g_anfang"]
-    },
-    {
-      "id": "s018", "type": "line", "speaker": "frau",
-      "text": "Von Anfang an.",
-      "translation": "From the beginning.",
-      "pause_after_ms": 1400
-    },
-    {
-      "id": "s019", "type": "check", "speaker": "narrator",
-      "text": "Was soll der Mann tun?",
-      "translation": "What should the man do?",
-      "answers": ["Er soll ihr vorlesen."],
-      "answer_pause_ms": 3500,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s020", "type": "vocab", "speaker": "narrator",
-      "text": "vorlesen",
-      "translation": "to read aloud",
-      "pause_after_ms": 800,
-      "gloss": ["g_vorlesen"]
-    },
-    {
-      "id": "s021", "type": "vocab", "speaker": "narrator",
+      "id": "s016",
+      "type": "vocab",
+      "speaker": "narrator",
       "text": "die Bibliothek",
       "translation": "the library",
-      "pause_after_ms": 800,
-      "gloss": ["g_bibliothek"]
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bibliothek"
+      ]
     },
     {
-      "id": "s022", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: literarische Dialoge mit Rhythmus und Pausen.",
-      "translation": "Today you learned: literary dialogues with rhythm and pauses.",
+      "id": "s017",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "warten",
+      "translation": "to wait",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_warten"
+      ]
+    },
+    {
+      "id": "s018",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "riechen nach",
+      "translation": "to smell of",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_riechen"
+      ]
+    },
+    {
+      "id": "s019",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Sie schlagen die erste Seite auf. Der Text beginnt mit einem einzigen, langen Satz.",
+      "translation": "They open the first page. The text begins with a single, long sentence.",
       "pause_after_ms": 700
+    },
+    {
+      "id": "s020",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Hör dir diesen Anfang an: Es war ein Tag, an dem nichts geschah, und doch war alles anders.",
+      "translation": "Listen to this beginning: It was a day on which nothing happened, and yet everything was different.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_anfang",
+        "g_geschehen",
+        "g_doch"
+      ]
+    },
+    {
+      "id": "s021",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Ein schöner Widerspruch. Nichts geschieht, und trotzdem ist es ein Ereignis.",
+      "translation": "A beautiful contradiction. Nothing happens, and yet it is an event.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_widerspruch"
+      ]
+    },
+    {
+      "id": "s022",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Der Satz lebt von diesem „und doch“. Ohne ihn wäre er nur eine Feststellung.",
+      "translation": "The sentence lives from this 'and yet'. Without it, it would be merely a statement.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_feststellung"
+      ]
+    },
+    {
+      "id": "s023",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Feststellung: eine einfache Aussage. Der Konjunktiv „wäre“ markiert hier eine hypothetische Situation.",
+      "translation": "Statement: a simple assertion. The subjunctive 'wäre' marks a hypothetical situation here.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s024",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Nichts geschieht, und trotzdem ist es ein Ereignis.",
+      "translation": "Nothing happens, and yet it is an event.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s025",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Lies ihn noch einmal. Langsam. Der Rhythmus trägt die Bedeutung.",
+      "translation": "Read it again. Slowly. The rhythm carries the meaning.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_rhythmus",
+        "g_tragen"
+      ]
+    },
+    {
+      "id": "s026",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Es war ein Tag … an dem nichts geschah … und doch war alles anders.",
+      "translation": "It was a day ... on which nothing happened ... and yet everything was different.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_pause"
+      ]
+    },
+    {
+      "id": "s027",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wovon lebt der erste Satz laut dem Mann?",
+      "translation": "What does the first sentence live from according to the man?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Von dem „und doch“."
+      ]
+    },
+    {
+      "id": "s028",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Die Pause markiert einen Einschnitt im Lesen. Pausen sind Teil des Rhythmus, nicht bloß Abwesenheit von Ton.",
+      "translation": "The pause marks a break in reading. Pauses are part of rhythm, not merely absence of sound.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s029",
+      "type": "drill",
+      "speaker": "herr",
+      "text": "Der Rhythmus trägt die Bedeutung.",
+      "translation": "The rhythm carries the meaning.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s030",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Jeder Satz ist eine Entscheidung. Er wählt dieses Wort und verwirft ein anderes.",
+      "translation": "Every sentence is a decision. It chooses this word and discards another.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_entscheidung",
+        "g_verwerfen"
+      ]
+    },
+    {
+      "id": "s031",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Und genau diese Entscheidung ist der Stil.",
+      "translation": "And precisely this decision is style.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_stil"
+      ]
+    },
+    {
+      "id": "s032",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Jeder Satz ist eine Entscheidung.",
+      "translation": "Every sentence is a decision.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s033",
+      "type": "drill",
+      "speaker": "herr",
+      "text": "Diese Entscheidung ist der Stil.",
+      "translation": "This decision is style.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s034",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Anfang",
+      "translation": "the beginning",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_anfang"
+      ]
+    },
+    {
+      "id": "s035",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Widerspruch",
+      "translation": "the contradiction",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_widerspruch"
+      ]
+    },
+    {
+      "id": "s036",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "geschehen",
+      "translation": "to happen",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_geschehen"
+      ]
+    },
+    {
+      "id": "s037",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Rhythmus",
+      "translation": "the rhythm",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_rhythmus"
+      ]
+    },
+    {
+      "id": "s038",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Entscheidung",
+      "translation": "the decision",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_entscheidung"
+      ]
+    },
+    {
+      "id": "s039",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Stil",
+      "translation": "the style",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stil"
+      ]
+    },
+    {
+      "id": "s040",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Der Mann liest laut vor. Die Frau schließt die Augen.",
+      "translation": "The man reads aloud. The woman closes her eyes.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s041",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Der Wind strich über die Felder, und die Bäume neigten sich, als hätten sie ein Geheimnis gehört.",
+      "translation": "The wind swept over the fields, and the trees bent as if they had heard a secret.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_wind",
+        "g_geheimnis",
+        "g_neigen"
+      ]
+    },
+    {
+      "id": "s042",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Hörst du das? „Strich“ ist ein sanftes Wort. Es klingt nach etwas, das man kaum spürt.",
+      "translation": "Do you hear that? 'Strich' is a gentle word. It sounds like something one hardly feels.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sanft"
+      ]
+    },
+    {
+      "id": "s043",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Aber dann „neigten sich“. Die Bewegung wird größer, fast feierlich.",
+      "translation": "But then 'bent'. The movement grows larger, almost solemn.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_feierlich"
+      ]
+    },
+    {
+      "id": "s044",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Das ist die Kunst: Mit einem Verb die ganze Landschaft verändern.",
+      "translation": "That's the art: changing the whole landscape with one verb.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verb",
+        "g_landschaft"
+      ]
+    },
+    {
+      "id": "s045",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welches Wort beschreibt eine sanfte Bewegung?",
+      "translation": "Which word describes a gentle movement?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "„Strich“."
+      ]
+    },
+    {
+      "id": "s046",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Mit einem Verb die ganze Landschaft verändern.",
+      "translation": "Changing the whole landscape with one verb.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s047",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Lies du den nächsten Absatz. Deine Stimme ist ruhiger.",
+      "translation": "You read the next paragraph. Your voice is calmer.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_absatz",
+        "g_stimme"
+      ]
+    },
+    {
+      "id": "s048",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Niemand sprach. Die Stille war so dicht, dass man sie hätte schneiden können.",
+      "translation": "No one spoke. The silence was so thick you could have cut it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_stille",
+        "g_dicht"
+      ]
+    },
+    {
+      "id": "s049",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Ein Bild, das man nicht wörtlich nehmen darf. Und gerade darum wirkt es.",
+      "translation": "An image one must not take literally. And precisely for that reason it works.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_bild",
+        "g_woertlich",
+        "g_wirken"
+      ]
+    },
+    {
+      "id": "s050",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Wörtlich heißt Wort für Wort. Übertragen bedeutet ein Bild etwas anderes, als seine Worte sagen.",
+      "translation": "Literally means word for word. Figuratively, an image means something other than its words say.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s051",
+      "type": "drill",
+      "speaker": "frau",
+      "text": "Die Stille war so dicht, dass man sie hätte schneiden können.",
+      "translation": "The silence was so thick you could have cut it.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s052",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Stille",
+      "translation": "the silence",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stille"
+      ]
+    },
+    {
+      "id": "s053",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Geheimnis",
+      "translation": "the secret",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_geheimnis"
+      ]
+    },
+    {
+      "id": "s054",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "feierlich",
+      "translation": "solemn",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_feierlich"
+      ]
+    },
+    {
+      "id": "s055",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "wörtlich",
+      "translation": "literal / literally",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_woertlich"
+      ]
+    },
+    {
+      "id": "s056",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Sie legen das Buch auf den Tisch. Der Regen hat nachgelassen.",
+      "translation": "They put the book on the table. The rain has eased.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s057",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Was mich an dem Text fasziniert: Er sagt nie, was er meint.",
+      "translation": "What fascinates me about the text: it never says what it means.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_faszinieren"
+      ]
+    },
+    {
+      "id": "s058",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Genau das ist die Andeutung. Sie zeigt eine Spur, aber nicht das Ziel.",
+      "translation": "Precisely that is suggestion. It shows a trace, but not the goal.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_andeutung",
+        "g_spur"
+      ]
+    },
+    {
+      "id": "s059",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Der Leser muss die Lücke selbst füllen. Das ist anstrengend und belohnend zugleich.",
+      "translation": "The reader must fill the gap himself. That is demanding and rewarding at once.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_luecke",
+        "g_belohnend"
+      ]
+    },
+    {
+      "id": "s060",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was muss der Leser bei einer Andeutung tun?",
+      "translation": "What must the reader do with suggestion?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Die Lücke selbst füllen."
+      ]
+    },
+    {
+      "id": "s061",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Die Andeutung ist ein Hinweis, der nicht direkt ausspricht, sondern erraten lässt.",
+      "translation": "Suggestion is a hint that does not state directly but lets one guess.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true,
+      "gloss": [
+        "g_erraten"
+      ]
+    },
+    {
+      "id": "s062",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Der Leser muss die Lücke selbst füllen.",
+      "translation": "The reader must fill the gap himself.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s063",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Ein Autor, der alles erklärt, nimmt dem Leser die Arbeit ab – und auch das Vergnügen.",
+      "translation": "An author who explains everything takes the work away from the reader — and the pleasure too.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_erklaeren",
+        "g_vergnuegen"
+      ]
+    },
+    {
+      "id": "s064",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Ich gestehe, dass ich am Anfang oft zu viel erkläre.",
+      "translation": "I admit that at the beginning I often explain too much.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gestehen"
+      ]
+    },
+    {
+      "id": "s065",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Das ist ein häufiger Fehler. Man traut dem Leser nicht zu, was er längst kann.",
+      "translation": "That's a common mistake. One doesn't trust the reader with what he can already do.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zutrauen"
+      ]
+    },
+    {
+      "id": "s066",
+      "type": "drill",
+      "speaker": "frau",
+      "text": "Ich gestehe, dass ich am Anfang oft zu viel erkläre.",
+      "translation": "I admit that at the beginning I often explain too much.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s067",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Ein Text, der nichts andeutet, ist wie ein Brief ohne Geheimnis.",
+      "translation": "A text that suggests nothing is like a letter without a secret.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s068",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Aber zu viel Andeutung wird zum Rätsel. Man muss das Maß finden.",
+      "translation": "But too much suggestion becomes a riddle. One must find the measure.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_raetsel",
+        "g_mass"
+      ]
+    },
+    {
+      "id": "s069",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was passiert bei zu viel Andeutung?",
+      "translation": "What happens with too much suggestion?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Es wird zum Rätsel."
+      ]
+    },
+    {
+      "id": "s070",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Das Maß ist die richtige Menge. Stil ist oft eine Frage des Maßes.",
+      "translation": "Measure is the right amount. Style is often a question of measure.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s071",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Zu viel Andeutung wird zum Rätsel.",
+      "translation": "Too much suggestion becomes a riddle.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s072",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Andeutung",
+      "translation": "the suggestion",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_andeutung"
+      ]
+    },
+    {
+      "id": "s073",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Lücke",
+      "translation": "the gap",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_luecke"
+      ]
+    },
+    {
+      "id": "s074",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "erraten",
+      "translation": "to guess",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erraten"
+      ]
+    },
+    {
+      "id": "s075",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Vergnügen",
+      "translation": "the pleasure",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vergnuegen"
+      ]
+    },
+    {
+      "id": "s076",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Rätsel",
+      "translation": "the riddle",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_raetsel"
+      ]
+    },
+    {
+      "id": "s077",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Maß",
+      "translation": "the measure",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_mass"
+      ]
+    },
+    {
+      "id": "s078",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Die Frau nimmt einen alten Zettel aus dem Buch. Darauf steht eine handschriftliche Zeile.",
+      "translation": "The woman takes an old slip of paper from the book. A handwritten line is on it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zettel",
+        "g_handschriftlich"
+      ]
+    },
+    {
+      "id": "s079",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Das hat meine Mutter hineingeschrieben, vor vielen Jahren.",
+      "translation": "My mother wrote that in it, many years ago.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_mutter"
+      ]
+    },
+    {
+      "id": "s080",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Darf ich lesen? Alles, was wir lieben, bleibt in den Dingen, die wir berühren.",
+      "translation": "May I read? Everything we love stays in the things we touch.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_beruehren"
+      ]
+    },
+    {
+      "id": "s081",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Sie hat oft solche Sätze aufgeschrieben. Ich verstehe sie erst jetzt.",
+      "translation": "She often wrote down sentences like that. I only understand them now.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_aufschreiben"
+      ]
+    },
+    {
+      "id": "s082",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wer hat den Zettel geschrieben?",
+      "translation": "Who wrote the slip of paper?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Die Mutter der Frau."
+      ]
+    },
+    {
+      "id": "s083",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "„Erst jetzt“: Das Wort erst betont, dass etwas später als erwartet geschieht.",
+      "translation": "'Only now': the word 'erst' emphasises that something happens later than expected.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s084",
+      "type": "echo",
+      "speaker": "herr",
+      "text": "Alles, was wir lieben, bleibt in den Dingen, die wir berühren.",
+      "translation": "Everything we love stays in the things we touch.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s085",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Ein schöner Gedanke. Erinnerung ist nicht nur im Kopf, sondern auch in den Händen.",
+      "translation": "A beautiful thought. Memory is not only in the head, but also in the hands.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_erinnerung"
+      ]
+    },
+    {
+      "id": "s086",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Vielleicht ist das der Grund, warum wir alte Bücher nicht wegwerfen.",
+      "translation": "Perhaps that's the reason we don't throw away old books.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_wegwerfen"
+      ]
+    },
+    {
+      "id": "s087",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Sie sind mehr als Papier. Sie sind eine Spur von dem, was wir einmal waren.",
+      "translation": "They are more than paper. They are a trace of what we once were.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s088",
+      "type": "drill",
+      "speaker": "frau",
+      "text": "Erinnerung ist nicht nur im Kopf, sondern auch in den Händen.",
+      "translation": "Memory is not only in the head, but also in the hands.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s089",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Erinnerung",
+      "translation": "the memory",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erinnerung"
+      ]
+    },
+    {
+      "id": "s090",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "berühren",
+      "translation": "to touch",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_beruehren"
+      ]
+    },
+    {
+      "id": "s091",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "wegwerfen",
+      "translation": "to throw away",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_wegwerfen"
+      ]
+    },
+    {
+      "id": "s092",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "handschriftlich",
+      "translation": "handwritten",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_handschriftlich"
+      ]
+    },
+    {
+      "id": "s093",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Der Mann schlägt eine Seite mit einem kurzen Gedicht auf.",
+      "translation": "The man turns to a page with a short poem.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s094",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Hier, dieses Gedicht. Es hat nur vier Zeilen, aber es bleibt lange im Ohr.",
+      "translation": "Here, this poem. It has only four lines, but it stays in the ear for a long time.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gedicht",
+        "g_zeile"
+      ]
+    },
+    {
+      "id": "s095",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Lies es. Ich höre zu.",
+      "translation": "Read it. I'm listening.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s096",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Der Abend legt die Hand aufs Haus. Die Fenster werden still und groß. Irgendwo geht eine Tür. Und niemand weiß, wohin.",
+      "translation": "Evening lays its hand on the house. The windows grow still and wide. Somewhere a door opens. And no one knows where to.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_abend",
+        "g_tuer"
+      ]
+    },
+    {
+      "id": "s097",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Die erste Zeile ist ein Bild, aber keines, das man sehen kann. Man fühlt es.",
+      "translation": "The first line is an image, but not one you can see. You feel it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fuehlen"
+      ]
+    },
+    {
+      "id": "s098",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Und die letzte Zeile öffnet den Text. Sie stellt eine Frage, ohne ein Fragezeichen.",
+      "translation": "And the last line opens the text. It asks a question without a question mark.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_oeffnen",
+        "g_fragezeichen"
+      ]
+    },
+    {
+      "id": "s099",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie endet das Gedicht?",
+      "translation": "How does the poem end?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Mit „Und niemand weiß, wohin.“"
+      ]
+    },
+    {
+      "id": "s100",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Ein Bild ist hier kein Gemälde, sondern eine sprachliche Vorstellung, die ein Gefühl auslöst.",
+      "translation": "An image here is not a painting, but a verbal impression that triggers a feeling.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s101",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Sie stellt eine Frage, ohne ein Fragezeichen.",
+      "translation": "It asks a question without a question mark.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s102",
+      "type": "drill",
+      "speaker": "herr",
+      "text": "Und niemand weiß, wohin.",
+      "translation": "And no one knows where to.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s103",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Gedicht",
+      "translation": "the poem",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gedicht"
+      ]
+    },
+    {
+      "id": "s104",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Zeile",
+      "translation": "the line",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zeile"
+      ]
+    },
+    {
+      "id": "s105",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Tür",
+      "translation": "the door",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_tuer"
+      ]
+    },
+    {
+      "id": "s106",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "fühlen",
+      "translation": "to feel",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fuehlen"
+      ]
+    },
+    {
+      "id": "s107",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Die Bibliothek wird leer. Die letzten Leser gehen. Nur ihre Stimmen bleiben.",
+      "translation": "The library empties. The last readers leave. Only their voices remain.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s108",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Es ist spät. Aber ich möchte noch nicht gehen.",
+      "translation": "It's late. But I don't want to leave yet.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gehen"
+      ]
+    },
+    {
+      "id": "s109",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Ich auch nicht. Es ist, als hätte der Text uns hier festgehalten.",
+      "translation": "Neither do I. It's as if the text had held us here.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_festhalten"
+      ]
+    },
+    {
+      "id": "s110",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Vielleicht ist Lesen genau das: für einen Moment festgehalten werden.",
+      "translation": "Perhaps reading is exactly that: being held for a moment.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s111",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Warum möchte die Frau noch nicht gehen?",
+      "translation": "Why doesn't the woman want to leave yet?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Weil der Text sie festhält."
+      ]
+    },
+    {
+      "id": "s112",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "„Als hätte …“: Nach als steht der Konjunktiv II. So beschreibt man etwas Unwirkliches oder Vermutetes.",
+      "translation": "'As if ... had': after als, the subjunctive II is used. This describes something unreal or presumed.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s113",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Für einen Moment festgehalten werden.",
+      "translation": "Being held for a moment.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s114",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Morgen werden wir wieder über diese Sätze sprechen. Ich bin sicher.",
+      "translation": "Tomorrow we will speak about these sentences again. I'm sure.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sicher"
+      ]
+    },
+    {
+      "id": "s115",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Und bis dahin lese ich den Anfang noch einmal. Langsam.",
+      "translation": "And until then I'll read the beginning once more. Slowly.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_bis_dahin"
+      ]
+    },
+    {
+      "id": "s116",
+      "type": "drill",
+      "speaker": "herr",
+      "text": "Morgen werden wir wieder über diese Sätze sprechen.",
+      "translation": "Tomorrow we will speak about these sentences again.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s117",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "festhalten",
+      "translation": "to hold fast",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_festhalten"
+      ]
+    },
+    {
+      "id": "s118",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sicher",
+      "translation": "certain / sure",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sicher"
+      ]
+    },
+    {
+      "id": "s119",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bis dahin",
+      "translation": "until then",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bis_dahin"
+      ]
+    },
+    {
+      "id": "s120",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Sie schließen das Buch. Die letzte Seite bleibt aufgeschlagen liegen.",
+      "translation": "They close the book. The last page lies open.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s121",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Weißt du, was ich heute gelernt habe?",
+      "translation": "Do you know what I learned today?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_heute"
+      ]
+    },
+    {
+      "id": "s122",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Sag es mir.",
+      "translation": "Tell me.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s123",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Dass ein Satz nicht nur Informationen trägt. Er trägt auch Rhythmus, Pause und Erinnerung.",
+      "translation": "That a sentence carries not only information. It carries rhythm, pause, and memory.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_information"
+      ]
+    },
+    {
+      "id": "s124",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was trägt ein Satz laut der Frau außer Informationen?",
+      "translation": "What does a sentence carry besides information according to the woman?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Rhythmus, Pause und Erinnerung."
+      ]
+    },
+    {
+      "id": "s125",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Zusammenfassung: Literarische Sprache lebt von Rhythmus, Pausen, Bildern und Andeutungen. Der Leser füllt die Lücken selbst.",
+      "translation": "Summary: literary language lives from rhythm, pauses, images, and suggestions. The reader fills the gaps himself.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s126",
+      "type": "echo",
+      "speaker": "frau",
+      "text": "Ein Satz trägt auch Rhythmus, Pause und Erinnerung.",
+      "translation": "A sentence also carries rhythm, pause, and memory.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s127",
+      "type": "line",
+      "speaker": "herr",
+      "text": "Dann war dieser Abend nicht umsonst.",
+      "translation": "Then this evening was not in vain.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_umsonst"
+      ]
+    },
+    {
+      "id": "s128",
+      "type": "line",
+      "speaker": "frau",
+      "text": "Nein. Er war genau richtig.",
+      "translation": "No. It was just right.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s129",
+      "type": "drill",
+      "speaker": "frau",
+      "text": "Ein Satz trägt auch Rhythmus, Pause und Erinnerung.",
+      "translation": "A sentence also carries rhythm, pause, and memory.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s130",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Information",
+      "translation": "the information",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_information"
+      ]
+    },
+    {
+      "id": "s131",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "umsonst",
+      "translation": "in vain",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_umsonst"
+      ]
+    },
+    {
+      "id": "s132",
+      "type": "recap",
+      "speaker": "narrator",
+      "text": "Heute hast du gelernt: literarische Dialoge mit Rhythmus, Pausen und Andeutungen zu verstehen – und die Lücken selbst zu füllen.",
+      "translation": "Today you learned: understanding literary dialogues with rhythm, pauses, and suggestions — and filling the gaps yourself.",
+      "pause_after_ms": 800
     }
   ],
   "glossary": [
     {
-      "id": "g_literatur", "de": "die Literatur", "en": "the literature", "pos": "noun",
-      "article": "die", "plural": "die Literaturen",
-      "example_de": "Ich lese gern deutsche Literatur.", "example_en": "I like reading German literature."
+      "id": "g_spaet",
+      "de": "spät",
+      "en": "late",
+      "pos": "adjective",
+      "example_de": "Du bist spät.",
+      "example_en": "You are late."
     },
     {
-      "id": "g_dialog", "de": "der Dialog", "en": "the dialogue", "pos": "noun",
-      "article": "der", "plural": "die Dialoge",
-      "example_de": "Der Dialog ist sehr ruhig.", "example_en": "The dialogue is very calm."
+      "id": "g_zuruhe",
+      "de": "zur Ruhe kommen",
+      "en": "to calm down",
+      "pos": "verb",
+      "example_de": "Ich bin zur Ruhe gekommen.",
+      "example_en": "I calmed down."
     },
     {
-      "id": "g_bibliothek", "de": "die Bibliothek", "en": "the library", "pos": "noun",
-      "article": "die", "plural": "die Bibliotheken",
-      "example_de": "Wir treffen uns in der Bibliothek.", "example_en": "We meet in the library."
+      "id": "g_trotzdem",
+      "de": "trotzdem",
+      "en": "nevertheless",
+      "pos": "adverb",
+      "example_de": "Trotzdem bin ich hier.",
+      "example_en": "Nevertheless I'm here."
     },
     {
-      "id": "g_weg", "de": "der Weg", "en": "the way / path", "pos": "noun",
-      "article": "der", "plural": "die Wege",
-      "example_de": "Ich habe den Weg zu Fuß genommen.", "example_en": "I took the way on foot."
+      "id": "g_schliessen",
+      "de": "schließen",
+      "en": "to close",
+      "pos": "verb",
+      "example_de": "Die Bibliothek schließt.",
+      "example_en": "The library closes."
     },
     {
-      "id": "g_zu_fuss", "de": "zu Fuß", "en": "on foot", "pos": "phrase",
-      "example_de": "Ich gehe zu Fuß.", "example_en": "I'm going on foot."
+      "id": "g_als_ob",
+      "de": "als ob",
+      "en": "as if",
+      "pos": "conjunction",
+      "example_de": "Als gäbe es keinen Ort.",
+      "example_en": "As if there were no place."
     },
     {
-      "id": "g_licht", "de": "das Licht", "en": "the light", "pos": "noun",
-      "article": "das", "plural": "die Lichter",
-      "example_de": "Das Licht ist noch an.", "example_en": "The light is still on."
+      "id": "g_setzen",
+      "de": "sich setzen",
+      "en": "to sit down",
+      "pos": "verb",
+      "example_de": "Setz dich.",
+      "example_en": "Sit down."
     },
     {
-      "id": "g_riechen", "de": "riechen", "en": "to smell", "pos": "verb",
-      "example_de": "Es riecht nach alten Büchern.", "example_en": "It smells of old books."
+      "id": "g_warten",
+      "de": "warten",
+      "en": "to wait",
+      "pos": "verb",
+      "example_de": "Ich habe gewartet.",
+      "example_en": "I waited."
     },
     {
-      "id": "g_zeit", "de": "die Zeit", "en": "the time", "pos": "noun",
-      "article": "die", "plural": "die Zeiten",
-      "example_de": "Es riecht nach Zeit.", "example_en": "It smells of time."
+      "id": "g_selten",
+      "de": "selten",
+      "en": "rarely",
+      "pos": "adverb",
+      "example_de": "Ich warte selten.",
+      "example_en": "I rarely wait."
     },
     {
-      "id": "g_vorlesen", "de": "vorlesen", "en": "to read aloud", "pos": "verb",
-      "note_de": "Trennbares Verb: ich lese vor.",
-      "note_en": "Separable verb: ich lese vor.",
-      "example_de": "Lies mir vor.", "example_en": "Read to me."
+      "id": "g_riechen",
+      "de": "riechen nach",
+      "en": "to smell of",
+      "pos": "verb",
+      "example_de": "Es riecht nach Zeit.",
+      "example_en": "It smells of time."
     },
     {
-      "id": "g_anfang", "de": "der Anfang", "en": "the beginning", "pos": "noun",
-      "article": "der", "plural": "die Anfänge",
-      "example_de": "Von Anfang an.", "example_en": "From the beginning."
+      "id": "g_staub",
+      "de": "der Staub",
+      "en": "the dust",
+      "pos": "noun",
+      "example_de": "Nur Staub und Papier.",
+      "example_en": "Only dust and paper.",
+      "article": "der"
     },
     {
-      "id": "g_warten", "de": "warten", "en": "to wait", "pos": "verb",
-      "example_de": "Du hast gewartet.", "example_en": "You waited."
+      "id": "g_bibliothek",
+      "de": "die Bibliothek",
+      "en": "the library",
+      "pos": "noun",
+      "example_de": "Die Bibliothek ist still.",
+      "example_en": "The library is quiet.",
+      "article": "die",
+      "plural": "die Bibliotheken"
     },
     {
-      "id": "g_leise", "de": "leise", "en": "quiet", "pos": "adj",
-      "example_de": "Sie sprechen leise.", "example_en": "They speak quietly."
+      "id": "g_anfang",
+      "de": "der Anfang",
+      "en": "the beginning",
+      "pos": "noun",
+      "example_de": "Der Anfang ist schwer.",
+      "example_en": "The beginning is hard.",
+      "article": "der",
+      "plural": "die Anfänge"
     },
     {
-      "id": "g_atmosphaere", "de": "die Atmosphäre", "en": "the atmosphere", "pos": "noun",
-      "article": "die", "plural": "die Atmosphären",
-      "example_de": "Die Atmosphäre ist ruhig.", "example_en": "The atmosphere is calm."
+      "id": "g_geschehen",
+      "de": "geschehen",
+      "en": "to happen",
+      "pos": "verb",
+      "example_de": "Nichts ist geschehen.",
+      "example_en": "Nothing happened."
     },
     {
-      "id": "g_rhythmus", "de": "der Rhythmus", "en": "the rhythm", "pos": "noun",
-      "article": "der", "plural": "die Rhythmen",
-      "example_de": "Der Rhythmus der Sätze ist wichtig.", "example_en": "The rhythm of the sentences matters."
+      "id": "g_doch",
+      "de": "doch",
+      "en": "yet / however",
+      "pos": "adverb",
+      "example_de": "Und doch war alles anders.",
+      "example_en": "And yet everything was different."
     },
     {
-      "id": "g_trotzdem", "de": "trotzdem", "en": "nevertheless", "pos": "adverb",
-      "example_de": "Und trotzdem bist du hier.", "example_en": "And nevertheless you are here."
+      "id": "g_widerspruch",
+      "de": "der Widerspruch",
+      "en": "the contradiction",
+      "pos": "noun",
+      "example_de": "Ein schöner Widerspruch.",
+      "example_en": "A nice contradiction.",
+      "article": "der",
+      "plural": "die Widersprüche"
+    },
+    {
+      "id": "g_feststellung",
+      "de": "die Feststellung",
+      "en": "the statement",
+      "pos": "noun",
+      "example_de": "Nur eine Feststellung.",
+      "example_en": "Only a statement.",
+      "article": "die",
+      "plural": "die Feststellungen"
+    },
+    {
+      "id": "g_rhythmus",
+      "de": "der Rhythmus",
+      "en": "the rhythm",
+      "pos": "noun",
+      "example_de": "Der Rhythmus trägt die Bedeutung.",
+      "example_en": "The rhythm carries the meaning.",
+      "article": "der",
+      "plural": "die Rhythmen"
+    },
+    {
+      "id": "g_tragen",
+      "de": "tragen",
+      "en": "to carry",
+      "pos": "verb",
+      "example_de": "Der Satz trägt die Bedeutung.",
+      "example_en": "The sentence carries the meaning."
+    },
+    {
+      "id": "g_pause",
+      "de": "die Pause",
+      "en": "the pause",
+      "pos": "noun",
+      "example_de": "Eine Pause im Lesen.",
+      "example_en": "A pause in reading.",
+      "article": "die",
+      "plural": "die Pausen"
+    },
+    {
+      "id": "g_entscheidung",
+      "de": "die Entscheidung",
+      "en": "the decision",
+      "pos": "noun",
+      "example_de": "Jeder Satz ist eine Entscheidung.",
+      "example_en": "Every sentence is a decision.",
+      "article": "die",
+      "plural": "die Entscheidungen"
+    },
+    {
+      "id": "g_verwerfen",
+      "de": "verwerfen",
+      "en": "to discard",
+      "pos": "verb",
+      "example_de": "Er verwirft ein anderes Wort.",
+      "example_en": "He discards another word."
+    },
+    {
+      "id": "g_stil",
+      "de": "der Stil",
+      "en": "the style",
+      "pos": "noun",
+      "example_de": "Das ist der Stil.",
+      "example_en": "That is the style.",
+      "article": "der",
+      "plural": "die Stile"
+    },
+    {
+      "id": "g_wind",
+      "de": "der Wind",
+      "en": "the wind",
+      "pos": "noun",
+      "example_de": "Der Wind weht.",
+      "example_en": "The wind blows.",
+      "article": "der"
+    },
+    {
+      "id": "g_geheimnis",
+      "de": "das Geheimnis",
+      "en": "the secret",
+      "pos": "noun",
+      "example_de": "Ein Geheimnis gehört.",
+      "example_en": "A secret is heard.",
+      "article": "das",
+      "plural": "die Geheimnisse"
+    },
+    {
+      "id": "g_neigen",
+      "de": "sich neigen",
+      "en": "to bend / lean",
+      "pos": "verb",
+      "example_de": "Die Bäume neigen sich.",
+      "example_en": "The trees bend."
+    },
+    {
+      "id": "g_sanft",
+      "de": "sanft",
+      "en": "gentle",
+      "pos": "adjective",
+      "example_de": "Ein sanftes Wort.",
+      "example_en": "A gentle word."
+    },
+    {
+      "id": "g_feierlich",
+      "de": "feierlich",
+      "en": "solemn",
+      "pos": "adjective",
+      "example_de": "Fast feierlich.",
+      "example_en": "Almost solemn."
+    },
+    {
+      "id": "g_verb",
+      "de": "das Verb",
+      "en": "the verb",
+      "pos": "noun",
+      "example_de": "Ein starkes Verb.",
+      "example_en": "A strong verb.",
+      "article": "das",
+      "plural": "die Verben"
+    },
+    {
+      "id": "g_landschaft",
+      "de": "die Landschaft",
+      "en": "the landscape",
+      "pos": "noun",
+      "example_de": "Die ganze Landschaft.",
+      "example_en": "The whole landscape.",
+      "article": "die",
+      "plural": "die Landschaften"
+    },
+    {
+      "id": "g_absatz",
+      "de": "der Absatz",
+      "en": "the paragraph",
+      "pos": "noun",
+      "example_de": "Der nächste Absatz.",
+      "example_en": "The next paragraph.",
+      "article": "der",
+      "plural": "die Absätze"
+    },
+    {
+      "id": "g_stimme",
+      "de": "die Stimme",
+      "en": "the voice",
+      "pos": "noun",
+      "example_de": "Deine Stimme ist ruhig.",
+      "example_en": "Your voice is calm.",
+      "article": "die",
+      "plural": "die Stimmen"
+    },
+    {
+      "id": "g_stille",
+      "de": "die Stille",
+      "en": "the silence",
+      "pos": "noun",
+      "example_de": "Die Stille ist dicht.",
+      "example_en": "The silence is thick.",
+      "article": "die"
+    },
+    {
+      "id": "g_dicht",
+      "de": "dicht",
+      "en": "dense / thick",
+      "pos": "adjective",
+      "example_de": "So dicht wie ein Tuch.",
+      "example_en": "As thick as a cloth."
+    },
+    {
+      "id": "g_bild",
+      "de": "das Bild",
+      "en": "the image",
+      "pos": "noun",
+      "example_de": "Ein starkes Bild.",
+      "example_en": "A strong image.",
+      "article": "das",
+      "plural": "die Bilder"
+    },
+    {
+      "id": "g_woertlich",
+      "de": "wörtlich",
+      "en": "literal / literally",
+      "pos": "adjective",
+      "example_de": "Nicht wörtlich nehmen.",
+      "example_en": "Don't take it literally."
+    },
+    {
+      "id": "g_wirken",
+      "de": "wirken",
+      "en": "to have an effect",
+      "pos": "verb",
+      "example_de": "Gerade darum wirkt es.",
+      "example_en": "Precisely for that reason it works."
+    },
+    {
+      "id": "g_faszinieren",
+      "de": "faszinieren",
+      "en": "to fascinate",
+      "pos": "verb",
+      "example_de": "Es fasziniert mich.",
+      "example_en": "It fascinates me."
+    },
+    {
+      "id": "g_andeutung",
+      "de": "die Andeutung",
+      "en": "the suggestion",
+      "pos": "noun",
+      "example_de": "Eine leise Andeutung.",
+      "example_en": "A subtle suggestion.",
+      "article": "die",
+      "plural": "die Andeutungen"
+    },
+    {
+      "id": "g_spur",
+      "de": "die Spur",
+      "en": "the trace",
+      "pos": "noun",
+      "example_de": "Eine Spur, kein Ziel.",
+      "example_en": "A trace, not a goal.",
+      "article": "die",
+      "plural": "die Spuren"
+    },
+    {
+      "id": "g_luecke",
+      "de": "die Lücke",
+      "en": "the gap",
+      "pos": "noun",
+      "example_de": "Die Lücke füllen.",
+      "example_en": "Fill the gap.",
+      "article": "die",
+      "plural": "die Lücken"
+    },
+    {
+      "id": "g_belohnend",
+      "de": "belohnend",
+      "en": "rewarding",
+      "pos": "adjective",
+      "example_de": "Anstrengend und belohnend.",
+      "example_en": "Demanding and rewarding."
+    },
+    {
+      "id": "g_erraten",
+      "de": "erraten",
+      "en": "to guess",
+      "pos": "verb",
+      "example_de": "Man muss es erraten.",
+      "example_en": "One must guess it."
+    },
+    {
+      "id": "g_erklaeren",
+      "de": "erklären",
+      "en": "to explain",
+      "pos": "verb",
+      "example_de": "Er erklärt alles.",
+      "example_en": "He explains everything."
+    },
+    {
+      "id": "g_vergnuegen",
+      "de": "das Vergnügen",
+      "en": "the pleasure",
+      "pos": "noun",
+      "example_de": "Auch das Vergnügen.",
+      "example_en": "The pleasure too.",
+      "article": "das"
+    },
+    {
+      "id": "g_gestehen",
+      "de": "gestehen",
+      "en": "to admit",
+      "pos": "verb",
+      "example_de": "Ich gestehe es.",
+      "example_en": "I admit it."
+    },
+    {
+      "id": "g_zutrauen",
+      "de": "zutrauen",
+      "en": "to trust / credit with",
+      "pos": "verb",
+      "example_de": "Mir wird viel zugetraut.",
+      "example_en": "Much is trusted to me."
+    },
+    {
+      "id": "g_raetsel",
+      "de": "das Rätsel",
+      "en": "the riddle",
+      "pos": "noun",
+      "example_de": "Wird zum Rätsel.",
+      "example_en": "Becomes a riddle.",
+      "article": "das",
+      "plural": "die Rätsel"
+    },
+    {
+      "id": "g_mass",
+      "de": "das Maß",
+      "en": "the measure",
+      "pos": "noun",
+      "example_de": "Das Maß finden.",
+      "example_en": "Find the measure.",
+      "article": "das"
+    },
+    {
+      "id": "g_zettel",
+      "de": "der Zettel",
+      "en": "the slip of paper",
+      "pos": "noun",
+      "example_de": "Ein alter Zettel.",
+      "example_en": "An old slip of paper.",
+      "article": "der",
+      "plural": "die Zettel"
+    },
+    {
+      "id": "g_handschriftlich",
+      "de": "handschriftlich",
+      "en": "handwritten",
+      "pos": "adjective",
+      "example_de": "Eine handschriftliche Zeile.",
+      "example_en": "A handwritten line."
+    },
+    {
+      "id": "g_mutter",
+      "de": "die Mutter",
+      "en": "the mother",
+      "pos": "noun",
+      "example_de": "Meine Mutter schrieb es.",
+      "example_en": "My mother wrote it.",
+      "article": "die",
+      "plural": "die Mütter"
+    },
+    {
+      "id": "g_beruehren",
+      "de": "berühren",
+      "en": "to touch",
+      "pos": "verb",
+      "example_de": "Die Dinge, die wir berühren.",
+      "example_en": "The things we touch."
+    },
+    {
+      "id": "g_aufschreiben",
+      "de": "aufschreiben",
+      "en": "to write down",
+      "pos": "verb",
+      "example_de": "Sie hat es aufgeschrieben.",
+      "example_en": "She wrote it down."
+    },
+    {
+      "id": "g_erinnerung",
+      "de": "die Erinnerung",
+      "en": "the memory",
+      "pos": "noun",
+      "example_de": "Die Erinnerung bleibt.",
+      "example_en": "The memory stays.",
+      "article": "die",
+      "plural": "die Erinnerungen"
+    },
+    {
+      "id": "g_wegwerfen",
+      "de": "wegwerfen",
+      "en": "to throw away",
+      "pos": "verb",
+      "example_de": "Bücher nicht wegwerfen.",
+      "example_en": "Don't throw books away."
+    },
+    {
+      "id": "g_gedicht",
+      "de": "das Gedicht",
+      "en": "the poem",
+      "pos": "noun",
+      "example_de": "Ein kurzes Gedicht.",
+      "example_en": "A short poem.",
+      "article": "das",
+      "plural": "die Gedichte"
+    },
+    {
+      "id": "g_zeile",
+      "de": "die Zeile",
+      "en": "the line",
+      "pos": "noun",
+      "example_de": "Vier Zeilen.",
+      "example_en": "Four lines.",
+      "article": "die",
+      "plural": "die Zeilen"
+    },
+    {
+      "id": "g_abend",
+      "de": "der Abend",
+      "en": "the evening",
+      "pos": "noun",
+      "example_de": "Der Abend kommt.",
+      "example_en": "The evening comes.",
+      "article": "der",
+      "plural": "die Abende"
+    },
+    {
+      "id": "g_tuer",
+      "de": "die Tür",
+      "en": "the door",
+      "pos": "noun",
+      "example_de": "Eine Tür geht auf.",
+      "example_en": "A door opens.",
+      "article": "die",
+      "plural": "die Türen"
+    },
+    {
+      "id": "g_fuehlen",
+      "de": "fühlen",
+      "en": "to feel",
+      "pos": "verb",
+      "example_de": "Man fühlt es.",
+      "example_en": "One feels it."
+    },
+    {
+      "id": "g_oeffnen",
+      "de": "öffnen",
+      "en": "to open",
+      "pos": "verb",
+      "example_de": "Die Zeile öffnet den Text.",
+      "example_en": "The line opens the text."
+    },
+    {
+      "id": "g_fragezeichen",
+      "de": "das Fragezeichen",
+      "en": "the question mark",
+      "pos": "noun",
+      "example_de": "Ohne Fragezeichen.",
+      "example_en": "Without a question mark.",
+      "article": "das",
+      "plural": "die Fragezeichen"
+    },
+    {
+      "id": "g_gehen",
+      "de": "gehen",
+      "en": "to go / leave",
+      "pos": "verb",
+      "example_de": "Ich möchte gehen.",
+      "example_en": "I want to leave."
+    },
+    {
+      "id": "g_festhalten",
+      "de": "festhalten",
+      "en": "to hold fast",
+      "pos": "verb",
+      "example_de": "Der Text hält uns fest.",
+      "example_en": "The text holds us fast."
+    },
+    {
+      "id": "g_sicher",
+      "de": "sicher",
+      "en": "certain / sure",
+      "pos": "adjective",
+      "example_de": "Ich bin sicher.",
+      "example_en": "I'm sure."
+    },
+    {
+      "id": "g_bis_dahin",
+      "de": "bis dahin",
+      "en": "until then",
+      "pos": "adverb",
+      "example_de": "Bis dahin lese ich.",
+      "example_en": "Until then I'll read."
+    },
+    {
+      "id": "g_heute",
+      "de": "heute",
+      "en": "today",
+      "pos": "adverb",
+      "example_de": "Heute habe ich gelernt.",
+      "example_en": "Today I learned."
+    },
+    {
+      "id": "g_information",
+      "de": "die Information",
+      "en": "the information",
+      "pos": "noun",
+      "example_de": "Nur Informationen tragen.",
+      "example_en": "Only carry information.",
+      "article": "die",
+      "plural": "die Informationen"
+    },
+    {
+      "id": "g_umsonst",
+      "de": "umsonst",
+      "en": "in vain",
+      "pos": "adverb",
+      "example_de": "Nicht umsonst.",
+      "example_en": "Not in vain."
     }
   ],
   "meta": {

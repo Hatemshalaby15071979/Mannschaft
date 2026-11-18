@@ -382,17 +382,18 @@ def test_cli_render_renders_segments_end_to_end(tmp_path, monkeypatch, ready_voi
     monkeypatch.setattr(cli, "VoiceStudioClient", lambda: VoiceStudioClient(transport=fake))
     monkeypatch.setattr(cli, "AUDIO_DIR", tmp_path / "audio")
 
+    n = len(json.loads(LESSON.read_text(encoding="utf-8"))["segments"])
     assert cli.main(["render", "A2-01", "--segments-only"]) == 0
     out = capsys.readouterr().out
-    assert "28 segments" in out
-    assert "0 from cache, 28 synthesised" in out
+    assert f"{n} segments" in out
+    assert f"0 from cache, {n} synthesised" in out
     lines = list((tmp_path / "audio" / "A2-01" / "lines").glob("*.wav"))
-    assert len(lines) == 28
+    assert len(lines) == n
 
     # second run is a pure cache replay
     assert cli.main(["render", "A2-01", "--segments-only"]) == 0
-    assert "28 from cache, 0 synthesised" in capsys.readouterr().out
-    assert len(fake.calls) == 28
+    assert f"{n} from cache, 0 synthesised" in capsys.readouterr().out
+    assert len(fake.calls) == n
 
 
 @pytest.mark.skipif(

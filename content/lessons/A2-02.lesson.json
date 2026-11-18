@@ -5,13 +5,13 @@
   "title": { "de": "Anmeldung im Bürgeramt", "en": "Registering at the citizens' office" },
   "minutes": 10,
   "scene": {
-    "setting_de": "Das Bürgeramt an einem Dienstagmorgen. Frau Weber hat einen Termin.",
-    "setting_en": "The citizens' office on a Tuesday morning. Ms Weber has an appointment.",
+    "setting_de": "Das Bürgeramt an einem Dienstagmorgen. Frau Weber hat einen Termin und zieht gerade in eine neue Wohnung.",
+    "setting_en": "The citizens' office on a Tuesday morning. Ms Weber has an appointment and is just moving into a new flat.",
     "register": "formal-service",
-    "can_do_de": "Ich kann mich anmelden, ein Formular ausfüllen und sagen, was ich muss und darf.",
-    "can_do_en": "I can register, fill in a form, and say what I must and may do.",
-    "situation_tags": ["bureaucracy", "registration", "service"],
-    "grammar_focus": ["muessen-duerfen", "formulare", "perfekt"]
+    "can_do_de": "Ich kann mich anmelden, ein Formular ausfüllen, persönliche Daten angeben und sagen, was ich muss und darf.",
+    "can_do_en": "I can register, fill in a form, give personal details, and say what I must and may do.",
+    "situation_tags": ["bureaucracy", "registration", "service", "housing"],
+    "grammar_focus": ["muessen-duerfen", "formulare", "perfekt", "datum"]
   },
   "cast": [
     { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
@@ -127,33 +127,309 @@
       "pause_after_ms": 600
     },
     {
-      "id": "s017", "type": "line", "speaker": "buerger",
+      "id": "s017", "type": "note", "speaker": "narrator",
+      "text": "müssen heißt must. dürfen heißt may oder be allowed to.",
+      "translation": "müssen means must. dürfen means may or to be allowed to.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s018", "type": "line", "speaker": "beamter",
+      "text": "Wie ist Ihr Familienname?",
+      "translation": "What is your surname?",
+      "pause_after_ms": 600,
+      "gloss": ["g_familienname"]
+    },
+    {
+      "id": "s019", "type": "line", "speaker": "buerger",
+      "text": "Weber. Mit W.",
+      "translation": "Weber. With a W.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s020", "type": "line", "speaker": "beamter",
+      "text": "Und Ihr Vorname?",
+      "translation": "And your first name?",
+      "pause_after_ms": 600,
+      "gloss": ["g_vorname"]
+    },
+    {
+      "id": "s021", "type": "line", "speaker": "buerger",
+      "text": "Julia.",
+      "translation": "Julia.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s022", "type": "check", "speaker": "narrator",
+      "text": "Wie heißt die Frau mit Vornamen?",
+      "translation": "What is the woman's first name?",
+      "answers": ["Julia"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s023", "type": "line", "speaker": "beamter",
+      "text": "Wann sind Sie geboren?",
+      "translation": "When were you born?",
+      "pause_after_ms": 600,
+      "gloss": ["g_geboren"]
+    },
+    {
+      "id": "s024", "type": "line", "speaker": "buerger",
+      "text": "Am dritten Mai neunzehnhundertzweiundneunzig.",
+      "translation": "On the third of May, nineteen ninety-two.",
+      "pause_after_ms": 800,
+      "gloss": ["g_geboren"]
+    },
+    {
+      "id": "s025", "type": "check", "speaker": "narrator",
+      "text": "Wann ist Frau Weber geboren?",
+      "translation": "When was Ms Weber born?",
+      "answers": ["am dritten Mai 1992"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s026", "type": "note", "speaker": "narrator",
+      "text": "Datum: am dritten Mai, am ersten Januar, am einundzwanzigsten März.",
+      "translation": "Dates: am dritten Mai, am ersten Januar, am einundzwanzigsten März.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s027", "type": "drill", "speaker": "buerger",
+      "text": "Ich bin am dritten Mai geboren.",
+      "translation": "I was born on the third of May.",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1000
+    },
+    {
+      "id": "s028", "type": "line", "speaker": "beamter",
+      "text": "Wo sind Sie geboren?",
+      "translation": "Where were you born?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s029", "type": "line", "speaker": "buerger",
+      "text": "In Hamburg.",
+      "translation": "In Hamburg.",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s030", "type": "line", "speaker": "beamter",
+      "text": "Und welche Staatsangehörigkeit haben Sie?",
+      "translation": "And what nationality do you have?",
+      "pause_after_ms": 700,
+      "gloss": ["g_staatsangehoerigkeit"]
+    },
+    {
+      "id": "s031", "type": "line", "speaker": "buerger",
+      "text": "Die spanische. Ich habe auch einen deutschen Pass.",
+      "translation": "Spanish. I also have a German passport.",
+      "pause_after_ms": 800,
+      "gloss": ["g_staatsangehoerigkeit"]
+    },
+    {
+      "id": "s032", "type": "check", "speaker": "narrator",
+      "text": "Welche Staatsangehörigkeit hat Frau Weber?",
+      "translation": "What nationality does Ms Weber have?",
+      "answers": ["die spanische"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s033", "type": "note", "speaker": "narrator",
+      "text": "die Staatsangehörigkeit ist die Nationalität. Kurz: die Staatsangehörigkeit.",
+      "translation": "die Staatsangehörigkeit is the nationality.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s034", "type": "vocab", "speaker": "narrator",
+      "text": "die Staatsangehörigkeit",
+      "translation": "the nationality",
+      "pause_after_ms": 900,
+      "gloss": ["g_staatsangehoerigkeit"]
+    },
+    {
+      "id": "s035", "type": "line", "speaker": "beamter",
+      "text": "Wie lautet Ihre neue Adresse?",
+      "translation": "What is your new address?",
+      "pause_after_ms": 600,
+      "gloss": ["g_adresse"]
+    },
+    {
+      "id": "s036", "type": "line", "speaker": "buerger",
+      "text": "Lindenstraße vierzehn, in Frankfurt.",
+      "translation": "Lindenstrasse fourteen, in Frankfurt.",
+      "pause_after_ms": 800,
+      "gloss": ["g_strasse"]
+    },
+    {
+      "id": "s037", "type": "line", "speaker": "beamter",
+      "text": "Mit Postleitzahl, bitte.",
+      "translation": "With the postcode, please.",
+      "pause_after_ms": 600,
+      "gloss": ["g_postleitzahl"]
+    },
+    {
+      "id": "s038", "type": "line", "speaker": "buerger",
+      "text": "Sechs null drei eins fünf.",
+      "translation": "Six zero three one five.",
+      "pause_after_ms": 700,
+      "gloss": ["g_postleitzahl"]
+    },
+    {
+      "id": "s039", "type": "check", "speaker": "narrator",
+      "text": "Wie lautet die Postleitzahl?",
+      "translation": "What is the postcode?",
+      "answers": ["sechs null drei eins fünf"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s040", "type": "note", "speaker": "narrator",
+      "text": "Adresse: die Straße, die Hausnummer, die Postleitzahl, die Stadt.",
+      "translation": "Address: die Straße, die Hausnummer, die Postleitzahl, die Stadt.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s041", "type": "drill", "speaker": "buerger",
+      "text": "Lindenstraße vierzehn, sechs null drei eins fünf, Frankfurt.",
+      "translation": "Lindenstrasse fourteen, six zero three one five, Frankfurt.",
+      "repeat": 2, "speed": 0.85, "pause_after_ms": 1000
+    },
+    {
+      "id": "s042", "type": "vocab", "speaker": "narrator",
+      "text": "die Postleitzahl",
+      "translation": "the postcode",
+      "pause_after_ms": 900,
+      "gloss": ["g_postleitzahl"]
+    },
+    {
+      "id": "s043", "type": "vocab", "speaker": "narrator",
+      "text": "die Straße",
+      "translation": "the street",
+      "pause_after_ms": 900,
+      "gloss": ["g_strasse"]
+    },
+    {
+      "id": "s044", "type": "line", "speaker": "beamter",
+      "text": "Wie viele Personen ziehen mit Ihnen ein?",
+      "translation": "How many people are moving in with you?",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s045", "type": "line", "speaker": "buerger",
+      "text": "Nur ich. Meine Kinder wohnen noch in Hamburg.",
+      "translation": "Only me. My children still live in Hamburg.",
+      "pause_after_ms": 800
+    },
+    {
+      "id": "s046", "type": "check", "speaker": "narrator",
+      "text": "Wie viele Personen ziehen ein?",
+      "translation": "How many people are moving in?",
+      "answers": ["nur eine Person"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s047", "type": "line", "speaker": "beamter",
+      "text": "Sind Sie verheiratet?",
+      "translation": "Are you married?",
+      "pause_after_ms": 600,
+      "gloss": ["g_verheiratet"]
+    },
+    {
+      "id": "s048", "type": "line", "speaker": "buerger",
+      "text": "Nein, ich bin geschieden.",
+      "translation": "No, I'm divorced.",
+      "pause_after_ms": 700,
+      "gloss": ["g_geschieden"]
+    },
+    {
+      "id": "s049", "type": "note", "speaker": "narrator",
+      "text": "Familienstand: ledig, verheiratet, geschieden, verwitwet.",
+      "translation": "Marital status: single, married, divorced, widowed.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s050", "type": "vocab", "speaker": "narrator",
+      "text": "verheiratet",
+      "translation": "married",
+      "pause_after_ms": 900,
+      "gloss": ["g_verheiratet"]
+    },
+    {
+      "id": "s051", "type": "line", "speaker": "beamter",
+      "text": "Haben Sie einen Mietvertrag dabei?",
+      "translation": "Do you have a rental contract with you?",
+      "pause_after_ms": 700,
+      "gloss": ["g_mietvertrag"]
+    },
+    {
+      "id": "s052", "type": "line", "speaker": "buerger",
+      "text": "Ja, hier. Und die Bestätigung vom Vermieter.",
+      "translation": "Yes, here. And the confirmation from the landlord.",
+      "pause_after_ms": 800,
+      "gloss": ["g_mietvertrag", "g_wohnungsgeberbestaetigung"]
+    },
+    {
+      "id": "s053", "type": "line", "speaker": "beamter",
+      "text": "Gut. Das kostet zwölf Euro.",
+      "translation": "Good. That costs twelve euros.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s054", "type": "line", "speaker": "buerger",
+      "text": "Kann ich mit Karte zahlen?",
+      "translation": "Can I pay by card?",
+      "pause_after_ms": 600
+    },
+    {
+      "id": "s055", "type": "line", "speaker": "beamter",
+      "text": "Nein, nur bar. Kartenzahlung ist hier leider nicht möglich.",
+      "translation": "No, cash only. Card payment unfortunately isn't possible here.",
+      "pause_after_ms": 700
+    },
+    {
+      "id": "s056", "type": "check", "speaker": "narrator",
+      "text": "Wie kann Frau Weber bezahlen?",
+      "translation": "How can Ms Weber pay?",
+      "answers": ["nur bar"],
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400
+    },
+    {
+      "id": "s057", "type": "note", "speaker": "narrator",
+      "text": "Im Amt kann man oft nur bar zahlen. Nimm immer etwas Bargeld mit.",
+      "translation": "At an office you can often only pay cash. Always bring some cash.",
+      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+    },
+    {
+      "id": "s058", "type": "line", "speaker": "buerger",
       "text": "Fertig. Ist das so richtig?",
       "translation": "Done. Is that right like this?",
       "pause_after_ms": 700
     },
     {
-      "id": "s018", "type": "line", "speaker": "beamter",
+      "id": "s059", "type": "line", "speaker": "beamter",
       "text": "Fast. Sie müssen hier noch unterschreiben.",
       "translation": "Almost. You still have to sign here.",
       "pause_after_ms": 700,
       "gloss": ["g_unterschreiben"]
     },
     {
-      "id": "s019", "type": "line", "speaker": "buerger",
+      "id": "s060", "type": "line", "speaker": "buerger",
       "text": "Oh, entschuldigung. Wo genau?",
       "translation": "Oh, sorry. Where exactly?",
       "pause_after_ms": 600
     },
     {
-      "id": "s020", "type": "line", "speaker": "beamter",
+      "id": "s061", "type": "line", "speaker": "beamter",
       "text": "Hier unten, neben dem Datum.",
       "translation": "Down here, next to the date.",
       "pause_after_ms": 700,
       "gloss": ["g_datum"]
     },
     {
-      "id": "s021", "type": "check", "speaker": "narrator",
+      "id": "s062", "type": "check", "speaker": "narrator",
       "text": "Was muss Frau Weber noch tun?",
       "translation": "What does Ms Weber still have to do?",
       "answers": ["Sie muss das Formular unterschreiben."],
@@ -161,62 +437,55 @@
       "pause_after_ms": 400
     },
     {
-      "id": "s022", "type": "note", "speaker": "narrator",
-      "text": "müssen heißt must. dürfen heißt may oder be allowed to.",
-      "translation": "müssen means must. dürfen means may or to be allowed to.",
-      "speed": 0.9, "pause_after_ms": 600, "skippable": true
+      "id": "s063", "type": "line", "speaker": "buerger",
+      "text": "So, jetzt aber.",
+      "translation": "There, now it's done.",
+      "pause_after_ms": 600
     },
     {
-      "id": "s023", "type": "line", "speaker": "beamter",
+      "id": "s064", "type": "line", "speaker": "beamter",
       "text": "So, das ist erledigt. Sie bekommen eine neue Meldebescheinigung.",
       "translation": "So, that's done. You'll get a new registration certificate.",
       "pause_after_ms": 700,
       "gloss": ["g_erledigt", "g_meldebescheinigung"]
     },
     {
-      "id": "s024", "type": "line", "speaker": "buerger",
+      "id": "s065", "type": "line", "speaker": "buerger",
       "text": "Wann bekomme ich sie?",
       "translation": "When do I get it?",
       "pause_after_ms": 600
     },
     {
-      "id": "s025", "type": "line", "speaker": "beamter",
+      "id": "s066", "type": "line", "speaker": "beamter",
       "text": "Sofort. Einen Moment, bitte.",
       "translation": "Right away. One moment, please.",
       "pause_after_ms": 600,
       "gloss": ["g_sofort"]
     },
     {
-      "id": "s026", "type": "line", "speaker": "buerger",
+      "id": "s067", "type": "line", "speaker": "buerger",
       "text": "Vielen Dank für Ihre Hilfe.",
       "translation": "Thank you very much for your help.",
       "pause_after_ms": 700,
       "gloss": ["g_hilfe"]
     },
     {
-      "id": "s027", "type": "line", "speaker": "beamter",
+      "id": "s068", "type": "line", "speaker": "beamter",
       "text": "Gern. Einen schönen Tag noch.",
       "translation": "You're welcome. Have a nice day.",
       "pause_after_ms": 800
     },
     {
-      "id": "s028", "type": "vocab", "speaker": "narrator",
+      "id": "s069", "type": "vocab", "speaker": "narrator",
       "text": "das Formular",
       "translation": "the form",
       "pause_after_ms": 900,
       "gloss": ["g_anmeldeformular"]
     },
     {
-      "id": "s029", "type": "vocab", "speaker": "narrator",
-      "text": "unterschreiben",
-      "translation": "to sign",
-      "pause_after_ms": 900,
-      "gloss": ["g_unterschreiben"]
-    },
-    {
-      "id": "s030", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: sich anmelden, ein Formular ausfüllen und unterschreiben.",
-      "translation": "Today you learned: registering, filling in a form, and signing.",
+      "id": "s070", "type": "recap", "speaker": "narrator",
+      "text": "Heute hast du gelernt: sich anmelden, persönliche Daten angeben, ein Formular ausfüllen und unterschreiben.",
+      "translation": "Today you learned: registering, giving personal details, filling in a form, and signing.",
       "pause_after_ms": 800
     }
   ],
@@ -315,6 +584,56 @@
       "id": "g_hilfe", "de": "die Hilfe", "en": "the help", "pos": "noun",
       "article": "die", "plural": "die Hilfen",
       "example_de": "Vielen Dank für Ihre Hilfe.", "example_en": "Thank you very much for your help."
+    },
+    {
+      "id": "g_familienname", "de": "der Familienname", "en": "the surname", "pos": "noun",
+      "article": "der", "plural": "die Familiennamen",
+      "example_de": "Wie ist Ihr Familienname?", "example_en": "What is your surname?"
+    },
+    {
+      "id": "g_vorname", "de": "der Vorname", "en": "the first name", "pos": "noun",
+      "article": "der", "plural": "die Vornamen",
+      "example_de": "Und Ihr Vorname?", "example_en": "And your first name?"
+    },
+    {
+      "id": "g_geboren", "de": "geboren", "en": "born", "pos": "participle",
+      "note_de": "geboren sein = to be born. Wann sind Sie geboren?",
+      "note_en": "geboren sein = to be born. Wann sind Sie geboren?",
+      "example_de": "Ich bin in Hamburg geboren.", "example_en": "I was born in Hamburg."
+    },
+    {
+      "id": "g_staatsangehoerigkeit", "de": "die Staatsangehörigkeit", "en": "the nationality", "pos": "noun",
+      "article": "die", "plural": "die Staatsangehörigkeiten",
+      "note_de": "Langes Wort: Staat + Angehörigkeit.",
+      "note_en": "Long compound: Staat + Angehörigkeit.",
+      "example_de": "Welche Staatsangehörigkeit haben Sie?", "example_en": "What nationality do you have?"
+    },
+    {
+      "id": "g_strasse", "de": "die Straße", "en": "the street", "pos": "noun",
+      "article": "die", "plural": "die Straßen",
+      "example_de": "Ich wohne in der Lindenstraße.", "example_en": "I live on Lindenstrasse."
+    },
+    {
+      "id": "g_postleitzahl", "de": "die Postleitzahl", "en": "the postcode", "pos": "noun",
+      "article": "die", "plural": "die Postleitzahlen",
+      "note_de": "Oft abgekürzt: PLZ.",
+      "note_en": "Often abbreviated: PLZ.",
+      "example_de": "Mit Postleitzahl, bitte.", "example_en": "With the postcode, please."
+    },
+    {
+      "id": "g_verheiratet", "de": "verheiratet", "en": "married", "pos": "adj",
+      "example_de": "Sind Sie verheiratet?", "example_en": "Are you married?"
+    },
+    {
+      "id": "g_geschieden", "de": "geschieden", "en": "divorced", "pos": "adj",
+      "example_de": "Nein, ich bin geschieden.", "example_en": "No, I'm divorced."
+    },
+    {
+      "id": "g_mietvertrag", "de": "der Mietvertrag", "en": "the rental contract", "pos": "noun",
+      "article": "der", "plural": "die Mietverträge",
+      "note_de": "die Miete = the rent, der Vertrag = the contract.",
+      "note_en": "die Miete = the rent, der Vertrag = the contract.",
+      "example_de": "Haben Sie einen Mietvertrag dabei?", "example_en": "Do you have a rental contract with you?"
     }
   ],
   "meta": {

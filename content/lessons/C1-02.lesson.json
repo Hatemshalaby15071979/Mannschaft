@@ -2,254 +2,1583 @@
   "schema": "lesson-script/v1",
   "id": "C1-02",
   "level": "C1",
-  "title": { "de": "Verhandlung mit dem Lieferanten", "en": "Negotiating with the supplier" },
+  "title": {
+    "de": "Lieferantenverhandlung",
+    "en": "Supplier negotiation"
+  },
   "minutes": 18,
   "scene": {
-    "setting_de": "Eine Verhandlung mit einem Lieferanten. Es geht um Preise und Lieferzeiten.",
-    "setting_en": "A negotiation with a supplier. The topic is prices and delivery times.",
-    "register": "formal-business",
-    "can_do_de": "Ich kann vorsichtig verhandeln, Bedingungen aushandeln und mit Modalpartikeln den Ton steuern.",
-    "can_do_en": "I can negotiate cautiously, agree on terms, and use modal particles to steer the tone.",
-    "situation_tags": ["business", "negotiation", "suppliers"],
-    "grammar_focus": ["vagheit", "modalpartikeln", "konjunktiv-2"]
+    "setting_de": "Eine Verhandlung mit einem Lieferanten. Die Einkäuferin verhandelt über Preis, Lieferzeiten und Qualität.",
+    "setting_en": "A negotiation with a supplier. The purchaser negotiates price, delivery times and quality.",
+    "register": "formal-work",
+    "can_do_de": "Ich kann professionell verhandeln, Bedingungen präzisieren und Zugeständnisse höflich aber bestimmt einfordern.",
+    "can_do_en": "I can negotiate professionally, specify terms precisely, and request concessions politely but firmly.",
+    "situation_tags": [
+      "work",
+      "negotiation",
+      "suppliers"
+    ],
+    "grammar_focus": [
+      "konjunktiv-2",
+      "passiv",
+      "konnektoren"
+    ]
   },
   "cast": [
-    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
-    { "role": "einkaeufer", "voice": "de_narrator_m", "lang": "de" },
-    { "role": "lieferant", "voice": "de_older_m", "lang": "de" }
+    {
+      "role": "narrator",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "einkaeuferin",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "lieferant",
+      "voice": "de_older_m",
+      "lang": "de"
+    }
   ],
   "segments": [
     {
-      "id": "s001", "type": "scene", "speaker": "narrator",
-      "text": "Eine Verhandlung mit einem Lieferanten. Es geht um Preise und Lieferzeiten.",
-      "translation": "A negotiation with a supplier. The topic is prices and delivery times.",
-      "pause_after_ms": 450
+      "id": "s001",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Ein Verhandlungstermin. Die Einkäuferin und der Lieferant sitzen am Tisch.",
+      "translation": "A negotiation meeting. The purchaser and the supplier sit at the table.",
+      "pause_after_ms": 700
     },
     {
-      "id": "s002", "type": "line", "speaker": "einkaeufer",
-      "text": "Vielen Dank, dass Sie gekommen sind.",
-      "translation": "Thank you very much for coming.",
-      "pause_after_ms": 450
-    },
-    {
-      "id": "s003", "type": "line", "speaker": "lieferant",
-      "text": "Gern. Worum geht es genau?",
-      "translation": "You're welcome. What exactly is it about?",
-      "pause_after_ms": 450
-    },
-    {
-      "id": "s004", "type": "line", "speaker": "einkaeufer",
-      "text": "Wir sind mit dem aktuellen Preis nicht ganz zufrieden.",
-      "translation": "We're not entirely satisfied with the current price.",
-      "pause_after_ms": 500,
-      "gloss": ["g_preis", "g_zufrieden"]
-    },
-    {
-      "id": "s005", "type": "line", "speaker": "lieferant",
-      "text": "Das ist ja interessant. Der Preis ist eigentlich fair.",
-      "translation": "That's interesting. The price is actually fair.",
-      "pause_after_ms": 500,
-      "gloss": ["g_fair", "g_modalpartikel"]
-    },
-    {
-      "id": "s006", "type": "check", "speaker": "narrator",
-      "text": "Womit ist der Einkäufer nicht zufrieden?",
-      "translation": "What is the buyer not satisfied with?",
-      "answers": ["mit dem aktuellen Preis"],
-      "answer_pause_ms": 3000,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s007", "type": "note", "speaker": "narrator",
-      "text": "Modalpartikeln wie ja, eigentlich und doch machen Aussagen weicher und höflicher.",
-      "translation": "Modal particles like ja, eigentlich and doch make statements softer and more polite.",
-      "speed": 1.0, "pause_after_ms": 400, "skippable": true
-    },
-    {
-      "id": "s008", "type": "line", "speaker": "einkaeufer",
-      "text": "Vielleicht könnten Sie uns ja einen Rabatt anbieten.",
-      "translation": "Perhaps you could offer us a discount.",
-      "pause_after_ms": 500,
-      "gloss": ["g_rabatt"]
-    },
-    {
-      "id": "s009", "type": "line", "speaker": "lieferant",
-      "text": "Hmm, das ist schwierig. Die Materialkosten sind gestiegen.",
-      "translation": "Hmm, that's difficult. Material costs have risen.",
-      "pause_after_ms": 500,
-      "gloss": ["g_materialkosten"]
-    },
-    {
-      "id": "s010", "type": "line", "speaker": "einkaeufer",
-      "text": "Das verstehe ich. Aber wir bestellen ja größere Mengen.",
-      "translation": "I understand. But we do order larger quantities.",
-      "pause_after_ms": 500,
-      "gloss": ["g_menge"]
-    },
-    {
-      "id": "s011", "type": "line", "speaker": "lieferant",
-      "text": "Das stimmt wohl. Wie viel Rabatt stellen Sie sich vor?",
-      "translation": "That's probably true. How much discount do you have in mind?",
-      "pause_after_ms": 500
-    },
-    {
-      "id": "s012", "type": "line", "speaker": "einkaeufer",
-      "text": "So etwa fünf Prozent wären schon hilfreich.",
-      "translation": "About five percent would already be helpful.",
-      "pause_after_ms": 500,
-      "gloss": ["g_hilfreich"]
-    },
-    {
-      "id": "s013", "type": "check", "speaker": "narrator",
-      "text": "Wie viel Rabatt möchte der Einkäufer?",
-      "translation": "How much discount does the buyer want?",
-      "answers": ["etwa fünf Prozent"],
-      "answer_pause_ms": 3000,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s014", "type": "drill", "speaker": "einkaeufer",
-      "text": "Vielleicht könnten Sie uns einen Rabatt anbieten.",
-      "translation": "Perhaps you could offer us a discount.",
-      "repeat": 2, "speed": 1.0, "pause_after_ms": 900
-    },
-    {
-      "id": "s015", "type": "line", "speaker": "lieferant",
-      "text": "Fünf Prozent ist machbar, aber nur bei einer Jahresbestellung.",
-      "translation": "Five percent is feasible, but only with an annual order.",
-      "pause_after_ms": 500,
-      "gloss": ["g_machbar", "g_jahresbestellung"]
-    },
-    {
-      "id": "s016", "type": "line", "speaker": "einkaeufer",
-      "text": "Das ließe sich einrichten. Und die Lieferzeit?",
-      "translation": "That could be arranged. And the delivery time?",
-      "pause_after_ms": 500,
-      "gloss": ["g_einrichten", "g_lieferzeit"]
-    },
-    {
-      "id": "s017", "type": "line", "speaker": "lieferant",
-      "text": "Die bleibt bei zwei Wochen, das ist ja unser Standard.",
-      "translation": "It stays at two weeks, that's our standard after all.",
-      "pause_after_ms": 500,
-      "gloss": ["g_standard"]
-    },
-    {
-      "id": "s018", "type": "line", "speaker": "einkaeufer",
-      "text": "Gut. Dann halten wir das so fest.",
-      "translation": "Good. Then we'll record it that way.",
-      "pause_after_ms": 500,
-      "gloss": ["g_festhalten"]
-    },
-    {
-      "id": "s019", "type": "check", "speaker": "narrator",
-      "text": "Unter welcher Bedingung gibt es den Rabatt?",
-      "translation": "Under what condition is the discount given?",
-      "answers": ["bei einer Jahresbestellung"],
-      "answer_pause_ms": 3000,
-      "pause_after_ms": 400
-    },
-    {
-      "id": "s020", "type": "vocab", "speaker": "narrator",
-      "text": "der Rabatt",
-      "translation": "the discount",
+      "id": "s002",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Guten Tag. Wir möchten heute über den neuen Liefervertrag sprechen.",
+      "translation": "Good day. We'd like to talk about the new supply contract today.",
       "pause_after_ms": 700,
-      "gloss": ["g_rabatt"]
+      "gloss": [
+        "g_liefervertrag"
+      ]
     },
     {
-      "id": "s021", "type": "vocab", "speaker": "narrator",
+      "id": "s003",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Guten Tag. Ich habe die aktuelle Kalkulation mitgebracht.",
+      "translation": "Good day. I've brought the current calculation with me.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_kalkulation"
+      ]
+    },
+    {
+      "id": "s004",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Dann lassen Sie uns direkt in die Preisverhandlung einsteigen.",
+      "translation": "Then let's get straight into the price negotiation.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_einsteigen"
+      ]
+    },
+    {
+      "id": "s005",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Gerne. Der Stückpreis liegt aktuell bei zwölf Euro.",
+      "translation": "Gladly. The unit price is currently twelve euros.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_stueckpreis"
+      ]
+    },
+    {
+      "id": "s006",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie hoch ist der aktuelle Stückpreis?",
+      "translation": "What is the current unit price?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "zwölf Euro"
+      ]
+    },
+    {
+      "id": "s007",
+      "type": "echo",
+      "speaker": "einkaeuferin",
+      "text": "Lassen Sie uns in die Preisverhandlung einsteigen.",
+      "translation": "Let's get into the price negotiation.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s008",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Zwölf Euro sind höher als unser Budget hergibt. Welche Staffelpreise bieten Sie?",
+      "translation": "Twelve euros is higher than our budget allows. What volume prices do you offer?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_staffelpreis",
+        "g_hergeben"
+      ]
+    },
+    {
+      "id": "s009",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Ab tausend Stück könnten wir auf zehn Euro gehen. Bei fünftausend auf neun.",
+      "translation": "From one thousand units we could go down to ten euros. At five thousand, nine.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ab"
+      ]
+    },
+    {
+      "id": "s010",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Wir bestellen jährlich etwa viertausend Stück. Wo läge unser Preis?",
+      "translation": "We order about four thousand units annually. Where would our price be?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_jaehrlich"
+      ]
+    },
+    {
+      "id": "s011",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Bei viertausend Stück läge er bei neun Euro fünfzig.",
+      "translation": "At four thousand it would be nine euros fifty.",
+      "pause_after_ms": 700,
+      "gloss": []
+    },
+    {
+      "id": "s012",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welchen Preis erhält der Kunde bei viertausend Stück?",
+      "translation": "What price does the customer get at four thousand units?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "neun Euro fünfzig"
+      ]
+    },
+    {
+      "id": "s013",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II beim Verhandeln: wir könnten, wir würden, es läge. Damit bleibt ein Angebot unverbindlich und verhandelbar.",
+      "translation": "Subjunctive II in negotiation: wir könnten, wir würden, es läge. This keeps an offer non-binding and negotiable.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s014",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Neun Euro fünfzig wäre akzeptabel, wenn die Lieferzeiten stimmen.",
+      "translation": "Nine euros fifty would be acceptable if the delivery times are right.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_akzeptabel",
+        "g_lieferzeit",
+        "g_stimmen"
+      ]
+    },
+    {
+      "id": "s015",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Die Lieferzeit beträgt derzeit vier Wochen. Wir könnten sie auf drei Wochen verkürzen.",
+      "translation": "Delivery time is currently four weeks. We could shorten it to three weeks.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_betragen",
+        "g_verkuerzen"
+      ]
+    },
+    {
+      "id": "s016",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Drei Wochen sind knapp. Ich hätte gern eine Garantie von zwei Wochen.",
+      "translation": "Three weeks is tight. I'd like a guarantee of two weeks.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_knapp",
+        "g_garantie"
+      ]
+    },
+    {
+      "id": "s017",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Zwei Wochen wären nur gegen einen Aufschlag möglich. Wären Sie dazu bereit?",
+      "translation": "Two weeks would only be possible with a surcharge. Would you be willing to that?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_aufschlag",
+        "g_bereit"
+      ]
+    },
+    {
+      "id": "s018",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welche Lieferzeit möchte die Einkäuferin garantiert haben?",
+      "translation": "What delivery time does the purchaser want guaranteed?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "zwei Wochen"
+      ]
+    },
+    {
+      "id": "s019",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Konjunktiv II mit gegen: nur gegen Aufschlag, nur gegen Vorauszahlung. Es bedeutet im Gegenzug für etwas.",
+      "translation": "Subjunctive II with gegen: nur gegen Aufschlag, nur gegen Vorauszahlung. It means in exchange for something.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s020",
+      "type": "drill",
+      "speaker": "lieferant",
+      "text": "Zwei Wochen wären nur gegen einen Aufschlag möglich.",
+      "translation": "Two weeks would only be possible with a surcharge.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s021",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Liefervertrag",
+      "translation": "the supply contract",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_liefervertrag"
+      ]
+    },
+    {
+      "id": "s022",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Kalkulation",
+      "translation": "the calculation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kalkulation"
+      ]
+    },
+    {
+      "id": "s023",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "einsteigen",
+      "translation": "to get into / start",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einsteigen"
+      ]
+    },
+    {
+      "id": "s024",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Stückpreis",
+      "translation": "the unit price",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stueckpreis"
+      ]
+    },
+    {
+      "id": "s025",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Staffelpreis",
+      "translation": "the volume price",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_staffelpreis"
+      ]
+    },
+    {
+      "id": "s026",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "hergeben",
+      "translation": "to allow / give",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_hergeben"
+      ]
+    },
+    {
+      "id": "s027",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "ab",
+      "translation": "from / as of",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ab"
+      ]
+    },
+    {
+      "id": "s028",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "jährlich",
+      "translation": "annually",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_jaehrlich"
+      ]
+    },
+    {
+      "id": "s029",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "akzeptabel",
+      "translation": "acceptable",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_akzeptabel"
+      ]
+    },
+    {
+      "id": "s030",
+      "type": "vocab",
+      "speaker": "narrator",
       "text": "die Lieferzeit",
       "translation": "the delivery time",
-      "pause_after_ms": 700,
-      "gloss": ["g_lieferzeit"]
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_lieferzeit"
+      ]
     },
     {
-      "id": "s022", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: vorsichtig verhandeln mit Modalpartikeln.",
-      "translation": "Today you learned: negotiating cautiously with modal particles.",
-      "pause_after_ms": 600
+      "id": "s031",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "stimmen",
+      "translation": "to be right / correct",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_stimmen"
+      ]
+    },
+    {
+      "id": "s032",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "betragen",
+      "translation": "to amount to",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_betragen"
+      ]
+    },
+    {
+      "id": "s033",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verkürzen",
+      "translation": "to shorten",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verkuerzen"
+      ]
+    },
+    {
+      "id": "s034",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "knapp",
+      "translation": "tight",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_knapp"
+      ]
+    },
+    {
+      "id": "s035",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Garantie",
+      "translation": "the guarantee",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_garantie"
+      ]
+    },
+    {
+      "id": "s036",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Aufschlag",
+      "translation": "the surcharge",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_aufschlag"
+      ]
+    },
+    {
+      "id": "s037",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bereit",
+      "translation": "willing / ready",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bereit"
+      ]
+    },
+    {
+      "id": "s038",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Über den Aufschlag können wir reden, wenn die Qualität stimmt.",
+      "translation": "We can talk about the surcharge if the quality is right.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_qualitaet"
+      ]
+    },
+    {
+      "id": "s039",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Unsere Qualität ist zertifiziert. Alle Chargen werden vor dem Versand geprüft.",
+      "translation": "Our quality is certified. All batches are checked before shipping.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zertifiziert",
+        "g_charge",
+        "g_versand"
+      ]
+    },
+    {
+      "id": "s040",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Können Sie ein Qualitätszertifikat für jede Charge vorlegen?",
+      "translation": "Can you provide a quality certificate for each batch?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_vorlegen"
+      ]
+    },
+    {
+      "id": "s041",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Ja, das Zertifikat wird jeder Lieferung beigelegt.",
+      "translation": "Yes, the certificate is enclosed with every delivery.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_beilegen"
+      ]
+    },
+    {
+      "id": "s042",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was wird jeder Lieferung beigelegt?",
+      "translation": "What is enclosed with every delivery?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "ein Qualitätszertifikat"
+      ]
+    },
+    {
+      "id": "s043",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Passiv mit werden: alle Chargen werden geprüft, das Zertifikat wird beigelegt. Das Passiv wirkt sachlich und formell.",
+      "translation": "Passive with werden: all batches are checked, the certificate is enclosed. The passive sounds factual and formal.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s044",
+      "type": "echo",
+      "speaker": "lieferant",
+      "text": "Alle Chargen werden vor dem Versand geprüft.",
+      "translation": "All batches are checked before shipping.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s045",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Und wie wird bei Reklamationen verfahren?",
+      "translation": "And how are complaints handled?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_reklamation",
+        "g_verfahren"
+      ]
+    },
+    {
+      "id": "s046",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Eine Reklamation wird innerhalb von fünf Werktagen bearbeitet.",
+      "translation": "A complaint is processed within five working days.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_innerhalb",
+        "g_werktag",
+        "g_bearbeiten"
+      ]
+    },
+    {
+      "id": "s047",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Das ist akzeptabel. Wer trägt die Kosten bei einem Defekt?",
+      "translation": "That's acceptable. Who bears the costs in case of a defect?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_defekt",
+        "g_tragen"
+      ]
+    },
+    {
+      "id": "s048",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Bei einem nachgewiesenen Defekt tragen wir die Kosten vollständig.",
+      "translation": "For a verified defect, we bear the costs entirely.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_nachgewiesen"
+      ]
+    },
+    {
+      "id": "s049",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Innerhalb wie vieler Werktage wird eine Reklamation bearbeitet?",
+      "translation": "Within how many working days is a complaint processed?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "fünf Werktage"
+      ]
+    },
+    {
+      "id": "s050",
+      "type": "drill",
+      "speaker": "lieferant",
+      "text": "Die Reklamation wird innerhalb von fünf Werktagen bearbeitet.",
+      "translation": "The complaint is processed within five working days.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s051",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Jetzt zur Zahlungsbedingung. Wir zahlen derzeit nach dreißig Tagen.",
+      "translation": "Now to the payment terms. We currently pay after thirty days.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zahlungsbedingung"
+      ]
+    },
+    {
+      "id": "s052",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Wir hätten gern Zahlung nach vierzehn Tagen, um unsere Liquidität zu verbessern.",
+      "translation": "We'd prefer payment after fourteen days to improve our liquidity.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_liquiditaet",
+        "g_verbessern"
+      ]
+    },
+    {
+      "id": "s053",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Zwanzig Tage wäre ein Kompromiss, den wir eingehen könnten.",
+      "translation": "Twenty days would be a compromise we could accept.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_kompromiss",
+        "g_eingehen"
+      ]
+    },
+    {
+      "id": "s054",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Zwanzig Tage - damit könnten wir leben.",
+      "translation": "Twenty days - we could live with that.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_damit",
+        "g_leben"
+      ],
+      "focus": []
+    },
+    {
+      "id": "s055",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Welche Zahlungsfrist wird am Ende vereinbart?",
+      "translation": "Which payment term is agreed in the end?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "zwanzig Tage"
+      ]
+    },
+    {
+      "id": "s056",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Qualität",
+      "translation": "the quality",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_qualitaet"
+      ]
+    },
+    {
+      "id": "s057",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "zertifiziert",
+      "translation": "certified",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zertifiziert"
+      ]
+    },
+    {
+      "id": "s058",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Charge",
+      "translation": "the batch",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_charge"
+      ]
+    },
+    {
+      "id": "s059",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Versand",
+      "translation": "the shipping",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_versand"
+      ]
+    },
+    {
+      "id": "s060",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "vorlegen",
+      "translation": "to present / provide",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_vorlegen"
+      ]
+    },
+    {
+      "id": "s061",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "beilegen",
+      "translation": "to enclose",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_beilegen"
+      ]
+    },
+    {
+      "id": "s062",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Reklamation",
+      "translation": "the complaint",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_reklamation"
+      ]
+    },
+    {
+      "id": "s063",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verfahren",
+      "translation": "to proceed / handle",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verfahren"
+      ]
+    },
+    {
+      "id": "s064",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "innerhalb",
+      "translation": "within",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_innerhalb"
+      ]
+    },
+    {
+      "id": "s065",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Werktag",
+      "translation": "the working day",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_werktag"
+      ]
+    },
+    {
+      "id": "s066",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bearbeiten",
+      "translation": "to process",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bearbeiten"
+      ]
+    },
+    {
+      "id": "s067",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Defekt",
+      "translation": "the defect",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_defekt"
+      ]
+    },
+    {
+      "id": "s068",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "tragen",
+      "translation": "to bear",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_tragen"
+      ]
+    },
+    {
+      "id": "s069",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "nachgewiesen",
+      "translation": "verified / proven",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_nachgewiesen"
+      ]
+    },
+    {
+      "id": "s070",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Zahlungsbedingung",
+      "translation": "the payment term",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zahlungsbedingung"
+      ]
+    },
+    {
+      "id": "s071",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Liquidität",
+      "translation": "liquidity",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_liquiditaet"
+      ]
+    },
+    {
+      "id": "s072",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verbessern",
+      "translation": "to improve",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verbessern"
+      ]
+    },
+    {
+      "id": "s073",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Kompromiss",
+      "translation": "the compromise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kompromiss"
+      ]
+    },
+    {
+      "id": "s074",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "eingehen",
+      "translation": "to accept / enter into",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_eingehen"
+      ]
+    },
+    {
+      "id": "s075",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "damit",
+      "translation": "with that",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_damit"
+      ]
+    },
+    {
+      "id": "s076",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Es gibt noch einen Punkt: die Mindestbestellmenge.",
+      "translation": "There's one more point: the minimum order quantity.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_mindestbestellmenge"
+      ]
+    },
+    {
+      "id": "s077",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Unsere Mindestbestellmenge liegt bei fünfhundert Stück pro Bestellung.",
+      "translation": "Our minimum order quantity is five hundred units per order.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_pro"
+      ]
+    },
+    {
+      "id": "s078",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Fünfhundert wären kein Problem. Aber könnten wir kleinere Musterbestellungen machen?",
+      "translation": "Five hundred wouldn't be a problem. But could we place smaller sample orders?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_musterbestellung"
+      ]
+    },
+    {
+      "id": "s079",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Musterbestellungen sind bis fünfzig Stück möglich, allerdings zum Normalpreis.",
+      "translation": "Sample orders are possible up to fifty units, but at the regular price.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_allerdings",
+        "g_normalpreis"
+      ]
+    },
+    {
+      "id": "s080",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wie hoch ist die Mindestbestellmenge?",
+      "translation": "What is the minimum order quantity?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "fünfhundert Stück pro Bestellung"
+      ]
+    },
+    {
+      "id": "s081",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "allerdings leitet einen Einschränkung ein: Es ist möglich, allerdings teurer. Es entspricht etwa dem englischen however.",
+      "translation": "allerdings introduces a restriction: Es ist möglich, allerdings teurer. It roughly corresponds to however.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s082",
+      "type": "echo",
+      "speaker": "einkaeuferin",
+      "text": "Könnten wir kleinere Musterbestellungen machen?",
+      "translation": "Could we place smaller sample orders?",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s083",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Hätten Sie noch weitere Punkte, die wir klären sollten?",
+      "translation": "Do you have any other points we should clarify?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_klaeren"
+      ]
+    },
+    {
+      "id": "s084",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Ich denke, wir haben die wesentlichen Bedingungen besprochen.",
+      "translation": "I think we've discussed the essential terms.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_wesentlich"
+      ]
+    },
+    {
+      "id": "s085",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Dann würde ich den Vertrag entsprechend aufbereiten und Ihnen morgen schicken.",
+      "translation": "Then I'd prepare the contract accordingly and send it to you tomorrow.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_aufbereiten",
+        "g_entsprechend"
+      ]
+    },
+    {
+      "id": "s086",
+      "type": "line",
+      "speaker": "einkaeuferin",
+      "text": "Das wäre ideal. Ich prüfe ihn und melde mich bis Ende der Woche.",
+      "translation": "That would be ideal. I'll review it and get back to you by the end of the week.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ende"
+      ]
+    },
+    {
+      "id": "s087",
+      "type": "line",
+      "speaker": "lieferant",
+      "text": "Vielen Dank für das konstruktive Gespräch.",
+      "translation": "Thank you for the constructive conversation.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_konstruktiv"
+      ]
+    },
+    {
+      "id": "s088",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann bekommt die Einkäuferin den Vertrag?",
+      "translation": "When will the purchaser receive the contract?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "morgen"
+      ]
+    },
+    {
+      "id": "s089",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Zusammenfassung: in Verhandlungen zählen Staffelpreise, Lieferzeiten, Qualität, Zahlungsbedingungen und klare Konjunktiv-II-Formulierungen.",
+      "translation": "Summary: in negotiations, volume prices, delivery times, quality, payment terms and clear subjunctive forms matter.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s090",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Mindestbestellmenge",
+      "translation": "the minimum order quantity",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_mindestbestellmenge"
+      ]
+    },
+    {
+      "id": "s091",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "pro",
+      "translation": "per",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_pro"
+      ]
+    },
+    {
+      "id": "s092",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Musterbestellung",
+      "translation": "the sample order",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_musterbestellung"
+      ]
+    },
+    {
+      "id": "s093",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Normalpreis",
+      "translation": "the regular price",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_normalpreis"
+      ]
+    },
+    {
+      "id": "s094",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "klären",
+      "translation": "to clarify",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_klaeren"
+      ]
+    },
+    {
+      "id": "s095",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "wesentlich",
+      "translation": "essential",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_wesentlich"
+      ]
+    },
+    {
+      "id": "s096",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "aufbereiten",
+      "translation": "to prepare",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_aufbereiten"
+      ]
+    },
+    {
+      "id": "s097",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "entsprechend",
+      "translation": "accordingly",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_entsprechend"
+      ]
+    },
+    {
+      "id": "s098",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Ende",
+      "translation": "the end",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ende"
+      ]
+    },
+    {
+      "id": "s099",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "konstruktiv",
+      "translation": "constructive",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_konstruktiv"
+      ]
+    },
+    {
+      "id": "s100",
+      "type": "recap",
+      "speaker": "narrator",
+      "text": "Heute hast du gelernt: professionell über Preise und Bedingungen zu verhandeln und Zugeständnisse klar zu formulieren.",
+      "translation": "Today you learned: negotiating prices and terms professionally and formulating concessions clearly.",
+      "pause_after_ms": 800
     }
   ],
   "glossary": [
     {
-      "id": "g_verhandlung", "de": "die Verhandlung", "en": "the negotiation", "pos": "noun",
-      "article": "die", "plural": "die Verhandlungen",
-      "example_de": "Die Verhandlung war erfolgreich.", "example_en": "The negotiation was successful."
+      "id": "g_liefervertrag",
+      "de": "der Liefervertrag",
+      "en": "the supply contract",
+      "pos": "noun",
+      "example_de": "Der Liefervertrag ist fertig.",
+      "example_en": "The supply contract is ready.",
+      "article": "der",
+      "plural": "die Lieferverträge"
     },
     {
-      "id": "g_lieferant", "de": "der Lieferant", "en": "the supplier", "pos": "noun",
-      "article": "der", "plural": "die Lieferanten",
-      "example_de": "Wir verhandeln mit dem Lieferanten.", "example_en": "We're negotiating with the supplier."
+      "id": "g_kalkulation",
+      "de": "die Kalkulation",
+      "en": "the calculation",
+      "pos": "noun",
+      "example_de": "Die Kalkulation liegt vor.",
+      "example_en": "The calculation is available.",
+      "article": "die",
+      "plural": "die Kalkulationen"
     },
     {
-      "id": "g_preis", "de": "der Preis", "en": "the price", "pos": "noun",
-      "article": "der", "plural": "die Preise",
-      "example_de": "Der Preis ist eigentlich fair.", "example_en": "The price is actually fair."
+      "id": "g_einsteigen",
+      "de": "einsteigen",
+      "en": "to get into / start",
+      "pos": "verb",
+      "example_de": "Wir steigen in die Verhandlung ein.",
+      "example_en": "We get into the negotiation."
     },
     {
-      "id": "g_zufrieden", "de": "zufrieden", "en": "satisfied", "pos": "adj",
-      "example_de": "Wir sind nicht ganz zufrieden.", "example_en": "We're not entirely satisfied."
+      "id": "g_stueckpreis",
+      "de": "der Stückpreis",
+      "en": "the unit price",
+      "pos": "noun",
+      "example_de": "Der Stückpreis ist zwölf Euro.",
+      "example_en": "The unit price is twelve euros.",
+      "article": "der",
+      "plural": "die Stückpreise"
     },
     {
-      "id": "g_fair", "de": "fair", "en": "fair", "pos": "adj",
-      "example_de": "Der Preis ist fair.", "example_en": "The price is fair."
+      "id": "g_staffelpreis",
+      "de": "der Staffelpreis",
+      "en": "the volume price",
+      "pos": "noun",
+      "example_de": "Der Staffelpreis ist günstiger.",
+      "example_en": "The volume price is cheaper.",
+      "article": "der",
+      "plural": "die Staffelpreise"
     },
     {
-      "id": "g_modalpartikel", "de": "die Modalpartikel", "en": "the modal particle", "pos": "noun",
-      "article": "die", "plural": "die Modalpartikeln",
-      "note_de": "Kleine Wörter wie ja, doch, eigentlich, die den Ton färben.",
-      "note_en": "Small words like ja, doch, eigentlich that colour the tone.",
-      "example_de": "Das ist ja interessant.", "example_en": "That's interesting (indeed)."
+      "id": "g_hergeben",
+      "de": "hergeben",
+      "en": "to allow / give",
+      "pos": "verb",
+      "example_de": "Das Budget gibt das nicht her.",
+      "example_en": "The budget doesn't allow that."
     },
     {
-      "id": "g_rabatt", "de": "der Rabatt", "en": "the discount", "pos": "noun",
-      "article": "der", "plural": "die Rabatte",
-      "example_de": "Könnten Sie uns einen Rabatt anbieten?", "example_en": "Could you offer us a discount?"
+      "id": "g_ab",
+      "de": "ab",
+      "en": "from / as of",
+      "pos": "preposition",
+      "example_de": "Ab tausend Stück.",
+      "example_en": "From one thousand units."
     },
     {
-      "id": "g_materialkosten", "de": "die Materialkosten", "en": "the material costs", "pos": "noun",
-      "article": "die", "plural": "die Materialkosten",
-      "note_de": "Pluralwort.",
-      "note_en": "Plural-only noun.",
-      "example_de": "Die Materialkosten sind gestiegen.", "example_en": "Material costs have risen."
+      "id": "g_jaehrlich",
+      "de": "jährlich",
+      "en": "annually",
+      "pos": "adverb",
+      "example_de": "Wir bestellen jährlich.",
+      "example_en": "We order annually."
     },
     {
-      "id": "g_menge", "de": "die Menge", "en": "the quantity", "pos": "noun",
-      "article": "die", "plural": "die Mengen",
-      "example_de": "Wir bestellen größere Mengen.", "example_en": "We order larger quantities."
+      "id": "g_akzeptabel",
+      "de": "akzeptabel",
+      "en": "acceptable",
+      "pos": "adjective",
+      "example_de": "Das ist akzeptabel.",
+      "example_en": "That's acceptable."
     },
     {
-      "id": "g_hilfreich", "de": "hilfreich", "en": "helpful", "pos": "adj",
-      "example_de": "Fünf Prozent wären hilfreich.", "example_en": "Five percent would be helpful."
+      "id": "g_lieferzeit",
+      "de": "die Lieferzeit",
+      "en": "the delivery time",
+      "pos": "noun",
+      "example_de": "Die Lieferzeit beträgt drei Wochen.",
+      "example_en": "Delivery time is three weeks.",
+      "article": "die",
+      "plural": "die Lieferzeiten"
     },
     {
-      "id": "g_machbar", "de": "machbar", "en": "feasible", "pos": "adj",
-      "example_de": "Fünf Prozent ist machbar.", "example_en": "Five percent is feasible."
+      "id": "g_stimmen",
+      "de": "stimmen",
+      "en": "to be right / correct",
+      "pos": "verb",
+      "example_de": "Die Lieferzeiten stimmen.",
+      "example_en": "The delivery times are right."
     },
     {
-      "id": "g_jahresbestellung", "de": "die Jahresbestellung", "en": "the annual order", "pos": "noun",
-      "article": "die", "plural": "die Jahresbestellungen",
-      "example_de": "Nur bei einer Jahresbestellung.", "example_en": "Only with an annual order."
+      "id": "g_betragen",
+      "de": "betragen",
+      "en": "to amount to",
+      "pos": "verb",
+      "example_de": "Die Lieferzeit beträgt vier Wochen.",
+      "example_en": "Delivery time amounts to four weeks."
     },
     {
-      "id": "g_lieferzeit", "de": "die Lieferzeit", "en": "the delivery time", "pos": "noun",
-      "article": "die", "plural": "die Lieferzeiten",
-      "example_de": "Die Lieferzeit bleibt bei zwei Wochen.", "example_en": "The delivery time stays at two weeks."
+      "id": "g_verkuerzen",
+      "de": "verkürzen",
+      "en": "to shorten",
+      "pos": "verb",
+      "example_de": "Wir verkürzen die Lieferzeit.",
+      "example_en": "We shorten the delivery time."
     },
     {
-      "id": "g_standard", "de": "der Standard", "en": "the standard", "pos": "noun",
-      "article": "der", "plural": "die Standards",
-      "example_de": "Das ist unser Standard.", "example_en": "That's our standard."
+      "id": "g_knapp",
+      "de": "knapp",
+      "en": "tight",
+      "pos": "adjective",
+      "example_de": "Die Frist ist knapp.",
+      "example_en": "The deadline is tight."
     },
     {
-      "id": "g_festhalten", "de": "festhalten", "en": "to record / hold on to", "pos": "verb",
-      "note_de": "Trennbares Verb: ich halte fest.",
-      "note_en": "Separable verb: ich halte fest.",
-      "example_de": "Dann halten wir das so fest.", "example_en": "Then we'll record it that way."
+      "id": "g_garantie",
+      "de": "die Garantie",
+      "en": "the guarantee",
+      "pos": "noun",
+      "example_de": "Die Garantie gilt zwei Wochen.",
+      "example_en": "The guarantee lasts two weeks.",
+      "article": "die",
+      "plural": "die Garantien"
     },
     {
-      "id": "g_einrichten", "de": "einrichten", "en": "to arrange", "pos": "verb",
-      "example_de": "Das ließe sich einrichten.", "example_en": "That could be arranged."
+      "id": "g_aufschlag",
+      "de": "der Aufschlag",
+      "en": "the surcharge",
+      "pos": "noun",
+      "example_de": "Es gibt einen Aufschlag.",
+      "example_en": "There's a surcharge.",
+      "article": "der",
+      "plural": "die Aufschläge"
+    },
+    {
+      "id": "g_bereit",
+      "de": "bereit",
+      "en": "willing / ready",
+      "pos": "adjective",
+      "example_de": "Ich bin dazu bereit.",
+      "example_en": "I'm willing to do that."
+    },
+    {
+      "id": "g_qualitaet",
+      "de": "die Qualität",
+      "en": "the quality",
+      "pos": "noun",
+      "example_de": "Die Qualität stimmt.",
+      "example_en": "The quality is right.",
+      "article": "die"
+    },
+    {
+      "id": "g_zertifiziert",
+      "de": "zertifiziert",
+      "en": "certified",
+      "pos": "adjective",
+      "example_de": "Die Ware ist zertifiziert.",
+      "example_en": "The goods are certified."
+    },
+    {
+      "id": "g_charge",
+      "de": "die Charge",
+      "en": "the batch",
+      "pos": "noun",
+      "example_de": "Jede Charge wird geprüft.",
+      "example_en": "Every batch is checked.",
+      "article": "die",
+      "plural": "die Chargen"
+    },
+    {
+      "id": "g_versand",
+      "de": "der Versand",
+      "en": "the shipping",
+      "pos": "noun",
+      "example_de": "Vor dem Versand prüfen wir.",
+      "example_en": "Before shipping we check.",
+      "article": "der"
+    },
+    {
+      "id": "g_vorlegen",
+      "de": "vorlegen",
+      "en": "to present / provide",
+      "pos": "verb",
+      "example_de": "Ich lege das Zertifikat vor.",
+      "example_en": "I present the certificate."
+    },
+    {
+      "id": "g_beilegen",
+      "de": "beilegen",
+      "en": "to enclose",
+      "pos": "verb",
+      "example_de": "Wir legen es bei.",
+      "example_en": "We enclose it."
+    },
+    {
+      "id": "g_reklamation",
+      "de": "die Reklamation",
+      "en": "the complaint",
+      "pos": "noun",
+      "example_de": "Die Reklamation wird bearbeitet.",
+      "example_en": "The complaint is processed.",
+      "article": "die",
+      "plural": "die Reklamationen"
+    },
+    {
+      "id": "g_verfahren",
+      "de": "verfahren",
+      "en": "to proceed / handle",
+      "pos": "verb",
+      "example_de": "Wir verfahren nach einer Regel.",
+      "example_en": "We proceed according to a rule."
+    },
+    {
+      "id": "g_innerhalb",
+      "de": "innerhalb",
+      "en": "within",
+      "pos": "preposition",
+      "example_de": "Innerhalb von fünf Tagen.",
+      "example_en": "Within five days."
+    },
+    {
+      "id": "g_werktag",
+      "de": "der Werktag",
+      "en": "the working day",
+      "pos": "noun",
+      "example_de": "Fünf Werktage.",
+      "example_en": "Five working days.",
+      "article": "der",
+      "plural": "die Werktage"
+    },
+    {
+      "id": "g_bearbeiten",
+      "de": "bearbeiten",
+      "en": "to process",
+      "pos": "verb",
+      "example_de": "Wir bearbeiten die Reklamation.",
+      "example_en": "We process the complaint."
+    },
+    {
+      "id": "g_defekt",
+      "de": "der Defekt",
+      "en": "the defect",
+      "pos": "noun",
+      "example_de": "Es gibt einen Defekt.",
+      "example_en": "There's a defect.",
+      "article": "der",
+      "plural": "die Defekte"
+    },
+    {
+      "id": "g_tragen",
+      "de": "tragen",
+      "en": "to bear",
+      "pos": "verb",
+      "example_de": "Wir tragen die Kosten.",
+      "example_en": "We bear the costs."
+    },
+    {
+      "id": "g_nachgewiesen",
+      "de": "nachgewiesen",
+      "en": "verified / proven",
+      "pos": "adjective",
+      "example_de": "Ein nachgewiesener Defekt.",
+      "example_en": "A verified defect."
+    },
+    {
+      "id": "g_zahlungsbedingung",
+      "de": "die Zahlungsbedingung",
+      "en": "the payment term",
+      "pos": "noun",
+      "example_de": "Die Zahlungsbedingungen sind klar.",
+      "example_en": "The payment terms are clear.",
+      "article": "die",
+      "plural": "die Zahlungsbedingungen"
+    },
+    {
+      "id": "g_liquiditaet",
+      "de": "die Liquidität",
+      "en": "liquidity",
+      "pos": "noun",
+      "example_de": "Die Liquidität verbessert sich.",
+      "example_en": "Liquidity is improving.",
+      "article": "die"
+    },
+    {
+      "id": "g_verbessern",
+      "de": "verbessern",
+      "en": "to improve",
+      "pos": "verb",
+      "example_de": "Wir verbessern die Liquidität.",
+      "example_en": "We improve liquidity."
+    },
+    {
+      "id": "g_kompromiss",
+      "de": "der Kompromiss",
+      "en": "the compromise",
+      "pos": "noun",
+      "example_de": "Ein Kompromiss ist möglich.",
+      "example_en": "A compromise is possible.",
+      "article": "der",
+      "plural": "die Kompromisse"
+    },
+    {
+      "id": "g_eingehen",
+      "de": "eingehen",
+      "en": "to accept / enter into",
+      "pos": "verb",
+      "example_de": "Wir gehen den Kompromiss ein.",
+      "example_en": "We accept the compromise."
+    },
+    {
+      "id": "g_damit",
+      "de": "damit",
+      "en": "with that",
+      "pos": "adverb",
+      "example_de": "Damit können wir leben.",
+      "example_en": "We can live with that."
+    },
+    {
+      "id": "g_mindestbestellmenge",
+      "de": "die Mindestbestellmenge",
+      "en": "the minimum order quantity",
+      "pos": "noun",
+      "example_de": "Die Mindestbestellmenge ist fünfhundert.",
+      "example_en": "The minimum order quantity is five hundred.",
+      "article": "die",
+      "plural": "die Mindestbestellmengen"
+    },
+    {
+      "id": "g_pro",
+      "de": "pro",
+      "en": "per",
+      "pos": "preposition",
+      "example_de": "Fünfhundert pro Bestellung.",
+      "example_en": "Five hundred per order."
+    },
+    {
+      "id": "g_musterbestellung",
+      "de": "die Musterbestellung",
+      "en": "the sample order",
+      "pos": "noun",
+      "example_de": "Eine Musterbestellung ist möglich.",
+      "example_en": "A sample order is possible.",
+      "article": "die",
+      "plural": "die Musterbestellungen"
+    },
+    {
+      "id": "g_allerdings",
+      "de": "allerdings",
+      "en": "however / admittedly",
+      "pos": "adverb",
+      "example_de": "Allerdings ist es teurer.",
+      "example_en": "However, it's more expensive."
+    },
+    {
+      "id": "g_normalpreis",
+      "de": "der Normalpreis",
+      "en": "the regular price",
+      "pos": "noun",
+      "example_de": "Zum Normalpreis bestellen.",
+      "example_en": "Order at the regular price.",
+      "article": "der",
+      "plural": "die Normalpreise"
+    },
+    {
+      "id": "g_klaeren",
+      "de": "klären",
+      "en": "to clarify",
+      "pos": "verb",
+      "example_de": "Wir klären die Punkte.",
+      "example_en": "We clarify the points."
+    },
+    {
+      "id": "g_wesentlich",
+      "de": "wesentlich",
+      "en": "essential",
+      "pos": "adjective",
+      "example_de": "Die wesentlichen Bedingungen.",
+      "example_en": "The essential terms."
+    },
+    {
+      "id": "g_aufbereiten",
+      "de": "aufbereiten",
+      "en": "to prepare",
+      "pos": "verb",
+      "example_de": "Ich bereite den Vertrag auf.",
+      "example_en": "I prepare the contract."
+    },
+    {
+      "id": "g_entsprechend",
+      "de": "entsprechend",
+      "en": "accordingly",
+      "pos": "adverb",
+      "example_de": "Entsprechend aufbereiten.",
+      "example_en": "Prepare accordingly."
+    },
+    {
+      "id": "g_ende",
+      "de": "das Ende",
+      "en": "the end",
+      "pos": "noun",
+      "example_de": "Bis Ende der Woche.",
+      "example_en": "By the end of the week.",
+      "article": "das"
+    },
+    {
+      "id": "g_konstruktiv",
+      "de": "konstruktiv",
+      "en": "constructive",
+      "pos": "adjective",
+      "example_de": "Ein konstruktives Gespräch.",
+      "example_en": "A constructive conversation."
+    },
+    {
+      "id": "g_leben",
+      "de": "damit leben",
+      "en": "to live with that",
+      "pos": "phrase",
+      "example_de": "Damit können wir leben.",
+      "example_en": "We can live with that."
     }
   ],
   "meta": {

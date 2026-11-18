@@ -2,239 +2,2229 @@
   "schema": "lesson-script/v1",
   "id": "C2-01",
   "level": "C2",
-  "title": { "de": "Ironie und Untertreibung", "en": "Irony and understatement" },
+  "title": {
+    "de": "Ironie und Untertreibung",
+    "en": "Irony and understatement"
+  },
   "minutes": 20,
   "scene": {
-    "setting_de": "Ein Abendessen mit Freunden. Der Abend ist chaotisch, aber alle bleiben höflich.",
-    "setting_en": "A dinner with friends. The evening is chaotic, but everyone stays polite.",
-    "register": "informal-social",
-    "can_do_de": "Ich kann Ironie und Untertreibung erkennen und selbst benutzen, ohne missverstanden zu werden.",
-    "can_do_en": "I can recognize and use irony and understatement without being misunderstood.",
-    "situation_tags": ["social", "humour", "dinner"],
-    "grammar_focus": ["stil", "partikeln", "ironie"]
+    "setting_de": "Ein literarisches Gespräch über ironische Bemerkungen und bewusste Untertreibungen im Alltag.",
+    "setting_en": "A literary conversation about ironic remarks and deliberate understatement in everyday life.",
+    "register": "literary-refined",
+    "can_do_de": "Ich kann Ironie und Untertreibung erkennen, Nuancen von Tonfall deuten und stilistisch anspruchsvoll formulieren.",
+    "can_do_en": "I can recognise irony and understatement, interpret nuances of tone, and formulate in a stylistically refined way.",
+    "situation_tags": [
+      "culture",
+      "literature",
+      "conversation"
+    ],
+    "grammar_focus": [
+      "konjunktiv-2",
+      "stilistik",
+      "nuancierung"
+    ]
   },
   "cast": [
-    { "role": "narrator", "voice": "de_narrator_f", "lang": "de" },
-    { "role": "gast1", "voice": "de_young_f", "lang": "de" },
-    { "role": "gast2", "voice": "de_older_m", "lang": "de" }
+    {
+      "role": "narrator",
+      "voice": "de_narrator_f",
+      "lang": "de"
+    },
+    {
+      "role": "autorin",
+      "voice": "de_older_f",
+      "lang": "de"
+    },
+    {
+      "role": "kritiker",
+      "voice": "de_older_m",
+      "lang": "de"
+    }
   ],
   "segments": [
     {
-      "id": "s001", "type": "scene", "speaker": "narrator",
-      "text": "Ein Abendessen mit Freunden. Der Abend ist chaotisch, aber alle bleiben höflich.",
-      "translation": "A dinner with friends. The evening is chaotic, but everyone stays polite.",
-      "pause_after_ms": 400
+      "id": "s001",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Ein Gespräch zwischen einer Autorin und einem Kritiker über die Feinheiten der Ironie.",
+      "translation": "A conversation between an author and a critic about the finer points of irony.",
+      "pause_after_ms": 700
     },
     {
-      "id": "s002", "type": "line", "speaker": "gast1",
-      "text": "Na, das war ja ein interessanter Abend.",
-      "translation": "Well, that was an interesting evening.",
-      "pause_after_ms": 450,
-      "gloss": ["g_ironie", "g_interessant"]
+      "id": "s002",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Ironie ist eine subtile Kunst. Man sagt das Gegenteil und meint doch genau das, was man meint.",
+      "translation": "Irony is a subtle art. You say the opposite and yet mean exactly what you mean.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ironie",
+        "g_subtil",
+        "g_bedeuten"
+      ]
     },
     {
-      "id": "s003", "type": "line", "speaker": "gast2",
-      "text": "Interessant ist wohl das freundlichste Wort dafür.",
-      "translation": "Interesting is probably the kindest word for it.",
-      "pause_after_ms": 450
+      "id": "s003",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Eine schöne Beschreibung. Allerdings ist Ironie gefährlich, wenn ihr Tonfall missverstanden wird.",
+      "translation": "A nice description. However, irony is dangerous when its tone is misunderstood.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_allerdings",
+        "g_tonfall",
+        "g_missverstehen"
+      ]
     },
     {
-      "id": "s004", "type": "line", "speaker": "gast1",
-      "text": "Der Koch hat sich wirklich Mühe gegeben.",
-      "translation": "The cook really made an effort.",
-      "pause_after_ms": 450,
-      "gloss": ["g_muehe_geben"]
+      "id": "s004",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Das ist der Punkt: Die Ironie lebt vom Zusammenspiel zwischen Wort und Ton.",
+      "translation": "That's the point: irony lives from the interplay between word and tone.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zusammenspiel"
+      ]
     },
     {
-      "id": "s005", "type": "line", "speaker": "gast2",
-      "text": "Ja, besonders das Hauptgericht war unvergesslich.",
-      "translation": "Yes, especially the main course was unforgettable.",
-      "pause_after_ms": 450,
-      "gloss": ["g_hauptgericht", "g_unvergesslich"]
+      "id": "s005",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wovon lebt die Ironie laut der Autorin?",
+      "translation": "What does irony live from according to the author?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "vom Zusammenspiel zwischen Wort und Ton"
+      ]
     },
     {
-      "id": "s006", "type": "check", "speaker": "narrator",
-      "text": "Was meinen die beiden mit interessant und unvergesslich?",
-      "translation": "What do the two mean by interesting and unforgettable?",
-      "answers": ["Sie meinen es ironisch: der Abend war chaotisch und das Essen schlecht."],
-      "answer_pause_ms": 3500,
-      "pause_after_ms": 400
+      "id": "s006",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Ironie bedeutet, das Gegenteil des Gemeinten zu sagen. Der Kontext und der Tonfall verraten die eigentliche Bedeutung.",
+      "translation": "Irony means saying the opposite of what is meant. Context and tone reveal the real meaning.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
     },
     {
-      "id": "s007", "type": "note", "speaker": "narrator",
-      "text": "Ironie sagt das Gegenteil. Untertreibung sagt weniger, als man meint.",
-      "translation": "Irony says the opposite. Understatement says less than one means.",
-      "speed": 1.0, "pause_after_ms": 400, "skippable": true
+      "id": "s007",
+      "type": "echo",
+      "speaker": "autorin",
+      "text": "Die Ironie lebt vom Zusammenspiel zwischen Wort und Ton.",
+      "translation": "Irony lives from the interplay between word and tone.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
     },
     {
-      "id": "s008", "type": "line", "speaker": "gast1",
-      "text": "Immerhin ist niemand verletzt worden.",
-      "translation": "At least nobody got hurt.",
-      "pause_after_ms": 450,
-      "gloss": ["g_untertreibung", "g_immerhin"]
+      "id": "s008",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Ein klassisches Beispiel: Bei einem schrecklichen Wetter sagt man, es sei ein schöner Tag.",
+      "translation": "A classic example: in terrible weather you say it's a lovely day.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_klassisch",
+        "g_beispiel"
+      ]
     },
     {
-      "id": "s009", "type": "line", "speaker": "gast2",
-      "text": "Das ist ein niedriges Niveau, aber okay.",
-      "translation": "That's a low bar, but okay.",
-      "pause_after_ms": 450,
-      "gloss": ["g_niveau"]
+      "id": "s009",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Genau. Und die Untertreibung ist ihre Verwandte. Man sagt, es sei ein bisschen kalt, wenn es eiskalt ist.",
+      "translation": "Exactly. And understatement is its relative. You say it's a bit cold when it's freezing.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_untertreibung",
+        "g_verwandt",
+        "g_eiskalt"
+      ]
     },
     {
-      "id": "s010", "type": "line", "speaker": "gast1",
-      "text": "Nächstes Mal kochen wir einfach zusammen.",
-      "translation": "Next time we'll simply cook together.",
-      "pause_after_ms": 450
+      "id": "s010",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Englische Literatur ist voll von solchen Untertreibungen. Das gehört zur nationalen Mentalität.",
+      "translation": "English literature is full of such understatements. That's part of the national mentality.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_mentalitaet"
+      ]
     },
     {
-      "id": "s011", "type": "line", "speaker": "gast2",
-      "text": "Oh, wunderbar. Dann brennt wenigstens nur die Küche.",
-      "translation": "Oh, wonderful. Then at least only the kitchen will burn.",
-      "pause_after_ms": 500,
-      "gloss": ["g_wenigstens"]
+      "id": "s011",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was ist ein Beispiel für Untertreibung?",
+      "translation": "What's an example of understatement?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "ein bisschen kalt sagen, wenn es eiskalt ist"
+      ]
     },
     {
-      "id": "s012", "type": "check", "speaker": "narrator",
-      "text": "Was schlägt Gast 1 für das nächste Mal vor?",
-      "translation": "What does guest 1 suggest for next time?",
-      "answers": ["zusammen zu kochen"],
-      "answer_pause_ms": 3500,
-      "pause_after_ms": 400
+      "id": "s012",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Ich würde sagen, Untertreibung ist die höfliche Schwester der Ironie.",
+      "translation": "I'd say understatement is the polite sister of irony.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_schwester"
+      ]
     },
     {
-      "id": "s013", "type": "drill", "speaker": "gast2",
-      "text": "Das war ja ein interessanter Abend.",
-      "translation": "That was an interesting evening.",
-      "repeat": 2, "speed": 1.0, "pause_after_ms": 900
+      "id": "s013",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Eine hübsche Metapher. Aber ich frage mich, ob sie der Sache gerecht wird.",
+      "translation": "A pretty metaphor. But I wonder whether it does the thing justice.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_metapher",
+        "g_gerecht_werden"
+      ]
     },
     {
-      "id": "s014", "type": "line", "speaker": "gast1",
-      "text": "Du bist wirklich ein Optimist.",
-      "translation": "You really are an optimist.",
-      "pause_after_ms": 450,
-      "gloss": ["g_optimist"]
+      "id": "s014",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "sich fragen, ob…: Ich frage mich, ob das stimmt. Das leitet eine indirekte Frage ein.",
+      "translation": "sich fragen, ob…: Ich frage mich, ob das stimmt. This introduces an indirect question.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
     },
     {
-      "id": "s015", "type": "line", "speaker": "gast2",
-      "text": "Optimist? Ich bin Realist mit guter Laune.",
-      "translation": "Optimist? I'm a realist in a good mood.",
-      "pause_after_ms": 500,
-      "gloss": ["g_realist", "g_laune"]
+      "id": "s015",
+      "type": "drill",
+      "speaker": "autorin",
+      "text": "Ich würde sagen, Untertreibung ist die höfliche Schwester der Ironie.",
+      "translation": "I'd say understatement is the polite sister of irony.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
     },
     {
-      "id": "s016", "type": "line", "speaker": "gast1",
-      "text": "Das ist eine schöne Beschreibung.",
-      "translation": "That's a nice description.",
-      "pause_after_ms": 450,
-      "gloss": ["g_beschreibung"]
+      "id": "s016",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Ironie",
+      "translation": "irony",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ironie"
+      ]
     },
     {
-      "id": "s017", "type": "line", "speaker": "gast2",
-      "text": "Danke. Ich arbeite daran.",
-      "translation": "Thanks. I'm working on it.",
-      "pause_after_ms": 500
+      "id": "s017",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "subtil",
+      "translation": "subtle",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_subtil"
+      ]
     },
     {
-      "id": "s018", "type": "check", "speaker": "narrator",
-      "text": "Wie beschreibt sich Gast 2 selbst?",
-      "translation": "How does guest 2 describe himself?",
-      "answers": ["als Realist mit guter Laune"],
-      "answer_pause_ms": 3500,
-      "pause_after_ms": 400
+      "id": "s018",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bedeuten",
+      "translation": "to mean",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bedeuten"
+      ]
     },
     {
-      "id": "s019", "type": "vocab", "speaker": "narrator",
+      "id": "s019",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "allerdings",
+      "translation": "however",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_allerdings"
+      ]
+    },
+    {
+      "id": "s020",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Tonfall",
+      "translation": "the tone of voice",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_tonfall"
+      ]
+    },
+    {
+      "id": "s021",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "missverstehen",
+      "translation": "to misunderstand",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_missverstehen"
+      ]
+    },
+    {
+      "id": "s022",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Zusammenspiel",
+      "translation": "the interplay",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zusammenspiel"
+      ]
+    },
+    {
+      "id": "s023",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "klassisch",
+      "translation": "classic",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_klassisch"
+      ]
+    },
+    {
+      "id": "s024",
+      "type": "vocab",
+      "speaker": "narrator",
       "text": "die Untertreibung",
-      "translation": "the understatement",
-      "pause_after_ms": 700,
-      "gloss": ["g_untertreibung"]
+      "translation": "understatement",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_untertreibung"
+      ]
     },
     {
-      "id": "s020", "type": "vocab", "speaker": "narrator",
-      "text": "ironisch",
-      "translation": "ironic",
-      "pause_after_ms": 700,
-      "gloss": ["g_ironie"]
+      "id": "s025",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verwandt",
+      "translation": "related",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verwandt"
+      ]
     },
     {
-      "id": "s021", "type": "recap", "speaker": "narrator",
-      "text": "Heute hast du gelernt: Ironie und Untertreibung erkennen und selbst benutzen.",
-      "translation": "Today you learned: recognizing and using irony and understatement yourself.",
-      "pause_after_ms": 600
+      "id": "s026",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "eiskalt",
+      "translation": "ice-cold",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_eiskalt"
+      ]
+    },
+    {
+      "id": "s027",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Mentalität",
+      "translation": "the mentality",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_mentalitaet"
+      ]
+    },
+    {
+      "id": "s028",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Schwester",
+      "translation": "the sister",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_schwester"
+      ]
+    },
+    {
+      "id": "s029",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Metapher",
+      "translation": "the metaphor",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_metapher"
+      ]
+    },
+    {
+      "id": "s030",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gerecht werden",
+      "translation": "to do justice to",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gerecht_werden"
+      ]
+    },
+    {
+      "id": "s031",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Schreiben Sie nicht, was passiert. Schreiben Sie, was es mit jemandem macht.",
+      "translation": "Don't write what happens. Write what it does to someone.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_passieren",
+        "g_jemand"
+      ]
+    },
+    {
+      "id": "s032",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Das ist der Kern guter Prosa. Die äußere Handlung ist nur die Oberfläche.",
+      "translation": "That's the heart of good prose. The external action is only the surface.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_kern",
+        "g_prosa",
+        "g_oberflaeche"
+      ]
+    },
+    {
+      "id": "s033",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Und die eigentliche Handlung spielt sich im Inneren der Figuren ab.",
+      "translation": "And the real action takes place inside the characters.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_figur",
+        "g_inner"
+      ]
+    },
+    {
+      "id": "s034",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wo spielt sich die eigentliche Handlung ab?",
+      "translation": "Where does the real action take place?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "im Inneren der Figuren"
+      ]
+    },
+    {
+      "id": "s035",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "sich abspielen: Die Handlung spielt sich im Inneren ab. Das ist ein reflexives Verb mit einer Ortsangabe.",
+      "translation": "sich abspielen: Die Handlung spielt sich im Inneren ab. This is a reflexive verb with a place specification.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s036",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Ein Autor, der nur Ereignisse schildert, liefert eine Reportage, keine Literatur.",
+      "translation": "An author who only describes events delivers a report, not literature.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_schildern",
+        "g_ereignis",
+        "g_reportage"
+      ]
+    },
+    {
+      "id": "s037",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Zustimmung. Aber eine Reportage kann durchaus literarisch sein, wenn sie den Ton trifft.",
+      "translation": "Agreed. But a report can certainly be literary if it strikes the right tone.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zustimmung",
+        "g_durchaus"
+      ]
+    },
+    {
+      "id": "s038",
+      "type": "echo",
+      "speaker": "kritiker",
+      "text": "Die eigentliche Handlung spielt sich im Inneren der Figuren ab.",
+      "translation": "The real action takes place inside the characters.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s039",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Ironie verlangt vom Leser eine Art Mitarbeit. Er muss den Sinn zwischen den Zeilen lesen.",
+      "translation": "Irony asks something of the reader. He must read between the lines.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_verlangen",
+        "g_mitarbeit",
+        "g_zwischen_den_zeilen"
+      ]
+    },
+    {
+      "id": "s040",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Zwischen den Zeilen lesen heißt, die implizite Bedeutung zu erschließen.",
+      "translation": "Reading between the lines means uncovering the implicit meaning.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_implizit",
+        "g_erschliessen"
+      ]
+    },
+    {
+      "id": "s041",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Genau. Und genau darin liegt die Schönheit der Sprache: Sie sagt mehr, als sie ausspricht.",
+      "translation": "Exactly. And that's precisely where the beauty of language lies: it says more than it utters.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_aussprechen",
+        "g_schoenheit"
+      ]
+    },
+    {
+      "id": "s042",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was muss der Leser bei Ironie tun?",
+      "translation": "What must the reader do with irony?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "zwischen den Zeilen lesen"
+      ]
+    },
+    {
+      "id": "s043",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "mehr als: Sie sagt mehr, als sie ausspricht. Nach als steht der Infinitiv mit zu; das ist ein Vergleichssatz.",
+      "translation": "more than: Sie sagt mehr, als sie ausspricht. After als stands the infinitive with zu; that's a comparison clause.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s044",
+      "type": "drill",
+      "speaker": "autorin",
+      "text": "Ironie verlangt vom Leser Mitarbeit.",
+      "translation": "Irony asks something of the reader.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s045",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Ich gestehe, dass ich Ironie oft erst beim zweiten Lesen erkenne.",
+      "translation": "I admit that I often recognise irony only on a second reading.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gestehen",
+        "g_erkennen"
+      ]
+    },
+    {
+      "id": "s046",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Das ist kein Makel. Gerade die verzögerte Einsicht ist der Genuss des Textes.",
+      "translation": "That's no flaw. Precisely the delayed insight is the pleasure of the text.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_makel",
+        "g_verzoegert",
+        "g_einsicht",
+        "g_genuss"
+      ]
+    },
+    {
+      "id": "s047",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Ein wunderbarer Gedanke. Die Einsicht kommt nicht sofort, sondern schleicht sich ein.",
+      "translation": "A wonderful thought. The insight doesn't come immediately, but creeps in.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sich_einschleichen"
+      ]
+    },
+    {
+      "id": "s048",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wann erkennt der Kritiker Ironie oft?",
+      "translation": "When does the critic often recognise irony?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "erst beim zweiten Lesen"
+      ]
+    },
+    {
+      "id": "s049",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "passieren",
+      "translation": "to happen",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_passieren"
+      ]
+    },
+    {
+      "id": "s050",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Kern",
+      "translation": "the core",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kern"
+      ]
+    },
+    {
+      "id": "s051",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Prosa",
+      "translation": "prose",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_prosa"
+      ]
+    },
+    {
+      "id": "s052",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Oberfläche",
+      "translation": "the surface",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_oberflaeche"
+      ]
+    },
+    {
+      "id": "s053",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Figur",
+      "translation": "the character",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_figur"
+      ]
+    },
+    {
+      "id": "s054",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "innen",
+      "translation": "inside",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_inner"
+      ]
+    },
+    {
+      "id": "s055",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "schildern",
+      "translation": "to describe",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_schildern"
+      ]
+    },
+    {
+      "id": "s056",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Ereignis",
+      "translation": "the event",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ereignis"
+      ]
+    },
+    {
+      "id": "s057",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Reportage",
+      "translation": "the report",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_reportage"
+      ]
+    },
+    {
+      "id": "s058",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Zustimmung",
+      "translation": "agreement",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zustimmung"
+      ]
+    },
+    {
+      "id": "s059",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verlangen",
+      "translation": "to demand / require",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verlangen"
+      ]
+    },
+    {
+      "id": "s060",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Mitarbeit",
+      "translation": "the participation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_mitarbeit"
+      ]
+    },
+    {
+      "id": "s061",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "zwischen den Zeilen",
+      "translation": "between the lines",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zwischen_den_zeilen"
+      ]
+    },
+    {
+      "id": "s062",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "implizit",
+      "translation": "implicit",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_implizit"
+      ]
+    },
+    {
+      "id": "s063",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "erschließen",
+      "translation": "to uncover / infer",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erschliessen"
+      ]
+    },
+    {
+      "id": "s064",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Schönheit",
+      "translation": "the beauty",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_schoenheit"
+      ]
+    },
+    {
+      "id": "s065",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gestehen",
+      "translation": "to admit",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gestehen"
+      ]
+    },
+    {
+      "id": "s066",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "erkennen",
+      "translation": "to recognise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erkennen"
+      ]
+    },
+    {
+      "id": "s067",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Makel",
+      "translation": "the flaw",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_makel"
+      ]
+    },
+    {
+      "id": "s068",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verzögert",
+      "translation": "delayed",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verzoegert"
+      ]
+    },
+    {
+      "id": "s069",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Einsicht",
+      "translation": "the insight",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_einsicht"
+      ]
+    },
+    {
+      "id": "s070",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Genuss",
+      "translation": "the pleasure",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_genuss"
+      ]
+    },
+    {
+      "id": "s071",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "sich einschleichen",
+      "translation": "to creep in",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sich_einschleichen"
+      ]
+    },
+    {
+      "id": "s072",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Und das ist der Punkt, an dem Sprachlust entsteht: am Spiel mit Erwartungen.",
+      "translation": "And that's the point where joy in language arises: in the play with expectations.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sprachlust",
+        "g_erwartung",
+        "g_spiel"
+      ]
+    },
+    {
+      "id": "s073",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Erwartungen zu brechen ist riskant. Der Leser kann sich verraten fühlen.",
+      "translation": "Breaking expectations is risky. The reader may feel betrayed.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_brechen",
+        "g_verraten"
+      ]
+    },
+    {
+      "id": "s074",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Aber nur wer bricht, schafft Überraschung. Und ohne Überraschung keine Literatur.",
+      "translation": "But only those who break create surprise. And without surprise, no literature.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ueberraschung"
+      ]
+    },
+    {
+      "id": "s075",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Wodurch entsteht laut Autorin Sprachlust?",
+      "translation": "What creates joy in language according to the author?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "durch das Spiel mit Erwartungen"
+      ]
+    },
+    {
+      "id": "s076",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "nur wer…, schafft…: Nur wer bricht, schafft Überraschung. Diese Konstruktion betont eine Bedingung.",
+      "translation": "nur wer…, schafft…: Only those who break create surprise. This construction emphasises a condition.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s077",
+      "type": "drill",
+      "speaker": "autorin",
+      "text": "Ohne Überraschung keine Literatur.",
+      "translation": "Without surprise, no literature.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s078",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Ich gebe zu, dass Sie mich überzeugt haben. Ironie ist mehr als ein bloßer stilistischer Kniff.",
+      "translation": "I admit you've convinced me. Irony is more than a mere stylistic trick.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_zu_geben",
+        "g_bloss",
+        "g_kniff"
+      ]
+    },
+    {
+      "id": "s079",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Sie ist eine Haltung. Eine Art, die Welt mit einem leisen Lächeln zu betrachten.",
+      "translation": "It's an attitude. A way of viewing the world with a quiet smile.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_haltung",
+        "g_betrachten"
+      ]
+    },
+    {
+      "id": "s080",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Ein leises Lächeln - das ist vielleicht die treffendste Beschreibung, die ich heute gehört habe.",
+      "translation": "A quiet smile - that's perhaps the most fitting description I've heard today.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_treffend"
+      ]
+    },
+    {
+      "id": "s081",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was ist Ironie laut Autorin?",
+      "translation": "What is irony according to the author?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "eine Haltung"
+      ]
+    },
+    {
+      "id": "s082",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Zusammenfassung: Ironie sagt das Gegenteil und meint es doch; Untertreibung ist ihre höfliche Verwandte. Beide leben von Kontext und Tonfall.",
+      "translation": "Summary: irony says the opposite and means it anyway; understatement is its polite relative. Both live from context and tone.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s083",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Sprachlust",
+      "translation": "joy in language",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sprachlust"
+      ]
+    },
+    {
+      "id": "s084",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Erwartung",
+      "translation": "the expectation",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_erwartung"
+      ]
+    },
+    {
+      "id": "s085",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Spiel",
+      "translation": "the play / game",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_spiel"
+      ]
+    },
+    {
+      "id": "s086",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "brechen",
+      "translation": "to break",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_brechen"
+      ]
+    },
+    {
+      "id": "s087",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verraten",
+      "translation": "to betray",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verraten"
+      ]
+    },
+    {
+      "id": "s088",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Überraschung",
+      "translation": "the surprise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ueberraschung"
+      ]
+    },
+    {
+      "id": "s089",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "zugeben",
+      "translation": "to admit / concede",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_zu_geben"
+      ]
+    },
+    {
+      "id": "s090",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "bloß",
+      "translation": "mere / merely",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_bloss"
+      ]
+    },
+    {
+      "id": "s091",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Kniff",
+      "translation": "the trick",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kniff"
+      ]
+    },
+    {
+      "id": "s092",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Haltung",
+      "translation": "the attitude",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_haltung"
+      ]
+    },
+    {
+      "id": "s093",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "betrachten",
+      "translation": "to view / consider",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_betrachten"
+      ]
+    },
+    {
+      "id": "s094",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "treffend",
+      "translation": "fitting / apt",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_treffend"
+      ]
+    },
+    {
+      "id": "s095",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Und die Übertreibung? Ist sie die Schwester der Untertreibung oder ihr Gegenteil?",
+      "translation": "And overstatement? Is it the sister of understatement or its opposite?",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_uebertreibung",
+        "g_gegenteil"
+      ]
+    },
+    {
+      "id": "s096",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Sie ist die laute Schwester. Wo die Untertreibung flüstert, ruft die Übertreibung.",
+      "translation": "She is the loud sister. Where understatement whispers, overstatement shouts.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_fluestern",
+        "g_rufen"
+      ]
+    },
+    {
+      "id": "s097",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "„Ich habe eine Ewigkeit gewartet“ – das ist eine Übertreibung.",
+      "translation": "I waited an eternity – that's an overstatement.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_ewigkeit"
+      ]
+    },
+    {
+      "id": "s098",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was ist ein Beispiel für Übertreibung?",
+      "translation": "What's an example of overstatement?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Ich habe eine Ewigkeit gewartet."
+      ]
+    },
+    {
+      "id": "s099",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Übertreibung und Untertreibung sind Gegensätze, aber beide spielen mit dem Maß. Sie verschieben die Wirklichkeit bewusst.",
+      "translation": "Overstatement and understatement are opposites, but both play with measure. They deliberately shift reality.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true,
+      "gloss": [
+        "g_verschieben"
+      ]
+    },
+    {
+      "id": "s100",
+      "type": "echo",
+      "speaker": "autorin",
+      "text": "Wo die Untertreibung flüstert, ruft die Übertreibung.",
+      "translation": "Where understatement whispers, overstatement shouts.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s101",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Der Sarkasmus wiederum ist eine schärfere Form der Ironie. Er verletzt, während die Ironie nur anspielt.",
+      "translation": "Sarcasm, in turn, is a sharper form of irony. It wounds while irony merely alludes.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_sarkasmus",
+        "g_verletzen",
+        "g_anspielen"
+      ]
+    },
+    {
+      "id": "s102",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "„Was für eine geniale Idee!“, sagt man, wenn die Idee misslungen ist. Das beißt.",
+      "translation": "What a brilliant idea! you say when the idea failed. That bites.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_genial",
+        "g_misslingen",
+        "g_beissen"
+      ]
+    },
+    {
+      "id": "s103",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Genau. Die Zustimmung ist hier eine Maske. Der Tonfall entlarvt sie.",
+      "translation": "Exactly. Agreement here is a mask. The tone unmasks it.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_maske",
+        "g_entlarven"
+      ]
+    },
+    {
+      "id": "s104",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Woran erkennt man Sarkasmus?",
+      "translation": "How do you recognise sarcasm?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Am Tonfall, der die Zustimmung als Maske entlarvt."
+      ]
+    },
+    {
+      "id": "s105",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Sarkasmus: eine beißende Ironie. Sie ist oft verletzender als offene Kritik, weil sie sich hinter Zustimmung versteckt.",
+      "translation": "Sarcasm: biting irony. It is often more hurtful than open criticism because it hides behind agreement.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s106",
+      "type": "drill",
+      "speaker": "kritiker",
+      "text": "Der Tonfall entlarvt die Zustimmung als Maske.",
+      "translation": "The tone unmasks the agreement as a mask.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s107",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Übertreibung",
+      "translation": "overstatement",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_uebertreibung"
+      ]
+    },
+    {
+      "id": "s108",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Gegenteil",
+      "translation": "the opposite",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gegenteil"
+      ]
+    },
+    {
+      "id": "s109",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "flüstern",
+      "translation": "to whisper",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_fluestern"
+      ]
+    },
+    {
+      "id": "s110",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Ewigkeit",
+      "translation": "eternity",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_ewigkeit"
+      ]
+    },
+    {
+      "id": "s111",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Sarkasmus",
+      "translation": "sarcasm",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_sarkasmus"
+      ]
+    },
+    {
+      "id": "s112",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "verletzen",
+      "translation": "to hurt / wound",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_verletzen"
+      ]
+    },
+    {
+      "id": "s113",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Maske",
+      "translation": "the mask",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_maske"
+      ]
+    },
+    {
+      "id": "s114",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "entlarven",
+      "translation": "to expose / unmask",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_entlarven"
+      ]
+    },
+    {
+      "id": "s115",
+      "type": "scene",
+      "speaker": "narrator",
+      "text": "Draußen wird es dunkel. Die Autorin stellt die Lampe anders.",
+      "translation": "It gets dark outside. The author moves the lamp.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_dunkel",
+        "g_lampe"
+      ]
+    },
+    {
+      "id": "s116",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Ironie ohne Kontext ist wie ein Witz ohne Pointe. Sie verpufft.",
+      "translation": "Irony without context is like a joke without a punchline. It fizzles out.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_kontext",
+        "g_pointe",
+        "g_verpuffen"
+      ]
+    },
+    {
+      "id": "s117",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Deshalb funktioniert sie nur unter Menschen, die sich kennen. Sie braucht ein gemeinsames Wissen.",
+      "translation": "That's why it only works among people who know each other. It needs shared knowledge.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_gemeinsam"
+      ]
+    },
+    {
+      "id": "s118",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Genau darauf beruht das Spiel: Der eine weiß, dass der andere es weiß.",
+      "translation": "Precisely on that the game depends: one knows that the other knows.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_beruhen"
+      ]
+    },
+    {
+      "id": "s119",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was braucht Ironie laut dem Kritiker?",
+      "translation": "What does irony need according to the critic?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Ein gemeinsames Wissen."
+      ]
+    },
+    {
+      "id": "s120",
+      "type": "note",
+      "speaker": "narrator",
+      "text": "Ein gemeinsames Wissen ist geteilte Erfahrung, auf die sich eine Andeutung stützen kann.",
+      "translation": "Shared knowledge is common experience that a suggestion can rely on.",
+      "speed": 0.95,
+      "pause_after_ms": 600,
+      "skippable": true
+    },
+    {
+      "id": "s121",
+      "type": "echo",
+      "speaker": "autorin",
+      "text": "Ironie ohne Kontext ist wie ein Witz ohne Pointe.",
+      "translation": "Irony without context is like a joke without a punchline.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1200
+    },
+    {
+      "id": "s122",
+      "type": "drill",
+      "speaker": "kritiker",
+      "text": "Sie braucht ein gemeinsames Wissen.",
+      "translation": "It needs shared knowledge.",
+      "repeat": 2,
+      "speed": 0.85,
+      "pause_after_ms": 1000
+    },
+    {
+      "id": "s123",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "der Kontext",
+      "translation": "the context",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_kontext"
+      ]
+    },
+    {
+      "id": "s124",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "die Pointe",
+      "translation": "the punchline",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_pointe"
+      ]
+    },
+    {
+      "id": "s125",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "gemeinsam",
+      "translation": "shared / common",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_gemeinsam"
+      ]
+    },
+    {
+      "id": "s126",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "beruhen auf",
+      "translation": "to rest on / depend on",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_beruhen"
+      ]
+    },
+    {
+      "id": "s127",
+      "type": "line",
+      "speaker": "autorin",
+      "text": "Vielleicht ist das die größte Kunst: zu wissen, wann man ironisch sein darf – und wann besser nicht.",
+      "translation": "Perhaps that's the greatest art: knowing when one may be ironic — and when better not.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_darf",
+        "g_besser"
+      ]
+    },
+    {
+      "id": "s128",
+      "type": "line",
+      "speaker": "kritiker",
+      "text": "Eine weise Einsicht. Ironie ist ein Werkzeug, kein Zustand.",
+      "translation": "A wise insight. Irony is a tool, not a state.",
+      "pause_after_ms": 700,
+      "gloss": [
+        "g_weise",
+        "g_werkzeug",
+        "g_zustand"
+      ]
+    },
+    {
+      "id": "s129",
+      "type": "check",
+      "speaker": "narrator",
+      "text": "Was ist Ironie laut dem Kritiker am Ende?",
+      "translation": "What is irony according to the critic in the end?",
+      "answer_pause_ms": 2500,
+      "pause_after_ms": 400,
+      "answers": [
+        "Ein Werkzeug, kein Zustand."
+      ]
+    },
+    {
+      "id": "s130",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "weise",
+      "translation": "wise",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_weise"
+      ]
+    },
+    {
+      "id": "s131",
+      "type": "vocab",
+      "speaker": "narrator",
+      "text": "das Werkzeug",
+      "translation": "the tool",
+      "pause_after_ms": 900,
+      "gloss": [
+        "g_werkzeug"
+      ]
+    },
+    {
+      "id": "s132",
+      "type": "recap",
+      "speaker": "narrator",
+      "text": "Heute hast du gelernt: Ironie und Untertreibung zu erkennen, Tonfall zu deuten und stilistisch nuanciert zu formulieren.",
+      "translation": "Today you learned: recognising irony and understatement, interpreting tone, and formulating with stylistic nuance.",
+      "pause_after_ms": 800
     }
   ],
   "glossary": [
     {
-      "id": "g_ironie", "de": "die Ironie", "en": "the irony", "pos": "noun",
-      "article": "die", "plural": "die Ironien",
-      "note_de": "Man sagt das Gegenteil von dem, was man meint.",
-      "note_en": "Saying the opposite of what one means.",
-      "example_de": "Das war ja ein interessanter Abend.", "example_en": "That was an interesting evening (ironic)."
+      "id": "g_ironie",
+      "de": "die Ironie",
+      "en": "irony",
+      "pos": "noun",
+      "example_de": "Die Ironie ist subtil.",
+      "example_en": "Irony is subtle.",
+      "article": "die"
     },
     {
-      "id": "g_untertreibung", "de": "die Untertreibung", "en": "the understatement", "pos": "noun",
-      "article": "die", "plural": "die Untertreibungen",
-      "note_de": "Man sagt weniger, als man meint.",
-      "note_en": "Saying less than one means.",
-      "example_de": "Das ist ein niedriges Niveau.", "example_en": "That's a low bar (understatement)."
+      "id": "g_subtil",
+      "de": "subtil",
+      "en": "subtle",
+      "pos": "adjective",
+      "example_de": "Eine subtile Bemerkung.",
+      "example_en": "A subtle remark."
     },
     {
-      "id": "g_interessant", "de": "interessant", "en": "interesting", "pos": "adj",
-      "example_de": "Das war ein interessanter Abend.", "example_en": "That was an interesting evening."
+      "id": "g_bedeuten",
+      "de": "bedeuten",
+      "en": "to mean",
+      "pos": "verb",
+      "example_de": "Was bedeutet das?",
+      "example_en": "What does that mean?"
     },
     {
-      "id": "g_unvergesslich", "de": "unvergesslich", "en": "unforgettable", "pos": "adj",
-      "example_de": "Das Hauptgericht war unvergesslich.", "example_en": "The main course was unforgettable."
+      "id": "g_allerdings",
+      "de": "allerdings",
+      "en": "however",
+      "pos": "adverb",
+      "example_de": "Allerdings ist es schwierig.",
+      "example_en": "However, it's difficult."
     },
     {
-      "id": "g_muehe_geben", "de": "sich Mühe geben", "en": "to make an effort", "pos": "phrase",
-      "example_de": "Der Koch hat sich Mühe gegeben.", "example_en": "The cook made an effort."
+      "id": "g_tonfall",
+      "de": "der Tonfall",
+      "en": "the tone of voice",
+      "pos": "noun",
+      "example_de": "Der Tonfall verrät alles.",
+      "example_en": "The tone reveals everything.",
+      "article": "der",
+      "plural": "die Tonfälle"
     },
     {
-      "id": "g_hauptgericht", "de": "das Hauptgericht", "en": "the main course", "pos": "noun",
-      "article": "das", "plural": "die Hauptgerichte",
-      "example_de": "Das Hauptgericht war unvergesslich.", "example_en": "The main course was unforgettable."
+      "id": "g_missverstehen",
+      "de": "missverstehen",
+      "en": "to misunderstand",
+      "pos": "verb",
+      "example_de": "Ich habe es missverstanden.",
+      "example_en": "I misunderstood it."
     },
     {
-      "id": "g_niveau", "de": "das Niveau", "en": "the level / standard", "pos": "noun",
-      "article": "das", "plural": "die Niveaus",
-      "example_de": "Das ist ein niedriges Niveau.", "example_en": "That's a low bar."
+      "id": "g_zusammenspiel",
+      "de": "das Zusammenspiel",
+      "en": "the interplay",
+      "pos": "noun",
+      "example_de": "Das Zusammenspiel ist entscheidend.",
+      "example_en": "The interplay is decisive.",
+      "article": "das"
     },
     {
-      "id": "g_immerhin", "de": "immerhin", "en": "at least", "pos": "adverb",
-      "example_de": "Immerhin ist niemand verletzt worden.", "example_en": "At least nobody got hurt."
+      "id": "g_klassisch",
+      "de": "klassisch",
+      "en": "classic",
+      "pos": "adjective",
+      "example_de": "Ein klassisches Beispiel.",
+      "example_en": "A classic example."
     },
     {
-      "id": "g_wenigstens", "de": "wenigstens", "en": "at least", "pos": "adverb",
-      "example_de": "Dann brennt wenigstens nur die Küche.", "example_en": "Then at least only the kitchen burns."
+      "id": "g_beispiel",
+      "de": "das Beispiel",
+      "en": "the example",
+      "pos": "noun",
+      "example_de": "Ein gutes Beispiel.",
+      "example_en": "A good example.",
+      "article": "das",
+      "plural": "die Beispiele"
     },
     {
-      "id": "g_optimist", "de": "der Optimist", "en": "the optimist", "pos": "noun",
-      "article": "der", "plural": "die Optimisten",
-      "example_de": "Du bist wirklich ein Optimist.", "example_en": "You really are an optimist."
+      "id": "g_aussprechen",
+      "de": "aussprechen",
+      "en": "to utter / pronounce",
+      "pos": "verb",
+      "example_de": "Sie spricht mehr aus, als sie sagt.",
+      "example_en": "She utters more than she says."
     },
     {
-      "id": "g_realist", "de": "der Realist", "en": "the realist", "pos": "noun",
-      "article": "der", "plural": "die Realisten",
-      "example_de": "Ich bin Realist.", "example_en": "I'm a realist."
+      "id": "g_untertreibung",
+      "de": "die Untertreibung",
+      "en": "understatement",
+      "pos": "noun",
+      "example_de": "Eine typische Untertreibung.",
+      "example_en": "A typical understatement.",
+      "article": "die",
+      "plural": "die Untertreibungen"
     },
     {
-      "id": "g_laune", "de": "die Laune", "en": "the mood", "pos": "noun",
-      "article": "die", "plural": "die Launen",
-      "example_de": "Ich bin Realist mit guter Laune.", "example_en": "I'm a realist in a good mood."
+      "id": "g_verwandt",
+      "de": "verwandt",
+      "en": "related",
+      "pos": "adjective",
+      "example_de": "Die Begriffe sind verwandt.",
+      "example_en": "The terms are related."
     },
     {
-      "id": "g_beschreibung", "de": "die Beschreibung", "en": "the description", "pos": "noun",
-      "article": "die", "plural": "die Beschreibungen",
-      "example_de": "Das ist eine schöne Beschreibung.", "example_en": "That's a nice description."
+      "id": "g_eiskalt",
+      "de": "eiskalt",
+      "en": "ice-cold",
+      "pos": "adjective",
+      "example_de": "Es ist eiskalt.",
+      "example_en": "It's freezing."
     },
     {
-      "id": "g_chaotisch", "de": "chaotisch", "en": "chaotic", "pos": "adj",
-      "example_de": "Der Abend war chaotisch.", "example_en": "The evening was chaotic."
+      "id": "g_mentalitaet",
+      "de": "die Mentalität",
+      "en": "the mentality",
+      "pos": "noun",
+      "example_de": "Die Mentalität ist geprägt.",
+      "example_en": "The mentality is shaped.",
+      "article": "die",
+      "plural": "die Mentalitäten"
     },
     {
-      "id": "g_verletzt", "de": "verletzt", "en": "injured", "pos": "adj",
-      "example_de": "Niemand ist verletzt worden.", "example_en": "Nobody got injured."
+      "id": "g_schwester",
+      "de": "die Schwester",
+      "en": "the sister",
+      "pos": "noun",
+      "example_de": "Die höfliche Schwester.",
+      "example_en": "The polite sister.",
+      "article": "die",
+      "plural": "die Schwestern"
+    },
+    {
+      "id": "g_metapher",
+      "de": "die Metapher",
+      "en": "the metaphor",
+      "pos": "noun",
+      "example_de": "Eine treffende Metapher.",
+      "example_en": "A fitting metaphor.",
+      "article": "die",
+      "plural": "die Metaphern"
+    },
+    {
+      "id": "g_gerecht_werden",
+      "de": "gerecht werden",
+      "en": "to do justice to",
+      "pos": "verb",
+      "example_de": "Der Sache gerecht werden.",
+      "example_en": "To do justice to the matter."
+    },
+    {
+      "id": "g_passieren",
+      "de": "passieren",
+      "en": "to happen",
+      "pos": "verb",
+      "example_de": "Was ist passiert?",
+      "example_en": "What happened?"
+    },
+    {
+      "id": "g_jemand",
+      "de": "jemand",
+      "en": "someone",
+      "pos": "pronoun",
+      "example_de": "Es macht etwas mit jemandem.",
+      "example_en": "It does something to someone."
+    },
+    {
+      "id": "g_kern",
+      "de": "der Kern",
+      "en": "the core",
+      "pos": "noun",
+      "example_de": "Der Kern der Sache.",
+      "example_en": "The heart of the matter.",
+      "article": "der"
+    },
+    {
+      "id": "g_prosa",
+      "de": "die Prosa",
+      "en": "prose",
+      "pos": "noun",
+      "example_de": "Gute Prosa ist selten.",
+      "example_en": "Good prose is rare.",
+      "article": "die"
+    },
+    {
+      "id": "g_oberflaeche",
+      "de": "die Oberfläche",
+      "en": "the surface",
+      "pos": "noun",
+      "example_de": "Nur die Oberfläche.",
+      "example_en": "Only the surface.",
+      "article": "die",
+      "plural": "die Oberflächen"
+    },
+    {
+      "id": "g_figur",
+      "de": "die Figur",
+      "en": "the character",
+      "pos": "noun",
+      "example_de": "Die Figur ist komplex.",
+      "example_en": "The character is complex.",
+      "article": "die",
+      "plural": "die Figuren"
+    },
+    {
+      "id": "g_inner",
+      "de": "im Inneren",
+      "en": "inside",
+      "pos": "phrase",
+      "example_de": "Im Inneren der Figuren.",
+      "example_en": "Inside the characters."
+    },
+    {
+      "id": "g_schildern",
+      "de": "schildern",
+      "en": "to describe",
+      "pos": "verb",
+      "example_de": "Er schildert die Szene.",
+      "example_en": "He describes the scene."
+    },
+    {
+      "id": "g_ereignis",
+      "de": "das Ereignis",
+      "en": "the event",
+      "pos": "noun",
+      "example_de": "Das Ereignis ist vorbei.",
+      "example_en": "The event is over.",
+      "article": "das",
+      "plural": "die Ereignisse"
+    },
+    {
+      "id": "g_reportage",
+      "de": "die Reportage",
+      "en": "the report",
+      "pos": "noun",
+      "example_de": "Eine Reportage schreiben.",
+      "example_en": "To write a report.",
+      "article": "die",
+      "plural": "die Reportagen"
+    },
+    {
+      "id": "g_zustimmung",
+      "de": "die Zustimmung",
+      "en": "agreement",
+      "pos": "noun",
+      "example_de": "Voll Zustimmung.",
+      "example_en": "Full agreement.",
+      "article": "die"
+    },
+    {
+      "id": "g_durchaus",
+      "de": "durchaus",
+      "en": "certainly",
+      "pos": "adverb",
+      "example_de": "Das ist durchaus möglich.",
+      "example_en": "That's quite possible."
+    },
+    {
+      "id": "g_verlangen",
+      "de": "verlangen",
+      "en": "to demand / require",
+      "pos": "verb",
+      "example_de": "Es verlangt Aufmerksamkeit.",
+      "example_en": "It demands attention."
+    },
+    {
+      "id": "g_mitarbeit",
+      "de": "die Mitarbeit",
+      "en": "the participation",
+      "pos": "noun",
+      "example_de": "Die Mitarbeit des Lesers.",
+      "example_en": "The reader's participation.",
+      "article": "die"
+    },
+    {
+      "id": "g_zwischen_den_zeilen",
+      "de": "zwischen den Zeilen",
+      "en": "between the lines",
+      "pos": "phrase",
+      "example_de": "Zwischen den Zeilen lesen.",
+      "example_en": "Read between the lines."
+    },
+    {
+      "id": "g_implizit",
+      "de": "implizit",
+      "en": "implicit",
+      "pos": "adjective",
+      "example_de": "Die implizite Bedeutung.",
+      "example_en": "The implicit meaning."
+    },
+    {
+      "id": "g_erschliessen",
+      "de": "erschließen",
+      "en": "to uncover / infer",
+      "pos": "verb",
+      "example_de": "Die Bedeutung erschließen.",
+      "example_en": "Uncover the meaning."
+    },
+    {
+      "id": "g_schoenheit",
+      "de": "die Schönheit",
+      "en": "the beauty",
+      "pos": "noun",
+      "example_de": "Die Schönheit der Sprache.",
+      "example_en": "The beauty of language.",
+      "article": "die"
+    },
+    {
+      "id": "g_gestehen",
+      "de": "gestehen",
+      "en": "to admit",
+      "pos": "verb",
+      "example_de": "Ich gestehe es.",
+      "example_en": "I admit it."
+    },
+    {
+      "id": "g_erkennen",
+      "de": "erkennen",
+      "en": "to recognise",
+      "pos": "verb",
+      "example_de": "Ich erkenne die Ironie.",
+      "example_en": "I recognise the irony."
+    },
+    {
+      "id": "g_makel",
+      "de": "der Makel",
+      "en": "the flaw",
+      "pos": "noun",
+      "example_de": "Ein kleiner Makel.",
+      "example_en": "A small flaw.",
+      "article": "der"
+    },
+    {
+      "id": "g_verzoegert",
+      "de": "verzögert",
+      "en": "delayed",
+      "pos": "adjective",
+      "example_de": "Eine verzögerte Einsicht.",
+      "example_en": "A delayed insight."
+    },
+    {
+      "id": "g_einsicht",
+      "de": "die Einsicht",
+      "en": "the insight",
+      "pos": "noun",
+      "example_de": "Eine plötzliche Einsicht.",
+      "example_en": "A sudden insight.",
+      "article": "die",
+      "plural": "die Einsichten"
+    },
+    {
+      "id": "g_genuss",
+      "de": "der Genuss",
+      "en": "the pleasure",
+      "pos": "noun",
+      "example_de": "Der Genuss des Textes.",
+      "example_en": "The pleasure of the text.",
+      "article": "der"
+    },
+    {
+      "id": "g_sich_einschleichen",
+      "de": "sich einschleichen",
+      "en": "to creep in",
+      "pos": "verb",
+      "example_de": "Die Einsicht schleicht sich ein.",
+      "example_en": "The insight creeps in."
+    },
+    {
+      "id": "g_sprachlust",
+      "de": "die Sprachlust",
+      "en": "joy in language",
+      "pos": "noun",
+      "example_de": "Die Sprachlust entsteht.",
+      "example_en": "Joy in language arises.",
+      "article": "die"
+    },
+    {
+      "id": "g_erwartung",
+      "de": "die Erwartung",
+      "en": "the expectation",
+      "pos": "noun",
+      "example_de": "Die Erwartung wird gebrochen.",
+      "example_en": "The expectation is broken.",
+      "article": "die",
+      "plural": "die Erwartungen"
+    },
+    {
+      "id": "g_spiel",
+      "de": "das Spiel",
+      "en": "the play / game",
+      "pos": "noun",
+      "example_de": "Das Spiel mit Worten.",
+      "example_en": "The play with words.",
+      "article": "das",
+      "plural": "die Spiele"
+    },
+    {
+      "id": "g_brechen",
+      "de": "brechen",
+      "en": "to break",
+      "pos": "verb",
+      "example_de": "Eine Erwartung brechen.",
+      "example_en": "Break an expectation."
+    },
+    {
+      "id": "g_verraten",
+      "de": "verraten",
+      "en": "to betray",
+      "pos": "verb",
+      "example_de": "Sich verraten fühlen.",
+      "example_en": "Feel betrayed."
+    },
+    {
+      "id": "g_ueberraschung",
+      "de": "die Überraschung",
+      "en": "the surprise",
+      "pos": "noun",
+      "example_de": "Eine gute Überraschung.",
+      "example_en": "A good surprise.",
+      "article": "die",
+      "plural": "die Überraschungen"
+    },
+    {
+      "id": "g_zu_geben",
+      "de": "zugeben",
+      "en": "to admit / concede",
+      "pos": "verb",
+      "example_de": "Ich gebe es zu.",
+      "example_en": "I admit it."
+    },
+    {
+      "id": "g_bloss",
+      "de": "bloß",
+      "en": "mere / merely",
+      "pos": "adverb",
+      "example_de": "Ein bloßer Kniff.",
+      "example_en": "A mere trick."
+    },
+    {
+      "id": "g_kniff",
+      "de": "der Kniff",
+      "en": "the trick",
+      "pos": "noun",
+      "example_de": "Ein stilistischer Kniff.",
+      "example_en": "A stylistic trick.",
+      "article": "der",
+      "plural": "die Kniffe"
+    },
+    {
+      "id": "g_haltung",
+      "de": "die Haltung",
+      "en": "the attitude",
+      "pos": "noun",
+      "example_de": "Eine ironische Haltung.",
+      "example_en": "An ironic attitude.",
+      "article": "die",
+      "plural": "die Haltungen"
+    },
+    {
+      "id": "g_betrachten",
+      "de": "betrachten",
+      "en": "to view / consider",
+      "pos": "verb",
+      "example_de": "Die Welt betrachten.",
+      "example_en": "View the world."
+    },
+    {
+      "id": "g_treffend",
+      "de": "treffend",
+      "en": "fitting / apt",
+      "pos": "adjective",
+      "example_de": "Eine treffende Beschreibung.",
+      "example_en": "A fitting description."
+    },
+    {
+      "id": "g_uebertreibung",
+      "de": "die Übertreibung",
+      "en": "overstatement",
+      "pos": "noun",
+      "example_de": "Eine stereotype Übertreibung.",
+      "example_en": "A typical overstatement.",
+      "article": "die",
+      "plural": "die Übertreibungen"
+    },
+    {
+      "id": "g_gegenteil",
+      "de": "das Gegenteil",
+      "en": "the opposite",
+      "pos": "noun",
+      "example_de": "Das genaue Gegenteil.",
+      "example_en": "The exact opposite.",
+      "article": "das"
+    },
+    {
+      "id": "g_fluestern",
+      "de": "flüstern",
+      "en": "to whisper",
+      "pos": "verb",
+      "example_de": "Leise flüstern.",
+      "example_en": "To whisper softly."
+    },
+    {
+      "id": "g_rufen",
+      "de": "rufen",
+      "en": "to shout / call",
+      "pos": "verb",
+      "example_de": "Laut rufen.",
+      "example_en": "To shout loudly."
+    },
+    {
+      "id": "g_ewigkeit",
+      "de": "die Ewigkeit",
+      "en": "eternity",
+      "pos": "noun",
+      "example_de": "Eine Ewigkeit warten.",
+      "example_en": "To wait an eternity.",
+      "article": "die"
+    },
+    {
+      "id": "g_verschieben",
+      "de": "verschieben",
+      "en": "to shift",
+      "pos": "verb",
+      "example_de": "Die Wirklichkeit verschieben.",
+      "example_en": "Shift reality."
+    },
+    {
+      "id": "g_sarkasmus",
+      "de": "der Sarkasmus",
+      "en": "sarcasm",
+      "pos": "noun",
+      "example_de": "Ein beißender Sarkasmus.",
+      "example_en": "Biting sarcasm.",
+      "article": "der"
+    },
+    {
+      "id": "g_verletzen",
+      "de": "verletzen",
+      "en": "to hurt / wound",
+      "pos": "verb",
+      "example_de": "Jemanden verletzen.",
+      "example_en": "To hurt someone."
+    },
+    {
+      "id": "g_anspielen",
+      "de": "anspielen",
+      "en": "to allude to",
+      "pos": "verb",
+      "example_de": "Auf etwas anspielen.",
+      "example_en": "To allude to something."
+    },
+    {
+      "id": "g_genial",
+      "de": "genial",
+      "en": "brilliant",
+      "pos": "adjective",
+      "example_de": "Eine geniale Idee.",
+      "example_en": "A brilliant idea."
+    },
+    {
+      "id": "g_misslingen",
+      "de": "misslingen",
+      "en": "to fail / miscarry",
+      "pos": "verb",
+      "example_de": "Die Idee ist misslungen.",
+      "example_en": "The idea failed."
+    },
+    {
+      "id": "g_beissen",
+      "de": "beißen",
+      "en": "to bite",
+      "pos": "verb",
+      "example_de": "Die Bemerkung beißt.",
+      "example_en": "The remark bites."
+    },
+    {
+      "id": "g_maske",
+      "de": "die Maske",
+      "en": "the mask",
+      "pos": "noun",
+      "example_de": "Eine Maske tragen.",
+      "example_en": "To wear a mask.",
+      "article": "die",
+      "plural": "die Masken"
+    },
+    {
+      "id": "g_entlarven",
+      "de": "entlarven",
+      "en": "to expose / unmask",
+      "pos": "verb",
+      "example_de": "Die Zustimmung entlarven.",
+      "example_en": "To unmask the agreement."
+    },
+    {
+      "id": "g_dunkel",
+      "de": "dunkel",
+      "en": "dark",
+      "pos": "adjective",
+      "example_de": "Es wird dunkel.",
+      "example_en": "It's getting dark."
+    },
+    {
+      "id": "g_lampe",
+      "de": "die Lampe",
+      "en": "the lamp",
+      "pos": "noun",
+      "example_de": "Die Lampe anstellen.",
+      "example_en": "To turn on the lamp.",
+      "article": "die",
+      "plural": "die Lampen"
+    },
+    {
+      "id": "g_kontext",
+      "de": "der Kontext",
+      "en": "the context",
+      "pos": "noun",
+      "example_de": "Ohne Kontext.",
+      "example_en": "Without context.",
+      "article": "der"
+    },
+    {
+      "id": "g_pointe",
+      "de": "die Pointe",
+      "en": "the punchline",
+      "pos": "noun",
+      "example_de": "Die Pointe verpufft.",
+      "example_en": "The punchline falls flat.",
+      "article": "die",
+      "plural": "die Pointen"
+    },
+    {
+      "id": "g_verpuffen",
+      "de": "verpuffen",
+      "en": "to fizzle out",
+      "pos": "verb",
+      "example_de": "Der Witz verpufft.",
+      "example_en": "The joke fizzles out."
+    },
+    {
+      "id": "g_gemeinsam",
+      "de": "gemeinsam",
+      "en": "shared / common",
+      "pos": "adjective",
+      "example_de": "Ein gemeinsames Wissen.",
+      "example_en": "Shared knowledge."
+    },
+    {
+      "id": "g_beruhen",
+      "de": "beruhen auf",
+      "en": "to rest on / depend on",
+      "pos": "verb",
+      "example_de": "Darauf beruht das Spiel.",
+      "example_en": "The game rests on that."
+    },
+    {
+      "id": "g_darf",
+      "de": "dürfen",
+      "en": "may / to be allowed to",
+      "pos": "verb",
+      "example_de": "Wann man ironisch sein darf.",
+      "example_en": "When one may be ironic."
+    },
+    {
+      "id": "g_besser",
+      "de": "besser",
+      "en": "better",
+      "pos": "adverb",
+      "example_de": "Besser nicht.",
+      "example_en": "Better not."
+    },
+    {
+      "id": "g_weise",
+      "de": "weise",
+      "en": "wise",
+      "pos": "adjective",
+      "example_de": "Eine weise Einsicht.",
+      "example_en": "A wise insight."
+    },
+    {
+      "id": "g_werkzeug",
+      "de": "das Werkzeug",
+      "en": "the tool",
+      "pos": "noun",
+      "example_de": "Ein Werkzeug, kein Zustand.",
+      "example_en": "A tool, not a state.",
+      "article": "das",
+      "plural": "die Werkzeuge"
+    },
+    {
+      "id": "g_zustand",
+      "de": "der Zustand",
+      "en": "the state / condition",
+      "pos": "noun",
+      "example_de": "Kein Zustand.",
+      "example_en": "Not a state.",
+      "article": "der",
+      "plural": "die Zustände"
     }
   ],
   "meta": {
