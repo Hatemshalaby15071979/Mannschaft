@@ -19,9 +19,14 @@ every lesson verified: `lines/` count == JSON segs == timeline entries, drift �
 output loudness −16.42…−16.50 LUFS (target −16), SRT cues present, manifest `script_hash`
 matches the current JSON for all 12 (no stale audio). Authoring commit `095c14c`.
 
-**Next: M10 — scale to 72 lessons** (12 per level, up from 2 in M9). Use `corpus suggest`
-to mine material and the compact DSL to author at §9.1 depth; never auto-generate a
-lesson (plan §8.5). Reuse the render pipeline + content-addressed cache.
+**SCOPE DECISION (2026-11-18): stop at the 12 piloted lessons.** M10 (scale to 72) and
+M11 (release) are DEFERRED, not pending work. The 12 hand-authored pilots at full §9.1
+depth are the deliverable. Reason: 72 lessons is a ~6–7 week content program (60 more
+lessons, ~7,000 segments, ~30 h sequential CPU render) with a documented quality-stall
+risk around lesson #20 (plan §10 risk table, §14.1) — this is the plan's deliberate
+pilot decision point. Do **not** auto-generate lessons at scale or resume M10/M11
+without an explicit instruction from the user. Routine work on the existing 12 lessons
+(fixes, re-render, verification) stays in scope.
 
 **M6 is DONE** (see milestone row + log). `content/corpus/clips.jsonl` holds 790 scored
 candidates; `corpus suggest --level B1 --situation work` returns 30; the
@@ -50,8 +55,8 @@ advisory — objective waveform-distinctness passed 6/6.
 | M7 | Server | DONE | 135 tests (36 server + 5 pipeline). 16 routes on 127.0.0.1:8766; `Range: bytes=0-99` → **206**, `Content-Range: bytes 0-99/2048`, body exactly 100 bytes; suffix range → tail; `bytes=99999-` → **416**; `/api/health` reports VoiceStudio down (`[Errno 111] Connection refused`) without hanging; `assert_loopback` refuses `0.0.0.0`/LAN; live `make serve` returned A2-01 + honest health; commit `e6d4f97` |
 | M8 | Client | DONE | 152 tests (16 asset + 2 Playwright smoke). 8 screens; service worker with byte-range slicing (206/416 verified against HTTP semantics); position restored from `/api/progress` after reload; offline after first play; keyboard-only usable; commit `27a746d` |
 | M9 | Pilot 12 lessons | DONE | `095c14c` — 12 lessons (2 per level) at full §9.1 depth: A1 55, A2 70, B1 92–98, B2 125, C1 100–141, C2 132 segs. `make validate --all` → **12 lessons, 0 errors, 0 warnings**; `ruff` clean; `pytest` 186 passed. All 12 re-rendered at full depth (~5.5 h sequential CPU): every lesson has `lines/`==segs==timeline entries, drift ≤ 7 ms (spec ±50), output −16.42…−16.50 LUFS, SRT cues present, and manifest `script_hash` matches current JSON (no stale audio). |
-| M10 | Scale to 72 | TODO | — |
-| M11 | Release | TODO | — |
+| M10 | Scale to 72 | DEFERRED | 2026-11-18 pilot decision: scope capped at 12 lessons. 72 is a ~6–7 week content program (60 more lessons, ~7,000 segs, ~30 h CPU) with a quality-stall risk at #20. Not pending work. |
+| M11 | Release v5.0.0 | DEFERRED | Depends on M10's 72 lessons; out of scope under the 12-pilot decision. |
 
 ---
 
@@ -103,4 +108,5 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **Authoring gotcha:** C2 specs went through `/tmp/lh.py` + `/tmp/lesson_builder.py`; a regex gloss checker gave false `", "` errors on nested quotes. Replaced with a direct-import check that reads `S1/S2` and `G1/G2` objects — found real issues: `g_auss sprechen` (space), `g_bloß` (umlaut), `durchaus` (missing `g_`), `g_beispiel` (missing entry). Rule: glossary/segment ids must be ASCII `^[A-Za-z0-9_-]+$`; validate refs by import, never regex. |
 | 2026-11-18 | M9 | Full-depth render batch finished: all 12 lessons re-rendered sequentially in ~5.5 h (background `OMlabn`, `rc=0` for all, zero errors). Verified each: `lines/*.mp3` count == JSON segment count == `timeline.json` entries, mp3 vs manifest `duration_ms` drift ≤ 7 ms (spec ±50), output loudness −16.42…−16.50 LUFS (target −16), SRT cues present. Manifest `script_hash` recomputed from each current lesson JSON matched the audio manifest for all 12 → no stale render. M9 → DONE. |
 | — | — | **Measurement gotcha:** naive drift = mp3 duration − last `timeline.end_ms` shows ~800 ms and looks like a defect; it is the final segment's `pause_after_ms` tail, which is intentionally outside any cue's `end_ms`. The correct reference is `manifest.duration_ms` (includes tail) → drift 0–7 ms. Likewise +2100 ms "gaps" between segments are all `check` segments using `answer_pause_ms=2500` as thinking time instead of the normal 400 ms tail — not timeline corruption. |
+| 2026-11-18 | M10/M11 | **Scope decision: stop at the 12 pilots.** User chose to cap scope at 12 lessons when offered scaled / corpus-grounded / stop options. M10 (scale to 72) and M11 (release) are DEFERRED. Reason: 72 lessons is a ~6–7 week content program (60 more lessons, ~7,000 segs, ~30 h CPU render) with a documented quality-stall risk around #20 (plan §10/§14.1); this is the plan's deliberate pilot decision point. Do not resume M10/M11 without an explicit instruction. |
 
