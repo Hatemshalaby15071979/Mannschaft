@@ -6,7 +6,7 @@
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v4';
+const VERSION = 'v5';
 const SHELL = `mannschaft-${VERSION}`;
 const DATA = `mannschaft-data-${VERSION}`;
 
