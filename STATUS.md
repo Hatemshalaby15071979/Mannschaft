@@ -76,6 +76,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | V6-1 | Design shell + media + cards + dictionary + journey | DONE | `e1603d9` — matrix-derived dark shell (sidebar index, masthead, KPI tiles, level tabs, expandable rows, theme/motion/focus), 12/12 lessons have a `youtube-nocookie` clip, 120 cards (10/lesson), 542 dictionary entries, 4 new read-only routes. **221 passed**, `validate` 12/0/0, browser walkthrough 0 console errors, position restored after reload. |
 | V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `V6-REPORT.md`, serve/stop scripts. |
 | V6-3 | Root repo (local-ready) | DONE | `27e9d6c` — root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
+| V6-4 | Verification hardening | DONE | Structured request logging (`ts= method= route= status= ms=`), strict on-disk schema test for every generated JSON, 360 px header split into two rows (no overlap), full zip actually served from a clean directory (health rendered=12, `Range` → 206). **223 passed**; core/full rebuilt and `dist-check` OK. |
 
 ---
 
@@ -138,3 +139,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **A11y:** light `--warning` `#b28600` was 3.03:1 on `#f4f4f4`, used as body text for "Nochmal". Darkened to `#8a6800` → 4.70:1. All other token pairs ≥ 4.55:1. |
 | — | — | **Environment:** ruff's cache rename fails with `EINVAL` on this mount, so `make lint` uses `--no-cache`. CI keeps the normal cache. |
 | — | — | **Correction:** the Phase-0 hash snapshot was in `/tmp` and was cleared between sessions. The gate was re-proven by mtime audit (newest frozen file 2026-11-18 11:56; nothing under v3/v4/webapp newer than 2026-11-19) plus a fresh 2,657-file snapshot — see `V6-REPORT.md` §2. |
+| 2026-11-21 | V6 | Hardening pass against the execution prompt: added the §6 structured request log, a strict contract test over every generated JSON file, and a two-row mobile header. `make check` **223 passed**. Full zip served from a clean directory on an ephemeral loopback port: health `rendered=12`, `/api/audio/A1-01` 2,756,924 bytes, `Range: bytes=0-99` → 206 with 100 matching bytes, all four V6 routes 200. |
+| — | — | **Surprise:** the first full-zip serve attempt used port 8799 and hit an unrelated local service (`openmausbot`) that answered `/api/health` with its own JSON. The probe now asserts `app == "ok"` and binds an ephemeral port, so a port collision cannot masquerade as success. |
+| — | — | **Decision:** §5 asks new schemas to live in `src/v5/contract/`, but §3.1 freezes that directory. Schemas stay beside their generators and `test_on_disk_json_validates_against_its_schema` enforces them; this is recorded in `V6-REPORT.md` rather than silently ignored. |
+| — | — | **Correction:** at 360 px the index and controls shared one strip and the controls clipped the nav. They now occupy two rows; measured bar bottom 98.3 px vs content top 100.8 px. |

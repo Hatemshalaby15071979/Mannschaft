@@ -15,7 +15,10 @@ from __future__ import annotations
 
 import ipaddress
 import json
+import logging
 import mimetypes
+import time
+from datetime import UTC, datetime
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query
@@ -54,6 +57,17 @@ EVENT_KINDS = ("card_graded", "clip_opened")
 # Python's mimetypes does not know .webmanifest on every platform; without this
 # some browsers refuse the PWA manifest as application/octet-stream.
 mimetypes.add_type("application/manifest+json", ".webmanifest")
+
+# One structured line per request: timestamp, method, route, status, duration.
+# A dedicated handler keeps the format stable whether the app runs under
+# uvicorn, in tests, or from the CLI. No query string and no headers are logged.
+_http_log = logging.getLogger("v5.http")
+if not _http_log.handlers:
+    _handler = logging.StreamHandler()
+    _handler.setFormatter(logging.Formatter("%(message)s"))
+    _http_log.addHandler(_handler)
+    _http_log.setLevel(logging.INFO)
+    _http_log.propagate = False
 
 
 class ProgressUpdate(BaseModel):
@@ -164,6 +178,20 @@ def create_app(
 
     def configured_voices():
         return voices if voices is not None else load_voices()
+
+    @app.middleware("http")
+    async def log_requests(request, call_next):
+        started = time.perf_counter()
+        response = await call_next(request)
+        _http_log.info(
+            "ts=%s method=%s route=%s status=%d ms=%.1f",
+            datetime.now(UTC).isoformat(timespec="seconds"),
+            request.method,
+            request.url.path,
+            response.status_code,
+            (time.perf_counter() - started) * 1000,
+        )
+        return response
 
     # ---- meta ----------------------------------------------------------
 

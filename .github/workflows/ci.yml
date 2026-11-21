@@ -46,7 +46,7 @@ jobs:
 
       - name: Build core distribution
         if: matrix.python-version == '3.12'
-        run: python tools/package.py --kind core --out dist/v5-core.zip
+        run: make dist-core
 
       - name: Upload core distribution
         if: matrix.python-version == '3.12'

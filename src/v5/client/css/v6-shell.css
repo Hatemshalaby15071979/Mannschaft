@@ -739,6 +739,24 @@ body.reduce-motion *::after {
 }
 
 @media (max-width: 639px) {
+  /* Two short rows instead of one crowded strip: index on top, controls
+     below. Both scroll horizontally if they overflow. */
+  body { padding-top: 6.3rem; }
+  .side-index {
+    height: auto;
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+    padding: 0.35rem 0.5rem 0.4rem;
+  }
+  .side-index nav,
+  .side-controls {
+    flex: 1 0 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .side-index nav::-webkit-scrollbar,
+  .side-controls::-webkit-scrollbar { display: none; }
+  .side-controls { margin: 0; }
   .kpi-grid { grid-template-columns: 1fr 1fr; }
   .matrix-row-btn {
     grid-template-columns: minmax(0, 1fr) 40px;

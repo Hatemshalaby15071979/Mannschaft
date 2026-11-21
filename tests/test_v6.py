@@ -8,6 +8,7 @@ design-leak grep. They read the real authored content; nothing is written.
 from __future__ import annotations
 
 import json
+import logging
 import re
 from pathlib import Path
 
@@ -18,6 +19,7 @@ from v5.cards.build import build_deck
 from v5.cards.schema import CardDeck
 from v5.config import ROOT
 from v5.dictionary.lookup import lookup
+from v5.dictionary.schema import DictionarySeed
 from v5.dictionary.seed import build_seed
 from v5.media.manifest import MediaManifest
 from v5.media.select import (
@@ -183,6 +185,31 @@ def test_seed_on_disk_is_current():
     seed = build_seed()
     stored = json.loads((CONTENT / "dictionary" / "seed.json").read_text(encoding="utf-8"))
     assert stored["entries"] == json.loads(seed.model_dump_json())["entries"]
+
+
+def test_on_disk_json_validates_against_its_schema():
+    """Every generated JSON file must load through its strict model.
+
+    The schemas live beside their generators rather than in the frozen
+    ``src/v5/contract/`` package: V6's guardrail freezes that directory, so
+    adding files there would break the no-deletion hash gate. The models still
+    use ``extra="forbid"`` and are the single documented contract.
+    """
+    MediaManifest.model_validate_json(
+        (CONTENT / "lesson_media.json").read_text(encoding="utf-8")
+    )
+    DictionarySeed.model_validate_json(
+        (CONTENT / "dictionary" / "seed.json").read_text(encoding="utf-8")
+    )
+    for lesson_id in LESSON_IDS:
+        CardDeck.model_validate_json(
+            (CONTENT / "cards" / f"{lesson_id}.json").read_text(encoding="utf-8")
+        )
+    overrides = json.loads(
+        (CONTENT / "lesson_media.overrides.json").read_text(encoding="utf-8")
+    )
+    assert overrides["version"] == 1
+    assert set(overrides["lessons"]) <= set(LESSON_IDS)
 
 
 def test_lookup_prefers_exact_and_returns_links():
@@ -363,3 +390,27 @@ def test_health_reports_corpus_and_lesson_counts(client):
     body = client.get("/api/health").json()
     assert body["lessons"]["total"] == len(LESSON_IDS)
     assert body["corpus"]["clips"] >= 700
+
+
+def test_requests_are_logged_with_timestamp_route_and_status(client):
+    messages: list[str] = []
+
+    class Capture(logging.Handler):
+        def emit(self, record):
+            messages.append(record.getMessage())
+
+    logger = logging.getLogger("v5.http")
+    handler = Capture()
+    logger.addHandler(handler)
+    try:
+        client.get("/api/health")
+    finally:
+        logger.removeHandler(handler)
+
+    assert any(
+        "ts=" in message
+        and "route=/api/health" in message
+        and "status=200" in message
+        and "method=GET" in message
+        for message in messages
+    ), f"no structured request log: {messages}"
