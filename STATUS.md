@@ -57,6 +57,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | M9 | Pilot 12 lessons | DONE | `095c14c` — 12 lessons (2 per level) at full §9.1 depth: A1 55, A2 70, B1 92–98, B2 125, C1 100–141, C2 132 segs. `make validate --all` → **12 lessons, 0 errors, 0 warnings**; `ruff` clean; `pytest` 186 passed. All 12 re-rendered at full depth (~5.5 h sequential CPU): every lesson has `lines/`==segs==timeline entries, drift ≤ 7 ms (spec ±50), output −16.42…−16.50 LUFS, SRT cues present, and manifest `script_hash` matches current JSON (no stale audio). |
 | M10 | Scale to 72 | DEFERRED | 2026-11-18 pilot decision: scope capped at 12 lessons. 72 is a ~6–7 week content program (60 more lessons, ~7,000 segs, ~30 h CPU) with a quality-stall risk at #20. Not pending work. |
 | M11 | Release v5.0.0 | DEFERRED | Depends on M10's 72 lessons; out of scope under the 12-pilot decision. |
+| V6-0 | Guard — legacy hash snapshot | DONE | `tools/hash_legacy.py` → **2,657 files** hashed (2,438 audio + clips.jsonl + voices.toml + 11 server files); `app.py`/`main.js` carved out as the sanctioned additive surface. Snapshot: `/tmp/v6_legacy_before.sha256`. Baseline gate re-measured: **188 passed in 18.02s**, `ruff` clean. |
 
 ---
 
