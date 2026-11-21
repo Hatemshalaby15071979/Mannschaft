@@ -102,8 +102,8 @@ No legacy file was modified or deleted. The two sanctioned mutation points are
 
 | Zip | Size | SHA-256 | Clean install |
 |---|---|---|---|
-| `v5/dist/mannschaft-core.zip` | 922,587 B (0.88 MiB) | `dcd2c21564cd0c99bd8e92194afe0c21fc1d4c726436a1962100acacf464b52e` | **OK** |
-| `v5/dist/mannschaft-full.zip` | 223,653,752 B (213.29 MiB) | `8ce37ad9df49fe041a905af85b46aac11dd5c05692ca166eb1f142843a942187` | **served OK** (see below) |
+| `v5/dist/mannschaft-core.zip` | 924,682 B (0.88 MiB) | `bbf7e863a9d45db302b95fb00534391eb2aed62df5ff7a89d8fbf184cf3c5511` | **OK** |
+| `v5/dist/mannschaft-full.zip` | 223,655,847 B (213.29 MiB) | `7cf400b8717aa6bf5a856197145c859c99c6f1ca99677864e405b203a9f4626c` | **served OK** (see below) |
 
 `make dist-check` unzipped core into a fresh `/tmp` directory and ran
 `python3 -m v5 --help`, `python3 -m v5 validate --all` (12 lessons, 0 errors) and
