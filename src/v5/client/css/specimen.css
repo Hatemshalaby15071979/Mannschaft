@@ -226,8 +226,9 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 /* The founder's helix, at rest. It answers the pointer with one sweep, then
-   stops: the theme keeps still, and a loop would need a pause control. */
-.brand-mark { width: 2.25rem; height: 2.25rem; }
+   stops: the theme keeps still, and a loop would need a pause control. The
+   mark is drawn large enough for its engraved rings to survive downscaling. */
+.brand-mark { width: 3.5rem; height: 3.5rem; }
 .brand-mark img {
   filter: none;
   opacity: 1;
@@ -1281,7 +1282,7 @@ code, .mono, pre.mono {
 
 @media (max-width: 40rem) {
   .side-index { padding: 0 var(--space-sm); }
-  .brand-mark { width: 1.75rem; height: 1.75rem; }
+  .brand-mark { width: 2.5rem; height: 2.5rem; }
   .side-index nav { gap: var(--space-sm); }
   .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: var(--space-xl); }
   .figure-cell { padding: var(--space-sm) var(--space-md) var(--space-sm) 0; }

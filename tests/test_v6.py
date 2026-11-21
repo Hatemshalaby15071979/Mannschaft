@@ -391,6 +391,22 @@ def test_shell_revalidates_so_one_stale_file_cannot_wedge_the_page():
     assert "caches.delete" in source
 
 
+def test_audio_ranges_go_to_the_server_and_only_offline_uses_the_cache():
+    """Synthesising a 206 from a cached buffer gives a different ETag than the
+    server's; a preload that escaped the worker before it claimed control then
+    leaves FFmpeg with a mixed stream that stalls after ~2 s."""
+    source = (CLIENT / "sw.js").read_text(encoding="utf-8")
+    # Online: the browser's own ranged request goes through, untouched.
+    assert "const fresh = await fetch(request);" in source
+    assert "if (fresh.ok) return fresh;" in source
+    # Offline: the full body is warmed once under the range-less URL and only
+    # then sliced. The warm-up runs in waitUntil, not in the response path.
+    assert "event.waitUntil(warmAudio(event.request))" in source
+    assert "async function warmAudio(" in source
+    assert "if (await cache.match(key, { ignoreVary: true })) return;" in source
+    assert "return slice(buffer, range);" in source
+
+
 def test_first_paint_follows_the_system_theme_and_a_dead_module_says_so():
     html = (CLIENT / "index.html").read_text(encoding="utf-8")
     assert "prefers-color-scheme: dark" in html

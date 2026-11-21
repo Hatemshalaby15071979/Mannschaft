@@ -1,12 +1,13 @@
 /* Offline shell + byte-range slicing from the cached audio buffer.
    Strategy:
    - SHELL: precached on install, served cache-first.
-   - /api/audio/*: cache the FULL body under the range-less URL; answer any
-     Range request by slicing that buffer (206 / 416 with correct headers).
+   - /api/audio/*: pass ranged requests to the server (its ETag/206 are
+     authoritative); warm the FULL body under the range-less URL and slice it
+     only when offline (206 / 416 with correct headers).
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v8';
+const VERSION = 'v10';
 const SHELL = `mannschaft-${VERSION}`;
 const DATA = `mannschaft-data-${VERSION}`;
 
@@ -91,6 +92,9 @@ self.addEventListener('fetch', (event) => {
 
   if (url.pathname.startsWith('/api/audio/')) {
     event.respondWith(audioFromCache(event.request));
+    /* Keep a full body for offline use without delaying playback: the ranged
+       response goes straight back, the full copy is warmed in the background. */
+    event.waitUntil(warmAudio(event.request));
     return;
   }
 
@@ -132,20 +136,25 @@ async function refresh(fetchRequest) {
   }
 }
 
+/* Online: pass the browser's ranged request straight to the server, which
+   implements byte ranges correctly (206 + ETag + Content-Range). Synthesising
+   our own 206 from a cached buffer produces a different ETag; when an early
+   preload escaped this worker before it claimed control, FFmpeg then rejects
+   the mixed stream and playback stalls after ~2 s. Only fall back to slicing
+   the cached body when offline. */
 async function audioFromCache(request) {
+  const range = request.headers.get('range');
+  try {
+    const fresh = await fetch(request);
+    if (fresh.ok) return fresh;
+  } catch {
+    /* offline: use the warmed full body below */
+  }
   const cache = await caches.open(DATA);
   const key = new Request(request.url, { method: 'GET' });
-  let cached = await cache.match(key, { ignoreVary: true });
-
-  if (!cached) {
-    const fresh = await fetch(key);
-    if (!fresh.ok) return fresh;
-    await cache.put(key, fresh.clone());
-    cached = fresh;
-  }
-
+  const cached = await cache.match(key, { ignoreVary: true });
+  if (!cached) return new Response(null, { status: 503 });
   const buffer = await cached.arrayBuffer();
-  const range = request.headers.get('range');
   if (!range) {
     return new Response(buffer, {
       status: 200,
@@ -157,6 +166,21 @@ async function audioFromCache(request) {
     });
   }
   return slice(buffer, range);
+}
+
+/* Download the full body once so playback keeps working offline. Keyed by the
+   range-less URL; the ranged requests themselves are never cached (206 + Range
+   vary would otherwise multiply entries). */
+async function warmAudio(request) {
+  try {
+    const cache = await caches.open(DATA);
+    const key = new Request(request.url, { method: 'GET' });
+    if (await cache.match(key, { ignoreVary: true })) return;
+    const full = await fetch(key);
+    if (full.ok) await cache.put(key, full.clone());
+  } catch {
+    /* offline or aborted — the ranged response already went back */
+  }
 }
 
 function slice(buffer, rangeHeader) {

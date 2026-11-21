@@ -6,6 +6,8 @@
 Source: ``brand/helix_codex_inevitable_engraving.pdf`` in this repository (one page,
 white engraving on black). The PDF is rendered at 300 dpi, the near-black
 background is converted to transparency, and the mark is cropped to its ink.
+The engraving's hairlines are dilated slightly (STROKE_DILATE) so the mark stays
+legible when the browser scales it down to the app's 40-56 px UI slots.
 
 Outputs (committed, regenerable):
 
@@ -30,7 +32,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 PDF_CANDIDATES = [
@@ -44,6 +46,12 @@ ICONS = CLIENT / "icons"
 BACKGROUND = (13, 17, 23, 255)  # #0d1117, the app's dark surface
 NOISE_FLOOR = 18  # the PDF's black is ~10/255, not 0
 MARK_SIZE = 1024
+# The founder's engraving is extremely fine (1.4% ink coverage). Left as-is,
+# a browser downscaling 1024px to the 56px UI slot averages the hairlines down
+# to ~40% alpha and the mark reads as a grey smudge. A small dilation widens
+# every stroke before the gamma lift, so the spiral survives at UI sizes while
+# the full-size asset keeps its detail. See STROKE_DILATE in extract_mark().
+STROKE_DILATE = 5
 
 
 def render_pdf(workdir: Path) -> Path:
@@ -74,13 +82,19 @@ def extract_mark(page: Path) -> Image.Image:
     if box is None:
         raise SystemExit("no ink found in the logo PDF")
     ink = alpha.crop(box)
-    mark = Image.new("RGBA", ink.size, (255, 255, 255, 255))
-    mark.putalpha(ink)
 
     pad = max(2, round(max(ink.size) * 0.03))
-    padded = Image.new("RGBA", (ink.width + 2 * pad, ink.height + 2 * pad), (0, 0, 0, 0))
-    padded.paste(mark, (pad, pad))
-    return padded.resize((MARK_SIZE, MARK_SIZE), Image.LANCZOS)
+    padded = Image.new("L", (ink.width + 2 * pad, ink.height + 2 * pad), 0)
+    padded.paste(ink, (pad, pad))
+    mark_alpha = padded.resize((MARK_SIZE, MARK_SIZE), Image.LANCZOS)
+    # Widen the strokes at final size (resolution-independent), so a browser
+    # downscaling to the 40-56 px UI slot keeps a legible mark instead of a
+    # grey smudge. Applied to alpha only; the ink stays pure white.
+    if STROKE_DILATE > 1:
+        mark_alpha = mark_alpha.filter(ImageFilter.MaxFilter(STROKE_DILATE))
+    mark = Image.new("RGBA", mark_alpha.size, (255, 255, 255, 255))
+    mark.putalpha(mark_alpha)
+    return mark
 
 
 def on_square(mark: Image.Image, size: int, background: tuple[int, int, int, int], inset: float) -> Image.Image:
