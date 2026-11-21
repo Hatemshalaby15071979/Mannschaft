@@ -349,15 +349,22 @@ def test_index_links_the_shell_stylesheets():
     html = (CLIENT / "index.html").read_text(encoding="utf-8")
     assert "/css/v6-shell.css" in html
     assert "/css/v6.css" in html
-    assert 'data-theme="dark"' in html
+    # Specimen is dealt light-first; dark is a derived variant, not the default.
+    assert "/css/specimen.css" in html
+    assert re.search(r'data-theme="(light|dark)"', html)
     assert "side-index" in html
+
+    specimen = (CLIENT / "css" / "specimen.css").read_text(encoding="utf-8")
+    assert '@import url("./tokens.css")' in specimen
+    assert '@import url("./base.css")' in specimen
 
 
 def test_service_worker_precaches_v6_and_excludes_youtube():
     source = (CLIENT / "sw.js").read_text(encoding="utf-8")
     for name in ("clip", "cards", "dictionary"):
         assert f"/js/screens/{name}.js" in source
-    assert "/css/v6-shell.css" in source
+    for asset in ("/css/v6-shell.css", "/css/specimen.css", "/assets/fonts/bodoni.woff2"):
+        assert asset in source
     assert "youtube-nocookie" in source
     assert "VIDEO_ORIGINS" in source
 

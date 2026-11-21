@@ -13,13 +13,13 @@ function read() {
   try {
     const raw = JSON.parse(localStorage.getItem(KEY) || '{}');
     return {
-      theme: THEMES.includes(raw.theme) ? raw.theme : 'dark',
+      theme: THEMES.includes(raw.theme) ? raw.theme : 'light',
       intensity: INTENSITIES.includes(raw.intensity) ? raw.intensity : 'balanced',
       motion: raw.motion !== false,
       focus: raw.focus === true,
     };
   } catch {
-    return { theme: 'dark', intensity: 'balanced', motion: true, focus: false };
+    return { theme: 'light', intensity: 'balanced', motion: true, focus: false };
   }
 }
 
@@ -43,27 +43,27 @@ function paint() {
   const exit = document.getElementById('exit-focus');
   if (exit) exit.hidden = !shell.focus;
 
-  const themeBtn = document.querySelector('[data-shell="theme"]');
-  if (themeBtn) {
-    themeBtn.textContent = shell.theme === 'dark' ? 'Hell' : 'Dunkel';
-    themeBtn.setAttribute('aria-pressed', String(shell.theme === 'light'));
-    themeBtn.setAttribute('aria-label', 'Farbschema umschalten');
+  const themeButtons = document.querySelectorAll('[data-shell="theme"]');
+  for (const button of themeButtons) {
+    button.textContent = shell.theme === 'dark' ? 'Hell' : 'Dunkel';
+    button.setAttribute('aria-pressed', String(shell.theme === 'light'));
+    button.setAttribute('aria-label', 'Farbschema umschalten');
   }
-  const intensityBtn = document.querySelector('[data-shell="intensity"]');
-  if (intensityBtn) {
-    intensityBtn.textContent = INTENSITY_LABEL[shell.intensity];
-    intensityBtn.setAttribute('aria-label', `Intensität: ${INTENSITY_LABEL[shell.intensity]}`);
+  const intensityButtons = document.querySelectorAll('[data-shell="intensity"]');
+  for (const button of intensityButtons) {
+    button.textContent = INTENSITY_LABEL[shell.intensity];
+    button.setAttribute('aria-label', `Intensität: ${INTENSITY_LABEL[shell.intensity]}`);
   }
-  const motionBtn = document.querySelector('[data-shell="motion"]');
-  if (motionBtn) {
-    motionBtn.textContent = shell.motion ? 'Bewegung an' : 'Bewegung aus';
-    motionBtn.setAttribute('aria-pressed', String(!shell.motion));
+  const motionButtons = document.querySelectorAll('[data-shell="motion"]');
+  for (const button of motionButtons) {
+    button.textContent = shell.motion ? 'Bewegung an' : 'Bewegung aus';
+    button.setAttribute('aria-pressed', String(!shell.motion));
   }
-  const focusBtn = document.querySelector('[data-shell="focus"]');
-  if (focusBtn) {
-    focusBtn.textContent = 'Fokus';
-    focusBtn.setAttribute('aria-pressed', String(shell.focus));
-    focusBtn.setAttribute('aria-label', 'Fokusmodus (F)');
+  const focusButtons = document.querySelectorAll('[data-shell="focus"]');
+  for (const button of focusButtons) {
+    button.textContent = 'Fokus';
+    button.setAttribute('aria-pressed', String(shell.focus));
+    button.setAttribute('aria-label', 'Fokusmodus (F)');
   }
 }
 
@@ -90,18 +90,20 @@ function ensureExitButton() {
 
 /* ------------------------------------------------------- active index item */
 
+/* Two chromes carry links: the contents index and the phone tab bar. A route
+   maps to every nav name it lights, so both agree on where you are. */
 const NAV_FOR_PATH = [
-  [/^\/$/, 'heute'],
-  [/^\/library/, 'bibliothek'],
-  [/^\/clip\//, 'video'],
-  [/^\/cards\//, 'karten'],
-  [/^\/drill\//, 'karten'],
-  [/^\/dict/, 'woerter'],
-  [/^\/glossary/, 'woerter'],
-  [/^\/progress/, 'fortschritt'],
-  [/^\/lesson\//, 'lektion'],
-  [/^\/play\//, 'lektion'],
-  [/^\/transcript\//, 'lektion'],
+  [/^\/$/, ['heute', 'home']],
+  [/^\/library/, ['bibliothek', 'library']],
+  [/^\/clip\//, ['video']],
+  [/^\/cards\//, ['karten']],
+  [/^\/drill\//, ['karten']],
+  [/^\/dict/, ['woerter']],
+  [/^\/glossary/, ['woerter']],
+  [/^\/progress/, ['fortschritt', 'progress']],
+  [/^\/lesson\//, ['lektion']],
+  [/^\/play\//, ['lektion']],
+  [/^\/transcript\//, ['lektion']],
 ];
 
 function currentPath() {
@@ -130,23 +132,22 @@ function rememberLesson(path) {
   if (!id) return;
   const targets = { lektion: `#/lesson/${id}`, video: `#/clip/${id}`, karten: `#/cards/${id}` };
   for (const [nav, href] of Object.entries(targets)) {
-    const link = document.querySelector(`.side-index nav a[data-nav="${nav}"]`);
-    if (link) link.setAttribute('href', href);
+    document.querySelectorAll(`nav a[data-nav="${nav}"]`).forEach((link) => link.setAttribute('href', href));
   }
 }
 
 export function paintNav() {
   const path = currentPath();
   rememberLesson(path);
-  let active = null;
-  for (const [pattern, name] of NAV_FOR_PATH) {
+  let active = [];
+  for (const [pattern, names] of NAV_FOR_PATH) {
     if (pattern.test(path)) {
-      active = name;
+      active = names;
       break;
     }
   }
-  document.querySelectorAll('.side-index nav a[data-nav]').forEach((node) => {
-    const on = node.dataset.nav === active;
+  document.querySelectorAll('nav a[data-nav]').forEach((node) => {
+    const on = active.includes(node.dataset.nav);
     node.classList.toggle('is-active', on);
     if (on) node.setAttribute('aria-current', 'page');
     else node.removeAttribute('aria-current');
@@ -156,26 +157,20 @@ export function paintNav() {
 export function wireShellControls() {
   ensureExitButton();
 
-  document.querySelector('[data-shell="theme"]')?.addEventListener('click', () => {
-    shell.theme = shell.theme === 'dark' ? 'light' : 'dark';
-    save();
-    paint();
-  });
-  document.querySelector('[data-shell="intensity"]')?.addEventListener('click', () => {
-    shell.intensity = cycle(INTENSITIES, shell.intensity);
-    save();
-    paint();
-  });
-  document.querySelector('[data-shell="motion"]')?.addEventListener('click', () => {
-    shell.motion = !shell.motion;
-    save();
-    paint();
-  });
-  document.querySelector('[data-shell="focus"]')?.addEventListener('click', () => {
-    shell.focus = !shell.focus;
-    save();
-    paint();
-  });
+  const bind = (name, act) => {
+    for (const button of document.querySelectorAll(`[data-shell="${name}"]`)) {
+      button.addEventListener('click', () => {
+        act();
+        save();
+        paint();
+      });
+    }
+  };
+
+  bind('theme', () => { shell.theme = shell.theme === 'dark' ? 'light' : 'dark'; });
+  bind('intensity', () => { shell.intensity = cycle(INTENSITIES, shell.intensity); });
+  bind('motion', () => { shell.motion = !shell.motion; });
+  bind('focus', () => { shell.focus = !shell.focus; });
 
   document.addEventListener('keydown', (event) => {
     if (event.target.closest('input, textarea, select, [contenteditable]')) return;

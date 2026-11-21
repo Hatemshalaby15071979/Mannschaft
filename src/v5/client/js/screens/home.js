@@ -1,11 +1,12 @@
-/* Screen 1 — Home. The matrix shell with German content: masthead, honest
-   notice strip, KPI tiles, level tabs and expandable lesson rows.
+/* Screen 1, Home. A specimen book's opening page: the masthead, four figures,
+   one German line set as a specimen with its translation, then the twelve
+   lessons as a ruled index.
 
-   One primary action stays the rule: the "Heute" card is the only loud thing
-   on the page. Everything else is calm, dense and skimmable. */
+   One primary action stays the rule: the line's own button. The index is the
+   picker, so every row is a link, not a card. */
 
 import { api } from '../api.js';
-import { el, fmtClock, fmtMinutes, link, statusBlock } from '../ui.js';
+import { el, fmtClock, fmtMinutes, link, statusBlock, typo } from '../ui.js';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
@@ -20,7 +21,7 @@ export async function render() {
   } catch (error) {
     return statusBlock(
       'Kein lokaler Server',
-      `Kein Mannschaft-Server erreichbar: ${error.message} · Starte mit <code>make serve</code> (Port 8766).`,
+      `Kein Mannschaft-Server erreichbar: ${error.message}. Starte mit <code>make serve</code> (Port 8766).`,
     );
   }
   health = await api.health().catch(() => null);
@@ -30,9 +31,11 @@ export async function render() {
   const resumed = resume ? byId.get(resume.lesson_id) : null;
   const next = lessons.find((lesson) => lesson.id !== (resume && resume.lesson_id)) || null;
   const target = resumed || next;
+  const opening = await openingLine(target);
 
   const root = el('div', {});
-  root.append(masthead(lessons), kpis(lessons, progress, health), todayCard(target, resume, byId));
+  root.append(masthead(lessons), figures(lessons, progress, health));
+  if (target) root.append(specimen(target, resume, opening));
   root.append(lessonSection(lessons));
   root.append(healthLine(health));
 
@@ -42,79 +45,72 @@ export async function render() {
 
 /* ------------------------------------------------------------------ pieces */
 
+async function openingLine(lesson) {
+  if (!lesson) return null;
+  try {
+    const detail = await api.lesson(lesson.id);
+    const segments = (detail.lesson && detail.lesson.segments) || [];
+    const line = segments.find((segment) => segment.type === 'line' && segment.text);
+    if (!line) return null;
+    return { de: line.text, en: typo(line.translation || '') };
+  } catch {
+    return null;
+  }
+}
+
 function masthead(lessons) {
   const levels = [...new Set(lessons.map((lesson) => lesson.level))].sort();
-  const span = levels.length ? `${levels[0]}–${levels[levels.length - 1]}` : 'A1–C2';
+  const span = levels.length ? `${levels[0]} bis ${levels[levels.length - 1]}` : 'A1 bis C2';
   return el(
     'header',
     { class: 'masthead' },
+    el('h1', { class: 'headline' }, 'Hören zuerst.'),
+    el(
+      'p',
+      { class: 'lede' },
+      `Lektionen von ${span}, mit Audio, Video und Karten aus demselben Material.`,
+    ),
     el(
       'div',
-      { class: 'masthead-top' },
-      el(
-        'div',
-        { class: 'masthead-copy' },
-        el(
-          'div',
-          { class: 'masthead-brand' },
-          el(
-            'span',
-            { class: 'brand-mark brand-mark-lg', 'aria-hidden': 'true' },
-            el('img', { src: '/assets/logo-mark.png', alt: '', width: '96', height: '96' }),
-            el('span', { class: 'brand-scan' }),
-          ),
-        ),
-        el('span', { class: 'mono-label' }, `Mannschaft · ${span}`),
-        el('h1', { class: 'headline' }, 'Hören zuerst. ', el('strong', {}, 'Verstehen kommt nach.')),
-        el(
-          'p',
-          { class: 'lede' },
-          'Eine Lektion, eine Hauptaktion. Zwölf handgeschriebene Pilot-Lektionen von A1 bis C2, mit Audio, Video und Karten aus demselben Material.',
-        ),
-      ),
-      el(
-        'div',
-        { class: 'identity-meta' },
-        el('span', {}, `${lessons.length} Lektionen`),
-        el('span', {}, '2 pro Niveau'),
-        el('span', {}, 'lokal · Port 8766'),
-      ),
+      { class: 'identity-meta' },
+      el('span', {}, 'zwei pro Niveau'),
+      el('span', {}, 'lokal, Port 8766'),
     ),
     el(
       'div',
       { class: 'notice-strip', role: 'note' },
-      el('span', { class: 'notice-strip-icon', 'aria-hidden': 'true' }, '!'),
       el(
         'p',
         {},
         el('strong', {}, 'Ehrlich: '),
-        '12 Pilot-Lektionen, synthetischer Korpus, kein zertifizierter Kurs. Der Video-Korpus ist unausgewogen — wo kein passender Clip existiert, sagt die App das und nutzt dein gerendertes Audio.',
+        'Pilot-Lektionen, synthetischer Korpus, kein zertifizierter Kurs. Der Video-Korpus ist unausgewogen. Wo kein passender Clip existiert, sagt die App das und spielt dein gerendertes Audio.',
       ),
     ),
   );
 }
 
-function kpis(lessons, progress, health) {
-  const rendered = lessons.filter((lesson) => lesson.rendered).length;
+function figures(lessons, progress, health) {
+  const minutes = Math.round(
+    lessons.reduce((sum, lesson) => sum + (lesson.duration_ms || 0), 0) / 60000,
+  );
   const clips = health && health.corpus ? health.corpus.clips : null;
   const days = streak(progress.lessons);
   return el(
     'div',
-    { class: 'kpi-grid' },
-    tile('Lektionen', lessons.length, `${LEVELS.filter((l) => lessons.some((x) => x.level === l)).length} Niveaus`, 'var(--accent-hoeren)'),
-    tile('Gerendert', rendered, `${lessons.length - rendered} ohne Audio`, 'var(--accent-karten)'),
-    tile('Videoquellen', clips === null ? '—' : clips, 'bewertete Korpus-Clips', 'var(--accent-video)'),
-    tile('Serie', `${days} ${days === 1 ? 'Tag' : 'Tage'}`, 'aufeinanderfolgende Tage', 'var(--accent-fortschritt)'),
+    { class: 'figures' },
+    cell(String(lessons.length), 'Lektionen'),
+    cell(minutes ? String(minutes) : 'k. A.', 'Minuten Audio'),
+    cell(clips === null ? 'k. A.' : String(clips), 'Videoquellen'),
+    cell(`${days} ${days === 1 ? 'Tag' : 'Tage'}`, 'in Folge'),
   );
 }
 
-function tile(label, value, helper, accent) {
+function cell(value, label) {
   return el(
     'div',
-    { class: 'kpi-tile', style: { '--tile-accent': accent } },
-    el('span', { class: 'kpi-label' }, label),
-    el('span', { class: 'kpi-value' }, String(value)),
-    el('span', { class: 'kpi-helper' }, helper),
+    { class: 'figure-cell' },
+    el('span', { class: 'figure-value' }, value),
+    el('span', { class: 'figure-label' }, label),
   );
 }
 
@@ -142,50 +138,61 @@ function streak(rows) {
   return count;
 }
 
-function todayCard(target, resume, byId) {
-  const section = el(
-    'section',
-    { class: 'section-head accent-hoeren' },
-    el('h2', { class: 'section-heading' }, 'Heute'),
-    el('span', { class: 'mono-label' }, 'eine Hauptaktion'),
-  );
-  if (!target) {
-    return el(
-      'div',
-      {},
-      section,
-      statusBlock('Noch keine Lektion', 'Unter <code>content/lessons/</code> liegt nichts.'),
-    );
-  }
+/* The signature: one German line at display size, its cap height, x-height and
+   baseline ruled in the margin, the English under it. */
 
+function specimen(target, resume, opening) {
+  const duration = target.duration_ms || target.minutes * 60000;
   const position =
     resume && resume.lesson_id === target.id && !resume.completed ? resume.position_ms : 0;
-  const duration = target.duration_ms || target.minutes * 60000;
-  const card = el(
-    'div',
-    { class: 'card', 'data-accent': '' },
-    el('h2', {}, target.title.de),
-    el('p', { class: 'muted' }, target.title.en),
+  const de = opening && opening.de ? opening.de : target.title.de;
+  const en = opening && opening.en ? opening.en : target.title.en;
+  const action = target.rendered
+    ? link(`#/play/${target.id}`, position > 5000 ? 'Weiterhören' : 'Hören', 'button primary')
+    : link(`#/lesson/${target.id}`, 'Lektion ansehen', 'button primary');
+
+  return el(
+    'section',
+    { class: 'specimen', 'aria-labelledby': 'today-head' },
     el(
-      'p',
-      {},
-      target.rendered
-        ? position > 5000
-          ? `${fmtClock(position)} von ${fmtMinutes(duration)} — weiterhören`
-          : `Beginn · ${fmtMinutes(duration)}`
-        : 'Noch nicht gerendert — Lektion ansehen',
+      'div',
+      { class: 'specimen-head' },
+      el('h2', { id: 'today-head' }, 'Heute'),
+      el(
+        'span',
+        { class: 'specimen-meta' },
+        `${target.id}, ${position > 5000 ? `${fmtClock(position)} von ` : ''}${fmtMinutes(duration)}`,
+      ),
     ),
     el(
       'div',
-      { class: 'button-row' },
-      target.rendered
-        ? link(`#/play/${target.id}`, resume ? 'Weiterhören' : 'Hören')
-        : link(`#/lesson/${target.id}`, 'Lektion ansehen'),
+      { class: 'specimen-line' },
+      el(
+        'div',
+        { class: 'specimen-rail', 'aria-hidden': 'true' },
+        el('span', { class: 'tick tick-cap' }, el('i', {}, 'H')),
+        el('span', { class: 'tick tick-x' }, el('i', {}, 'x')),
+        el('span', { class: 'tick tick-base' }, el('i', {}, 'p')),
+      ),
+      el(
+        'div',
+        {},
+        el('p', { class: 'specimen-de', lang: 'de' }, de),
+        en ? el('p', { class: 'specimen-en', lang: 'en' }, en) : null,
+        el(
+          'p',
+          { class: 'specimen-caption' },
+          'Bodoni Moda. H Versalhöhe, x x-Höhe, p Grundlinie.',
+        ),
+      ),
+    ),
+    el(
+      'div',
+      { class: 'specimen-foot' },
+      action,
       link(`#/lesson/${target.id}`, 'Überblick', 'button quiet'),
     ),
   );
-  card.querySelector('a').classList.add('primary');
-  return el('div', {}, section, card);
 }
 
 function lessonSection(lessons) {
@@ -195,14 +202,14 @@ function lessonSection(lessons) {
     'div',
     { class: 'section-head accent-hoeren' },
     el('h2', { class: 'section-heading' }, 'Lektionen'),
-    el('span', { class: 'mono-label' }, `${lessons.length} Einträge`),
+    el('span', { class: 'mono-label' }, 'nach Niveau'),
   );
 
   const tabs = el('div', { class: 'domain-tabs', role: 'tablist', 'aria-label': 'Niveau' });
   const list = el('div', { class: 'matrix-shell' });
 
   const counts = new Map(LEVELS.map((level) => [level, lessons.filter((l) => l.level === level).length]));
-  const options = [{ level: null, label: 'Alle', count: lessons.length }].concat(
+  const options = [{ level: null, label: 'Alle', count: null }].concat(
     LEVELS.map((level) => ({ level, label: level, count: counts.get(level) })),
   );
 
@@ -225,7 +232,7 @@ function lessonSection(lessons) {
           },
         },
         option.label,
-        el('span', { class: 'tab-count' }, String(option.count)),
+        option.count === null ? null : el('span', { class: 'tab-count' }, String(option.count)),
       ),
     );
   }
@@ -252,6 +259,7 @@ function rowFor(lesson) {
       'aria-expanded': 'false',
       'aria-controls': detailId,
     },
+    el('span', { class: 'index-level' }, lesson.level),
     el(
       'span',
       {},
@@ -261,8 +269,8 @@ function rowFor(lesson) {
     el(
       'span',
       {},
-      el('span', { class: 'repo-slug' }, `${lesson.level} · ${lesson.segments} Segmente`),
-      el('span', { class: 'problem-desc' }, lesson.can_do.en),
+      el('span', { class: 'repo-slug' }, fmtMinutes(lesson.duration_ms || lesson.minutes * 60000)),
+      el('span', { class: 'repo-slug' }, `${lesson.segments} Sätze`),
     ),
     el(
       'span',
@@ -270,27 +278,39 @@ function rowFor(lesson) {
       lesson.rendered
         ? el('span', { class: 'badge ok' }, 'Audio')
         : el('span', { class: 'badge' }, 'Text'),
-      el('span', { class: 'mono-label' }, fmtMinutes(lesson.duration_ms || lesson.minutes * 60000)),
     ),
-    el('span', { class: 'expand-chevron', 'aria-hidden': 'true' }, '▾'),
+    el('span', { class: 'expand-chevron', 'aria-hidden': 'true' }, '+'),
   );
 
-  const detail = el('div', { class: 'matrix-detail', id: detailId, hidden: true },
-    el('div', { class: 'detail-block' },
+  const detail = el(
+    'div',
+    { class: 'matrix-detail', id: detailId, hidden: true },
+    el(
+      'div',
+      { class: 'detail-block' },
       el('h3', { class: 'detail-block-title' }, 'Szene'),
-      el('p', {}, lesson.tags.length ? lesson.tags.join(' · ') : '—'),
+      el('p', {}, lesson.tags.length ? lesson.tags.join(', ') : 'ohne Angabe'),
       el('p', { class: 'problem-desc' }, lesson.can_do.de),
     ),
-    el('div', { class: 'detail-block' },
+    el(
+      'div',
+      { class: 'detail-block' },
       el('h3', { class: 'detail-block-title' }, 'Grammatik'),
-      el('div', { class: 'chip-row' },
+      el(
+        'div',
+        { class: 'chip-row' },
         ...(lesson.grammar_focus.length
           ? lesson.grammar_focus.map((item) => el('span', { class: 'chip' }, item))
-          : [el('span', { class: 'chip' }, '—')])),
+          : [el('span', { class: 'chip' }, 'ohne Angabe')]),
+      ),
     ),
-    el('div', { class: 'detail-block' },
+    el(
+      'div',
+      { class: 'detail-block' },
       el('h3', { class: 'detail-block-title' }, 'Weiter'),
-      el('div', { class: 'button-row' },
+      el(
+        'div',
+        { class: 'button-row' },
         lesson.rendered
           ? link(`#/play/${lesson.id}`, 'Hören', 'button')
           : link(`#/lesson/${lesson.id}`, 'Lektion', 'button'),
@@ -313,17 +333,17 @@ function rowFor(lesson) {
 }
 
 function healthLine(health) {
-  if (!health) return el('p', { class: 'loading' }, 'Health unklar — der Server antwortet nicht.');
+  if (!health) return el('p', { class: 'loading' }, 'Health unklar, der Server antwortet nicht.');
   const bits = [];
   if (!health.voices_ok) {
-    bits.push(`${health.missing_voices.length}/6 Stimmen fehlen (VoiceStudio-Design)`);
+    bits.push(`${health.missing_voices.length} von 6 Stimmen fehlen`);
   }
   if (!health.voicestudio.up) {
-    bits.push('VoiceStudio läuft nicht — gerenderte Lektionen spielen trotzdem');
+    bits.push('VoiceStudio läuft nicht, gerenderte Lektionen spielen trotzdem');
   }
   return el(
     'p',
-    { class: 'mono-label', style: { marginTop: '1.5rem' } },
-    bits.length ? bits.join(' · ') : 'Alles bereit · lokal · kein Tracking',
+    { class: 'mono-label health-line' },
+    bits.length ? bits.join(', ') : 'Alles bereit, lokal, kein Tracking',
   );
 }

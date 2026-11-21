@@ -1,4 +1,4 @@
-/* Screen 5 — Glossary. With a lesson id: that lesson's words. Without: a
+/* Screen 5, Glossary. With a lesson id: that lesson's words. Without: a
    search across everything that is loaded, which stays honest (only what
    exists today is shown). */
 
@@ -19,7 +19,7 @@ export async function render([id]) {
       return statusBlock('Keine Lektion', error.message);
     }
     entries = detail.lesson.glossary || [];
-    title = `${detail.lesson.title.de} — Glossar`;
+    title = `${detail.lesson.title.de}, Glossar`;
     pill = detail.lesson.level;
   } else {
     const { lessons } = await api.lessons();
@@ -64,7 +64,7 @@ export async function render([id]) {
               el('span', { class: 'gloss-term' }, entry.de),
               ' ',
               el('span', { class: 'muted' }, entry.pos || ''),
-              entry.plural ? el('span', { class: 'muted' }, ` · ${entry.plural}`) : null,
+              entry.plural ? el('span', { class: 'muted' }, `, ${entry.plural}`) : null,
               entry.lesson ? el('span', { class: 'badge' }, entry.lesson) : null,
             ),
             el('div', {}, entry.en),

@@ -1,4 +1,4 @@
-/* Screen 7 — Progress. The numbers come from the server's SQLite, not from
+/* Screen 7, Progress. The numbers come from the server's SQLite, not from
    local memory: this is the page that answers "where was I?" */
 
 import { api } from '../api.js';
@@ -23,7 +23,7 @@ export async function render() {
   const root = el('section', {},
     el('h1', {}, 'Fortschritt'),
     el('p', { class: 'muted' },
-      `${completed} abgeschlossen · ${started} in Arbeit · ${fmtMinutes(heardMs)} gehört`),
+      `${completed} abgeschlossen, ${started} in Arbeit, ${fmtMinutes(heardMs)} gehört`),
   );
 
   if (rows.length) {
@@ -43,7 +43,7 @@ export async function render() {
                 el('span', { class: 'grow' },
                   el('span', { class: 'title' }, summary.title.de),
                   el('span', { class: 'sub' },
-                    `${summary.level} · ${fmtClock(row.position_ms)}${total ? ` von ${fmtClock(total)}` : ''}`),
+                    `${summary.level}, ${fmtClock(row.position_ms)}${total ? ` von ${fmtClock(total)}` : ''}`),
                 ),
                 row.completed
                   ? el('span', { class: 'badge ok' }, 'fertig')
@@ -58,7 +58,7 @@ export async function render() {
     root.append(
       statusBlock(
         'Noch keine Fortschrittsdaten',
-        'Sobald du eine Lektion angehört hast, erscheint sie hier — gespeichert im Server-SQLite, nicht im Browser.',
+        'Sobald du eine Lektion angehört hast, erscheint sie hier, gespeichert im Server-SQLite, nicht im Browser.',
         [link('#/library', 'Zur Bibliothek', 'button')],
       ),
     );

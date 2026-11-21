@@ -1,9 +1,9 @@
-/* Screen 2 — Player. One primary action: play/pause. */
+/* Screen 2, Player. One primary action: play/pause. */
 
 import { api, ApiError } from '../api.js';
 import { player } from '../player.js';
 import { getDetail, prefs, cycleRate, savePrefs, RATES } from '../store.js';
-import { el, fmtClock, setPill, statusBlock, toast } from '../ui.js';
+import { el, fmtClock, setPill, statusBlock, toast, typo } from '../ui.js';
 
 export async function render([id], query = {}) {
   let detail, progress;
@@ -82,12 +82,25 @@ export async function render([id], query = {}) {
     now.replaceChildren();
     if (entry) {
       const segment = segments.get(entry.id);
+      const meta = [entry.speaker, entry.type && entry.type !== 'line' ? entry.type : null]
+        .filter(Boolean)
+        .join(', ');
       now.append(
-        entry.speaker ? el('span', { class: 'speaker' }, entry.speaker) : null,
-        entry.type && entry.type !== 'line' ? el('span', { class: 'type' }, entry.type) : null,
-        el('div', { class: 'de' }, entry.text),
+        meta ? el('span', { class: 'speaker' }, meta) : null,
+        el(
+          'div',
+          { class: 'now-line' },
+          el(
+            'div',
+            { class: 'specimen-rail', 'aria-hidden': 'true' },
+            el('span', { class: 'tick tick-cap' }, el('i', {}, 'H')),
+            el('span', { class: 'tick tick-x' }, el('i', {}, 'x')),
+            el('span', { class: 'tick tick-base' }, el('i', {}, 'p')),
+          ),
+          el('div', { class: 'de', lang: 'de' }, entry.text),
+        ),
         prefs.translations && segment && segment.translation
-          ? el('div', { class: 'en' }, segment.translation)
+          ? el('div', { class: 'en', lang: 'en' }, typo(segment.translation))
           : null,
       );
       paintAnswer(segment);
@@ -98,7 +111,7 @@ export async function render([id], query = {}) {
 
     const play = transport.querySelector('[data-action=play]');
     if (play) {
-      play.textContent = _player.isPlaying ? '⏸' : '▶';
+      play.textContent = _player.isPlaying ? 'Pause' : 'Abspielen';
       play.setAttribute('aria-label', _player.isPlaying ? 'Pause' : 'Abspielen');
     }
   }
@@ -107,17 +120,17 @@ export async function render([id], query = {}) {
     const isCheck = segment && segment.type === 'check';
     answer.hidden = !isCheck || !document.getElementById('show-answer').checked;
     if (answer.hidden) return;
-    const answers = (segment.answers || []).join(' · ') || '—';
+    const answers = (segment.answers || []).join(', ') || 'keine Antwort hinterlegt';
     answer.replaceChildren(el('strong', {}, 'Antwort: '), answers);
   }
 
   transport.replaceChildren(
-    el('button', { class: 'step', type: 'button', 'data-action': 'prev', title: 'Vorheriger Satz (J)' }, '⏮'),
+    el('button', { class: 'step', type: 'button', 'data-action': 'prev', title: 'Vorheriger Satz (J)' }, 'Zurück'),
     el('button', {
       class: 'primary-play', type: 'button', 'data-action': 'play',
       title: 'Abspielen/Pause (Space)',
-    }, '▶'),
-    el('button', { class: 'step', type: 'button', 'data-action': 'next', title: 'Nächster Satz (K)' }, '⏭'),
+    }, 'Abspielen'),
+    el('button', { class: 'step', type: 'button', 'data-action': 'next', title: 'Nächster Satz (K)' }, 'Weiter'),
   );
   transport.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]');
@@ -128,18 +141,19 @@ export async function render([id], query = {}) {
   });
 
   controls.replaceChildren(
-    ...RATES.map(
-      (rate) =>
-        el('button', {
-          class: 'chip', type: 'button', 'data-rate': String(rate),
-          'aria-pressed': String(prefs.rate === rate), title: `Tempo ${rate}`,
-        }, String(rate)),
-    ),
+    ...RATES.map((rate) => {
+      const label = rate === 1 ? '1,0' : String(rate).replace('.', ',');
+      return el('button', {
+        class: 'chip', type: 'button', 'data-rate': String(rate),
+        'aria-pressed': String(prefs.rate === rate),
+        title: `Tempo ${label}`,
+      }, label);
+    }),
     el('button', {
       class: 'chip', type: 'button', id: 'show-answer',
       'aria-pressed': 'false', title: 'Übersetzung zeigen (T)',
-    }, 'Übers.'),
-    el('button', { class: 'chip', type: 'button', id: 'repeat-line', 'aria-pressed': 'false' }, 'Satz ↻'),
+    }, 'Übersetzung'),
+    el('button', { class: 'chip', type: 'button', id: 'repeat-line', 'aria-pressed': 'false' }, 'Wiederholen'),
   );
   const showAnswer = document.getElementById('show-answer');
   showAnswer.addEventListener('click', () => {
@@ -207,7 +221,7 @@ export async function render([id], query = {}) {
         controls.querySelectorAll('[data-rate]').forEach((other) =>
           other.setAttribute('aria-pressed', String(Number(other.dataset.rate) === rate)),
         );
-        toast(`Tempo ${rate}`);
+        toast(`Tempo ${String(rate).replace('.', ',')}`);
         break;
       }
       default:

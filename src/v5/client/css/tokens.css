@@ -1,0 +1,77 @@
+/* Specimen tokens — the theme's material, in one place.
+   Light is the theme's own paper. Dark is derived, never inverted: a warm
+   near-black ground, oat ink, the same ink blue lifted for contrast.
+   Values are OKLCH; the hue stays on the oat (60 to 82) except the signal. */
+
+:root {
+  color-scheme: light;
+
+  /* spacing: 2 4 8 12 16 24 40 64 96 144 */
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px;
+  --space-md: 16px; --space-lg: 24px; --space-xl: 40px;
+  --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+
+  /* type: 1.2 ratio from a 16px body, plus a label step */
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-label: 0.8125rem;
+  --text-md: 1rem; --text-lg: 1.2rem; --text-xl: 1.44rem;
+  --text-2xl: 1.728rem; --text-3xl: 2.074rem;
+  --text-display-s: 1.728rem; --text-display: 2.074rem;
+  --text-section: 1.44rem; --text-title: 1.2rem; --text-lead: 1.0625rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+
+  --container: 1280px; --gutter: 40px; --gap-columns: 32px;
+  --section-gap-s: 64px; --section-gap: 80px; --section-gap-l: 96px;
+
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200;
+  --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* paper, ink, five neutrals between, one signal */
+  --color-paper: oklch(96.5% 0.016 82);
+  --color-paper-2: oklch(93.5% 0.02 80);
+  --color-paper-3: oklch(89% 0.024 78);
+  --color-ink: oklch(17% 0.012 60);
+  --color-ink-2: oklch(28% 0.014 60);
+  --color-muted: oklch(45% 0.014 65);
+  --color-rule: oklch(80% 0.018 75);
+  --color-rule-2: oklch(66% 0.02 72);
+  --color-field: oklch(52% 0.016 70);
+  --color-accent: oklch(45% 0.18 262);
+  --color-accent-ink: oklch(97% 0.012 82);
+  --color-focus: oklch(50% 0.18 262);
+  --color-guide: oklch(55% 0.16 262 / 0.5);
+  --color-error: oklch(45% 0.19 27);
+  --color-success: oklch(40% 0.11 150);
+  --color-warning: oklch(45% 0.11 75);
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geist Mono", ui-monospace, monospace;
+
+  --radius-card: 0; --radius-pill: 0; --rule-hair: 1px;
+  --shadow-card: none;
+  --tracking-display: -0.02em; --display-weight: 400; --display-optical: 96;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: oklch(16.5% 0.006 70);
+  --color-paper-2: oklch(21% 0.007 70);
+  --color-paper-3: oklch(25.5% 0.008 70);
+  --color-ink: oklch(93% 0.012 82);
+  --color-ink-2: oklch(85% 0.012 80);
+  --color-muted: oklch(72% 0.012 78);
+  --color-rule: oklch(32% 0.01 75);
+  --color-rule-2: oklch(44% 0.012 75);
+  --color-field: oklch(58% 0.014 75);
+  --color-accent: oklch(72% 0.11 262);
+  --color-accent-ink: oklch(17% 0.02 262);
+  --color-focus: oklch(76% 0.12 262);
+  --color-guide: oklch(72% 0.11 262 / 0.55);
+  --color-error: oklch(70% 0.16 25);
+  --color-success: oklch(74% 0.12 150);
+  --color-warning: oklch(80% 0.11 80);
+}

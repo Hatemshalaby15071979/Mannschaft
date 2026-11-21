@@ -6,7 +6,7 @@
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v5';
+const VERSION = 'v6';
 const SHELL = `mannschaft-${VERSION}`;
 const DATA = `mannschaft-data-${VERSION}`;
 
@@ -19,9 +19,17 @@ const SHELL_URLS = [
   '/index.html',
   '/manifest.webmanifest',
   '/assets/logo-mark.png',
+  '/assets/fonts/bodoni.woff2',
+  '/assets/fonts/geist400.woff2',
+  '/assets/fonts/geist500.woff2',
+  '/assets/fonts/geistmono400.woff2',
+  '/assets/fonts/geistmono500.woff2',
+  '/css/tokens.css',
+  '/css/base.css',
   '/css/app.css',
   '/css/v6-shell.css',
   '/css/v6.css',
+  '/css/specimen.css',
   '/sw.js',
   '/js/main.js',
   '/js/shell.js',

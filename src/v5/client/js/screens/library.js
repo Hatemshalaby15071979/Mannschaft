@@ -1,4 +1,4 @@
-/* Screen 8 — Library. Filter chips + rows, client-side, no fetch per tap. */
+/* Screen 8, Library. Filter chips + rows, client-side, no fetch per tap. */
 
 import { api } from '../api.js';
 import { el, link, statusBlock } from '../ui.js';
@@ -10,7 +10,7 @@ export async function render() {
   try {
     ({ lessons: all } = await api.lessons());
   } catch (error) {
-    return statusBlock('Keine Bibliothik', error.message);
+    return statusBlock('Keine Bibliothek', error.message);
   }
 
   const levels = [...new Set(all.map((lesson) => lesson.level))].sort();
@@ -19,7 +19,7 @@ export async function render() {
   const root = el('div', {});
   root.append(
     el('h1', {}, 'Bibliothek'),
-    el('p', { class: 'muted' }, `${all.length} Lektion(en)`),
+    el('p', { class: 'muted' }, all.length === 1 ? 'eine Lektion' : `${all.length} Lektionen`),
   );
 
   const chips = el('div', { class: 'chips', role: 'group', 'aria-label': 'Filter' },
@@ -40,7 +40,7 @@ export async function render() {
   }
   root.append(chips);
 
-  const tagChips = el('div', { class: 'chips', role: 'group', 'aria-label': 'Thema' });
+  const tagChips = el('div', { class: 'chips chips--tag', role: 'group', 'aria-label': 'Thema' });
   const tags = [...new Set(all.flatMap((lesson) => lesson.tags))].sort();
   for (const tag of tags.slice(0, 12)) {
     tagChips.append(
@@ -72,7 +72,7 @@ export async function render() {
               { class: 'row', href: `#/lesson/${lesson.id}` },
               el('span', { class: 'grow' },
                 el('span', { class: 'title' }, lesson.title.de),
-                el('span', { class: 'sub' }, `${lesson.level} · ${lesson.title.en}`),
+                el('span', { class: 'sub' }, `${lesson.level}, ${lesson.title.en}`),
               ),
               lesson.rendered
                 ? el('span', { class: 'badge ok' }, 'Audio')

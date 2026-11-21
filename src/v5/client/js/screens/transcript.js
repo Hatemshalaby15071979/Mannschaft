@@ -1,11 +1,11 @@
-/* Screen 4 — Transcript. Shares the persistent player; sync is driven by the
+/* Screen 4, Transcript. Shares the persistent player; sync is driven by the
    measured timeline.json start_ms, never by estimation. Words are tappable and
    open the dictionary; the small arrow jumps the audio to that line. */
 
 import { api } from '../api.js';
 import { player } from '../player.js';
 import { getDetail, prefs } from '../store.js';
-import { el, fmtClock, setPill, statusBlock } from '../ui.js';
+import { el, fmtClock, setPill, statusBlock, typo } from '../ui.js';
 
 export async function render([id]) {
   let detail;
@@ -22,7 +22,7 @@ export async function render([id]) {
   const byEntry = new Map(timeline.map((entry) => [entry.id, entry]));
 
   if (player.detail && player.detail.lesson.id === id) {
-    /* already loaded — the shared player keeps playing */
+    /* already loaded, the shared player keeps playing */
   } else {
     player.load(detail, {});
   }
@@ -30,9 +30,9 @@ export async function render([id]) {
   const root = el('section', {},
     el('h1', {}, detail.lesson.title.de),
     timeline.length
-      ? el('p', { class: 'muted' }, `${timeline.length} Zeilen · synchron aus timeline.json`)
-      : el('p', { class: 'muted' }, 'Noch keine Timeline — Textansicht, ohne Synchronisation.'),
-    el('p', { class: 'mono-label' }, 'Wort antippen → Wörterbuch · Pfeil → an diese Stelle springen'),
+      ? el('p', { class: 'muted' }, `${timeline.length} Zeilen, synchron aus timeline.json`)
+      : el('p', { class: 'muted' }, 'Noch keine Timeline, Textansicht, ohne Synchronisation.'),
+    el('p', { class: 'mono-label' }, 'Ein Wort antippen öffnet das Wörterbuch. Die Zeit springt an die Stelle.'),
   );
 
   const list = el('ol', { class: 'transcript' });
@@ -58,12 +58,12 @@ export async function render([id]) {
           { class: 'line-block', 'data-seg': entry.id, 'aria-current': 'false' },
           el('p', { class: 'de' }, ...wordButtons(entry.text)),
           prefs.translations && segment && segment.translation
-            ? el('p', { class: 'en' }, segment.translation)
+            ? el('p', { class: 'en' }, typo(segment.translation))
             : null,
           el('span', { class: 'meta' },
             [entry.speaker, entry.type && entry.type !== 'line' ? entry.type : null]
               .filter(Boolean)
-              .join(' · ')),
+              .join(', ')),
           el(
             'button',
             {
@@ -73,7 +73,7 @@ export async function render([id]) {
               ...(measured ? {} : { disabled: true }),
               title: measured ? 'Zum Zeitpunkt springen' : 'Nicht synchronisiert',
             },
-            measured ? `↦ ${fmtClock(entry.start_ms)}` : 'ohne Zeit',
+            measured ? `ab ${fmtClock(entry.start_ms)}` : 'ohne Zeit',
           ),
         ),
       ),

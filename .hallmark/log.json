@@ -1,0 +1,24 @@
+[
+ {
+  "scope": "app",
+  "mode": "build",
+  "shape": "app screen: a ruled contents index in the left margin, the lesson line as a specimen on the first screen, twelve lessons as ruled rows",
+  "theme": "Specimen",
+  "axes": "light/high-contrast-serif/cool",
+  "hero": "masthead, four figures, then the lesson line set as a specimen (app scope: no hero, no fold)",
+  "nav": "sidebar contents index, hairline rows, no dots; five-tab bar under 60rem",
+  "footer": "sidebar foot: Pilot-Lektionen, A1 bis C2 / Lokal, kein Tracking",
+  "imagery": "none; the type is the picture",
+  "photos": [],
+  "entry": "masthead, figures, specimen, index",
+  "fingerprint": "index-first/app-shell",
+  "sections": "masthead, figures, specimen, index, health line",
+  "signature": "the lesson opening line set as a type specimen, ruled at cap, x and baseline",
+  "waived": [
+   "24b",
+   "39b"
+  ],
+  "prompt": "/hallmark: shell + all 12 screens, editorial, capture the app, pick a lesson",
+  "date": "2026-11-21"
+ }
+]

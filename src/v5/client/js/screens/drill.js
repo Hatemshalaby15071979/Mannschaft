@@ -1,9 +1,9 @@
-/* Screen 6 — Drill. Two lanes: vocabulary reveal/self-grade, and — for
-   lessons with echo/drill segments — listen-and-repeat the actual clip. */
+/* Screen 6, Drill. Two lanes: vocabulary reveal/self-grade, and, for
+   lessons with echo/drill segments, listen-and-repeat the actual clip. */
 
 import { api } from '../api.js';
 import { getDetail } from '../store.js';
-import { el, setPill, statusBlock, toast } from '../ui.js';
+import { el, setPill, statusBlock, toast, typo } from '../ui.js';
 
 const KEY = (id) => `v5.drill.${id}`;
 
@@ -25,7 +25,7 @@ export async function render([id]) {
   let index = 0;
   let revealed = false;
 
-  const root = el('section', {}, el('h1', {}, `${detail.lesson.title.de} — Übung`));
+  const root = el('section', {}, el('h1', {}, `${detail.lesson.title.de}, Übung`));
 
   /* ---- lane 1: vocabulary ------------------------------------------- */
 
@@ -61,7 +61,7 @@ export async function render([id]) {
     counter.textContent =
       entries.length === 0
         ? 'Diese Lektion hat noch kein Glossar (M9 fügt es aus).'
-        : `Eintrag ${index + 1} von ${entries.length} · gewusst ${stats.right.filter(Boolean).length}`;
+        : `Eintrag ${index + 1} von ${entries.length}, gewusst ${stats.right.filter(Boolean).length}`;
     card.replaceChildren();
     if (!entries.length) {
       card.append(el('p', {}, 'Kein Glossar.'));
@@ -74,7 +74,7 @@ export async function render([id]) {
       revealed
         ? el('div', {}, entry.en,
             entry.example_de ? el('div', { class: 'gloss-example' }, entry.example_de) : null)
-        : el('div', { class: 'muted' }, '— Umschalten für die Bedeutung'),
+        : el('div', { class: 'muted' }, 'Umschalten für die Bedeutung'),
     );
     buttons.replaceChildren(
       el('button', { type: 'button', 'data-act': 'flip' }, revealed ? 'Verbergen' : 'Umschalten'),
@@ -121,7 +121,7 @@ export async function render([id]) {
     } else {
       const pending = stats.right.findIndex((flag, i) => !flag);
       index = pending === -1 ? 0 : pending;
-      toast('Runde geschafft — nächste Runde mit den offenen Wörtern.');
+      toast('Runde geschafft, nächste Runde mit den offenen Wörtern.');
     }
   }
 
@@ -133,7 +133,7 @@ export async function render([id]) {
     root.append(
       el('h2', {}, 'Nachsprechen'),
       el('p', { class: 'muted' },
-        'Hör den Satz, sprich ihn nach. Das Clip ist das eigentliche Material — nicht ein neu synthetisiertes.'),
+        'Hör den Satz, sprich ihn nach. Das Clip ist das eigentliche Material, nicht ein neu synthetisiertes.'),
       el('ol', { class: 'row-list' },
         ...repeatSegments.map(
           (segment, i) =>
@@ -146,7 +146,7 @@ export async function render([id]) {
               }, '▶ Clip'),
               ' ',
               segment.text,
-              segment.translation ? el('div', { class: 'muted' }, segment.translation) : null),
+              segment.translation ? el('div', { class: 'muted' }, typo(segment.translation)) : null),
         ),
       ),
     );

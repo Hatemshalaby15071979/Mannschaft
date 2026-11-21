@@ -1,4 +1,4 @@
-/* Screen 3 — Lesson detail. The honest version: if there is no audio yet,
+/* Screen 3, Lesson detail. The honest version: if there is no audio yet,
    it says so and offers to render, reporting the real blocker (M4). */
 
 import { api, ApiError } from '../api.js';
@@ -31,8 +31,8 @@ export async function render([id]) {
     el('p', { class: 'muted' }, lesson.title ? lesson.title.en : ''),
     el('p', {},
       el('strong', {}, lesson.level),
-      ` · ${fmtMinutes((summary && summary.duration_ms) || lesson.minutes * 60000)}`,
-      ' · ',
+      `, ${fmtMinutes((summary && summary.duration_ms) || lesson.minutes * 60000)}`,
+      ', ',
       `${lesson.segments.length} Segmente`,
     ),
   );
@@ -68,10 +68,10 @@ export async function render([id]) {
       el('div', { class: 'panel', style: { marginTop: '0.5rem' } },
         el('span', { class: 'mono-label' }, 'Weg durch die Lektion'),
         el('p', { class: 'muted' },
-          `Hören → Video → Karten → Wörterbuch. `,
+          'Hören, dann Video, dann Karten, dann Wörterbuch. ',
           context.media.has_clip
             ? 'Ein Clip ist zugeordnet.'
-            : 'Kein passender Clip — das gerenderte Audio ist das Material.',
+            : 'Kein passender Clip, das gerenderte Audio ist das Material.',
         ),
         el('div', { class: 'chip-row' },
           ...(context.grammar_focus || []).map((item) => el('span', { class: 'chip' }, item))),
@@ -85,7 +85,7 @@ export async function render([id]) {
     audioSlot.append(
       el('p', {},
         el('span', { class: 'badge ok' }, 'Audio bereit'),
-        ` · ${timeline.length} Zeilen im Timeline`,
+        `, ${timeline.length} Zeilen mit Zeitangaben`,
       ),
     );
   } else {
@@ -101,8 +101,7 @@ export async function render([id]) {
           (entry) =>
             el('li', {},
               el('span', { class: 'gloss-term' }, entry.de),
-              ' — ',
-              entry.en,
+              el('span', { class: 'gloss-en' }, entry.en),
               entry.example_de ? el('div', { class: 'gloss-example' }, entry.example_de) : null,
             ),
         ),
@@ -121,7 +120,7 @@ function renderOffer(id, lesson) {
   const offer = el('div', { class: 'card' },
     el('h2', {}, 'Noch kein Audio'),
     el('p', { class: 'muted' },
-      'Dieser Text ist validiert, aber noch nicht synthetisiert. Starte den Render-Job — er läuft sequenziell im Hintergrund.'),
+      'Dieser Text ist validiert, aber noch nicht synthetisiert. Starte den Render-Job, er läuft sequenziell im Hintergrund.'),
   );
   const button = el('button', { class: 'primary', type: 'button' }, 'Jetzt rendern');
   const status = el('p', { class: 'loading', 'aria-live': 'polite' }, '');
@@ -131,7 +130,7 @@ function renderOffer(id, lesson) {
     button.disabled = true;
     try {
       const { job } = await api.render(id);
-      status.textContent = `Job ${job.job_id} — ${job.state}…`;
+      status.textContent = `Job ${job.job_id}, ${job.state}…`;
       poll(job.job_id, status, () => {
         invalidateDetail(id);
         status.textContent = '';

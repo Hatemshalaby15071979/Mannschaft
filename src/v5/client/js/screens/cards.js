@@ -1,14 +1,14 @@
-/* Screen 10 — Sentence cards. One card on screen at a time, built from the
+/* Screen 10, Sentence cards. One card on screen at a time, built from the
    lesson's own segments and glossary. Audio comes from the existing per-line
    render; the browser's speech synthesis is the fallback when a line has no
    render. Grading writes a `card_graded` event and nothing else. */
 
 import { api } from '../api.js';
 import { getDetail } from '../store.js';
-import { el, setPill, statusBlock, toast } from '../ui.js';
+import { el, setPill, statusBlock, toast, typo } from '../ui.js';
 
 const KIND_LABEL = {
-  recall: 'Erinnern · DE → EN',
+  recall: 'Erinnern, DE nach EN',
   cloze: 'Lücke füllen',
   order: 'Satz ordnen',
   produce: 'Selbst sprechen',
@@ -44,8 +44,8 @@ export async function render([id]) {
   const stage = el('div', { class: 'card-stage', 'aria-live': 'polite' });
   const footer = el('div', { class: 'card-footer' });
   root.append(
-    el('span', { class: 'mono-label' }, 'Karten · eine pro Bildschirm'),
     el('h1', {}, title),
+    el('p', { class: 'mono-label' }, 'Karten, eine pro Bildschirm'),
     stage,
     footer,
     el('p', { class: 'mono-label', style: { marginTop: '1rem' } },
@@ -150,7 +150,7 @@ export async function render([id]) {
       stage.append(tokens, builtLine);
     } else if (card.kind === 'produce') {
       stage.append(
-        el('p', { class: 'card-prompt' }, card.can_do_en || ''),
+        el('p', { class: 'card-prompt' }, typo(card.can_do_en || '')),
         el('p', { class: 'card-hint' }, 'Sag es laut auf Deutsch. Dann vergleiche.'),
       );
     } else {
@@ -184,7 +184,7 @@ export async function render([id]) {
   }
 
   function answerFor(card) {
-    if (card.kind === 'recall') return el('p', {}, card.answer_en || '');
+    if (card.kind === 'recall') return el('p', {}, typo(card.answer_en || ''));
     if (card.kind === 'cloze') return el('p', {}, card.answer_de || '');
     if (card.kind === 'order') return el('p', {}, card.answer || '');
     return el('p', {}, card.answer_de || '');
@@ -193,7 +193,7 @@ export async function render([id]) {
   function paintFooter() {
     footer.replaceChildren(
       el('span', { class: 'card-progress' },
-        `Karte ${state.index + 1} von ${cards.length} · gewusst ${state.graded}`),
+        `Karte ${state.index + 1} von ${cards.length}, gewusst ${state.graded}`),
       state.revealed
         ? el('span', { class: 'card-score' },
             el('button', {

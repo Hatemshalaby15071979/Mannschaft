@@ -189,7 +189,7 @@ def test_library_to_play_and_position_restores(server_url):
         page.on("console", lambda msg: print("console:", msg.text))
         page.on("pageerror", lambda err: print("pageerror:", err))
         page.goto(server_url, wait_until="load")
-        page.wait_for_selector(".tabbar", timeout=10_000)
+        page.wait_for_selector(".side-index", timeout=10_000)
 
         # library renders the lesson row
         page.evaluate("location.hash = '#/library'")
@@ -254,19 +254,19 @@ def test_every_screen_renders_real_content(server_url):
         browser = p.chromium.launch(args=["--no-sandbox"])
         page = browser.new_page()
         page.goto(server_url, wait_until="load")
-        page.wait_for_selector(".tabbar", timeout=10_000)
+        page.wait_for_selector(".side-index", timeout=10_000)
 
         routes = [
             ("#/", "Hören zuerst."),
             ("#/library", "Bibliothek"),
             ("#/lesson/A1-01", "Segmente"),
-            ("#/play/A1-01", "NARRATOR"),
+            ("#/play/A1-01", "narrator"),
             ("#/transcript/A1-01", "Zeilen"),
             ("#/glossary/A1-01", "Glossar"),
             ("#/drill/A1-01", "bung"),
             ("#/progress", "Fortschritt"),
-            ("#/clip/A1-01", "EIN CLIP"),
-            ("#/cards/A1-01", "KARTEN"),
+            ("#/clip/A1-01", "ein Clip"),
+            ("#/cards/A1-01", "eine pro Bildschirm"),
             ("#/dict", "Wort nachschlagen"),
         ]
         for route, expected in routes:
@@ -346,7 +346,7 @@ def test_brand_mark_appears_on_every_route(server_url):
         browser = p.chromium.launch(args=["--no-sandbox"])
         page = browser.new_page(viewport={"width": 1280, "height": 900})
         page.goto(server_url, wait_until="load")
-        page.wait_for_selector(".tabbar", timeout=10_000)
+        page.wait_for_selector(".side-index", timeout=10_000)
         for route in routes:
             page.evaluate(f"location.hash = {json.dumps(route)}")
             page.wait_for_timeout(300)

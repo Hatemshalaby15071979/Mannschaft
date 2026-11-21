@@ -1,4 +1,4 @@
-/* Screen 11 — Wörterbuch. Local seed first (built from the 12 lessons' own
+/* Screen 11, Wörterbuch. Local seed first (built from the 12 lessons' own
    glossaries, with source attribution), then clearly labelled outbound links.
    The app never scrapes or stores a dictionary page. */
 
@@ -18,8 +18,8 @@ export async function render(_params, query) {
 
   const root = el('section', { class: 'accent-woerter' });
   root.append(
-    el('span', { class: 'mono-label' }, 'Wörterbuch · lokal zuerst'),
     el('h1', {}, 'Wort nachschlagen'),
+    el('p', { class: 'mono-label' }, 'Wörterbuch, lokal zuerst'),
     el('p', { class: 'lede' },
       payload.count
         ? `${payload.count} Einträge aus den eigenen Lektionen. Erst lokal, dann Links zu DWDS, Wiktionary, Cambridge und Collins.`
@@ -64,7 +64,7 @@ export async function render(_params, query) {
     );
   } else if (!initial) {
     results.append(el('h2', { class: 'section-heading' }, 'Bestand'),
-      el('p', { class: 'muted' }, 'Erste Einträge — suche oben nach einem Wort.'));
+      el('p', { class: 'muted' }, 'Erste Einträge, suche oben nach einem Wort.'));
   }
 
   for (const entry of local.slice(0, 30)) {
@@ -89,6 +89,11 @@ export async function render(_params, query) {
   return { node: root };
 }
 
+function sourceLabel(source) {
+  if (!source) return 'Lektionsglossar';
+  return source.replace(/^v5 lesson glossary/i, 'Lektionsglossar');
+}
+
 function entryCard(entry) {
   return el('article', { class: 'dict-result', style: { marginBottom: '0.75rem' } },
     el('div', { style: { display: 'flex', gap: '0.5rem', alignItems: 'baseline', flexWrap: 'wrap' } },
@@ -101,6 +106,6 @@ function entryCard(entry) {
     entry.example_en ? el('p', { class: 'dict-example' }, entry.example_en) : null,
     entry.note_de ? el('p', { class: 'muted' }, entry.note_de) : null,
     el('p', { class: 'dict-source' },
-      `Quelle: ${entry.source || 'Lektionsglossar'} · ${(entry.sources || [entry.source_lesson]).join(', ')}`),
+      `Quelle: ${sourceLabel(entry.source)}, ${(entry.sources || [entry.source_lesson]).join(', ')}`),
   );
 }

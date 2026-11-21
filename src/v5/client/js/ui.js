@@ -38,6 +38,14 @@ export function fmtMinutes(ms) {
   return `${minutes} Min.`;
 }
 
+/* Authored prose arrives with straight apostrophes and three dots. Set them
+   as typographic characters at the point of display, never in the data. */
+export function typo(text) {
+  return String(text ?? '')
+    .replace(/'/g, '\u2019')
+    .replace(/\.\.\./g, '\u2026');
+}
+
 export function setPill(text) {
   const pill = document.getElementById('level-pill');
   if (!pill) return;

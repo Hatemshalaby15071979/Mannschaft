@@ -84,12 +84,12 @@ def outbound_links(query: str) -> list[dict]:
         {
             "label": "Cambridge",
             "url": f"https://dictionary.cambridge.org/dictionary/german-english/{term}",
-            "note": "deutsch → englisch",
+            "note": "deutsch nach englisch",
         },
         {
             "label": "Collins",
             "url": f"https://www.collinsdictionary.com/dictionary/german-english/{term}",
-            "note": "deutsch → englisch",
+            "note": "deutsch nach englisch",
         },
     ]
 

@@ -1,4 +1,4 @@
-/* Screen 9 — Clip. One recommended video for this lesson, embedded from the
+/* Screen 9, Clip. One recommended video for this lesson, embedded from the
    privacy-enhanced host. Never autoplays; the user presses play. If the corpus
    has no suitable clip the screen says so and points at the rendered audio. */
 
@@ -23,8 +23,8 @@ export async function render([id]) {
 
   const root = el('section', { class: 'accent-video' });
   root.append(
-    el('span', { class: 'mono-label' }, 'Video · ein Clip, kein Autoplay'),
     el('h1', {}, title),
+    el('p', { class: 'mono-label' }, 'Video, ein Clip ohne Autoplay'),
   );
 
   if (!media.primary) {
@@ -32,7 +32,7 @@ export async function render([id]) {
       el('div', { class: 'clip-frame is-empty' },
         el('p', {},
           el('strong', {}, 'Kein passender freier Clip gefunden. '),
-          'Die App nutzt dein gerendertes Audio — das ist ehrlicher als ein unpassendes Video.'),
+          'Die App nutzt dein gerendertes Audio, das ist ehrlicher als ein unpassendes Video.'),
       ),
       el('div', { class: 'button-row' },
         link(`#/play/${id}`, 'Gerendertes Audio hören'),
@@ -88,7 +88,7 @@ export async function render([id]) {
               iframe.src = `https://www.youtube-nocookie.com/embed/${alt.video_id}?start=${Math.floor(alt.start_s)}&end=${Math.floor(alt.end_s)}&rel=0`;
             },
           }, 'Anderer Clip'),
-          ` ${Math.floor(alt.start_s)}–${Math.floor(alt.end_s)}s`,
+          ` ${Math.floor(alt.start_s)} bis ${Math.floor(alt.end_s)} s`,
         ),
       );
     }

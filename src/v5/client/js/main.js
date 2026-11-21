@@ -78,7 +78,7 @@ async function route() {
 
   const screen = document.getElementById('screen');
   if (!match) {
-    screen.append(statusBlock('Nicht gefunden', `Unbekannter Pfad: ${path || '/'} · Nutze die Tabbar.`));
+    screen.append(statusBlock('Nicht gefunden', `Unbekannter Pfad: ${path || '/'}, Nutze die Tabbar.`));
     return;
   }
 
