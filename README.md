@@ -2,6 +2,11 @@
   <img src="src/v5/client/assets/logo-badge.png" width="96" alt="Mannschaft — helix mark">
 </p>
 
+<p align="center">
+  <a href="https://github.com/Hatemshalaby15071979/Mannschaft/actions/workflows/ci.yml"><img src="https://github.com/Hatemshalaby15071979/Mannschaft/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-3776ab" alt="Python 3.11 to 3.14">
+</p>
+
 # Mannschaft
 
 Mannschaft is a single-user, localhost, listening-first German learning app for
@@ -22,12 +27,12 @@ address, and no content is scraped at runtime.
 | Audio | Rendered and verified for all 12 (`content/audio/`, ~251 MB, not in git) |
 | Corpus | 790 scored candidate clips from Easy German, **synthetic/uneven** (A1 has 3, B2 has 455) |
 | Voices | Six VoiceStudio design profiles; VoiceStudio is **optional** for daily learning |
-| Scale-out | M10 (72 lessons) and M11 (release v5.0.0) are **deferred** by the 2026-11-18 pilot decision |
+| Scale-out | M10 (72 lessons) and M11 (release) are **deferred** by the 2026-11-18 pilot decision |
 | Dictionary | Local seed built from the lessons' own glossaries (542 entries) + outbound links only |
 | Certification | None. This is not a certified course and does not claim to be |
 
-The app is additive over v5: the original eight screens, `/api/render`, the
-service worker and every rendered file are untouched. V6 adds three screens
+The app is additive over the original eight-screen build: those screens, `/api/render`,
+the service worker and every rendered file are untouched. V6 adds three screens
 (Video, Karten, Wörterbuch) and four read-only routes.
 
 ---
