@@ -9,17 +9,27 @@ const THEMES = ['dark', 'light'];
 const INTENSITIES = ['calm', 'balanced', 'vivid'];
 const INTENSITY_LABEL = { calm: 'Ruhig', balanced: 'Ausgewogen', vivid: 'Kräftig' };
 
+/* No stored choice follows the system: a dark desktop should not open a
+   paper page. The toggle still wins once the reader picks. */
+function systemTheme() {
+  try {
+    return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  } catch {
+    return 'light';
+  }
+}
+
 function read() {
   try {
     const raw = JSON.parse(localStorage.getItem(KEY) || '{}');
     return {
-      theme: THEMES.includes(raw.theme) ? raw.theme : 'light',
+      theme: THEMES.includes(raw.theme) ? raw.theme : systemTheme(),
       intensity: INTENSITIES.includes(raw.intensity) ? raw.intensity : 'balanced',
       motion: raw.motion !== false,
       focus: raw.focus === true,
     };
   } catch {
-    return { theme: 'light', intensity: 'balanced', motion: true, focus: false };
+    return { theme: systemTheme(), intensity: 'balanced', motion: true, focus: false };
   }
 }
 

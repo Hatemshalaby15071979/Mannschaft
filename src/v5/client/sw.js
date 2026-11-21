@@ -6,7 +6,7 @@
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v6';
+const VERSION = 'v7';
 const SHELL = `mannschaft-${VERSION}`;
 const DATA = `mannschaft-data-${VERSION}`;
 
@@ -107,7 +107,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  event.respondWith(shellFirst(event.request));
+  event.respondWith(shellFirst(event));
 });
 
 async function audioFromCache(request) {
@@ -199,14 +199,23 @@ async function navigationFirst(request) {
   }
 }
 
-async function shellFirst(request) {
+/* Stale-while-revalidate. A cache-first shell with no revalidation is how a
+   design ships and one file stays behind: the page then imports a module the
+   cache never replaced, and sits on its loading line forever. Paint from the
+   cache, but always fetch and replace it in the background. */
+async function shellFirst(event) {
+  const request = event.request;
   const cache = await caches.open(SHELL);
   const cached = await cache.match(request, { ignoreVary: true });
+  const fresh = fetch(request)
+    .then(async (response) => {
+      if (response && response.ok) await cache.put(request, response.clone());
+      return response;
+    })
+    .catch(() => null);
+  event.waitUntil(fresh);
   if (cached) return cached;
-  const response = await fetch(request).catch(() => null);
-  if (response && response.ok) {
-    await cache.put(request, response.clone());
-  }
+  const response = await fresh;
   if (response) return response;
   if (request.mode === 'navigate') {
     const index = await cache.match('/index.html');

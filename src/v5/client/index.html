@@ -17,6 +17,24 @@
   <link rel="stylesheet" href="/css/v6-shell.css">
   <link rel="stylesheet" href="/css/v6.css">
   <link rel="stylesheet" href="/css/specimen.css">
+  <script>
+    /* First paint, before any module runs: honour a stored choice, else the
+       system. Without this a dark desktop flashes paper for a frame. */
+    (function () {
+      var theme = null;
+      try {
+        var saved = JSON.parse(localStorage.getItem('v6.shell') || '{}');
+        if (saved.theme === 'dark' || saved.theme === 'light') theme = saved.theme;
+      } catch (e) { /* private mode */ }
+      if (!theme) {
+        theme = 'light';
+        try {
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+        } catch (e) { /* no matchMedia */ }
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
 </head>
 <body>
   <a class="skip" href="#screen">Zum Inhalt</a>
@@ -111,6 +129,46 @@
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <noscript><p class="loading">Diese App braucht JavaScript.</p></noscript>
+
+  <script>
+    /* A page that never leaves its loading line is the worst failure mode:
+       nothing on screen says what broke. Say it, and offer the one fix. */
+    (function () {
+      var shown = false;
+      function fail(reason) {
+        if (shown) return;
+        var main = document.getElementById('screen');
+        if (!main || !main.querySelector('.loading')) return;
+        shown = true;
+        var title = document.createElement('h1');
+        title.textContent = 'Die Oberfläche lädt nicht.';
+        var text = document.createElement('p');
+        text.textContent = reason;
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'button primary';
+        button.textContent = 'Neu laden';
+        button.addEventListener('click', function () { location.reload(); });
+        var actions = document.createElement('div');
+        actions.className = 'button-row';
+        actions.appendChild(button);
+        main.replaceChildren(title, text, actions);
+      }
+      window.addEventListener('error', function (event) {
+        if (event.target && event.target.tagName === 'SCRIPT') {
+          fail('Ein Skript konnte nicht geladen werden. Neu laden holt die aktuelle Fassung.');
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function () {
+        fail('Ein Modul ist beim Start gescheitert.');
+      });
+      setTimeout(function () {
+        if (document.querySelector('#screen > .loading')) {
+          fail('Der Start dauert länger als erwartet. Läuft der Server auf Port 8766?');
+        }
+      }, 10000);
+    })();
+  </script>
 
   <script type="module" src="/js/main.js"></script>
 </body>
