@@ -9,12 +9,16 @@
 
 ## NEXT ACTION
 
-**No pending implementation work.** V6 is complete and verified: see
-`V6-REPORT.md`. The only open item is an owner decision — whether to add a
-GitHub remote and push (never guessed, never pushed). M10/M11 stay deferred
-under the 2026-11-18 pilot decision.
+**No pending implementation work.** V6 is complete, verified and **published**:
+`https://github.com/Hatemshalaby15071979/Mannschaft` (branch `main`, tag
+`v6.0.0`). CI runs on 3.11–3.13. See `V6-REPORT.md` for evidence.
 
-Re-verify at any time with: `make check` (221 tests), `make validate`,
+Two owner decisions remain, neither blocking: (1) a LICENSE — none has been
+chosen, so `pyproject.toml` carries no license field; (2) whether the root
+repository should flatten the `v3/`, `v5/`, `webapp/` gitlinks or stay an
+archive-only index. M10/M11 stay deferred under the 2026-11-18 pilot decision.
+
+Re-verify at any time with: `make check` (230 tests), `make validate`,
 `make dist-check`, `make serve-bg` + `/api/health`.
 
 ---
@@ -81,6 +85,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | V6-4 | Verification hardening | DONE | `722af96` — structured request logging (`ts= method= route= status= ms=`), strict on-disk schema test for every generated JSON, 360 px header split into two rows (no overlap), full zip actually served from a clean directory (health rendered=12, `Range` → 206). **223 passed**; core/full rebuilt and `dist-check` OK. |
 | V6-6 | Mannschaft rename + brand delivery | DONE | `892d745` — user-visible `v5` removed, artifacts renamed `mannschaft-*`, hero mark on home, navigation network-first with upgrade reload, shell headers `no-cache`, caches `mannschaft-v4`; **230 passed**. |
 | V6-5 | Mannschaft rebrand | DONE | `b69e562` — product name, docs, UI, manifest and server title renamed; `tools/make_logo.py` turns the founder's helix PDF into transparent/PWA assets; animated mark in both persistent chromes, proven on all 11 routes; **227 passed**. |
+| V6-7 | Published to GitHub | DONE | `Hatemshalaby15071979/Mannschaft`, branch `main`, tag `v6.0.0`; description + topics set; Actions matrix 3.11/3.13 green after making the golden-parser test skip on hosts without VoiceStudio. |
 
 ---
 
@@ -154,3 +159,5 @@ advisory — objective waveform-distinctness passed 6/6.
 | 2026-11-21 | V6 | **Logo visibility fix + final rename.** The mark was served correctly (200, PNG), but a tab opened before the rebrand kept the old shell: the service worker answered navigations cache-first, and that old page predated any reload listener. Navigations are now network-first, `/`, `/sw.js` and the manifest are `Cache-Control: no-cache`, the registration reloads once on `controllerchange`, activation reloads stale windows, and caches are renamed `mannschaft-v4`. Home now carries an 88 px hero mark (68 px on mobile) beside the existing 56/44 px chrome marks. User-visible `v5` copy is gone; zips are `mannschaft-core.zip` / `mannschaft-full.zip`. **230 passed**. |
 | — | — | **Naming:** the source tree and Python package stay `v5/` / `python -m v5`; `AGENTS.md` and the legacy hash guard pin those paths. The product, install directory, artifacts, UI and docs are Mannschaft. |
 | — | — | **Gotcha:** a cache-first navigation is how a rebrand ships and nobody sees it. The browser had the new files on disk and the old DOM on screen at the same time. |
+| 2026-11-21 | V6 | **Published.** `v5/` is its own repository at `Hatemshalaby15071979/Mannschaft`, branch `main`, tag `v6.0.0`, public, description + topics set. The root workspace repo still holds the archives as gitlinks and stays local. |
+| — | — | **CI failure and fix:** the first Actions run (44904796412) failed 3.11 and 3.13 on `test_golden_spans_match_real_parser` — `RuntimeError: VoiceStudio parser not found under /home/hatem/.config/VoiceStudio/runtime/project`. The test imported `real_parser()` unconditionally, so the one test that must use the real parser was also the one test that could not run on a clean host. It now resolves the parser through a module fixture that calls `pytest.skip` on `RuntimeError`; the guard still fails loudly on a machine where VoiceStudio exists but is broken, because a missing file is the only thing skipped. Local run 230 passed, and with `VOICESTUDIO_PROJECT` pointed at a nonexistent path the suite reports `1 skipped` instead of `1 failed`. | — |

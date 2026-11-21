@@ -20,6 +20,15 @@ def script() -> LessonScript:
 
 
 @pytest.fixture(scope="module")
+def voice_studio_parser():
+    """VoiceStudio's parser, or a skip on hosts that do not have it installed."""
+    try:
+        return real_parser()
+    except RuntimeError as exc:  # host-agnostic: CI has no VoiceStudio
+        pytest.skip(str(exc))
+
+
+@pytest.fixture(scope="module")
 def ready_voices():
     """Fake profile ids so the adapter can run before M4 exists."""
     return {
@@ -47,13 +56,12 @@ def test_baseline_speed_is_exact_and_untagged():
     assert quantise_speed(1.0, baseline=0.90) == (None, 0.90)
 
 
-def test_golden_spans_match_real_parser(script, ready_voices):
+def test_golden_spans_match_real_parser(script, ready_voices, voice_studio_parser):
     """The load-bearing test: our output, parsed by VoiceStudio itself."""
     level = load_levels()[script.level]
     doc = build(script, ready_voices, level)
 
-    parse_script_to_spans = real_parser()
-    chapters = parse_script_to_spans(
+    chapters = voice_studio_parser(
         doc.text, default_voice=doc.default_voice, default_speed=doc.default_speed
     )
     actual = [span for chapter in chapters for span in chapter["spans"]]
