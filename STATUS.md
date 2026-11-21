@@ -20,7 +20,7 @@ Re-verify at any time with: `make check` (221 tests), `make validate`,
 ## V6 — additive architecture (2026-11-21)
 
 All phases landed. Commits: `df06f80` (guard) → `e1603d9` (design shell, media,
-cards, dictionary, journey) → `v6-2` (CI, packaging, docs). 221 tests green,
+cards, dictionary, journey) → `baa1d50` (CI, packaging, docs). 221 tests green,
 12 lessons 0 errors, clean-directory install OK. Full evidence in `V6-REPORT.md`.
 
 **The 12-pilot boundary is unchanged.** V6 adds screens and read-only routes; it
