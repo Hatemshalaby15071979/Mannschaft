@@ -123,12 +123,15 @@ function wireShell() {
 
   if ('serviceWorker' in navigator) {
     const hadController = Boolean(navigator.serviceWorker.controller);
+    let reloading = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
       /* A new worker took over. Reload once so the visible DOM is the new
-         shell, not the one the old worker served before activation. */
-      if (!hadController || sessionStorage.getItem('mannschaft-sw-reloaded')) return;
-      sessionStorage.setItem('mannschaft-sw-reloaded', '1');
-      location.reload();
+         shell, not the one the old worker served before activation. The short
+         delay lets the worker's own activate-time navigate win, avoiding a
+         double reload. */
+      if (!hadController || reloading) return;
+      reloading = true;
+      setTimeout(() => location.reload(), 250);
     });
     window.addEventListener('load', () => {
       navigator.serviceWorker

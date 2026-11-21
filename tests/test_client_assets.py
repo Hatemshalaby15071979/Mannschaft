@@ -230,4 +230,4 @@ def test_registration_reloads_once_when_the_worker_changes():
     source = (CLIENT / "js" / "main.js").read_text(encoding="utf-8")
     assert "controllerchange" in source
     assert "updateViaCache: 'none'" in source
-    assert "mannschaft-sw-reloaded" in source
+    assert "let reloading = false" in source
