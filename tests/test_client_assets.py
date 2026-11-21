@@ -215,3 +215,19 @@ def test_logo_assets_are_real_pngs():
         data = (CLIENT / name).read_bytes()
         assert data[:8] == b"\x89PNG\r\n\x1a\n", f"{name} is not a PNG"
         assert len(data) > 500, f"{name} suspiciously small"
+
+
+def test_service_worker_never_serves_a_stale_shell():
+    """A cache-first navigation is how a rebrand ships and nobody sees it."""
+    source = (CLIENT / "sw.js").read_text(encoding="utf-8")
+    assert "request.mode === 'navigate'" in source
+    assert "navigationFirst" in source
+    assert "mannschaft-${VERSION}" in source
+    assert "clients.matchAll({ type: 'window' })" in source
+
+
+def test_registration_reloads_once_when_the_worker_changes():
+    source = (CLIENT / "js" / "main.js").read_text(encoding="utf-8")
+    assert "controllerchange" in source
+    assert "updateViaCache: 'none'" in source
+    assert "mannschaft-sw-reloaded" in source

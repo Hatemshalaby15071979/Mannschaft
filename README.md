@@ -2,7 +2,7 @@
   <img src="src/v5/client/assets/logo-badge.png" width="96" alt="Mannschaft — helix mark">
 </p>
 
-# Mannschaft — v5
+# Mannschaft
 
 Mannschaft is a single-user, localhost, listening-first German learning app for
 A1–C2. Twelve
@@ -37,8 +37,8 @@ service worker and every rendered file are untouched. V6 adds three screens
 ### From the core zip (no audio, ~0.9 MB)
 
 ```bash
-unzip v5-core.zip -d v5
-cd v5
+unzip mannschaft-core.zip -d Mannschaft
+cd Mannschaft
 python3 -m venv .venv && . .venv/bin/activate
 pip install -e '.[dev]'
 make check          # ruff + pytest
@@ -52,8 +52,8 @@ lessons show their transcript and cards but no MP3 until you render.
 ### From the full zip (with rendered audio, ~213 MB)
 
 ```bash
-unzip v5-full.zip -d v5
-cd v5
+unzip mannschaft-full.zip -d Mannschaft
+cd Mannschaft
 pip install -e '.[dev]'
 make serve
 ```
@@ -94,8 +94,8 @@ Screens: `#/` (Heute), `#/library`, `#/lesson/<id>`, `#/play/<id>`,
 ## Package
 
 ```bash
-make dist-core             # dist/v5-core.zip   (CI builds this; ≤20 MB)
-make dist-full             # dist/v5-full.zip   (local only)
+make dist-core             # dist/mannschaft-core.zip   (CI builds this; ≤20 MB)
+make dist-full             # dist/mannschaft-full.zip   (local only)
 make dist-check            # unzip into an empty dir, run help/validate/pytest/health
 ```
 

@@ -52,6 +52,6 @@ jobs:
         if: matrix.python-version == '3.12'
         uses: actions/upload-artifact@v4
         with:
-          name: v5-core
-          path: dist/v5-core.zip
+          name: mannschaft-core
+          path: dist/mannschaft-core.zip
           if-no-files-found: error

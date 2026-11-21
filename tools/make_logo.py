@@ -65,7 +65,7 @@ def extract_mark(page: Path) -> Image.Image:
     )
     # Lift midtones: the engraving is fine-lined, so at 32-52 px a linear alpha
     # averages to a grey smudge. Gamma < 1 keeps small sizes legible.
-    alpha = alpha.point(lambda a: round(255 * (a / 255) ** 0.72))
+    alpha = alpha.point(lambda a: round(255 * (a / 255) ** 0.62))
     box = alpha.getbbox()
     if box is None:
         raise SystemExit("no ink found in the logo PDF")

@@ -6,9 +6,9 @@
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v3';
-const SHELL = `v5-${VERSION}`;
-const DATA = `v5-data-${VERSION}`;
+const VERSION = 'v4';
+const SHELL = `mannschaft-${VERSION}`;
+const DATA = `mannschaft-data-${VERSION}`;
 
 /* Cross-origin media must never be intercepted: a YouTube iframe is not ours
    to cache, and a stale cached player is a broken player. */
@@ -56,12 +56,17 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     (async () => {
       const names = await caches.keys();
-      await Promise.all(
-        names
-          .filter((name) => name !== SHELL && name !== DATA)
-          .map((name) => caches.delete(name)),
-      );
+      const stale = names.filter((name) => name !== SHELL && name !== DATA);
+      await Promise.all(stale.map((name) => caches.delete(name)));
       await self.clients.claim();
+      /* On an upgrade, reload open windows so the visible DOM is the new
+         shell even when the old page predates the controllerchange listener. */
+      if (stale.length) {
+        const windows = await self.clients.matchAll({ type: 'window' });
+        await Promise.all(
+          windows.map((client) => client.navigate(client.url).catch(() => {})),
+        );
+      }
     })(),
   );
 });
@@ -83,6 +88,14 @@ self.addEventListener('fetch', (event) => {
 
   if (url.pathname.startsWith('/api/lessons/')) {
     event.respondWith(networkFirst(event.request));
+    return;
+  }
+
+  /* A navigation must never be answered from a stale shell: a cache-first
+     index is how a rebrand ships and nobody sees it. Online wins; offline
+     falls back to the precached shell. */
+  if (event.request.mode === 'navigate') {
+    event.respondWith(navigationFirst(event.request));
     return;
   }
 
@@ -162,6 +175,19 @@ async function networkFirst(request) {
       status: 503,
       headers: { 'Content-Type': 'application/json' },
     });
+  }
+}
+
+async function navigationFirst(request) {
+  const cache = await caches.open(SHELL);
+  try {
+    const fresh = await fetch(request);
+    if (fresh.ok) await cache.put('/index.html', fresh.clone());
+    return fresh;
+  } catch {
+    const cached = await cache.match('/index.html');
+    if (cached) return cached;
+    return new Response(null, { status: 503 });
   }
 }
 

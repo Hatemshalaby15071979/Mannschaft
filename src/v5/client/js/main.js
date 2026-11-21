@@ -122,8 +122,19 @@ function wireShell() {
   });
 
   if ('serviceWorker' in navigator) {
+    const hadController = Boolean(navigator.serviceWorker.controller);
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      /* A new worker took over. Reload once so the visible DOM is the new
+         shell, not the one the old worker served before activation. */
+      if (!hadController || sessionStorage.getItem('mannschaft-sw-reloaded')) return;
+      sessionStorage.setItem('mannschaft-sw-reloaded', '1');
+      location.reload();
+    });
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
+      navigator.serviceWorker
+        .register('/sw.js', { updateViaCache: 'none' })
+        .then((registration) => registration.update())
+        .catch(() => {});
     });
   }
 }

@@ -281,8 +281,8 @@ h1 strong { font-weight: 600; }
   position: relative;
   display: inline-grid;
   place-items: center;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
   flex: 0 0 auto;
 }
 .brand-mark img {
@@ -319,12 +319,28 @@ h1 strong { font-weight: 600; }
   );
   animation: brand-sweep 6.5s linear infinite;
 }
-.brand-mark-sm { width: 2.5rem; height: 2.5rem; }
+.brand-mark-sm { width: 2.75rem; height: 2.75rem; }
+.brand-mark-lg { width: 5.5rem; height: 5.5rem; }
 .brand:hover .brand-scan::before,
 .brand-mark:hover .brand-scan::before { animation-duration: 1.6s; }
 [data-theme="light"] .brand-mark img {
   filter: invert(1) drop-shadow(0 0 5px rgba(15, 98, 254, 0.18));
 }
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: -7%;
+  border-radius: 50%;
+  border: 1px solid rgba(121, 184, 255, 0.22);
+  box-shadow: 0 0 24px rgba(121, 184, 255, 0.12), inset 0 0 18px rgba(121, 184, 255, 0.06);
+  pointer-events: none;
+}
+[data-theme="light"] .brand-mark::after {
+  border-color: rgba(15, 98, 254, 0.18);
+  box-shadow: 0 0 18px rgba(15, 98, 254, 0.1);
+}
+.masthead-copy { display: grid; gap: 0.25rem; }
+.masthead-brand { margin-bottom: 0.35rem; }
 
 @keyframes brand-sweep {
   from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -824,6 +840,7 @@ body.reduce-motion *::after {
 }
 
 @media (max-width: 639px) {
+  .brand-mark-lg { width: 4.25rem; height: 4.25rem; }
   /* Two short rows instead of one crowded strip: index on top, controls
      below. Both scroll horizontally if they overflow. */
   body { padding-top: 6.3rem; }

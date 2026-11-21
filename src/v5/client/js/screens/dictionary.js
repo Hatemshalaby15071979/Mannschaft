@@ -101,6 +101,6 @@ function entryCard(entry) {
     entry.example_en ? el('p', { class: 'dict-example' }, entry.example_en) : null,
     entry.note_de ? el('p', { class: 'muted' }, entry.note_de) : null,
     el('p', { class: 'dict-source' },
-      `Quelle: ${entry.source || 'v5 lesson glossary'} · ${(entry.sources || [entry.source_lesson]).join(', ')}`),
+      `Quelle: ${entry.source || 'Lektionsglossar'} · ${(entry.sources || [entry.source_lesson]).join(', ')}`),
   );
 }

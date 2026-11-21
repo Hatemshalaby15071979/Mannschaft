@@ -50,7 +50,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     tmp = Path(tempfile.mkdtemp(prefix="v5-dist-check-"))
-    archive = tmp / "v5-core.zip"
+    archive = tmp / "mannschaft-core.zip"
     install = tmp / "install"
     install.mkdir()
 

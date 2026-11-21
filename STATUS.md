@@ -1,4 +1,4 @@
-# STATUS — Mannschaft (v5)
+# STATUS — Mannschaft
 
 <img src="src/v5/client/assets/logo-badge.png" width="64" alt="Mannschaft">
 
@@ -79,6 +79,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `V6-REPORT.md`, serve/stop scripts. |
 | V6-3 | Root repo (local-ready) | DONE | `27e9d6c` — root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
 | V6-4 | Verification hardening | DONE | `722af96` — structured request logging (`ts= method= route= status= ms=`), strict on-disk schema test for every generated JSON, 360 px header split into two rows (no overlap), full zip actually served from a clean directory (health rendered=12, `Range` → 206). **223 passed**; core/full rebuilt and `dist-check` OK. |
+| V6-6 | Mannschaft rename + brand delivery | DONE | User-visible `v5` removed, artifacts renamed `mannschaft-*`, hero mark on home, navigation network-first with upgrade reload, shell headers `no-cache`, caches `mannschaft-v4`; **230 passed**. |
 | V6-5 | Mannschaft rebrand | DONE | `b69e562` — product name, docs, UI, manifest and server title renamed; `tools/make_logo.py` turns the founder's helix PDF into transparent/PWA assets; animated mark in both persistent chromes, proven on all 11 routes; **227 passed**. |
 
 ---
@@ -150,3 +151,6 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **Design:** the PDF's black is ~10/255, not 0 — a naive luminance alpha left a grey square. The tool floors at 18, lifts midtones with gamma 0.72, and crops to the ink. One white-on-transparent asset serves both themes; the light theme inverts it in CSS. |
 | — | — | **Gotcha:** at 26 px the engraving averages into a grey smudge. The topbar mark is now 40 px and the sidebar 52 px, with a faint accent drop-shadow; the wordmark stays visible down to 360 px. |
 | — | — | **A11y:** the sweep and breath are disabled under `prefers-reduced-motion`; the mark is decorative (`alt=""`) and its links carry an explicit `aria-label`. |
+| 2026-11-21 | V6 | **Logo visibility fix + final rename.** The mark was served correctly (200, PNG), but a tab opened before the rebrand kept the old shell: the service worker answered navigations cache-first, and that old page predated any reload listener. Navigations are now network-first, `/`, `/sw.js` and the manifest are `Cache-Control: no-cache`, the registration reloads once on `controllerchange`, activation reloads stale windows, and caches are renamed `mannschaft-v4`. Home now carries an 88 px hero mark (68 px on mobile) beside the existing 56/44 px chrome marks. User-visible `v5` copy is gone; zips are `mannschaft-core.zip` / `mannschaft-full.zip`. **230 passed**. |
+| — | — | **Naming:** the source tree and Python package stay `v5/` / `python -m v5`; `AGENTS.md` and the legacy hash guard pin those paths. The product, install directory, artifacts, UI and docs are Mannschaft. |
+| — | — | **Gotcha:** a cache-first navigation is how a rebrand ships and nobody sees it. The browser had the new files on disk and the old DOM on screen at the same time. |

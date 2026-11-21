@@ -20,7 +20,7 @@ export async function render() {
   } catch (error) {
     return statusBlock(
       'Kein lokaler Server',
-      `Kein v5-Server erreichbar: ${error.message} · Starte mit <code>make serve</code> (Port 8766).`,
+      `Kein Mannschaft-Server erreichbar: ${error.message} · Starte mit <code>make serve</code> (Port 8766).`,
     );
   }
   health = await api.health().catch(() => null);
@@ -53,7 +53,17 @@ function masthead(lessons) {
       { class: 'masthead-top' },
       el(
         'div',
-        {},
+        { class: 'masthead-copy' },
+        el(
+          'div',
+          { class: 'masthead-brand' },
+          el(
+            'span',
+            { class: 'brand-mark brand-mark-lg', 'aria-hidden': 'true' },
+            el('img', { src: '/assets/logo-mark.png', alt: '', width: '96', height: '96' }),
+            el('span', { class: 'brand-scan' }),
+          ),
+        ),
         el('span', { class: 'mono-label' }, `Mannschaft · ${span}`),
         el('h1', { class: 'headline' }, 'Hören zuerst. ', el('strong', {}, 'Verstehen kommt nach.')),
         el(
@@ -144,7 +154,7 @@ function todayCard(target, resume, byId) {
       'div',
       {},
       section,
-      statusBlock('Noch keine Lektion', 'Unter <code>v5/content/lessons/</code> liegt nichts.'),
+      statusBlock('Noch keine Lektion', 'Unter <code>content/lessons/</code> liegt nichts.'),
     );
   }
 

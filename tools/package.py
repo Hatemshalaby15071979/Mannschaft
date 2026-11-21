@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build the two V6 distributions.
 
-    python3 tools/package.py --kind core --out dist/v5-core.zip
-    python3 tools/package.py --kind full --out dist/v5-full.zip
+    python3 tools/package.py --kind core --out dist/mannschaft-core.zip
+    python3 tools/package.py --kind full --out dist/mannschaft-full.zip
 
 `core` is code + authored lessons + derived JSON + config + client assets +
 README. It excludes rendered audio and raw corpus intermediates, and must stay

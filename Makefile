@@ -2,7 +2,7 @@ SHELL := bash
 export PYTHONPATH := src
 
 .PHONY: check lint test validate render assemble serve corpus-suggest clean \
-	dist-core dist-full dist-check serve-bg stop-bg logo
+	dist-core dist-full dist-check serve-bg stop-bg logo media cards dict
 
 check: lint test
 
@@ -31,6 +31,17 @@ serve:
 corpus-suggest:
 	python3 -m v5 corpus suggest --level $(LEVEL) --situation $(SITUATION)
 
+# ---- derived content -----------------------------------------------------
+
+media:
+	python3 -m v5.media.select
+
+cards:
+	python3 -m v5.cards.build
+
+dict:
+	python3 -m v5.dictionary.seed
+
 # ---- brand ---------------------------------------------------------------
 
 logo:
@@ -39,10 +50,10 @@ logo:
 # ---- packaging (V6) -------------------------------------------------------
 
 dist-core:
-	python3 tools/package.py --kind core --out dist/v5-core.zip
+	python3 tools/package.py --kind core --out dist/mannschaft-core.zip
 
 dist-full:
-	python3 tools/package.py --kind full --out dist/v5-full.zip
+	python3 tools/package.py --kind full --out dist/mannschaft-full.zip
 
 dist-check:
 	python3 tools/dist_check.py

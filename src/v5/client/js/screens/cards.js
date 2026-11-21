@@ -26,7 +26,7 @@ export async function render([id]) {
     return statusBlock(
       'Keine Karten',
       error.status === 404
-        ? 'Für diese Lektion wurden noch keine Karten erzeugt (python -m v5.cards.build).'
+        ? 'Für diese Lektion wurden noch keine Karten erzeugt (make cards).'
         : error.message,
     );
   }

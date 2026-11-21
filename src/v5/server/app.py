@@ -183,6 +183,8 @@ def create_app(
     async def log_requests(request, call_next):
         started = time.perf_counter()
         response = await call_next(request)
+        if request.url.path in ("/", "/index.html", "/sw.js", "/manifest.webmanifest"):
+            response.headers["Cache-Control"] = "no-cache"
         _http_log.info(
             "ts=%s method=%s route=%s status=%d ms=%.1f",
             datetime.now(UTC).isoformat(timespec="seconds"),

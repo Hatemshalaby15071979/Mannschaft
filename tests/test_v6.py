@@ -414,3 +414,11 @@ def test_requests_are_logged_with_timestamp_route_and_status(client):
         and "method=GET" in message
         for message in messages
     ), f"no structured request log: {messages}"
+
+
+def test_shell_files_are_served_no_cache(client):
+    """index/sw/manifest must revalidate so a new build is actually seen."""
+    for path in ("/", "/sw.js", "/manifest.webmanifest"):
+        response = client.get(path)
+        assert response.status_code == 200, path
+        assert response.headers.get("cache-control") == "no-cache", path
