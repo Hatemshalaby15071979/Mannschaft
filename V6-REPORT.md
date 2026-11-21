@@ -20,6 +20,7 @@ screens (Video, Karten, Wörterbuch) and four read-only API routes sit on top.
 | 3 Dictionary | `e1603d9` | `src/v5/dictionary/`, `content/dictionary/seed.json` (542 entries), `GET /api/dict?q=`, `#/dict`, word taps |
 | 4 Journey | `e1603d9` | `GET /api/lesson/{id}/context`, clip/cards buttons on the lesson screen, `clip_opened` event |
 | 5 Verify / package | `baa1d50` | CI, packaging, serve scripts, README, this report, STATUS |
+| Root repo | `27e9d6c` | `git init -b main` at the project root; plans, archives, v5 gitlink; no remote |
 
 ---
 

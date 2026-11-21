@@ -75,7 +75,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | V6-0 | Guard — legacy hash snapshot | DONE | `tools/hash_legacy.py` → **2,657 files** hashed (2,438 audio + clips.jsonl + voices.toml + 11 server files); `app.py`/`main.js` carved out as the sanctioned additive surface. Snapshot: `/tmp/v6_legacy_before.sha256`. Baseline gate re-measured: **188 passed in 18.02s**, `ruff` clean. |
 | V6-1 | Design shell + media + cards + dictionary + journey | DONE | `e1603d9` — matrix-derived dark shell (sidebar index, masthead, KPI tiles, level tabs, expandable rows, theme/motion/focus), 12/12 lessons have a `youtube-nocookie` clip, 120 cards (10/lesson), 542 dictionary entries, 4 new read-only routes. **221 passed**, `validate` 12/0/0, browser walkthrough 0 console errors, position restored after reload. |
 | V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `V6-REPORT.md`, serve/stop scripts. |
-| V6-3 | Root repo (local-ready) | DONE | Root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
+| V6-3 | Root repo (local-ready) | DONE | `27e9d6c` — root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
 
 ---
 
