@@ -18,6 +18,12 @@ export async function render([id]) {
 
   const { lesson, summary, timeline } = detail;
   const rendered = Boolean(timeline && summary && summary.rendered);
+  let context = null;
+  try {
+    context = await api.context(id);
+  } catch {
+    context = null;
+  }
 
   const root = el('article', {});
   root.append(
@@ -43,15 +49,35 @@ export async function render([id]) {
     );
   }
 
+  const cardCount = context && context.cards ? context.cards.count : null;
+  const hasClip = Boolean(context && context.media && context.media.has_clip);
   root.append(
-    el('div', { class: 'button-row' },
+    el('div', { class: 'lesson-actions' },
       link(`#/play/${id}`, rendered ? 'Hören' : 'Übung (Text)'),
+      link(`#/clip/${id}`, hasClip ? 'Video ansehen' : 'Video (kein Clip)', 'button quiet'),
+      link(`#/cards/${id}`, cardCount ? `Karten (${cardCount})` : 'Karten', 'button quiet'),
       link(`#/transcript/${id}`, 'Transkript', 'button quiet'),
       link(`#/glossary/${id}`, 'Glossar', 'button quiet'),
       link(`#/drill/${id}`, 'Übung', 'button quiet'),
     ),
   );
   root.querySelector('a').classList.add('primary');
+
+  if (context) {
+    root.append(
+      el('div', { class: 'panel', style: { marginTop: '0.5rem' } },
+        el('span', { class: 'mono-label' }, 'Weg durch die Lektion'),
+        el('p', { class: 'muted' },
+          `Hören → Video → Karten → Wörterbuch. `,
+          context.media.has_clip
+            ? 'Ein Clip ist zugeordnet.'
+            : 'Kein passender Clip — das gerenderte Audio ist das Material.',
+        ),
+        el('div', { class: 'chip-row' },
+          ...(context.grammar_focus || []).map((item) => el('span', { class: 'chip' }, item))),
+      ),
+    );
+  }
 
   const audioSlot = el('div', {});
   root.append(audioSlot);

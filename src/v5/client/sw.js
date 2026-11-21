@@ -6,17 +6,24 @@
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = `v5-${VERSION}`;
 const DATA = `v5-data-${VERSION}`;
+
+/* Cross-origin media must never be intercepted: a YouTube iframe is not ours
+   to cache, and a stale cached player is a broken player. */
+const VIDEO_ORIGINS = /(^|\.)(youtube\.com|youtube-nocookie\.com|ytimg\.com|googlevideo\.com)$/;
 
 const SHELL_URLS = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
   '/css/app.css',
+  '/css/v6-shell.css',
+  '/css/v6.css',
   '/sw.js',
   '/js/main.js',
+  '/js/shell.js',
   '/js/ui.js',
   '/js/api.js',
   '/js/store.js',
@@ -29,6 +36,9 @@ const SHELL_URLS = [
   '/js/screens/glossary.js',
   '/js/screens/drill.js',
   '/js/screens/progress.js',
+  '/js/screens/clip.js',
+  '/js/screens/cards.js',
+  '/js/screens/dictionary.js',
 ];
 
 self.addEventListener('install', (event) => {
@@ -62,6 +72,7 @@ function rangeStatus() {
 
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
+  if (VIDEO_ORIGINS.test(url.hostname)) return; // browser handles embeds directly
   if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
 
   if (url.pathname.startsWith('/api/audio/')) {

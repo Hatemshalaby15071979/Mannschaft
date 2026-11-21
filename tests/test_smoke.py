@@ -257,7 +257,7 @@ def test_every_screen_renders_real_content(server_url):
         page.wait_for_selector(".tabbar", timeout=10_000)
 
         routes = [
-            ("#/", "Guten Tag."),
+            ("#/", "Hören zuerst."),
             ("#/library", "Bibliothek"),
             ("#/lesson/A1-01", "Segmente"),
             ("#/play/A1-01", "NARRATOR"),
@@ -265,6 +265,9 @@ def test_every_screen_renders_real_content(server_url):
             ("#/glossary/A1-01", "Glossar"),
             ("#/drill/A1-01", "bung"),
             ("#/progress", "Fortschritt"),
+            ("#/clip/A1-01", "EIN CLIP"),
+            ("#/cards/A1-01", "KARTEN"),
+            ("#/dict", "Wort nachschlagen"),
         ]
         for route, expected in routes:
             page.evaluate(f"location.hash = {json.dumps(route)}")

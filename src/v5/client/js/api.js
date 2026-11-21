@@ -65,6 +65,17 @@ export const api = {
   render: (id) => request(`/api/render/${encodeURIComponent(id)}`, { method: 'POST' }),
   job: (id) => request(`/api/render/${encodeURIComponent(id)}`, { headers: JSON_HEADERS }),
   corpusSuggest: (params) => request(`/api/corpus/suggest${qs(params)}`),
+  media: (id) => request(`/api/media/${encodeURIComponent(id)}`, { headers: JSON_HEADERS }),
+  cards: (id) => request(`/api/cards/${encodeURIComponent(id)}`, { headers: JSON_HEADERS }),
+  dict: (q) => request(`/api/dict${qs({ q })}`, { headers: JSON_HEADERS }),
+  context: (id) =>
+    request(`/api/lesson/${encodeURIComponent(id)}/context`, { headers: JSON_HEADERS }),
+  event: (body) =>
+    request('/api/progress', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...JSON_HEADERS },
+      body: JSON.stringify(body),
+    }),
   audioUrl: (id) => `/api/audio/${encodeURIComponent(id)}`,
   lineUrl: (id, segmentId) =>
     `/api/audio/${encodeURIComponent(id)}/lines/${encodeURIComponent(segmentId)}`,

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme="dark" data-intensity="balanced">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -10,9 +10,42 @@
   <link rel="icon" href="/icons/icon-192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
   <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/v6-shell.css">
+  <link rel="stylesheet" href="/css/v6.css">
 </head>
 <body>
   <a class="skip" href="#screen">Zum Inhalt</a>
+
+  <aside class="side-index" aria-label="Bereiche">
+    <div class="side-brand">
+      <strong>Deutsch hören</strong>
+      <span>v5 · V6</span>
+    </div>
+
+    <h2>Bereiche</h2>
+    <nav aria-label="Hauptbereiche">
+      <a href="#/" data-nav="heute" class="dot-hoeren">Heute</a>
+      <a href="#/library" data-nav="bibliothek" class="dot-hoeren">Bibliothek</a>
+      <a href="#/lesson/A1-01" data-nav="lektion" class="dot-hoeren">Lektion</a>
+      <a href="#/clip/A1-01" data-nav="video" class="dot-video">Video</a>
+      <a href="#/cards/A1-01" data-nav="karten" class="dot-karten">Karten</a>
+      <a href="#/dict" data-nav="woerter" class="dot-woerter">Wörterbuch</a>
+      <a href="#/progress" data-nav="fortschritt" class="dot-fortschritt">Fortschritt</a>
+    </nav>
+
+    <h2>Ansicht</h2>
+    <div class="side-controls" role="group" aria-label="Darstellung">
+      <button type="button" data-shell="theme">Hell</button>
+      <button type="button" data-shell="intensity">Ausgewogen</button>
+      <button type="button" data-shell="motion">Bewegung an</button>
+      <button type="button" data-shell="focus">Fokus</button>
+    </div>
+
+    <a class="side-action" href="#/dict">Wörterbuch öffnen
+      <small>Wort nachschlagen · lokal zuerst</small>
+    </a>
+    <p class="side-foot">12 Pilot-Lektionen · A1–C2<br>Lokal · kein Tracking</p>
+  </aside>
 
   <header class="topbar">
     <a class="brand" href="#/" aria-label="Startseite">v5</a>
@@ -29,6 +62,7 @@
       <div><dt><kbd>J</kbd> <kbd>K</kbd></dt><dd>Vorheriger / nächster Satz</dd></div>
       <div><dt><kbd>T</kbd></dt><dd>Übersetzung zeigen</dd></div>
       <div><dt><kbd>S</kbd></dt><dd>Tempo 0,7 / 0,85 / 1,0</dd></div>
+      <div><dt><kbd>F</kbd></dt><dd>Fokusmodus</dd></div>
       <div><dt><kbd>?</kbd></dt><dd>Diese Hilfe</dd></div>
       <div><dt><kbd>Esc</kbd></dt><dd>Zurück</dd></div>
     </dl>

@@ -14,6 +14,7 @@ Design constraints that shape this file:
 from __future__ import annotations
 
 import ipaddress
+import json
 import mimetypes
 from pathlib import Path
 
@@ -23,6 +24,9 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from ..config import ROOT, load_voices, missing_profiles
+from ..dictionary.lookup import lookup as dictionary_lookup
+from ..events import EventStore
+from ..media.manifest import load_manifest_cached
 from ..render import (
     LessonNotFound,
     PipelineError,
@@ -39,7 +43,13 @@ from .progress import ProgressStore
 
 PORT = 8766
 CORPUS_PATH = ROOT / "content" / "corpus" / "clips.jsonl"
+MEDIA_PATH = ROOT / "content" / "lesson_media.json"
+CARDS_DIR = ROOT / "content" / "cards"
+DICTIONARY_PATH = ROOT / "content" / "dictionary" / "seed.json"
 CLIENT_DIR = Path(__file__).resolve().parent.parent / "client"
+
+# The client may post these; anything else is ignored by the model.
+EVENT_KINDS = ("card_graded", "clip_opened")
 
 # Python's mimetypes does not know .webmanifest on every platform; without this
 # some browsers refuse the PWA manifest as application/octet-stream.
@@ -48,9 +58,13 @@ mimetypes.add_type("application/manifest+json", ".webmanifest")
 
 class ProgressUpdate(BaseModel):
     lesson_id: str = Field(min_length=1)
-    seg_id: str = Field(min_length=1)
+    # `seg_id` stays first-class for the v5 player. A card or clip event may not
+    # have one (a `produce` card has no audio), so it is optional for events.
+    seg_id: str | None = Field(default=None, min_length=1)
     position_ms: int = Field(default=0, ge=0)
     completed: bool = False
+    event: str | None = None
+    detail: dict | None = None
 
 
 def assert_loopback(host: str) -> str:
@@ -64,6 +78,27 @@ def assert_loopback(host: str) -> str:
     if not address.is_loopback:
         raise ValueError(f"refusing to bind to {host} — this app is localhost-only")
     return host
+
+
+_clip_counts: dict[str, tuple[float, int]] = {}
+
+
+def _count_clips(path: Path) -> int:
+    """Cheap, honest corpus size for the KPI tile. Cached by mtime."""
+    try:
+        mtime = path.stat().st_mtime
+    except OSError:
+        return 0
+    cached = _clip_counts.get(str(path))
+    if cached is not None and cached[0] == mtime:
+        return cached[1]
+    try:
+        with path.open(encoding="utf-8") as fh:
+            count = sum(1 for line in fh if line.strip())
+    except OSError:
+        return 0
+    _clip_counts[str(path)] = (mtime, count)
+    return count
 
 
 def make_render_fn(catalogue: Catalogue):
@@ -94,6 +129,10 @@ def create_app(
     voices=None,
     client_dir: Path | None = None,
     corpus_path: Path | None = None,
+    media_path: Path | None = None,
+    cards_dir: Path | None = None,
+    dictionary_path: Path | None = None,
+    events_db: Path | None = None,
 ) -> FastAPI:
     app = FastAPI(
         title="v5",
@@ -105,12 +144,23 @@ def create_app(
 
     catalogue = Catalogue(lessons_dir=lessons_dir, audio_dir=audio_dir)
     store = ProgressStore(progress_db or ROOT / "user" / "progress.sqlite")
+    if events_db is None:
+        events_db = (
+            Path(progress_db).with_name("events.sqlite")
+            if progress_db is not None
+            else ROOT / "user" / "events.sqlite"
+        )
+    events = EventStore(events_db)
     queue = JobQueue(render_fn or make_render_fn(catalogue))
 
     app.state.catalogue = catalogue
     app.state.progress = store
+    app.state.events = events
     app.state.jobs = queue
     app.state.voicestudio_url = voicestudio_url
+    app.state.media_path = Path(media_path or MEDIA_PATH)
+    app.state.cards_dir = Path(cards_dir or CARDS_DIR)
+    app.state.dictionary_path = Path(dictionary_path or DICTIONARY_PATH)
 
     def configured_voices():
         return voices if voices is not None else load_voices()
@@ -136,6 +186,7 @@ def create_app(
                 "total": len(summaries),
                 "rendered": sum(1 for s in summaries if s.rendered),
             },
+            "corpus": {"clips": _count_clips(corpus_path or CORPUS_PATH)},
         }
 
     # ---- content -------------------------------------------------------
@@ -182,7 +233,13 @@ def create_app(
     @app.get("/api/progress")
     def get_progress() -> dict:
         return JSONResponse(
-            {"resume": store.resume(), "lessons": store.all()},
+            {
+                "resume": store.resume(),
+                "lessons": store.all(),
+                # Additive V6 fields: old clients ignore unknown keys.
+                "events": events.recent(50),
+                "event_counts": events.counts(),
+            },
             headers={"Cache-Control": "no-store"},
         )
 
@@ -190,6 +247,27 @@ def create_app(
     def post_progress(update: ProgressUpdate) -> dict:
         if catalogue.get(update.lesson_id) is None:
             raise HTTPException(status_code=404, detail=f"no such lesson: {update.lesson_id}")
+
+        if update.event is not None:
+            if update.event not in EVENT_KINDS:
+                raise HTTPException(
+                    status_code=422,
+                    detail=f"unknown event {update.event!r}; expected one of {list(EVENT_KINDS)}",
+                )
+            event = events.add(update.lesson_id, update.event, update.detail)
+            if update.seg_id:
+                row = store.upsert(
+                    update.lesson_id,
+                    update.seg_id,
+                    update.position_ms,
+                    completed=update.completed,
+                )
+            else:
+                row = store.for_lesson(update.lesson_id)
+            return {"event": event, "progress": row}
+
+        if not update.seg_id:
+            raise HTTPException(status_code=422, detail="seg_id is required for a progress update")
         row = store.upsert(
             update.lesson_id,
             update.seg_id,
@@ -254,6 +332,83 @@ def create_app(
         if not candidates and not (corpus_path or CORPUS_PATH).exists():
             result["reason"] = "corpus not built yet (M6)"
         return result
+
+    # ---- V6: media, cards, dictionary, journey context -----------------
+
+    @app.get("/api/media/{lesson_id}")
+    def lesson_media(lesson_id: str) -> dict:
+        if catalogue.get(lesson_id) is None:
+            raise HTTPException(status_code=404, detail=f"no such lesson: {lesson_id}")
+        manifest = load_manifest_cached(app.state.media_path)
+        if manifest is None:
+            raise HTTPException(
+                status_code=404,
+                detail="lesson media not generated — run python -m v5.media.select",
+            )
+        item = manifest.lessons.get(lesson_id)
+        if item is None:
+            raise HTTPException(status_code=404, detail=f"no media entry for {lesson_id}")
+        return {
+            "lesson_id": lesson_id,
+            "primary": item.primary.model_dump(mode="json") if item.primary else None,
+            "alternates": [pick.model_dump(mode="json") for pick in item.alternates],
+            "fallback": item.fallback,
+            "relevance": item.relevance.model_dump(mode="json"),
+            "embed_url": manifest.embed_url(lesson_id),
+        }
+
+    @app.get("/api/cards/{lesson_id}")
+    def lesson_cards(lesson_id: str) -> dict:
+        if catalogue.get(lesson_id) is None:
+            raise HTTPException(status_code=404, detail=f"no such lesson: {lesson_id}")
+        path = app.state.cards_dir / f"{lesson_id}.json"
+        if not path.exists():
+            raise HTTPException(
+                status_code=404,
+                detail=f"no card deck for {lesson_id} — run python -m v5.cards.build",
+            )
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise HTTPException(status_code=500, detail=f"unreadable deck: {exc}") from exc
+
+    @app.get("/api/dict")
+    def dictionary(q: str = Query(default=""), limit: int = Query(default=20, ge=1, le=100)) -> dict:
+        return dictionary_lookup(q, path=app.state.dictionary_path, limit=limit)
+
+    @app.get("/api/lesson/{lesson_id}/context")
+    def lesson_context(lesson_id: str) -> dict:
+        detail = catalogue.detail(lesson_id)
+        if detail is None:
+            raise HTTPException(status_code=404, detail=f"no such lesson: {lesson_id}")
+        lesson = detail["lesson"]
+        scene = lesson.get("scene") or {}
+        manifest = load_manifest_cached(app.state.media_path)
+        item = manifest.lessons.get(lesson_id) if manifest else None
+        card_count = None
+        deck_path = app.state.cards_dir / f"{lesson_id}.json"
+        if deck_path.exists():
+            try:
+                card_count = len(json.loads(deck_path.read_text(encoding="utf-8")).get("cards", []))
+            except (OSError, json.JSONDecodeError):
+                card_count = None
+        return {
+            "id": lesson_id,
+            "level": lesson.get("level"),
+            "title": lesson.get("title"),
+            "minutes": lesson.get("minutes"),
+            "can_do": {"de": scene.get("can_do_de"), "en": scene.get("can_do_en")},
+            "situation_tags": scene.get("situation_tags") or [],
+            "grammar_focus": scene.get("grammar_focus") or [],
+            "register": scene.get("register"),
+            "rendered": bool(detail.get("summary") and detail["summary"].get("rendered")),
+            "media": {
+                "has_clip": bool(item and item.primary),
+                "embed_url": manifest.embed_url(lesson_id) if manifest else None,
+                "fallback": item.fallback if item else "rendered_audio",
+            },
+            "cards": {"count": card_count, "available": card_count is not None},
+        }
 
     # ---- client (mounted last: API routes win, everything else is the PWA) --
 

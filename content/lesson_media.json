@@ -1,0 +1,378 @@
+{
+  "version": 1,
+  "generated": "2026-11-21",
+  "lessons": {
+    "A1-01": {
+      "primary": {
+        "video_id": "0q8ceeaEI68",
+        "start_s": 29.2,
+        "end_s": 89.9,
+        "clip_id": "eg:0q8ceeaEI68:29.2-89.9",
+        "reason": "Gleiches Niveau; Situation passt (school)."
+      },
+      "alternates": [
+        {
+          "video_id": "5LsSHezUUKQ",
+          "start_s": 245.6,
+          "end_s": 294.3,
+          "clip_id": "eg:5LsSHezUUKQ:245.6-294.3",
+          "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+        },
+        {
+          "video_id": "8kX2jsUnZck",
+          "start_s": 448.3,
+          "end_s": 523.5,
+          "clip_id": "eg:8kX2jsUnZck:448.3-523.5",
+          "reason": "Kein Clip auf A1; A2 mit passender Situation (Abstand 1)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": true,
+        "grammar_overlap": 0
+      }
+    },
+    "A1-02": {
+      "primary": {
+        "video_id": "0q8ceeaEI68",
+        "start_s": 29.2,
+        "end_s": 89.9,
+        "clip_id": "eg:0q8ceeaEI68:29.2-89.9",
+        "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+      },
+      "alternates": [
+        {
+          "video_id": "5LsSHezUUKQ",
+          "start_s": 245.6,
+          "end_s": 294.3,
+          "clip_id": "eg:5LsSHezUUKQ:245.6-294.3",
+          "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+        },
+        {
+          "video_id": "92Mcmx5gVus",
+          "start_s": 947.8,
+          "end_s": 1008.1,
+          "clip_id": "eg:92Mcmx5gVus:947.8-1008.1",
+          "reason": "Kein Clip auf A1; A2 mit passender Situation (Abstand 1)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": false,
+        "grammar_overlap": 0
+      }
+    },
+    "A2-01": {
+      "primary": {
+        "video_id": "8kX2jsUnZck",
+        "start_s": 448.3,
+        "end_s": 523.5,
+        "clip_id": "eg:8kX2jsUnZck:448.3-523.5",
+        "reason": "Gleiches Niveau; Situation passt (work)."
+      },
+      "alternates": [
+        {
+          "video_id": "92Mcmx5gVus",
+          "start_s": 947.8,
+          "end_s": 1008.1,
+          "clip_id": "eg:92Mcmx5gVus:947.8-1008.1",
+          "reason": "Gleiches Niveau; Situation passt (shopping)."
+        },
+        {
+          "video_id": "3KZnAVWL5IQ",
+          "start_s": 429.3,
+          "end_s": 494.0,
+          "clip_id": "eg:3KZnAVWL5IQ:429.3-494.0",
+          "reason": "Gleiches Niveau; Situation passt (housing)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": true,
+        "grammar_overlap": 0
+      }
+    },
+    "A2-02": {
+      "primary": {
+        "video_id": "8kX2jsUnZck",
+        "start_s": 448.3,
+        "end_s": 523.5,
+        "clip_id": "eg:8kX2jsUnZck:448.3-523.5",
+        "reason": "Gleiches Niveau; Situation passt (work)."
+      },
+      "alternates": [
+        {
+          "video_id": "92Mcmx5gVus",
+          "start_s": 947.8,
+          "end_s": 1008.1,
+          "clip_id": "eg:92Mcmx5gVus:947.8-1008.1",
+          "reason": "Gleiches Niveau; Situation passt (shopping)."
+        },
+        {
+          "video_id": "3KZnAVWL5IQ",
+          "start_s": 429.3,
+          "end_s": 494.0,
+          "clip_id": "eg:3KZnAVWL5IQ:429.3-494.0",
+          "reason": "Gleiches Niveau; Situation passt (housing)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": true,
+        "grammar_overlap": 0
+      }
+    },
+    "B1-01": {
+      "primary": {
+        "video_id": "BK_dy3YX-uA",
+        "start_s": 62.5,
+        "end_s": 130.4,
+        "clip_id": "eg:BK_dy3YX-uA:62.5-130.4",
+        "reason": "Gleiches Niveau; Situation passt (work)."
+      },
+      "alternates": [
+        {
+          "video_id": "86YgrypWSB0",
+          "start_s": 308.2,
+          "end_s": 373.7,
+          "clip_id": "eg:86YgrypWSB0:308.2-373.7",
+          "reason": "Gleiches Niveau; Situation passt (school)."
+        },
+        {
+          "video_id": "BPVFfbX2Ew0",
+          "start_s": 90.0,
+          "end_s": 150.8,
+          "clip_id": "eg:BPVFfbX2Ew0:90.0-150.8",
+          "reason": "Gleiches Niveau; Situation passt (leisure)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": true,
+        "grammar_overlap": 0
+      }
+    },
+    "B1-02": {
+      "primary": {
+        "video_id": "BK_dy3YX-uA",
+        "start_s": 62.5,
+        "end_s": 130.4,
+        "clip_id": "eg:BK_dy3YX-uA:62.5-130.4",
+        "reason": "Gleiches Niveau; Situation passt (work)."
+      },
+      "alternates": [
+        {
+          "video_id": "0uzP0OghZz0",
+          "start_s": 759.7,
+          "end_s": 821.8,
+          "clip_id": "eg:0uzP0OghZz0:759.7-821.8",
+          "reason": "Gleiches Niveau; Situation passt (work)."
+        },
+        {
+          "video_id": "20cw8FH6me0",
+          "start_s": 781.8,
+          "end_s": 841.8,
+          "clip_id": "eg:20cw8FH6me0:781.8-841.8",
+          "reason": "Gleiches Niveau; Situation passt (work)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": true,
+        "grammar_overlap": 0
+      }
+    },
+    "B2-01": {
+      "primary": {
+        "video_id": "2jg3DR3vthU",
+        "start_s": 629.8,
+        "end_s": 696.9,
+        "clip_id": "eg:2jg3DR3vthU:629.8-696.9",
+        "reason": "Gleiches Niveau; Situation passt (work)."
+      },
+      "alternates": [
+        {
+          "video_id": "AcHxQ72ETx8",
+          "start_s": 885.1,
+          "end_s": 949.8,
+          "clip_id": "eg:AcHxQ72ETx8:885.1-949.8",
+          "reason": "Gleiches Niveau; Situation passt (work)."
+        },
+        {
+          "video_id": "AcHxQ72ETx8",
+          "start_s": 1109.0,
+          "end_s": 1153.5,
+          "clip_id": "eg:AcHxQ72ETx8:1109.0-1153.5",
+          "reason": "Gleiches Niveau; Situation passt (work)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": true,
+        "grammar_overlap": 0
+      }
+    },
+    "B2-02": {
+      "primary": {
+        "video_id": "2jg3DR3vthU",
+        "start_s": 629.8,
+        "end_s": 696.9,
+        "clip_id": "eg:2jg3DR3vthU:629.8-696.9",
+        "reason": "Gleiches Niveau; Situation passt (work)."
+      },
+      "alternates": [
+        {
+          "video_id": "AcHxQ72ETx8",
+          "start_s": 885.1,
+          "end_s": 949.8,
+          "clip_id": "eg:AcHxQ72ETx8:885.1-949.8",
+          "reason": "Gleiches Niveau; Situation passt (work)."
+        },
+        {
+          "video_id": "AcHxQ72ETx8",
+          "start_s": 1109.0,
+          "end_s": 1153.5,
+          "clip_id": "eg:AcHxQ72ETx8:1109.0-1153.5",
+          "reason": "Gleiches Niveau; Situation passt (work)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": true,
+        "grammar_overlap": 0
+      }
+    },
+    "C1-01": {
+      "primary": {
+        "video_id": "2aUt0QjU5ZI",
+        "start_s": 447.2,
+        "end_s": 508.0,
+        "clip_id": "eg:2aUt0QjU5ZI:447.2-508.0",
+        "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+      },
+      "alternates": [
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 688.3,
+          "end_s": 749.3,
+          "clip_id": "eg:2aUt0QjU5ZI:688.3-749.3",
+          "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+        },
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 309.5,
+          "end_s": 370.4,
+          "clip_id": "eg:2aUt0QjU5ZI:309.5-370.4",
+          "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": false,
+        "grammar_overlap": 0
+      }
+    },
+    "C1-02": {
+      "primary": {
+        "video_id": "2aUt0QjU5ZI",
+        "start_s": 447.2,
+        "end_s": 508.0,
+        "clip_id": "eg:2aUt0QjU5ZI:447.2-508.0",
+        "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+      },
+      "alternates": [
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 688.3,
+          "end_s": 749.3,
+          "clip_id": "eg:2aUt0QjU5ZI:688.3-749.3",
+          "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+        },
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 309.5,
+          "end_s": 370.4,
+          "clip_id": "eg:2aUt0QjU5ZI:309.5-370.4",
+          "reason": "Gleiches Niveau; kein Situations-Tag am Clip."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 0,
+        "situation_match": false,
+        "grammar_overlap": 0
+      }
+    },
+    "C2-01": {
+      "primary": {
+        "video_id": "2aUt0QjU5ZI",
+        "start_s": 447.2,
+        "end_s": 508.0,
+        "clip_id": "eg:2aUt0QjU5ZI:447.2-508.0",
+        "reason": "Kein Clip auf C2; nächstes Niveau C1 (Abstand 1)."
+      },
+      "alternates": [
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 688.3,
+          "end_s": 749.3,
+          "clip_id": "eg:2aUt0QjU5ZI:688.3-749.3",
+          "reason": "Kein Clip auf C2; nächstes Niveau C1 (Abstand 1)."
+        },
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 309.5,
+          "end_s": 370.4,
+          "clip_id": "eg:2aUt0QjU5ZI:309.5-370.4",
+          "reason": "Kein Clip auf C2; nächstes Niveau C1 (Abstand 1)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 1,
+        "situation_match": false,
+        "grammar_overlap": 0
+      }
+    },
+    "C2-02": {
+      "primary": {
+        "video_id": "2aUt0QjU5ZI",
+        "start_s": 447.2,
+        "end_s": 508.0,
+        "clip_id": "eg:2aUt0QjU5ZI:447.2-508.0",
+        "reason": "Kein Clip auf C2; nächstes Niveau C1 (Abstand 1)."
+      },
+      "alternates": [
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 688.3,
+          "end_s": 749.3,
+          "clip_id": "eg:2aUt0QjU5ZI:688.3-749.3",
+          "reason": "Kein Clip auf C2; nächstes Niveau C1 (Abstand 1)."
+        },
+        {
+          "video_id": "2aUt0QjU5ZI",
+          "start_s": 309.5,
+          "end_s": 370.4,
+          "clip_id": "eg:2aUt0QjU5ZI:309.5-370.4",
+          "reason": "Kein Clip auf C2; nächstes Niveau C1 (Abstand 1)."
+        }
+      ],
+      "fallback": "rendered_audio",
+      "relevance": {
+        "level_gap": 1,
+        "situation_match": false,
+        "grammar_overlap": 0
+      }
+    }
+  }
+}

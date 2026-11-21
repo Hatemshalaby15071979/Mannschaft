@@ -1,10 +1,11 @@
 /* Screen 4 — Transcript. Shares the persistent player; sync is driven by the
-   measured timeline.json start_ms, never by estimation. */
+   measured timeline.json start_ms, never by estimation. Words are tappable and
+   open the dictionary; the small arrow jumps the audio to that line. */
 
-import { api, ApiError } from '../api.js';
+import { api } from '../api.js';
 import { player } from '../player.js';
 import { getDetail, prefs } from '../store.js';
-import { el, setPill, statusBlock } from '../ui.js';
+import { el, fmtClock, setPill, statusBlock } from '../ui.js';
 
 export async function render([id]) {
   let detail;
@@ -31,6 +32,7 @@ export async function render([id]) {
     timeline.length
       ? el('p', { class: 'muted' }, `${timeline.length} Zeilen · synchron aus timeline.json`)
       : el('p', { class: 'muted' }, 'Noch keine Timeline — Textansicht, ohne Synchronisation.'),
+    el('p', { class: 'mono-label' }, 'Wort antippen → Wörterbuch · Pfeil → an diese Stelle springen'),
   );
 
   const list = el('ol', { class: 'transcript' });
@@ -52,23 +54,27 @@ export async function render([id]) {
         'li',
         { class: entry.type === 'check' ? 'check' : '' },
         el(
-          'button',
-          {
-            class: 'line',
-            type: 'button',
-            'data-seg': entry.id,
-            'aria-current': 'false',
-            ...(measured ? {} : { disabled: true }),
-            title: measured ? 'Zum Zeitpunkt springen' : 'Nicht synchronisiert',
-          },
-          el('span', { class: 'de' }, entry.text),
+          'div',
+          { class: 'line-block', 'data-seg': entry.id, 'aria-current': 'false' },
+          el('p', { class: 'de' }, ...wordButtons(entry.text)),
           prefs.translations && segment && segment.translation
-            ? el('span', { class: 'en' }, segment.translation)
+            ? el('p', { class: 'en' }, segment.translation)
             : null,
           el('span', { class: 'meta' },
             [entry.speaker, entry.type && entry.type !== 'line' ? entry.type : null]
               .filter(Boolean)
               .join(' · ')),
+          el(
+            'button',
+            {
+              class: 'seek',
+              type: 'button',
+              'data-seg': entry.id,
+              ...(measured ? {} : { disabled: true }),
+              title: measured ? 'Zum Zeitpunkt springen' : 'Nicht synchronisiert',
+            },
+            measured ? `↦ ${fmtClock(entry.start_ms)}` : 'ohne Zeit',
+          ),
         ),
       ),
     );
@@ -76,7 +82,12 @@ export async function render([id]) {
   root.append(list);
 
   list.addEventListener('click', (event) => {
-    const button = event.target.closest('button.line');
+    const word = event.target.closest('button.word');
+    if (word) {
+      location.hash = `#/dict?q=${encodeURIComponent(word.dataset.word)}`;
+      return;
+    }
+    const button = event.target.closest('button.seek');
     if (!button || button.disabled) return;
     const entry = byEntry.get(button.dataset.seg);
     if (!entry) return;
@@ -89,7 +100,7 @@ export async function render([id]) {
 
   const paint = () => {
     const current = player.currentEntry;
-    list.querySelectorAll('button.line').forEach((node) => {
+    list.querySelectorAll('.line-block').forEach((node) => {
       const active = current && node.dataset.seg === current.id;
       node.setAttribute('aria-current', String(Boolean(active)));
       if (active) node.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -103,4 +114,23 @@ export async function render([id]) {
       unsubscribe();
     },
   };
+}
+
+function wordButtons(text) {
+  const nodes = [];
+  for (const part of String(text).split(/(\s+)/)) {
+    if (!part.trim()) {
+      nodes.push(part);
+      continue;
+    }
+    const clean = part.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+    if (!clean) {
+      nodes.push(part);
+      continue;
+    }
+    nodes.push(
+      el('button', { class: 'word', type: 'button', 'data-word': clean }, part),
+    );
+  }
+  return nodes;
 }

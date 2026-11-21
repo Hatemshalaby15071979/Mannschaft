@@ -1,6 +1,7 @@
 /* Screen router + app shell wiring. Hash routes, one screen at a time. */
 
 import { el, clear, statusBlock } from './ui.js';
+import { wireShellControls } from './shell.js';
 import * as home from './screens/home.js';
 import * as library from './screens/library.js';
 import * as lesson from './screens/lesson.js';
@@ -9,6 +10,9 @@ import * as transcript from './screens/transcript.js';
 import * as glossary from './screens/glossary.js';
 import * as drill from './screens/drill.js';
 import * as progressScreen from './screens/progress.js';
+import * as clip from './screens/clip.js';
+import * as cards from './screens/cards.js';
+import * as dictionary from './screens/dictionary.js';
 
 const ROUTES = [
   { pattern: /^\/$/, screen: home, nav: 'home' },
@@ -19,6 +23,9 @@ const ROUTES = [
   { pattern: /^\/glossary\/?([^/?#]*)$/, screen: glossary, nav: 'library' },
   { pattern: /^\/drill\/([^/?#]+)/, screen: drill, nav: 'library' },
   { pattern: /^\/progress$/, screen: progressScreen, nav: 'progress' },
+  { pattern: /^\/clip\/([^/?#]+)/, screen: clip, nav: null },
+  { pattern: /^\/cards\/([^/?#]+)/, screen: cards, nav: null },
+  { pattern: /^\/dict\/?$/, screen: dictionary, nav: null },
 ];
 
 let token = 0;
@@ -90,6 +97,7 @@ async function route() {
 }
 
 function wireShell() {
+  wireShellControls();
   const helpToggle = document.getElementById('help-toggle');
   const panel = document.getElementById('help-panel');
   helpToggle.addEventListener('click', () => {

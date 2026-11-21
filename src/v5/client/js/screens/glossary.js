@@ -4,7 +4,7 @@
 
 import { api } from '../api.js';
 import { getDetail } from '../store.js';
-import { el, setPill, statusBlock } from '../ui.js';
+import { el, link, setPill, statusBlock } from '../ui.js';
 
 export async function render([id]) {
   let entries = [];
@@ -72,6 +72,15 @@ export async function render([id]) {
             entry.example_en ? el('div', { class: 'gloss-example muted' }, entry.example_en) : null,
             entry.note_de ? el('div', { class: 'gloss-note' }, entry.note_de) : null,
             entry.note_en ? el('div', { class: 'gloss-note muted' }, entry.note_en) : null,
+            el('div', { class: 'chip-row', style: { marginTop: '0.5rem' } },
+              link(`#/dict?q=${encodeURIComponent(entry.de)}`, 'Wörterbuch', 'chip'),
+              el('a', {
+                class: 'chip',
+                href: `https://www.dwds.de/wb/${encodeURIComponent(entry.de)}`,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+              }, 'DWDS ↗'),
+            ),
           ),
       ),
       ...(!rows.length ? [el('li', { class: 'loading' }, 'Nichts gefunden.')] : []),
