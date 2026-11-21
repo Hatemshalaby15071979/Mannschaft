@@ -100,8 +100,8 @@ No legacy file was modified or deleted. The two sanctioned mutation points are
 
 | Zip | Size | SHA-256 | Clean install |
 |---|---|---|---|
-| `v5/dist/v5-core.zip` | 586,837 B (0.56 MiB) | `a7895b76671befae6b1201adfc35587cdf7aaac757bc3428cf09f42f74f69972` | **OK** |
-| `v5/dist/v5-full.zip` | 223,318,002 B (212.97 MiB) | `3a0e8732100a14eef6bc78ef2f15e4c98c39df4f5de23846407c9afe47a46104` | **served OK** (see below) |
+| `v5/dist/v5-core.zip` | 922,592 B (0.88 MiB) | `82556bca592a1fb1612fb5b2e0581b45de0aea4c54e2feb2c220b6892c06566b` | **OK** |
+| `v5/dist/v5-full.zip` | 223,653,757 B (213.29 MiB) | `600dba4cd7c7065ffe19aa403713669af874341823c8c724c05ccd1167b628f6` | **served OK** (see below) |
 
 `make dist-check` unzipped core into a fresh `/tmp` directory and ran
 `python3 -m v5 --help`, `python3 -m v5 validate --all` (12 lessons, 0 errors) and

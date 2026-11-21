@@ -34,7 +34,7 @@ service worker and every rendered file are untouched. V6 adds three screens
 
 ## Install
 
-### From the core zip (no audio, ~0.6 MB)
+### From the core zip (no audio, ~0.9 MB)
 
 ```bash
 unzip v5-core.zip -d v5
@@ -185,7 +185,7 @@ content/dictionary/    generated seed
 content/corpus/        clips.jsonl (committed) + sqlite/cache (ignored)
 config/                voices.toml, levels.toml, corpus.toml
 tools/                 hash guard, packaging, dist check, serve scripts, logo + icons
-tests/                 221 tests: contract, render, server, client, V6
+tests/                 227 tests: contract, render, server, client, V6
 ```
 
 See `STATUS.md` for the milestone log and the current next action.
