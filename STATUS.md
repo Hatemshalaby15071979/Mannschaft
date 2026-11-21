@@ -79,7 +79,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `V6-REPORT.md`, serve/stop scripts. |
 | V6-3 | Root repo (local-ready) | DONE | `27e9d6c` — root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
 | V6-4 | Verification hardening | DONE | `722af96` — structured request logging (`ts= method= route= status= ms=`), strict on-disk schema test for every generated JSON, 360 px header split into two rows (no overlap), full zip actually served from a clean directory (health rendered=12, `Range` → 206). **223 passed**; core/full rebuilt and `dist-check` OK. |
-| V6-6 | Mannschaft rename + brand delivery | DONE | User-visible `v5` removed, artifacts renamed `mannschaft-*`, hero mark on home, navigation network-first with upgrade reload, shell headers `no-cache`, caches `mannschaft-v4`; **230 passed**. |
+| V6-6 | Mannschaft rename + brand delivery | DONE | `892d745` — user-visible `v5` removed, artifacts renamed `mannschaft-*`, hero mark on home, navigation network-first with upgrade reload, shell headers `no-cache`, caches `mannschaft-v4`; **230 passed**. |
 | V6-5 | Mannschaft rebrand | DONE | `b69e562` — product name, docs, UI, manifest and server title renamed; `tools/make_logo.py` turns the founder's helix PDF into transparent/PWA assets; animated mark in both persistent chromes, proven on all 11 routes; **227 passed**. |
 
 ---
