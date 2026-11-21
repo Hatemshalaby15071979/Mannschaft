@@ -33,7 +33,7 @@ screens (Video, Karten, Wörterbuch) and four read-only API routes sit on top.
 | Tests before → after | 188 → **223** (+35 in `tests/test_v6.py`) |
 | `make validate --all` | **12 lessons, 0 errors, 0 warnings** |
 | Browser walkthrough | 11 routes; **0 console errors, 0 failed requests** (excluding navigation `ERR_ABORTED`) |
-| Playback restore | autosave fired, position after reload **8,200 ms** |
+| Playback restore | in-progress B1-02: autosave fired, position after reload **157,000 ms** (from 148,841 ms) |
 | Clip embed | `youtube-nocookie.com/embed/…?start=29&end=89&rel=0`, no autoplay, no YouTube URL in Cache Storage |
 | Cards | 10 per lesson (120 total); grading POSTs `/api/progress` |
 | Dictionary | 542 local entries; 4 outbound links with `rel="noopener"` |
@@ -85,8 +85,8 @@ No legacy file was modified or deleted. The two sanctioned mutation points are
 
 | Zip | Size | SHA-256 | Clean install |
 |---|---|---|---|
-| `v5/dist/v5-core.zip` | 586,198 B (0.56 MiB) | `2a1c7e57c0aa2ab39bfbb6dbc29dd5ba7421a77c6cecb8d181984be0fe73687c` | **OK** |
-| `v5/dist/v5-full.zip` | 223,317,363 B (212.97 MiB) | `f2b9b2f59014c7740719cb18b44a56a6a8ea5158ba748d9058b041c608186c40` | **served OK** (see below) |
+| `v5/dist/v5-core.zip` | 586,837 B (0.56 MiB) | `a7895b76671befae6b1201adfc35587cdf7aaac757bc3428cf09f42f74f69972` | **OK** |
+| `v5/dist/v5-full.zip` | 223,318,002 B (212.97 MiB) | `3a0e8732100a14eef6bc78ef2f15e4c98c39df4f5de23846407c9afe47a46104` | **served OK** (see below) |
 
 `make dist-check` unzipped core into a fresh `/tmp` directory and ran
 `python3 -m v5 --help`, `python3 -m v5 validate --all` (12 lessons, 0 errors) and
@@ -150,6 +150,10 @@ all new screens read generated JSON, not VoiceStudio.
 - **Media matching is heuristic.** All 12 lessons got a primary clip with no level
   gap, but the selector scores corpus metadata; it does not verify that the clip's
   content matches the authored scene. Overrides are the correction path.
+- **Completion is sticky.** Once a lesson's audio reaches the end, later visits start at
+  0 and the home hero moves to the next unfinished lesson. Re-listening works; it just
+  does not resume a finished lesson. The browser resume check therefore uses an
+  in-progress lesson (B1-02), and the pytest resume test uses a fresh database.
 - **Dictionary is a glossary index, not a dictionary.** 542 entries from the
   lessons' own glossaries plus outbound links; no scraped definitions.
 - **Voices are not human-auditioned.** M4's objective distinctness passed 6/6; the
