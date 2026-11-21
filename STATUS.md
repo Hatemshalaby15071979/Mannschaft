@@ -7,9 +7,24 @@
 
 ## NEXT ACTION
 
-**M9 — pilot 12 lessons.** Files: `content/lessons/`, `tests/`, `config/`.
-DoD (plan §14): 12 lessons (2 per level A1→C2), all validate and render and play;
-`make validate --all` → 0 errors; you finish one without wanting to stop.
+**No pending implementation work.** V6 is complete and verified: see
+`V6-REPORT.md`. The only open item is an owner decision — whether to add a
+GitHub remote and push (never guessed, never pushed). M10/M11 stay deferred
+under the 2026-11-18 pilot decision.
+
+Re-verify at any time with: `make check` (221 tests), `make validate`,
+`make dist-check`, `make serve-bg` + `/api/health`.
+
+---
+
+## V6 — additive architecture (2026-11-21)
+
+All phases landed. Commits: `df06f80` (guard) → `e1603d9` (design shell, media,
+cards, dictionary, journey) → `v6-2` (CI, packaging, docs). 221 tests green,
+12 lessons 0 errors, clean-directory install OK. Full evidence in `V6-REPORT.md`.
+
+**The 12-pilot boundary is unchanged.** V6 adds screens and read-only routes; it
+does not add lessons and does not resume M10/M11.
 
 **M9 is DONE.** All 12 lessons at full §9.1 depth (A1 55, A2 70, B1 92–98, B2 125,
 C1 100–141, C2 132 segs/lesson), all validate (0 errors, 0 warnings) and all render.
@@ -58,6 +73,9 @@ advisory — objective waveform-distinctness passed 6/6.
 | M10 | Scale to 72 | DEFERRED | 2026-11-18 pilot decision: scope capped at 12 lessons. 72 is a ~6–7 week content program (60 more lessons, ~7,000 segs, ~30 h CPU) with a quality-stall risk at #20. Not pending work. |
 | M11 | Release v5.0.0 | DEFERRED | Depends on M10's 72 lessons; out of scope under the 12-pilot decision. |
 | V6-0 | Guard — legacy hash snapshot | DONE | `tools/hash_legacy.py` → **2,657 files** hashed (2,438 audio + clips.jsonl + voices.toml + 11 server files); `app.py`/`main.js` carved out as the sanctioned additive surface. Snapshot: `/tmp/v6_legacy_before.sha256`. Baseline gate re-measured: **188 passed in 18.02s**, `ruff` clean. |
+| V6-1 | Design shell + media + cards + dictionary + journey | DONE | `e1603d9` — matrix-derived dark shell (sidebar index, masthead, KPI tiles, level tabs, expandable rows, theme/motion/focus), 12/12 lessons have a `youtube-nocookie` clip, 120 cards (10/lesson), 542 dictionary entries, 4 new read-only routes. **221 passed**, `validate` 12/0/0, browser walkthrough 0 console errors, position restored after reload. |
+| V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `V6-REPORT.md`, serve/stop scripts. |
+| V6-3 | Root repo (local-ready) | DONE | Root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
 
 ---
 
@@ -113,3 +131,10 @@ advisory — objective waveform-distinctness passed 6/6.
 | 2026-11-18 | M8 | Real-browser QA (`eb4a78a`) found and fixed three client bugs the isolated tests missed: (1) `home.js` destructured an undeclared `all` → ReferenceError, so home rendered blank; (2) `main.js` appended `result.node` even when a screen's error path returned a bare element → literal "undefined" on any screen error; (3) `player.load()` never assigned `this.detail`, so `_maybeSave`/`_save` always returned early and no progress was saved during normal listening. Live flow verified: home→lesson→play, audio advances, auto-save POST fires (>4 s), position survives reload, `?` help toggles, 0 console/page errors. 3 new smoke tests pin all three; 188 pass. |
 | — | — | **Gotcha:** the original M8 smoke test manually POSTed progress then checked restore, so it passed despite the player never saving anything. A test that exercises only the happy path of a *different* layer can miss a broken core promise — now covered by `test_player_saves_progress_during_playback`. Also: audio is a detached `new Audio()` in the player singleton, so `document.querySelector('audio')` finds nothing; query the player module instead. |
 
+| 2026-11-21 | V6 | Additive V6 shipped: design shell, clip/media selector, 120 sentence cards, 542-entry dictionary, journey context route. `make check` **221 passed**; `validate` 12/0/0; browser walkthrough 11 routes, 0 console errors; playback position restored (8.2 s) after reload; `dist-check` OK. |
+| — | — | **Gotcha:** the router focused `#screen` on *first paint*, which moves the sequential focus start point past the skip link — the first Tab went to the primary button. Now it focuses only on navigation (`token > 1`); the skip link is the first Tab stop again. |
+| — | — | **Gotcha:** Playwright's `inner_text` returns text with CSS `text-transform` applied. Smoke assertions for `Video` / `Karten` failed against `VIDEO · …` / `KARTEN`. Assert on the rendered case. |
+| — | — | **Bug:** dictionary ranking used substring matching, so `tag` matched `der Vorteil` through English "advan**tag**e". Now token/prefix matching only; `Tag` returns `der Tag`-family entries. |
+| — | — | **A11y:** light `--warning` `#b28600` was 3.03:1 on `#f4f4f4`, used as body text for "Nochmal". Darkened to `#8a6800` → 4.70:1. All other token pairs ≥ 4.55:1. |
+| — | — | **Environment:** ruff's cache rename fails with `EINVAL` on this mount, so `make lint` uses `--no-cache`. CI keeps the normal cache. |
+| — | — | **Correction:** the Phase-0 hash snapshot was in `/tmp` and was cleared between sessions. The gate was re-proven by mtime audit (newest frozen file 2026-11-18 11:56; nothing under v3/v4/webapp newer than 2026-11-19) plus a fresh 2,657-file snapshot — see `V6-REPORT.md` §2. |

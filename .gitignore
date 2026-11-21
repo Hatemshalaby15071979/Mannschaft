@@ -15,3 +15,6 @@ audio/.cache/
 
 # private
 user/
+
+# V6 artifacts
+dist/

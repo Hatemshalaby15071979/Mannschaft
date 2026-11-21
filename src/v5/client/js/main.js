@@ -58,7 +58,10 @@ async function route() {
     cleanup = null;
   }
   clear(document.getElementById('screen'));
-  document.getElementById('screen').focus();
+  // Move focus to the new screen on navigation, but not on first paint: doing
+  // it at load moves the sequential focus start point past the skip link, so
+  // the very first Tab would skip the page's own accessibility escape hatch.
+  if (token > 1) document.getElementById('screen').focus();
   setActiveNav();
 
   const { path, query } = currentLocation();
