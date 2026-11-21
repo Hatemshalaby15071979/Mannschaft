@@ -64,7 +64,6 @@ plays immediately; VoiceStudio is not needed.
 ### From source
 
 ```bash
-cd v5
 pip install -e '.[dev]'
 make check
 make serve
@@ -143,8 +142,8 @@ empty. See `tools/hash_legacy.py`.
 ## Brand
 
 **Mannschaft** is the platform name. The mark is the founder company's helix
-geometry engraving, supplied as `helix_codex_inevitable_engraving.pdf` at the
-project root and rendered to web assets by `tools/make_logo.py`:
+geometry engraving, supplied as `brand/helix_codex_inevitable_engraving.pdf`
+and rendered to web assets by `tools/make_logo.py`:
 
 ```bash
 make logo

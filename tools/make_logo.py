@@ -3,7 +3,7 @@
 
     python3 tools/make_logo.py
 
-Source: ``helix_codex_inevitable_engraving.pdf`` at the project root (one page,
+Source: ``brand/helix_codex_inevitable_engraving.pdf`` in this repository (one page,
 white engraving on black). The PDF is rendered at 300 dpi, the near-black
 background is converted to transparency, and the mark is cropped to its ink.
 
@@ -33,7 +33,10 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
-PDF = ROOT.parent / "helix_codex_inevitable_engraving.pdf"
+PDF_CANDIDATES = [
+    ROOT / "brand" / "helix_codex_inevitable_engraving.pdf",
+    ROOT.parent / "helix_codex_inevitable_engraving.pdf",
+]
 CLIENT = ROOT / "src" / "v5" / "client"
 ASSETS = CLIENT / "assets"
 ICONS = CLIENT / "icons"
@@ -44,10 +47,11 @@ MARK_SIZE = 1024
 
 
 def render_pdf(workdir: Path) -> Path:
-    if not PDF.is_file():
-        raise SystemExit(f"logo source not found: {PDF}")
+    pdf = next((candidate for candidate in PDF_CANDIDATES if candidate.is_file()), None)
+    if pdf is None:
+        raise SystemExit("logo source not found; expected brand/helix_codex_inevitable_engraving.pdf")
     subprocess.run(
-        ["pdftocairo", "-png", "-r", "300", "-f", "1", "-l", "1", str(PDF), str(workdir / "page")],
+        ["pdftocairo", "-png", "-r", "300", "-f", "1", "-l", "1", str(pdf), str(workdir / "page")],
         check=True,
         capture_output=True,
     )

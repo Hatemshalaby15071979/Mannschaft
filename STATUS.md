@@ -2,7 +2,7 @@
 
 <img src="src/v5/client/assets/logo-badge.png" width="64" alt="Mannschaft">
 
-> Single source of truth for progress. Read `../AGENTS.md` first.
+> Single source of truth for progress. Read `README.md` first.
 > Update this file **after every step**, then commit.
 
 ---

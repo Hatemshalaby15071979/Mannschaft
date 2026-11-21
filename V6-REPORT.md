@@ -5,7 +5,7 @@
 Product name: **Mannschaft**. Internal version: V6, tree `v5/`.
 
 Date: 2026-11-21 · Branch: `master` (v5 repo) / `main` (root repo, local only)
-Executor: autonomous agent · Scope: `V6-ARCHITECTURE-PLAN.md` + `V6-EXECUTION-PROMPT.md`
+Executor: autonomous agent · Scope: V6 (see `STATUS.md` for the milestone log)
 
 ---
 
