@@ -26,6 +26,7 @@ screens (Video, Karten, Wörterbuch) and four read-only API routes sit on top.
 | 5 Verify / package | `baa1d50` | CI, packaging, serve scripts, README, this report, STATUS |
 | Root repo | `27e9d6c` | `git init -b main` at the project root; plans, archives, v5 gitlink; no remote |
 | Hardening | `722af96` | request logging, on-disk schema test, mobile header, full-zip serve proof |
+| Rebrand | `b69e562` | platform renamed Mannschaft, helix mark, animated brand chrome, PWA icons |
 
 ---
 
