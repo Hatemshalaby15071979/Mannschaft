@@ -723,6 +723,8 @@ section[data-accent] .section-heading::before { display: none; }
   color: var(--color-muted);
 }
 .evidence-cell .mono-label { font-size: var(--text-xs); }
+/* A status word is not a figure; only the times in this cell are mono. */
+.evidence-cell .badge { font-family: var(--font-body); }
 
 .expand-chevron {
   width: 1.75rem;
