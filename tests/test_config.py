@@ -5,7 +5,7 @@ from v5.config import load_levels, load_voices, missing_profiles
 
 
 def test_version():
-    assert v5.__version__ == "0.1.0"
+    assert v5.__version__ == "6.0.1"
     assert v5.SCHEMA == "lesson-script/v1"
 
 

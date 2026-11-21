@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "v5"
-version = "0.1.0"
+version = "6.0.1"
 description = "Mannschaft — single-user listening-first German learning system"
 requires-python = ">=3.11"
 dependencies = ["pydantic>=2.6", "fastapi>=0.115", "uvicorn>=0.30"]

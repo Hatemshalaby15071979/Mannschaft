@@ -10,8 +10,8 @@
 ## NEXT ACTION
 
 **No pending implementation work.** V6 is complete, verified and **published**:
-`https://github.com/Hatemshalaby15071979/Mannschaft` (branch `main`, tag
-`v6.0.0`). CI runs on 3.11–3.13. See `V6-REPORT.md` for evidence.
+`https://github.com/Hatemshalaby15071979/Mannschaft` (branch `main`, release
+`v6.0.1`). CI runs on 3.11–3.14. See `V6-REPORT.md` for evidence.
 
 Two owner decisions remain, neither blocking: (1) a LICENSE — none has been
 chosen, so `pyproject.toml` carries no license field; (2) whether the root
@@ -161,4 +161,5 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **Gotcha:** a cache-first navigation is how a rebrand ships and nobody sees it. The browser had the new files on disk and the old DOM on screen at the same time. |
 | 2026-11-21 | V6 | **Published.** `v5/` is its own repository at `Hatemshalaby15071979/Mannschaft`, branch `main`, tag `v6.0.0`, public, description + topics set. The root workspace repo still holds the archives as gitlinks and stays local. |
 | — | — | **CI failure and fix:** the first Actions run (44904796412) failed 3.11 and 3.13 on `test_golden_spans_match_real_parser` — `RuntimeError: VoiceStudio parser not found under /home/hatem/.config/VoiceStudio/runtime/project`. The test imported `real_parser()` unconditionally, so the one test that must use the real parser was also the one test that could not run on a clean host. It now resolves the parser through a module fixture that calls `pytest.skip` on `RuntimeError`; the guard still fails loudly on a machine where VoiceStudio exists but is broken, because a missing file is the only thing skipped. Local run 230 passed, and with `VOICESTUDIO_PROJECT` pointed at a nonexistent path the suite reports `1 skipped` instead of `1 failed`. |
+| — | — | **Release:** `v6.0.1` is the first tag whose commit is green. `v6.0.0` shipped the V6 feature set but its own Actions run was red (the host-dependent adapter test), so it stays as history rather than being force-moved. Version strings now agree: `v5.__version__`, `pyproject.toml` and the FastAPI app all say 6.0.1 instead of 0.1.0/6.0.0. Core zip rebuilt (0.88 MiB, sha256 f948ed3…) and `make dist-check` is OK in a clean directory. |
 | — | — | **CI polish:** run 44905079050 is green on 3.11, 3.12, 3.13 **and 3.14**, with no annotations — `checkout`/`setup-python`/`upload-artifact` moved to their current majors (the old ones ran on a deprecated Node 20), and 3.14 joined the matrix because the project already runs on it locally. README gained the CI and Python badges. The one remaining warning is Starlette's own `httpx2` deprecation, not ours. | — |

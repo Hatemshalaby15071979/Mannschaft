@@ -3,5 +3,5 @@
 Read README.md before changing anything. Read STATUS.md for where we are.
 """
 
-__version__ = "0.1.0"
+__version__ = "6.0.1"
 SCHEMA = "lesson-script/v1"

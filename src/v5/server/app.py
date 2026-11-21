@@ -150,7 +150,7 @@ def create_app(
 ) -> FastAPI:
     app = FastAPI(
         title="Mannschaft",
-        version="6.0.0",
+        version="6.0.1",
         docs_url="/api/docs",
         openapi_url="/api/openapi.json",
         redoc_url=None,
