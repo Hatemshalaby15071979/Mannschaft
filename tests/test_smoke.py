@@ -325,3 +325,33 @@ def test_range_requests_serve_sliced_bytes(server_url):
     assert response.status == 206
     assert response.headers.get("Content-Range") == f"bytes 0-99/{len(full)}"
     assert response.read() == full[:100]
+
+
+def test_brand_mark_appears_on_every_route(server_url):
+    """Mannschaft's helix mark is persistent chrome, not a home-page ornament."""
+    routes = [
+        "#/",
+        "#/library",
+        "#/lesson/A1-01",
+        "#/play/A1-01",
+        "#/transcript/A1-01",
+        "#/glossary/A1-01",
+        "#/drill/A1-01",
+        "#/progress",
+        "#/clip/A1-01",
+        "#/cards/A1-01",
+        "#/dict?q=Tag",
+    ]
+    with sync_playwright() as p:
+        browser = p.chromium.launch(args=["--no-sandbox"])
+        page = browser.new_page(viewport={"width": 1280, "height": 900})
+        page.goto(server_url, wait_until="load")
+        page.wait_for_selector(".tabbar", timeout=10_000)
+        for route in routes:
+            page.evaluate(f"location.hash = {json.dumps(route)}")
+            page.wait_for_timeout(300)
+            marks = page.locator(".brand-mark img")
+            assert marks.count() >= 2, f"{route} lost the brand mark"
+            assert marks.first.is_visible(), f"{route} brand mark is hidden"
+            assert marks.first.get_attribute("src") == "/assets/logo-mark.png"
+        browser.close()

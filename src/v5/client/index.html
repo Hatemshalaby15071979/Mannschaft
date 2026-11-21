@@ -4,11 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0d1117">
-  <meta name="description" content="Hören zuerst. Deutsch von A1 bis C2.">
-  <title>v5 · Deutsch hören</title>
+  <meta name="description" content="Mannschaft — Deutsch hören, von A1 bis C2. Lokal, ruhig, ohne Tracking.">
+  <title>Mannschaft · Deutsch lernen</title>
   <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/favicon-32.png" sizes="32x32">
   <link rel="icon" href="/icons/icon-192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="preload" as="image" href="/assets/logo-mark.png">
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/v6-shell.css">
   <link rel="stylesheet" href="/css/v6.css">
@@ -18,8 +20,14 @@
 
   <aside class="side-index" aria-label="Bereiche">
     <div class="side-brand">
-      <strong>Deutsch hören</strong>
-      <span>v5 · V6</span>
+      <a class="brand-mark side-brand-mark" href="#/" aria-label="Mannschaft — Startseite">
+        <img src="/assets/logo-mark.png" alt="" width="44" height="44">
+        <span class="brand-scan" aria-hidden="true"></span>
+      </a>
+      <span class="brand-copy">
+        <strong>Mannschaft</strong>
+        <span>Deutsch · A1–C2</span>
+      </span>
     </div>
 
     <h2>Bereiche</h2>
@@ -48,7 +56,13 @@
   </aside>
 
   <header class="topbar">
-    <a class="brand" href="#/" aria-label="Startseite">v5</a>
+    <a class="brand" href="#/" aria-label="Mannschaft — Startseite">
+      <span class="brand-mark brand-mark-sm">
+        <img src="/assets/logo-mark.png" alt="" width="26" height="26">
+        <span class="brand-scan" aria-hidden="true"></span>
+      </span>
+      <span class="brand-name">Mannschaft</span>
+    </a>
     <span class="level-pill" id="level-pill" hidden></span>
     <button class="icon-button" id="help-toggle" type="button"
             aria-expanded="false" aria-controls="help-panel" title="Tastatur (?)">?</button>

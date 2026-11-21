@@ -149,8 +149,8 @@ def create_app(
     events_db: Path | None = None,
 ) -> FastAPI:
     app = FastAPI(
-        title="v5",
-        version="0.1.0",
+        title="Mannschaft",
+        version="6.0.0",
         docs_url="/api/docs",
         openapi_url="/api/openapi.json",
         redoc_url=None,

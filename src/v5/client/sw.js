@@ -6,7 +6,7 @@
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v2';
+const VERSION = 'v3';
 const SHELL = `v5-${VERSION}`;
 const DATA = `v5-data-${VERSION}`;
 
@@ -18,6 +18,7 @@ const SHELL_URLS = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
+  '/assets/logo-mark.png',
   '/css/app.css',
   '/css/v6-shell.css',
   '/css/v6.css',

@@ -42,6 +42,10 @@ REQUIRED_FILES = [
     "js/screens/progress.js",
     "icons/icon-192.png",
     "icons/icon-512.png",
+    "icons/apple-touch-icon.png",
+    "icons/favicon-32.png",
+    "assets/logo-mark.png",
+    "assets/logo-badge.png",
 ]
 
 SCREENS = [
@@ -85,7 +89,8 @@ def test_index_registers_service_worker_module():
 
 def test_manifest_is_valid_json_with_installable_fields():
     manifest = json.loads((CLIENT / "manifest.webmanifest").read_text(encoding="utf-8"))
-    assert manifest["name"]
+    assert manifest["name"].startswith("Mannschaft")
+    assert manifest["short_name"] == "Mannschaft"
     assert manifest["start_url"]
     assert manifest["display"] in {"standalone", "fullscreen", "minimal-ui"}
     assert manifest["icons"]
@@ -183,3 +188,30 @@ def test_icon_served_with_png_mime(tmp_path):
     response = TestClient(app).get("/icons/icon-192.png")
     assert response.status_code == 200
     assert response.headers["content-type"] == "image/png"
+
+
+def test_brand_mark_is_in_both_persistent_chromes():
+    """The helix mark must ride in the sidebar and the topbar, so every route
+    shows it whether the sidebar is visible or the layout has collapsed."""
+    html = (CLIENT / "index.html").read_text(encoding="utf-8")
+    assert html.count('class="brand-mark') >= 2
+    assert html.count('/assets/logo-mark.png') >= 2
+    assert "Mannschaft" in html
+    assert "brand-scan" in html
+
+
+def test_brand_animation_is_defined_and_motion_safe():
+    css = (CLIENT / "css" / "v6-shell.css").read_text(encoding="utf-8")
+    assert "@keyframes brand-sweep" in css
+    assert "@keyframes brand-breathe" in css
+    assert "prefers-reduced-motion: reduce" in css
+    assert ".brand-scan { display: none; }" in css
+    assert 'filter: invert(1)' in css
+
+
+def test_logo_assets_are_real_pngs():
+    for name in ("assets/logo-mark.png", "assets/logo-badge.png",
+                 "icons/apple-touch-icon.png", "icons/favicon-32.png"):
+        data = (CLIENT / name).read_bytes()
+        assert data[:8] == b"\x89PNG\r\n\x1a\n", f"{name} is not a PNG"
+        assert len(data) > 500, f"{name} suspiciously small"

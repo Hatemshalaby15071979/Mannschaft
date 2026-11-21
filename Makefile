@@ -2,7 +2,7 @@ SHELL := bash
 export PYTHONPATH := src
 
 .PHONY: check lint test validate render assemble serve corpus-suggest clean \
-	dist-core dist-full dist-check serve-bg stop-bg
+	dist-core dist-full dist-check serve-bg stop-bg logo
 
 check: lint test
 
@@ -30,6 +30,11 @@ serve:
 
 corpus-suggest:
 	python3 -m v5 corpus suggest --level $(LEVEL) --situation $(SITUATION)
+
+# ---- brand ---------------------------------------------------------------
+
+logo:
+	python3 tools/make_logo.py
 
 # ---- packaging (V6) -------------------------------------------------------
 

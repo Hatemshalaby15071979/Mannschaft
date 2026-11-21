@@ -1,4 +1,8 @@
-# V6 Report
+# V6 Report — Mannschaft
+
+<img src="src/v5/client/assets/logo-badge.png" width="72" alt="Mannschaft">
+
+Product name: **Mannschaft**. Internal version: V6, tree `v5/`.
 
 Date: 2026-11-21 · Branch: `master` (v5 repo) / `main` (root repo, local only)
 Executor: autonomous agent · Scope: `V6-ARCHITECTURE-PLAN.md` + `V6-EXECUTION-PROMPT.md`
@@ -29,8 +33,8 @@ screens (Video, Karten, Wörterbuch) and four read-only API routes sit on top.
 
 | Gate | Result |
 |---|---|
-| `make check` | **223 passed in 20.19 s**, `ruff` clean (`--no-cache`; see note) |
-| Tests before → after | 188 → **223** (+35 in `tests/test_v6.py`) |
+| `make check` | **227 passed in 23.97 s**, `ruff` clean (`--no-cache`; see note) |
+| Tests before → after | 188 → **227** (+35 V6, +4 brand) |
 | `make validate --all` | **12 lessons, 0 errors, 0 warnings** |
 | Browser walkthrough | 11 routes; **0 console errors, 0 failed requests** (excluding navigation `ERR_ABORTED`) |
 | Playback restore | in-progress B1-02: autosave fired, position after reload **157,000 ms** (from 148,841 ms) |
@@ -41,6 +45,16 @@ screens (Video, Karten, Wörterbuch) and four read-only API routes sit on top.
 | Contract validation | on-disk media manifest, 12 decks, dictionary seed and overrides load through their strict models |
 | Design leak grep | `grep -riIE 'n8n|WFM|Hatemshalaby|Operations___|github.com/Hatemshalaby' src/v5/client content --exclude-dir=audio` → **no matches** |
 | Legacy hash gate | See below |
+
+### Brand — Mannschaft
+
+The platform was renamed **Mannschaft**. The mark is the founder company's helix
+geometry engraving (`helix_codex_inevitable_engraving.pdf`), converted by
+`tools/make_logo.py` into a transparent 1024 px PNG plus PWA/favicon sizes. It
+sits in the sidebar and topbar — both persistent — so every route shows it, and
+a Playwright test walks all 11 routes to prove it. The mark breathes and a
+masked conic sweep travels along the engraving; `prefers-reduced-motion` removes
+both. The light theme inverts the asset in CSS, so one file serves both themes.
 
 ### Accessibility
 
@@ -90,7 +104,7 @@ No legacy file was modified or deleted. The two sanctioned mutation points are
 
 `make dist-check` unzipped core into a fresh `/tmp` directory and ran
 `python3 -m v5 --help`, `python3 -m v5 validate --all` (12 lessons, 0 errors) and
-`python3 -m pytest -q` (223 passed), then probed `/api/health`:
+`python3 -m pytest -q` (227 passed), then probed `/api/health`:
 `{"app":"ok","voicestudio":{"up":false,…},"lessons":{"total":12,"rendered":0},"corpus":{"clips":790}}`.
 `rendered: 0` is correct: core deliberately excludes audio.
 

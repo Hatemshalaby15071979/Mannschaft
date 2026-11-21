@@ -1,4 +1,6 @@
-# STATUS — v5
+# STATUS — Mannschaft (v5)
+
+<img src="src/v5/client/assets/logo-badge.png" width="64" alt="Mannschaft">
 
 > Single source of truth for progress. Read `../AGENTS.md` first.
 > Update this file **after every step**, then commit.
@@ -76,6 +78,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | V6-1 | Design shell + media + cards + dictionary + journey | DONE | `e1603d9` — matrix-derived dark shell (sidebar index, masthead, KPI tiles, level tabs, expandable rows, theme/motion/focus), 12/12 lessons have a `youtube-nocookie` clip, 120 cards (10/lesson), 542 dictionary entries, 4 new read-only routes. **221 passed**, `validate` 12/0/0, browser walkthrough 0 console errors, position restored after reload. |
 | V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `V6-REPORT.md`, serve/stop scripts. |
 | V6-3 | Root repo (local-ready) | DONE | `27e9d6c` — root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
+| V6-5 | Mannschaft rebrand | DONE | Product name, docs, UI, manifest and server title renamed; `tools/make_logo.py` turns the founder's helix PDF into transparent/PWA assets; animated mark in both persistent chromes, proven on all 11 routes; **227 passed**. |
 | V6-4 | Verification hardening | DONE | `722af96` — structured request logging (`ts= method= route= status= ms=`), strict on-disk schema test for every generated JSON, 360 px header split into two rows (no overlap), full zip actually served from a clean directory (health rendered=12, `Range` → 206). **223 passed**; core/full rebuilt and `dist-check` OK. |
 
 ---
@@ -143,3 +146,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **Surprise:** the first full-zip serve attempt used port 8799 and hit an unrelated local service (`openmausbot`) that answered `/api/health` with its own JSON. The probe now asserts `app == "ok"` and binds an ephemeral port, so a port collision cannot masquerade as success. |
 | — | — | **Decision:** §5 asks new schemas to live in `src/v5/contract/`, but §3.1 freezes that directory. Schemas stay beside their generators and `test_on_disk_json_validates_against_its_schema` enforces them; this is recorded in `V6-REPORT.md` rather than silently ignored. |
 | — | — | **Correction:** at 360 px the index and controls shared one strip and the controls clipped the nav. They now occupy two rows; measured bar bottom 98.3 px vs content top 100.8 px. |
+| 2026-11-21 | V6 | **Rebrand: the platform is Mannschaft.** Name applied to the root and v5 READMEs, STATUS, report, AGENTS, both plans, the HTML title, masthead, manifest, FastAPI title and package description. Logo extracted from `helix_codex_inevitable_engraving.pdf` into a transparent mark, docs badge, PWA icons and favicon. The mark is in the sidebar and topbar on every route, animated by a masked conic sweep plus a slow breath. `make check` **227 passed**. |
+| — | — | **Design:** the PDF's black is ~10/255, not 0 — a naive luminance alpha left a grey square. The tool floors at 18, lifts midtones with gamma 0.72, and crops to the ink. One white-on-transparent asset serves both themes; the light theme inverts it in CSS. |
+| — | — | **Gotcha:** at 26 px the engraving averages into a grey smudge. The topbar mark is now 40 px and the sidebar 52 px, with a faint accent drop-shadow; the wordmark stays visible down to 360 px. |
+| — | — | **A11y:** the sweep and breath are disabled under `prefers-reduced-motion`; the mark is decorative (`alt=""`) and its links carry an explicit `aria-label`. |

@@ -54,7 +54,7 @@ function masthead(lessons) {
       el(
         'div',
         {},
-        el('span', { class: 'mono-label' }, `Deutsch hören · ${span}`),
+        el('span', { class: 'mono-label' }, `Mannschaft · ${span}`),
         el('h1', { class: 'headline' }, 'Hören zuerst. ', el('strong', {}, 'Verstehen kommt nach.')),
         el(
           'p',

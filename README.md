@@ -1,6 +1,11 @@
-# v5 — Deutsch hören
+<p align="center">
+  <img src="src/v5/client/assets/logo-badge.png" width="96" alt="Mannschaft — helix mark">
+</p>
 
-A single-user, localhost, listening-first German learning app for A1–C2. Twelve
+# Mannschaft — v5
+
+Mannschaft is a single-user, localhost, listening-first German learning app for
+A1–C2. Twelve
 hand-authored pilot lessons, six German TTS voices, rendered audio with measured
 timelines, a YouTube clip per lesson, sentence cards, and an offline-capable PWA.
 
@@ -135,6 +140,29 @@ empty. See `tools/hash_legacy.py`.
 
 ---
 
+## Brand
+
+**Mannschaft** is the platform name. The mark is the founder company's helix
+geometry engraving, supplied as `helix_codex_inevitable_engraving.pdf` at the
+project root and rendered to web assets by `tools/make_logo.py`:
+
+```bash
+make logo
+```
+
+- `src/v5/client/assets/logo-mark.png` — white ink on transparency; the light
+  theme inverts it in CSS.
+- `src/v5/client/assets/logo-badge.png` — dark square used by the READMEs.
+- `src/v5/client/icons/` — PWA icons, Apple touch icon and favicon, regenerated
+  from the same mark.
+
+The mark sits in both persistent chromes (sidebar and topbar), so it is visible
+on every route and every screen. It breathes slowly, and a conic sweep masked
+by the engraving travels across the lines; `prefers-reduced-motion` disables
+both. The asset is precached, so the brand survives offline.
+
+---
+
 ## Content and provenance
 
 - Lessons are **re-authored** from Easy German material, never transcribed
@@ -156,7 +184,7 @@ content/cards/         generated card decks
 content/dictionary/    generated seed
 content/corpus/        clips.jsonl (committed) + sqlite/cache (ignored)
 config/                voices.toml, levels.toml, corpus.toml
-tools/                 hash guard, packaging, dist check, serve scripts, icons
+tools/                 hash guard, packaging, dist check, serve scripts, logo + icons
 tests/                 221 tests: contract, render, server, client, V6
 ```
 

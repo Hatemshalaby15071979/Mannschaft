@@ -271,20 +271,105 @@ h1 strong { font-weight: 600; }
   border-right: var(--rule);
 }
 
-.side-brand { display: grid; gap: 0.15rem; }
-.side-brand strong {
+/* ----------------------------------------------------------------- brand */
+
+/* The founder's helix engraving. One transparent asset; the light theme
+   inverts it. The mark breathes slowly, and a masked conic sweep travels
+   along the engraving lines, so it reads as active without moving the
+   layout or asking for attention. */
+.brand-mark {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
+}
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(121, 184, 255, 0.22));
+  animation: brand-breathe 7s ease-in-out infinite;
+}
+.brand-scan {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask: url("/assets/logo-mark.png") center / contain no-repeat;
+  mask: url("/assets/logo-mark.png") center / contain no-repeat;
+}
+.brand-scan::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 230%;
+  height: 230%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 244deg,
+    rgba(121, 184, 255, 0.15) 268deg,
+    rgba(121, 184, 255, 0.92) 306deg,
+    rgba(121, 184, 255, 0.12) 338deg,
+    transparent 354deg
+  );
+  animation: brand-sweep 6.5s linear infinite;
+}
+.brand-mark-sm { width: 2.5rem; height: 2.5rem; }
+.brand:hover .brand-scan::before,
+.brand-mark:hover .brand-scan::before { animation-duration: 1.6s; }
+[data-theme="light"] .brand-mark img {
+  filter: invert(1) drop-shadow(0 0 5px rgba(15, 98, 254, 0.18));
+}
+
+@keyframes brand-sweep {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes brand-breathe {
+  0%, 100% { opacity: 0.86; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark img, .brand-scan::before { animation: none; }
+  .brand-scan { display: none; }
+  .brand-mark img { opacity: 0.95; }
+}
+
+.side-brand { display: flex; align-items: center; gap: 0.7rem; }
+.side-brand-mark { text-decoration: none; }
+.brand-copy { display: grid; gap: 0.1rem; min-width: 0; }
+.brand-copy strong {
   font-family: var(--font-headline);
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--on-surface);
 }
-.side-brand span {
+.brand-copy > span {
   font-family: var(--font-label);
   font-size: 0.68rem;
   color: var(--on-surface-variant);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+.brand-name {
+  font-family: var(--font-headline);
+  font-weight: 600;
+}
+
 
 .side-index h2 {
   font-family: var(--font-label);
