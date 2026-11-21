@@ -380,7 +380,14 @@ def test_shell_revalidates_so_one_stale_file_cannot_wedge_the_page():
     an old one and sits on its loading line forever."""
     source = (CLIENT / "sw.js").read_text(encoding="utf-8")
     assert "Stale-while-revalidate" in source
-    assert "event.waitUntil(fresh)" in source
+    # waitUntil must be called synchronously in the handler, not from inside
+    # the async helper after an await: there the event is already dispatched.
+    assert "event.waitUntil(refresh(event.request))" in source
+    assert "async function refresh(" in source
+    # A live health probe and all other API calls must never be answered from
+    # the shell cache, which used to freeze lesson JSON and progress forever.
+    assert "url.pathname === '/api/health'" in source
+    assert "url.pathname.startsWith('/api/')" in source
     assert "caches.delete" in source
 
 
@@ -390,6 +397,15 @@ def test_first_paint_follows_the_system_theme_and_a_dead_module_says_so():
     assert "v6.shell" in html
     assert "Die Oberfläche lädt nicht." in html
     assert "location.reload()" in html
+
+
+def test_api_calls_cannot_hang_forever():
+    """An API call that never settles leaves the screen on 'Lädt …' with no
+    explanation; a bounded signal turns it into a visible error instead."""
+    source = (CLIENT / "js" / "api.js").read_text(encoding="utf-8")
+    assert "AbortSignal.timeout(TIMEOUT_MS)" in source
+    assert "cause.name === 'TimeoutError'" in source
+    assert "8 s ohne Antwort" in source
 
 
 def test_no_design_content_leaks():

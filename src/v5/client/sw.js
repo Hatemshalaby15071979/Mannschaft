@@ -6,7 +6,7 @@
    - /api/lessons/*: network-first with cache fallback (lesson content can be
      re-authored; audio is immutable once rendered). */
 
-const VERSION = 'v7';
+const VERSION = 'v8';
 const SHELL = `mannschaft-${VERSION}`;
 const DATA = `mannschaft-data-${VERSION}`;
 
@@ -94,7 +94,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  if (url.pathname.startsWith('/api/lessons/')) {
+  /* A live probe is never cached: a stale "up" is worse than no answer. */
+  if (url.pathname === '/api/health') {
+    event.respondWith(fetch(event.request).catch(() => new Response(null, { status: 503 })));
+    return;
+  }
+
+  /* Every other API call is fresh-first. They used to fall through to the
+     shell cache, which froze progress and lesson JSON on the first answer. */
+  if (url.pathname.startsWith('/api/')) {
     event.respondWith(networkFirst(event.request));
     return;
   }
@@ -107,8 +115,22 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  event.respondWith(shellFirst(event));
+  /* The cache answers first, the network replaces it. waitUntil is called
+     here, synchronously, never from inside the async helper: extending a
+     fetch event's life after dispatch has ended throws. */
+  event.respondWith(shellFirst(event.request));
+  event.waitUntil(refresh(event.request));
 });
+
+async function refresh(fetchRequest) {
+  try {
+    const cache = await caches.open(SHELL);
+    const response = await fetch(fetchRequest);
+    if (response && response.ok) await cache.put(fetchRequest, response.clone());
+  } catch {
+    /* offline: the cached copy already answered */
+  }
+}
 
 async function audioFromCache(request) {
   const cache = await caches.open(DATA);
@@ -202,20 +224,15 @@ async function navigationFirst(request) {
 /* Stale-while-revalidate. A cache-first shell with no revalidation is how a
    design ships and one file stays behind: the page then imports a module the
    cache never replaced, and sits on its loading line forever. Paint from the
-   cache, but always fetch and replace it in the background. */
-async function shellFirst(event) {
-  const request = event.request;
+   cache, and let the caller replace it in the background. */
+async function shellFirst(request) {
   const cache = await caches.open(SHELL);
   const cached = await cache.match(request, { ignoreVary: true });
-  const fresh = fetch(request)
-    .then(async (response) => {
-      if (response && response.ok) await cache.put(request, response.clone());
-      return response;
-    })
-    .catch(() => null);
-  event.waitUntil(fresh);
   if (cached) return cached;
-  const response = await fresh;
+  const response = await fetch(request).catch(() => null);
+  if (response && response.ok) {
+    await cache.put(request, response.clone());
+  }
   if (response) return response;
   if (request.mode === 'navigate') {
     const index = await cache.match('/index.html');

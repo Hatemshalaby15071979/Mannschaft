@@ -22,12 +22,27 @@ function detailMessage(detail) {
   return '';
 }
 
+/* A fetch that never settles is worse than one that fails: the screen stays on
+   its loading line and nothing says why. Eight seconds is generous on loopback. */
+const TIMEOUT_MS = 8000;
+
 async function request(path, options = {}) {
   let response;
+  const init = { ...options };
+  if (!init.signal && typeof AbortSignal !== 'undefined' && AbortSignal.timeout) {
+    init.signal = AbortSignal.timeout(TIMEOUT_MS);
+  }
   try {
-    response = await fetch(path, options);
+    response = await fetch(path, init);
   } catch (cause) {
-    throw new ApiError('Keine Verbindung zum lokalen Server.', 0, String(cause));
+    const timedOut = cause && cause.name === 'TimeoutError';
+    throw new ApiError(
+      timedOut
+        ? 'Der lokale Server antwortet nicht (8 s ohne Antwort).'
+        : 'Keine Verbindung zum lokalen Server.',
+      0,
+      String(cause),
+    );
   }
   const type = response.headers.get('content-type') || '';
   const payload = type.includes('json') ? await response.json().catch(() => null) : null;
