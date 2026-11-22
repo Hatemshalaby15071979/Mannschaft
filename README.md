@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="src/v5/client/assets/logo-badge.png" width="96" alt="Mannschaft — helix mark">
+  <img src="assets/helix-solutions-logo.svg" width="56" height="56" alt="Helix Solutions">
+  <img src="src/v5/client/assets/logo-badge.png" width="112" alt="Mannschaft — helix mark">
 </p>
 
 <p align="center">
@@ -7,7 +8,10 @@
   <img src="https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-3776ab" alt="Python 3.11 to 3.14">
 </p>
 
-# Mannschaft
+<h1 align="center">Mannschaft</h1>
+
+<p align="center"><strong>Deutsch hören, von A1 bis C2.</strong><br>
+Lokal. Ruhig. Für einen Menschen.</p>
 
 Mannschaft is a single-user, localhost, listening-first German learning app for
 A1–C2. Twelve
@@ -15,7 +19,13 @@ hand-authored pilot lessons, six German TTS voices, rendered audio with measured
 timelines, a YouTube clip per lesson, sentence cards, and an offline-capable PWA.
 
 Everything runs on `127.0.0.1:8766`. Nothing phones home, nothing binds to a LAN
-address, and no content is scraped at runtime.
+address, and no content is scraped at runtime. The current release is **V6**;
+`v5/` is the internal tree name.
+
+> **Publication status (verified 2026-11-22):** this is the published product
+> repository. The founder's local umbrella working copy carries the planning
+> plans, archives and a top-level README under `v5/`; the two are reconciled —
+> same story, same canonical Helix mark, paths adjusted for each repository root.
 
 ---
 
