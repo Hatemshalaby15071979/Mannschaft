@@ -13,7 +13,7 @@
 Lokal. Ruhig. Für einen Menschen.</p>
 
 <p float="left">
-  <strong>Mannschaft V6<br></strong><br>
+  <strong>Mannschaft V6</strong><br>
   <span style="font-size:0.9em;color:#93aaa0">by Helix Solutions</span>
 </p>
 
