@@ -12,6 +12,11 @@
 <p align="center"><strong>Deutsch hören, von A1 bis C2.</strong><br>
 Lokal. Ruhig. Für einen Menschen.</p>
 
+<p float="left">
+  <strong>Mannschaft V6<br></strong><br>
+  <span style="font-size:0.9em;color:#93aaa0">by Helix Solutions</span>
+</p>
+
 Mannschaft is a single-user, localhost, listening-first German learning app for
 A1–C2. Twelve
 hand-authored pilot lessons, six German TTS voices, rendered audio with measured
