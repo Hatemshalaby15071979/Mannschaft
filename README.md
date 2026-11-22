@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/helix-solutions-logo.svg" width="56" height="56" alt="Helix Solutions">
+  <img src="assets/helix-solutions-logo.png" width="56" height="56" alt="Helix Solutions">
   <img src="src/v5/client/assets/logo-badge.png" width="112" alt="Mannschaft — helix mark">
 </p>
 
