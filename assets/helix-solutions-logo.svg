@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Helix Solutions — canonical master logo. One mark for every project, product, README and HTML on the GitHub account. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="helix-solutions-title">
-  <title id="helix-solutions-title">Helix Solutions</title>
+<!-- Helix Solutions — canonical master logo. Clean gold mark: triangle + circle on dark rounded-rect. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="hs-logo-title">
+  <title id="hs-logo-title">Helix Solutions</title>
   <defs>
-    <linearGradient id="hs-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7cffb2"/>
-      <stop offset="50%" stop-color="#5ce1ff"/>
-      <stop offset="100%" stop-color="#ffb347"/>
+    <linearGradient id="hs-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A843"/>
+      <stop offset="100%" stop-color="#C9A44F"/>
     </linearGradient>
     <filter id="hs-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  <rect width="256" height="256" rx="44" fill="#060607"/>
-  <path d="M32 48h48l-16 160h16l16-48h32l16 48h16l-16-64h16l16 16h16l-32-96h32l16 48h16l-16-64h64l32 160h-16l-32-96h-32l-16 48h-16l32-96 16 48h48l16-64 16 48h16l-32-96h48l32 160h-16v-16h16l16-48h16l-32 96 16 64h-16l-32-96h-64l-16 48h-16l32-96-16 48h-48l-16 96v-48h16l16-96h16l-32 48 16 48h-16l-32-96-16 48h-48v-48h16l16-48h16l-32 96 16 48h-16l-32-96-16 48h48v-48z"
-        fill="url(#hs-grad)" filter="url(#hs-glow)"/>
+  <rect width="512" height="512" rx="88" fill="#060607"/>
+  <g filter="url(#hs-glow)">
+    <!-- Triangle: the "peak" -->
+    <path d="M256 112 L344 256 L168 256 Z"
+          stroke="url(#hs-gold)" stroke-width="12" stroke-linejoin="round" fill="none"/>
+    <!-- Outer circle: the "governance ring" -->
+    <circle cx="256" cy="368" r="44"
+            stroke="url(#hs-gold)" stroke-width="10" fill="none"/>
+    <!-- Inner dot: the "human in charge" -->
+    <circle cx="256" cy="368" r="17" fill="#F5F1E6"/>
+  </g>
 </svg>
