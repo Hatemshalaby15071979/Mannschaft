@@ -1,5 +1,11 @@
 <p align="center">
-  <img src="src/v5/client/assets/logo-badge.png" width="112" alt="Mannschaft — helix mark">
+  <img src="assets/helix-solutions-logo.svg" width="48" height="48" alt="Helix Solutions" style="vertical-align:middle;margin-right:0.5rem">
+
+  ![licence](https://img.shields.io/badge/licence-MIT-blue)
+  ![offline](https://img.shields.io/badge/offline-by-construction-blue)
+
+  <strong>Mannschaft 6.0.1</strong><br>
+  <span style="font-size:0.9em;color:#93aaa0">by Helix Solutions</span>
 </p>
 
 <p align="center">
@@ -12,10 +18,7 @@
 <p align="center"><strong>Deutsch hören, von A1 bis C2.</strong><br>
 Lokal. Ruhig. Für einen Menschen.</p>
 
-<p float="left">
-  <strong>Mannschaft V6</strong><br>
-  <span style="font-size:0.9em;color:#93aaa0">by Helix Solutions</span>
-</p>
+**Listen-first German learning, locally.**
 
 Mannschaft is a single-user, localhost, listening-first German learning app for
 A1–C2. Twelve
