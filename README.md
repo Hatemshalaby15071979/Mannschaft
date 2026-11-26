@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/helix-solutions-logo.svg" width="48" height="48" alt="Helix Solutions" style="vertical-align:middle;margin-right:0.5rem">
+  <img src="https://raw.githubusercontent.com/Hatemshalaby15071979/Helix-Solutions/main/assets/helix-solutions-logo.png" alt="Helix Solutions" width="48" height="48" style="vertical-align:middle;margin-right:0.5rem">
 
   ![licence](https://img.shields.io/badge/licence-MIT-blue)
   ![offline](https://img.shields.io/badge/offline-by-construction-blue)
