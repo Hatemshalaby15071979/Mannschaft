@@ -79,3 +79,21 @@ Verification: Planned — `scripts/check_root_docs.py` and `--self-test` locally
 Left undone: Nothing at sign-in.
 
 Sensitive: `git push origin main` (owner's instruction in chat, 2026-11-27). No force push, no history rewrite, no secrets.
+
+## [2026-11-27 05:01 EET] — sami (OpenMausBot), owner-authorised governance landing
+
+STATUS: SIGN-OUT (landing complete)
+
+Task: Bring this repository onto the portfolio governance standard. Done.
+
+Touched: `AGENTS.md`, `CHANGELOG.md`, `CONSTITUTION.md`, `GOVERNANCE.md`, `SECURITY.md` (all new); `scripts/check_root_docs.py` (new, md5 `35fc37ab16ff4461a33d4e2dcaedb7bf`, byte-identical to the copy in Assay, createlee, Helix-Solutions, Helix-Matrix, Helix-Codex and work-samples); `V6-REPORT.md` → `docs/archive/V6-REPORT.md` with its five references in `STATUS.md` repointed; `src/v5/__init__.py` (docstring now also points at `AGENTS.md` and `GOVERNANCE.md`); `.github/workflows/ci.yml` (one new `governance` job). Nothing deleted.
+
+Why: The repository had a README and a progress ledger but no written policy, no agent charter and no security policy, and a dated milestone report sat at the root. Two documents were deliberately **kept** at the root rather than moved: `STATUS.md` because `tools/package.py` ships it inside the core distribution and source and README both point at it, and `README.md` for the obvious reason — both are named in the GOVERNANCE.md section 2 table as required, which is the documented-exception mechanism the gate is built around.
+
+**Deliberately not done, and it needs the owner:** `LICENSE` was **not** added. `STATUS.md` records that no licence has been chosen yet and that `pyproject.toml` carries no licence field. That is the owner's decision, so the section 2 table does not name `LICENSE` either, and `GOVERNANCE.md` says explicitly that when the owner picks one, the file and the table row land together. The repository's licence badge in `README.md` now says MIT on no evidence of a decision; that is pre-existing and is the owner's to settle.
+
+Verification: `scripts/check_root_docs.py` → "OK — Mannschaft/ holds only the GOVERNANCE.md section 2 set" (7 table rows, 7 allowed root documents); `--self-test` → 7/7 cases behaved. The `governance` job parses as valid YAML (jobs: `test`, `governance`). ruff check → "All checks passed!"; `python -m v5 validate --all` → 12 lessons, 0 errors, 0 warnings; pytest → 226 passed, 2 skipped, 2 failed. The two failures are **pre-existing and environment-dependent**, not caused by this landing: `tests/test_assemble.py::test_mp3_duration_agrees_with_timeline` (63 ms drift against a 50 ms tolerance) and `::test_line_clips_are_written_per_segment` (65 ms against 60 ms) synthesise audio and probe its duration, so a different ffmpeg/TTS build moves them. They fail identically on the unmodified tree. `ruff format --check` reports 23 files that "would be reformatted" — also pre-existing and not part of this repository's gate, which runs `ruff check` only; the one file this landing touched is format-clean.
+
+Left undone: the licence decision (owner's). CI on `cfe3895` and the sign-out commit is the record of the same steps on a clean runner.
+
+Sensitive: `git push origin main` (owner's instruction in chat, 2026-11-27). No force push, no history rewrite, no secrets.
