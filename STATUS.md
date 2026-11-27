@@ -11,7 +11,7 @@
 
 **No pending implementation work.** V6 is complete, verified and **published**:
 `https://github.com/Hatemshalaby15071979/Mannschaft` (branch `main`, release
-`v6.0.1`). CI runs on 3.11–3.14. See `V6-REPORT.md` for evidence.
+`v6.0.1`). CI runs on 3.11–3.14. See `docs/archive/V6-REPORT.md` for evidence.
 
 Two owner decisions remain, neither blocking: (1) a LICENSE — none has been
 chosen, so `pyproject.toml` carries no license field; (2) whether the root
@@ -32,7 +32,7 @@ Re-verify at any time with: `make check` (230 tests), `make validate`,
 
 All phases landed. Commits: `df06f80` (guard) → `e1603d9` (design shell, media,
 cards, dictionary, journey) → `baa1d50` (CI, packaging, docs). 221 tests green,
-12 lessons 0 errors, clean-directory install OK. Full evidence in `V6-REPORT.md`.
+12 lessons 0 errors, clean-directory install OK. Full evidence in `docs/archive/V6-REPORT.md`.
 
 **The 12-pilot boundary is unchanged.** V6 adds screens and read-only routes; it
 does not add lessons and does not resume M10/M11.
@@ -85,7 +85,7 @@ advisory — objective waveform-distinctness passed 6/6.
 | M11 | Release v5.0.0 | DEFERRED | Depends on M10's 72 lessons; out of scope under the 12-pilot decision. |
 | V6-0 | Guard — legacy hash snapshot | DONE | `tools/hash_legacy.py` → **2,657 files** hashed (2,438 audio + clips.jsonl + voices.toml + 11 server files); `app.py`/`main.js` carved out as the sanctioned additive surface. Snapshot: `/tmp/v6_legacy_before.sha256`. Baseline gate re-measured: **188 passed in 18.02s**, `ruff` clean. |
 | V6-1 | Design shell + media + cards + dictionary + journey | DONE | `e1603d9` — matrix-derived dark shell (sidebar index, masthead, KPI tiles, level tabs, expandable rows, theme/motion/focus), 12/12 lessons have a `youtube-nocookie` clip, 120 cards (10/lesson), 542 dictionary entries, 4 new read-only routes. **221 passed**, `validate` 12/0/0, browser walkthrough 0 console errors, position restored after reload. |
-| V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `V6-REPORT.md`, serve/stop scripts. |
+| V6-2 | CI, packaging, docs | DONE | GitHub Actions (3.11–3.13, ruff + pytest + validate, core artifact), `dist-core` 571 KB / `dist-full` 213 MB, `dist-check` clean-install **OK**, `README.md`, `docs/archive/V6-REPORT.md`, serve/stop scripts. |
 | V6-3 | Root repo (local-ready) | DONE | `27e9d6c` — root `git init` on `main`; plans, archives and v5 gitlink committed; **no remote, nothing pushed** — awaiting owner approval. |
 | V6-4 | Verification hardening | DONE | `722af96` — structured request logging (`ts= method= route= status= ms=`), strict on-disk schema test for every generated JSON, 360 px header split into two rows (no overlap), full zip actually served from a clean directory (health rendered=12, `Range` → 206). **223 passed**; core/full rebuilt and `dist-check` OK. |
 | V6-6 | Mannschaft rename + brand delivery | DONE | `892d745` — user-visible `v5` removed, artifacts renamed `mannschaft-*`, hero mark on home, navigation network-first with upgrade reload, shell headers `no-cache`, caches `mannschaft-v4`; **230 passed**. |
@@ -152,10 +152,10 @@ advisory — objective waveform-distinctness passed 6/6.
 | — | — | **Bug:** dictionary ranking used substring matching, so `tag` matched `der Vorteil` through English "advan**tag**e". Now token/prefix matching only; `Tag` returns `der Tag`-family entries. |
 | — | — | **A11y:** light `--warning` `#b28600` was 3.03:1 on `#f4f4f4`, used as body text for "Nochmal". Darkened to `#8a6800` → 4.70:1. All other token pairs ≥ 4.55:1. |
 | — | — | **Environment:** ruff's cache rename fails with `EINVAL` on this mount, so `make lint` uses `--no-cache`. CI keeps the normal cache. |
-| — | — | **Correction:** the Phase-0 hash snapshot was in `/tmp` and was cleared between sessions. The gate was re-proven by mtime audit (newest frozen file 2026-11-18 11:56; nothing under v3/v4/webapp newer than 2026-11-19) plus a fresh 2,657-file snapshot — see `V6-REPORT.md` §2. |
+| — | — | **Correction:** the Phase-0 hash snapshot was in `/tmp` and was cleared between sessions. The gate was re-proven by mtime audit (newest frozen file 2026-11-18 11:56; nothing under v3/v4/webapp newer than 2026-11-19) plus a fresh 2,657-file snapshot — see `docs/archive/V6-REPORT.md` §2. |
 | 2026-11-21 | V6 | Hardening pass against the execution prompt: added the §6 structured request log, a strict contract test over every generated JSON file, and a two-row mobile header. `make check` **223 passed**. Full zip served from a clean directory on an ephemeral loopback port: health `rendered=12`, `/api/audio/A1-01` 2,756,924 bytes, `Range: bytes=0-99` → 206 with 100 matching bytes, all four V6 routes 200. |
 | — | — | **Surprise:** the first full-zip serve attempt used port 8799 and hit an unrelated local service (`openmausbot`) that answered `/api/health` with its own JSON. The probe now asserts `app == "ok"` and binds an ephemeral port, so a port collision cannot masquerade as success. |
-| — | — | **Decision:** §5 asks new schemas to live in `src/v5/contract/`, but §3.1 freezes that directory. Schemas stay beside their generators and `test_on_disk_json_validates_against_its_schema` enforces them; this is recorded in `V6-REPORT.md` rather than silently ignored. |
+| — | — | **Decision:** §5 asks new schemas to live in `src/v5/contract/`, but §3.1 freezes that directory. Schemas stay beside their generators and `test_on_disk_json_validates_against_its_schema` enforces them; this is recorded in `docs/archive/V6-REPORT.md` rather than silently ignored. |
 | — | — | **Correction:** at 360 px the index and controls shared one strip and the controls clipped the nav. They now occupy two rows; measured bar bottom 98.3 px vs content top 100.8 px. |
 | 2026-11-21 | V6 | **Rebrand: the platform is Mannschaft.** Name applied to the root and v5 READMEs, STATUS, report, AGENTS, both plans, the HTML title, masthead, manifest, FastAPI title and package description. Logo extracted from `helix_codex_inevitable_engraving.pdf` into a transparent mark, docs badge, PWA icons and favicon. The mark is in the sidebar and topbar on every route, animated by a masked conic sweep plus a slow breath. `make check` **227 passed**. |
 | — | — | **Design:** the PDF's black is ~10/255, not 0 — a naive luminance alpha left a grey square. The tool floors at 18, lifts midtones with gamma 0.72, and crops to the ink. One white-on-transparent asset serves both themes; the light theme inverts it in CSS. |
